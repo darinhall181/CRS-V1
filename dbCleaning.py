@@ -14,7 +14,7 @@ def extract_specs(filepath):
 
         specs = {}
         for row in soup.find("title"):
-            item_title = row.get_text(strip=True) # Clean item title
+            item_title = row.get_text(strip=True).rstrip(" Specs: Digital Photography Review") # Clean item title
             specs["Title: "] = item_title
         for row in soup.find_all("tr"):  # Iterate over table rows
             label_tag = row.find("th", class_="label")  # Find label
@@ -28,7 +28,11 @@ def extract_specs(filepath):
         return specs
 
 # Separate camera bodies and lenses
-data = []
+data = [] # List of extracted specs (no separation)
+camera_body = [] # Cameras with interchangeable lenses
+lens = [] # Camera lenses that can be attached to a camera body
+printer = [] # Just printers lol, has "Printer type" in the specs
+fixed_lens = [] # Fixed-lens cameras are cameras with a non-interchangeable lenses, when comparing to camera_body they have focal length and aperture in the specs
 
 # Extract specs from each HTML file
 for filename in os.listdir(html_folder):
