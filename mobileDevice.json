@@ -1,6 +1,6 @@
 [
     {
-        "Title: ": "ZTE Grand",
+        "Title": "ZTE Grand",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -23,7 +23,7 @@
         "Dimensions": "142 x 69 x 7mm(5.59 x 2.72 x 0.27\u2033)"
     },
     {
-        "Title: ": "Huawei Mate 8",
+        "Title": "Huawei Mate 8",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -65,7 +65,7 @@
         "Available colors": "Champagne Gold, Moonlight Silver, Space Gray, Mocha Brown"
     },
     {
-        "Title: ": "Huawei P9 Plu",
+        "Title": "Huawei P9 Plu",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -107,7 +107,7 @@
         "Available colors": "Ceramic White, Haze Gold, Rose Gold, Titanium Grey, Mystic Silver, Prestige Gold"
     },
     {
-        "Title: ": "HTC One M9+ Supreme Cam",
+        "Title": "HTC One M9+ Supreme Cam",
         "OS": "Google Android",
         "OS Version": "5.0.2",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -148,7 +148,7 @@
         "Available colors": "Gunmetal Gray, Silver Gold, Amber Gold"
     },
     {
-        "Title: ": "Huawei M",
+        "Title": "Huawei M",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -191,7 +191,7 @@
         "Available colors": "Luxurious Gold, Mystic Champagne, Titanium Grey"
     },
     {
-        "Title: ": "LG G4 Beat / LG G4",
+        "Title": "LG G4 Beat / LG G4",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -229,7 +229,7 @@
         "Available colors": "Metallic Gray, Ceramic White, Shiny Gold"
     },
     {
-        "Title: ": "Panasonic Lumix DMC-CM1",
+        "Title": "Panasonic Lumix DMC-CM1",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -263,7 +263,7 @@
         "Dimensions": "135 x 68 x 21mm(5.31 x 2.68 x 0.83\u2033)"
     },
     {
-        "Title: ": "Lenovo IdeaPhone K900",
+        "Title": "Lenovo IdeaPhone K900",
         "OS": "Google Android",
         "OS Version": "4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -287,7 +287,7 @@
         "Dimensions": "157 x 78 x 7mm(6.18 x 3.07 x 0.27\u2033)"
     },
     {
-        "Title: ": "Motorola Droid X2",
+        "Title": "Motorola Droid X2",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -331,7 +331,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy S6 edge+",
+        "Title": "Samsung Galaxy S6 edge+",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -374,7 +374,7 @@
         "Available colors": "Black Sapphire, Gold Platinum, Silver Titan, White Pearl"
     },
     {
-        "Title: ": "Apple iPhone 7",
+        "Title": "Apple iPhone 7",
         "OS": "Apple iOS",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -416,7 +416,7 @@
         "Available colors": "Rose Gold, Gold, Silver, Black, Jet Black"
     },
     {
-        "Title: ": "Sony Xperia Ion",
+        "Title": "Sony Xperia Ion",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -463,7 +463,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Blackberry Torch 9810",
+        "Title": "Blackberry Torch 9810",
         "OS": "BlackBerry OS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -505,7 +505,7 @@
         "Available colors": "Black, White, Orange"
     },
     {
-        "Title: ": "HTC H",
+        "Title": "HTC H",
         "OS": "Google Android",
         "OS Version": "1.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -547,7 +547,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "vivo Xplay 5",
+        "Title": "vivo Xplay 5",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -586,7 +586,7 @@
         "Available colors": "Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "Nokia Lumia 610 NFC",
+        "Title": "Nokia Lumia 610 NFC",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "5megapixels",
         "Camera sensor type": "Unknown",
@@ -627,7 +627,7 @@
         "Available colors": "Black, Blue, Purple, White"
     },
     {
-        "Title: ": "Blackb",
+        "Title": "Blackb",
         "OS": "Google Android",
         "OS Version": "5.1.1 with Blackberry launcher",
         "Rear camera effective pixels (Primary)": "18megapixels",
@@ -667,7 +667,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Huawei Ascend Mate 7",
+        "Title": "Huawei Ascend Mate 7",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -707,7 +707,7 @@
         "Available colors": "Obsidian black, Moonlight silver, Amber gold"
     },
     {
-        "Title: ": "Meizu Pro5",
+        "Title": "Meizu Pro5",
         "OS": "Google Android",
         "OS Version": "5.1 with Flyme 5 OS",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -746,7 +746,7 @@
         "Available colors": "Gray, Gold, Silver, Black/Silver"
     },
     {
-        "Title: ": "Nokia Lumia 928",
+        "Title": "Nokia Lumia 928",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "9megapixels",
         "Rear camera resolution": "1920 x 1080",
@@ -775,7 +775,7 @@
         "Available colors": "Black, white"
     },
     {
-        "Title: ": "HTC On",
+        "Title": "HTC On",
         "OS": "Google Android",
         "OS Version": "Android 4.1.2, upgradable to 4.2.2, with HTC Sense",
         "Rear camera effective pixels (Primary)": "4megapixels",
@@ -804,7 +804,7 @@
         "Dimensions": "137 x 68 x 9mm(5.41 x 2.69 x 0.37\u2033)"
     },
     {
-        "Title: ": "Motorola Droid 2",
+        "Title": "Motorola Droid 2",
         "OS": "Google Android",
         "OS Version": "2.2",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -847,7 +847,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Asus Zenfone 3",
+        "Title": "Asus Zenfone 3",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -886,7 +886,7 @@
         "Available colors": "Sapphire Black, Moonlight White, Shimmer Gold"
     },
     {
-        "Title: ": "LG V10",
+        "Title": "LG V10",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -929,7 +929,7 @@
         "Available colors": "Space Black, Luxe White, Modern Beige, Ocean Blue, Opal Blue"
     },
     {
-        "Title: ": "Motorola Electrif",
+        "Title": "Motorola Electrif",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -974,7 +974,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Apple iPhone 6",
+        "Title": "Apple iPhone 6",
         "OS": "Apple iOS",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1013,7 +1013,7 @@
         "Available colors": "Space Gray, Silver, Gold"
     },
     {
-        "Title: ": "ZTE Nubia Z7",
+        "Title": "ZTE Nubia Z7",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1051,7 +1051,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "ZTE Axon",
+        "Title": "ZTE Axon",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1090,7 +1090,7 @@
         "Available colors": "Ion Gold, Chromium Silver, Phthalo Blue"
     },
     {
-        "Title: ": "Asus ZenFone Zoom",
+        "Title": "Asus ZenFone Zoom",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1128,7 +1128,7 @@
         "Available colors": "Meteorite black, Glacier white"
     },
     {
-        "Title: ": "Sony Xperia Tipo Du",
+        "Title": "Sony Xperia Tipo Du",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -1173,7 +1173,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Focus F",
+        "Title": "Samsung Focus F",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -1212,7 +1212,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Motorola Titanium",
+        "Title": "Motorola Titanium",
         "OS": "Google Android",
         "OS Version": "2.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -1247,7 +1247,7 @@
         "Dimensions": "120 x 63 x 15mm(4.72 x 2.48 x 0.57\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Z3+",
+        "Title": "Sony Xperia Z3+",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -1290,7 +1290,7 @@
         "Dimensions": "146 x 72 x 7mm(5.75 x 2.83 x 0.27\u2033)"
     },
     {
-        "Title: ": "ZTE Nubia Z9",
+        "Title": "ZTE Nubia Z9",
         "OS": "Google Android",
         "OS Version": "5.0.2",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -1328,7 +1328,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "Sony Xperia Z U",
+        "Title": "Sony Xperia Z U",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1353,7 +1353,7 @@
         "Available colors": "Black, white, purple"
     },
     {
-        "Title: ": "Apple iPhone 8",
+        "Title": "Apple iPhone 8",
         "OS": "Apple iOS",
         "OS Version": "11",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -1399,7 +1399,7 @@
         "Available colors": "Gold, Silver, Space Gray"
     },
     {
-        "Title: ": "Nokia Lumia 710",
+        "Title": "Nokia Lumia 710",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "5megapixels",
         "Camera sensor type": "Unknown",
@@ -1440,7 +1440,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy Note9",
+        "Title": "Samsung Galaxy Note9",
         "OS": "Google Android",
         "OS Version": "8.1",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -1488,7 +1488,7 @@
         "Available colors": "Ocean Blue, Lavender Purple, Midnight Black, Metallic Copper"
     },
     {
-        "Title: ": "HTC On",
+        "Title": "HTC On",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1535,7 +1535,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galax",
+        "Title": "Samsung Galax",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -1580,7 +1580,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy N",
+        "Title": "Samsung Galaxy N",
         "OS": "Google Android",
         "OS Version": "Android 4.1 upgradable",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1605,7 +1605,7 @@
         "Dimensions": "147 x 83 x 10mm(5.78 x 3.27 x 0.38\u2033)"
     },
     {
-        "Title: ": "LG G Pro 2",
+        "Title": "LG G Pro 2",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1646,7 +1646,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Samsung Galaxy Proclaim",
+        "Title": "Samsung Galaxy Proclaim",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -1690,7 +1690,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Motorola Droid 4",
+        "Title": "Motorola Droid 4",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1733,7 +1733,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Oppo N1",
+        "Title": "Oppo N1",
         "OS": "Google Android",
         "OS Version": "4.2 with ColorOS",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1769,7 +1769,7 @@
         "Dimensions": "171 x 83 x 9mm(6.72 x 3.25 x 0.35\u2033)"
     },
     {
-        "Title: ": "Nokia C6-01",
+        "Title": "Nokia C6-01",
         "OS": "Symbian OS",
         "Rear camera effective pixels (Primary)": "8megapixels",
         "Front camera effective pixels": "2megapixels",
@@ -1800,7 +1800,7 @@
         "Dimensions": "147 x 83 x 10mm(5.78 x 3.27 x 0.38\u2033)"
     },
     {
-        "Title: ": "Motorola Atrix H",
+        "Title": "Motorola Atrix H",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -1846,7 +1846,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Motorola Moto X (2014)",
+        "Title": "Motorola Moto X (2014)",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -1890,7 +1890,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Nokia Lumia 920",
+        "Title": "Nokia Lumia 920",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "9megapixels",
@@ -1939,7 +1939,7 @@
         "Available colors": "Red, Yellow, White, Grey, Black"
     },
     {
-        "Title: ": "vivo X60 Pro+",
+        "Title": "vivo X60 Pro+",
         "OS": "Google Android",
         "OS Version": "Vivo Funtouch 11.1 (Android 11 skin)",
         "Rear camera effective pixels (Primary)": "50megapixels",
@@ -1984,7 +1984,7 @@
         "Dimensions": "159 x 73 x 9mm(6.24 x 2.89 x 0.36\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S4",
+        "Title": "Samsung Galaxy S4",
         "OS": "Google Android",
         "OS Version": "Android OS, v4.2.2 (Jelly Bean)",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2013,7 +2013,7 @@
         "Dimensions": "137 x 70 x 8mm(5.38 x 2.75 x 0.31\u2033)"
     },
     {
-        "Title: ": "HTC F",
+        "Title": "HTC F",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -2036,7 +2036,7 @@
         "Dimensions": "126 x 65 x 9mm(4.96 x 2.56 x 0.35\u2033)"
     },
     {
-        "Title: ": "Samsung ATIV S N",
+        "Title": "Samsung ATIV S N",
         "OS": "Microsoft Windows Phone",
         "OS Version": "Microsoft Windows Phone 8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2055,7 +2055,7 @@
         "Battery type": "Li-Ion 2000 mAh battery"
     },
     {
-        "Title: ": "Apple iPhone 5",
+        "Title": "Apple iPhone 5",
         "OS": "Apple iOS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2106,7 +2106,7 @@
         "Available colors": "Space gray, gold and silver"
     },
     {
-        "Title: ": "LG Optimus F7",
+        "Title": "LG Optimus F7",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2127,7 +2127,7 @@
         "Battery type": "Lithium-ion 2540 mAh"
     },
     {
-        "Title: ": "HTC One Mini 2",
+        "Title": "HTC One Mini 2",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2168,7 +2168,7 @@
         "Available colors": "Gunmetal Gray, Glacial Silver, Amber Gold"
     },
     {
-        "Title: ": "LG G Flex 2",
+        "Title": "LG G Flex 2",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2208,7 +2208,7 @@
         "Available colors": "Platinum Silver, Flamenco Red"
     },
     {
-        "Title: ": "Google Nexus 4",
+        "Title": "Google Nexus 4",
         "OS": "Google Android",
         "OS Version": "4.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2232,7 +2232,7 @@
         "Dimensions": "134 x 69 x 9mm(5.27 x 2.7 x 0.36\u2033)"
     },
     {
-        "Title: ": "Lenovo Moto G (4th generation)",
+        "Title": "Lenovo Moto G (4th generation)",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2275,7 +2275,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "OPPO Find 5",
+        "Title": "OPPO Find 5",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2305,7 +2305,7 @@
         "Dimensions": "142 x 69 x 9mm(5.58 x 2.71 x 0.35\u2033)"
     },
     {
-        "Title: ": "HTC Wildf",
+        "Title": "HTC Wildf",
         "OS": "Google Android",
         "OS Version": "1.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -2347,7 +2347,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Nokia Lumia 830",
+        "Title": "Nokia Lumia 830",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8.1",
         "Rear camera effective pixels (Primary)": "10megapixels",
@@ -2387,7 +2387,7 @@
         "Available colors": "Orange, green, white, black"
     },
     {
-        "Title: ": "HTC My Tou",
+        "Title": "HTC My Tou",
         "OS": "Google Android",
         "OS Version": "2.2",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -2430,7 +2430,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Xiaomi Redmi Note 3",
+        "Title": "Xiaomi Redmi Note 3",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2466,7 +2466,7 @@
         "Available colors": "Silver, Gray, Gold"
     },
     {
-        "Title: ": "LG G3 Beat / LG G3  \u201es\u201c",
+        "Title": "LG G3 Beat / LG G3  \u201es\u201c",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2506,7 +2506,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "HTC Windows Phone 8",
+        "Title": "HTC Windows Phone 8",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "5megapixels",
         "Front camera effective pixels": "2megapixels",
@@ -2547,7 +2547,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Blackberry Storm29550",
+        "Title": "Blackberry Storm29550",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -2590,7 +2590,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Apple iPhone 6",
+        "Title": "Apple iPhone 6",
         "OS": "Apple iOS",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -2630,7 +2630,7 @@
         "Available colors": "Space Gray, Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "Google Nexus 6",
+        "Title": "Google Nexus 6",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -2672,7 +2672,7 @@
         "Available colors": "Silver, black, white, gold"
     },
     {
-        "Title: ": "Samsung Galaxy Note II",
+        "Title": "Samsung Galaxy Note II",
         "OS": "Google Android",
         "OS Version": "Android (4.1.2, 4.1.1)",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2700,7 +2700,7 @@
         "Dimensions": "81 x 151 x 9mm(3.17 x 5.95 x 0.37\u2033)"
     },
     {
-        "Title: ": "Google Nexus 5",
+        "Title": "Google Nexus 5",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2739,7 +2739,7 @@
         "Available colors": "Black, White, Red"
     },
     {
-        "Title: ": "Apple iPhone XS Max",
+        "Title": "Apple iPhone XS Max",
         "OS": "Apple iOS",
         "OS Version": "12",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -2789,7 +2789,7 @@
         "Available colors": "Silver, Space Gray, Gold"
     },
     {
-        "Title: ": "Apple iPhone SE",
+        "Title": "Apple iPhone SE",
         "OS": "Apple iOS",
         "OS Version": "9.3",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -2829,7 +2829,7 @@
         "Available colors": "Space Gray, Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "HTC Desire E",
+        "Title": "HTC Desire E",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -2868,7 +2868,7 @@
         "Dimensions": "152 x 74 x 9mm(5.97 x 2.91 x 0.33\u2033)"
     },
     {
-        "Title: ": "HTC Wildf",
+        "Title": "HTC Wildf",
         "OS": "Google Android",
         "OS Version": "1.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -2910,7 +2910,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "BlackBerry Z10",
+        "Title": "BlackBerry Z10",
         "OS": "BlackBerry OS",
         "OS Version": "BlackBerry 10 OS, upgradable to v10.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -2939,7 +2939,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Google Nexus 5X",
+        "Title": "Google Nexus 5X",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -2982,7 +2982,7 @@
         "Available colors": "Black, White, Blue"
     },
     {
-        "Title: ": "Xiaomi Redmi Note 2",
+        "Title": "Xiaomi Redmi Note 2",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3020,7 +3020,7 @@
         "Available colors": "White, blue, yellow, pink, mint green"
     },
     {
-        "Title: ": "Sony Xperia Z5 Premium",
+        "Title": "Sony Xperia Z5 Premium",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -3064,7 +3064,7 @@
         "Available colors": "White, Graphite Black, Gold, Green"
     },
     {
-        "Title: ": "Huawei Honor V8",
+        "Title": "Huawei Honor V8",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3104,7 +3104,7 @@
         "Available colors": "Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "Samsung Galaxy S5",
+        "Title": "Samsung Galaxy S5",
         "OS": "Google Android",
         "OS Version": "Android 4.4.2",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -3145,7 +3145,7 @@
         "Available colors": "Black, White, Blue, Gold"
     },
     {
-        "Title: ": "Samsung Focu",
+        "Title": "Samsung Focu",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -3182,7 +3182,7 @@
         "Dimensions": "126 x 67 x 9mm(4.96 x 2.64 x 0.33\u2033)"
     },
     {
-        "Title: ": "Xiaomi Mi N",
+        "Title": "Xiaomi Mi N",
         "OS": "Google Android",
         "OS Version": "4.4.4 with MIUI 6",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3219,7 +3219,7 @@
         "Dimensions": "155 x 78 x 7mm(6.11 x 3.06 x 0.28\u2033)"
     },
     {
-        "Title: ": "Motorola XPRT",
+        "Title": "Motorola XPRT",
         "OS": "Google Android",
         "OS Version": "2.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -3254,7 +3254,7 @@
         "Dimensions": "120 x 61 x 13mm(4.72 x 2.4 x 0.49\u2033)"
     },
     {
-        "Title: ": "ZTE Grand Mem",
+        "Title": "ZTE Grand Mem",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3276,7 +3276,7 @@
         "Dimensions": "160 x 83 x 9mm(6.3 x 3.25 x 0.33\u2033)"
     },
     {
-        "Title: ": "Nokia Lumia 800",
+        "Title": "Nokia Lumia 800",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "8megapixels",
         "Rear camera resolution": "3264 x 2448",
@@ -3318,7 +3318,7 @@
         "Available colors": "Black, Pink"
     },
     {
-        "Title: ": "HTC Butterf",
+        "Title": "HTC Butterf",
         "OS": "Google Android",
         "OS Version": "Android 4.2.2 Jelly Bean overlaid with HTC Sense 5",
         "Rear camera effective pixels (Primary)": "4megapixels",
@@ -3347,7 +3347,7 @@
         "Dimensions": "145 x 71 x 11mm(5.69 x 2.78 x 0.42\u2033)"
     },
     {
-        "Title: ": "Google Pixel 4 XL",
+        "Title": "Google Pixel 4 XL",
         "OS": "Google Android",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3392,7 +3392,7 @@
         "Available colors": "Just Black, Clearly White, Oh So Orange"
     },
     {
-        "Title: ": "Nokia Lumia 1520",
+        "Title": "Nokia Lumia 1520",
         "OS": "Microsoft Windows Phone",
         "OS Version": "Windows Phone 8 with Lumia Black",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -3427,7 +3427,7 @@
         "Dimensions": "163 x 85 x 9mm(6.41 x 3.36 x 0.34\u2033)"
     },
     {
-        "Title: ": "Nextbit Robin",
+        "Title": "Nextbit Robin",
         "OS": "Google Android",
         "Rear camera effective pixels (Primary)": "13megapixels",
         "Rear camera resolution": "4160 x 3120",
@@ -3466,7 +3466,7 @@
         "Available colors": "green, black"
     },
     {
-        "Title: ": "LG G2 Min",
+        "Title": "LG G2 Min",
         "OS": "Apple iOS",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3508,7 +3508,7 @@
         "Available colors": "Titan Black, Lunar White, Red, Gold"
     },
     {
-        "Title: ": "Sony Xperia 1",
+        "Title": "Sony Xperia 1",
         "OS": "Google Android",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3553,7 +3553,7 @@
         "Available colors": "Black, purple"
     },
     {
-        "Title: ": "HTC One M8",
+        "Title": "HTC One M8",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "4megapixels",
@@ -3593,7 +3593,7 @@
         "Dimensions": "146 x 71 x 9mm(5.76 x 2.78 x 0.37\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Z",
+        "Title": "Sony Xperia Z",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3612,7 +3612,7 @@
         "Available colors": "black, white, purple"
     },
     {
-        "Title: ": "Apple iPhone 3G",
+        "Title": "Apple iPhone 3G",
         "OS": "Apple iOS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -3658,7 +3658,7 @@
         "Available colors": "White, Black"
     },
     {
-        "Title: ": "HTC One X+",
+        "Title": "HTC One X+",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -3703,7 +3703,7 @@
         "Available colors": "White"
     },
     {
-        "Title: ": "Google Pixel 2 XL",
+        "Title": "Google Pixel 2 XL",
         "OS": "Google Android",
         "OS Version": "8.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3742,7 +3742,7 @@
         "Dimensions": "158 x 77 x 8mm(6.22 x 3.02 x 0.31\u2033)"
     },
     {
-        "Title: ": "Xiaomi Mi N",
+        "Title": "Xiaomi Mi N",
         "OS": "Google Android",
         "OS Version": "4.4.4 with MIUI 6",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -3779,7 +3779,7 @@
         "Dimensions": "155 x 78 x 7mm(6.11 x 3.06 x 0.28\u2033)"
     },
     {
-        "Title: ": "Lenovo Vibe Z2",
+        "Title": "Lenovo Vibe Z2",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -3819,7 +3819,7 @@
         "Available colors": "Black, Gold, White"
     },
     {
-        "Title: ": "Sony X",
+        "Title": "Sony X",
         "OS": "Google Android",
         "OS Version": "4.04",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3866,7 +3866,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Nokia Lumia Icon",
+        "Title": "Nokia Lumia Icon",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -3910,7 +3910,7 @@
         "Available colors": "Black, white"
     },
     {
-        "Title: ": "Samsung Galaxy S9+",
+        "Title": "Samsung Galaxy S9+",
         "OS": "Google Android",
         "OS Version": "8.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -3953,7 +3953,7 @@
         "Dimensions": "158 x 74 x 9mm(6.22 x 2.91 x 0.33\u2033)"
     },
     {
-        "Title: ": "Lenovo Moto G Plu",
+        "Title": "Lenovo Moto G Plu",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -3997,7 +3997,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "HTC One Min",
+        "Title": "HTC One Min",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "4megapixels",
@@ -4037,7 +4037,7 @@
         "Available colors": "Glacial Silver, Stealth Black, BlueGlacial Silver, Stealth Black, Blue"
     },
     {
-        "Title: ": "Apple iPhone X",
+        "Title": "Apple iPhone X",
         "OS": "Apple iOS",
         "OS Version": "12",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4087,7 +4087,7 @@
         "Available colors": "Silver, Space Gray, Gold"
     },
     {
-        "Title: ": "Motorola Droid Turb",
+        "Title": "Motorola Droid Turb",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -4128,7 +4128,7 @@
         "Available colors": "Metallic Red, Metallic Black, Ballistic Nylon Black"
     },
     {
-        "Title: ": "Oppo R7",
+        "Title": "Oppo R7",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4169,7 +4169,7 @@
         "Available colors": "Golden, Silver"
     },
     {
-        "Title: ": "HTC Amaze 4G",
+        "Title": "HTC Amaze 4G",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -4214,7 +4214,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "HTC Sensation",
+        "Title": "HTC Sensation",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -4258,7 +4258,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Oppo R9 / Oppo F1 Plu",
+        "Title": "Oppo R9 / Oppo F1 Plu",
         "OS": "Google Android",
         "OS Version": "5.1 with Color OS 3.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4297,7 +4297,7 @@
         "Available colors": "Gold"
     },
     {
-        "Title: ": "ZTE Axon 7",
+        "Title": "ZTE Axon 7",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -4337,7 +4337,7 @@
         "Available colors": "Ion Gold, Quartz Grey"
     },
     {
-        "Title: ": "Samsung Galaxy A5 (2016)",
+        "Title": "Samsung Galaxy A5 (2016)",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4378,7 +4378,7 @@
         "Dimensions": "145 x 71 x 7mm(5.7 x 2.8 x 0.29\u2033)"
     },
     {
-        "Title: ": "Vertu T",
+        "Title": "Vertu T",
         "OS": "Google Android",
         "OS Version": "4.0",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -4401,7 +4401,7 @@
         "Battery type": "Lithium-ion"
     },
     {
-        "Title: ": "Samsung Galaxy A7 (2016)",
+        "Title": "Samsung Galaxy A7 (2016)",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4442,7 +4442,7 @@
         "Dimensions": "152 x 74 x 7mm(5.96 x 2.92 x 0.29\u2033)"
     },
     {
-        "Title: ": "Lenovo Moto Z F",
+        "Title": "Lenovo Moto Z F",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -4482,7 +4482,7 @@
         "Dimensions": "156 x 76 x 7mm(6.14 x 2.98 x 0.28\u2033)"
     },
     {
-        "Title: ": "Google Pixel 3",
+        "Title": "Google Pixel 3",
         "OS": "Google Android",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4525,7 +4525,7 @@
         "Available colors": "Just Black, Clearly White, Not Pink"
     },
     {
-        "Title: ": "Apple iPhone 11",
+        "Title": "Apple iPhone 11",
         "OS": "Apple iOS",
         "OS Version": "13",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4573,7 +4573,7 @@
         "Available colors": "Black, Green, Yellow, Purple, (Product) Red, White"
     },
     {
-        "Title: ": "Sony Xperia U",
+        "Title": "Sony Xperia U",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -4619,7 +4619,7 @@
         "Available colors": "Black & Pink, Black & Yellow, White & Pink, White & Yellow"
     },
     {
-        "Title: ": "OnePlus On",
+        "Title": "OnePlus On",
         "OS": "Google Android",
         "OS Version": "4.4. (CyanogenMod 11S)",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4658,7 +4658,7 @@
         "Available colors": "Silk White, Sandstone Black"
     },
     {
-        "Title: ": "Acer Liquid X1",
+        "Title": "Acer Liquid X1",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -4690,7 +4690,7 @@
         "Weight": "160g(5.64oz)"
     },
     {
-        "Title: ": "HTC M",
+        "Title": "HTC M",
         "OS": "Google Android",
         "OS Version": "2.2",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -4734,7 +4734,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Xiaomi Mi Max 2",
+        "Title": "Xiaomi Mi Max 2",
         "OS": "Google Android",
         "OS Version": "Android 7.1.1",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4775,7 +4775,7 @@
         "Dimensions": "174 x 89 x 8mm(6.85 x 3.49 x 0.3\u2033)"
     },
     {
-        "Title: ": "Google Pixel 4",
+        "Title": "Google Pixel 4",
         "OS": "Google Android",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4820,7 +4820,7 @@
         "Available colors": "Just Black, Clearly White, Oh So Orange"
     },
     {
-        "Title: ": "Apple iPhone 12",
+        "Title": "Apple iPhone 12",
         "OS": "Apple iOS",
         "OS Version": "14",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4868,7 +4868,7 @@
         "Available colors": "Silver, Graphite, Gold, Pacific Blue"
     },
     {
-        "Title: ": "Sony Xperia A",
+        "Title": "Sony Xperia A",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -4915,7 +4915,7 @@
         "Available colors": "Black, White,Pink"
     },
     {
-        "Title: ": "HTC Thunderb",
+        "Title": "HTC Thunderb",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -4958,7 +4958,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Saygus V2",
+        "Title": "Saygus V2",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -4995,7 +4995,7 @@
         "Dimensions": "137 x 67 x 10mm(5.39 x 2.64 x 0.38\u2033)"
     },
     {
-        "Title: ": "HTC Vivid",
+        "Title": "HTC Vivid",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -5040,7 +5040,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "HTC One M9",
+        "Title": "HTC One M9",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -5081,7 +5081,7 @@
         "Available colors": "Gunmetal Gray, Amber Gold, Silver/Rose gold, Gold/Pink"
     },
     {
-        "Title: ": "Lenovo Vibe X2",
+        "Title": "Lenovo Vibe X2",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5114,7 +5114,7 @@
         "Available colors": "Champagne Gold, Rock Pink and Electric Blue"
     },
     {
-        "Title: ": "Samsung Galaxy A",
+        "Title": "Samsung Galaxy A",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -5153,7 +5153,7 @@
         "Available colors": "Black, white, gold, silver, blue"
     },
     {
-        "Title: ": "Apple iPhone X",
+        "Title": "Apple iPhone X",
         "OS": "Apple iOS",
         "OS Version": "12",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -5199,7 +5199,7 @@
         "Available colors": "Blue, black, coral, white, yellow, red"
     },
     {
-        "Title: ": "HTC One M8",
+        "Title": "HTC One M8",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5241,7 +5241,7 @@
         "Available colors": "Gunmetal Gray, Glacial Silver, Amber Gold"
     },
     {
-        "Title: ": "Sony Xperia M5",
+        "Title": "Sony Xperia M5",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "22megapixels",
@@ -5282,7 +5282,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "LG Optimus G",
+        "Title": "LG Optimus G",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5311,7 +5311,7 @@
         "Dimensions": "150 x 76 x 9mm(5.91 x 3 x 0.37\u2033)"
     },
     {
-        "Title: ": "Blackberry Bold 9900",
+        "Title": "Blackberry Bold 9900",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5353,7 +5353,7 @@
         "Available colors": "Black,White"
     },
     {
-        "Title: ": "Huawei G8",
+        "Title": "Huawei G8",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5395,7 +5395,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "Blackberry Bold 9790",
+        "Title": "Blackberry Bold 9790",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5434,7 +5434,7 @@
         "Dimensions": "110 x 60 x 11mm(4.33 x 2.36 x 0.45\u2033)"
     },
     {
-        "Title: ": "Microsoft Lumia 950 XL",
+        "Title": "Microsoft Lumia 950 XL",
         "OS": "Microsoft Windows Phone",
         "OS Version": "Windows 10",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -5474,7 +5474,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Asus Zenfone 3 U",
+        "Title": "Asus Zenfone 3 U",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -5513,7 +5513,7 @@
         "Available colors": "Glacier Silver, Titanium Gray, Metallic Pink"
     },
     {
-        "Title: ": "Sony Xperia Z1",
+        "Title": "Sony Xperia Z1",
         "OS": "Google Android",
         "OS Version": "Android 4.3",
         "Front camera effective pixels": "21megapixels",
@@ -5530,7 +5530,7 @@
         "Available colors": "black, white and purple"
     },
     {
-        "Title: ": "Nokia 808 Pu",
+        "Title": "Nokia 808 Pu",
         "OS": "Symbian OS",
         "Rear camera effective pixels (Primary)": "41megapixels",
         "Rear camera focal length (Primary)": "8mm",
@@ -5560,7 +5560,7 @@
         "Available colors": "Black, Red, White"
     },
     {
-        "Title: ": "Blackberry Torch 9860",
+        "Title": "Blackberry Torch 9860",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5601,7 +5601,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy Mega 6.3",
+        "Title": "Samsung Galaxy Mega 6.3",
         "OS": "Google Android",
         "OS Version": "4.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -5627,7 +5627,7 @@
         "Dimensions": "168 x 88 x 8mm(6.6 x 3.46 x 0.31\u2033)"
     },
     {
-        "Title: ": "Blackberry Bold 9930",
+        "Title": "Blackberry Bold 9930",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5669,7 +5669,7 @@
         "Available colors": "Black,White"
     },
     {
-        "Title: ": "Motorola Adm",
+        "Title": "Motorola Adm",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5716,7 +5716,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Oppo R9 Plu",
+        "Title": "Oppo R9 Plu",
         "OS": "Google Android",
         "OS Version": "5.1 with Color OS 3.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -5755,7 +5755,7 @@
         "Available colors": "Gold"
     },
     {
-        "Title: ": "Apple iPhone 8 Plu",
+        "Title": "Apple iPhone 8 Plu",
         "OS": "Apple iOS",
         "OS Version": "11",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -5804,7 +5804,7 @@
         "Available colors": "Gold, Silver, Space Gray"
     },
     {
-        "Title: ": "Sony Xperia Z",
+        "Title": "Sony Xperia Z",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5832,7 +5832,7 @@
         "Dimensions": "131 x 67 x 10mm(5.16 x 2.65 x 0.41\u2033)"
     },
     {
-        "Title: ": "LG G6",
+        "Title": "LG G6",
         "OS": "Google Android",
         "OS Version": "7.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -5874,7 +5874,7 @@
         "Dimensions": "149 x 72 x 8mm(5.86 x 2.83 x 0.31\u2033)"
     },
     {
-        "Title: ": "Vertu Signature Touch (2015)",
+        "Title": "Vertu Signature Touch (2015)",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -5913,7 +5913,7 @@
         "Available colors": "Jet Calf, Garnet Calf, Grape Lizard, Pure Jet Lizard, Jet Alligator, Pure Navy Alligator, Clous de Paris Alligator, Pure Jet Red Gold"
     },
     {
-        "Title: ": "Blackberry Torch 9850",
+        "Title": "Blackberry Torch 9850",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -5954,7 +5954,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "HTC F",
+        "Title": "HTC F",
         "OS": "Google Android",
         "Rear camera effective pixels (Primary)": "3megapixels",
         "Camera sensor type": "CMOS",
@@ -5993,7 +5993,7 @@
         "Available colors": "Grey"
     },
     {
-        "Title: ": "Samsung Galaxy S III (Galaxy S3)",
+        "Title": "Samsung Galaxy S III (Galaxy S3)",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6041,7 +6041,7 @@
         "Available colors": "Pebble blue, Marble white"
     },
     {
-        "Title: ": "Nokia Lumia 925",
+        "Title": "Nokia Lumia 925",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6069,7 +6069,7 @@
         "Dimensions": "29 x 71 x 9mm(1.14 x 2.78 x 0.33\u2033)"
     },
     {
-        "Title: ": "Sony Xperia XA",
+        "Title": "Sony Xperia XA",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -6110,7 +6110,7 @@
         "Available colors": "White, Graphite Black, Lime Gold, Rose Gold"
     },
     {
-        "Title: ": "Oppo N3",
+        "Title": "Oppo N3",
         "OS": "Google Android",
         "OS Version": "4.4.4 with ColorOS 2.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -6147,7 +6147,7 @@
         "Dimensions": "161 x 77 x 10mm(6.35 x 3.03 x 0.39\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S4 Min",
+        "Title": "Samsung Galaxy S4 Min",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6188,7 +6188,7 @@
         "Available colors": "White Frost, Black Mist, Blue, Pink, Orange, Purple, Black Edition"
     },
     {
-        "Title: ": "Xiaomi Mi 4",
+        "Title": "Xiaomi Mi 4",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -6230,7 +6230,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Huawei P30",
+        "Title": "Huawei P30",
         "OS": "Google Android",
         "OS Version": "9.0",
         "Rear camera effective pixels (Primary)": "10megapixels",
@@ -6271,7 +6271,7 @@
         "Dimensions": "158 x 73 x 8mm(6.22 x 2.89 x 0.33\u2033)"
     },
     {
-        "Title: ": "Meizu PRO 6",
+        "Title": "Meizu PRO 6",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -6312,7 +6312,7 @@
         "Available colors": "Gray, Gold, Silver"
     },
     {
-        "Title: ": "Apple iPhone 12 Pro Max",
+        "Title": "Apple iPhone 12 Pro Max",
         "OS": "Apple iOS",
         "OS Version": "14",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -6360,7 +6360,7 @@
         "Available colors": "Silver, Graphite, Gold, Pacific Blue"
     },
     {
-        "Title: ": "HTC One V",
+        "Title": "HTC One V",
         "OS": "Google Android",
         "OS Version": "4.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -6400,7 +6400,7 @@
         "Dimensions": "120 x 60 x 9mm(4.72 x 2.35 x 0.36\u2033)"
     },
     {
-        "Title: ": "Sony Xperia XZ",
+        "Title": "Sony Xperia XZ",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -6444,7 +6444,7 @@
         "Available colors": "Mineral black, Platinum, Forest blue, Deep pink"
     },
     {
-        "Title: ": "HTC One M9+",
+        "Title": "HTC One M9+",
         "OS": "Google Android",
         "OS Version": "5.0.2",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -6483,7 +6483,7 @@
         "Available colors": "Gunmetal Gray, Silver Gold, Amber Gold"
     },
     {
-        "Title: ": "Huawei P8 Max",
+        "Title": "Huawei P8 Max",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -6525,7 +6525,7 @@
         "Available colors": "Titanium Grey, Mystic Champagne"
     },
     {
-        "Title: ": "Motorola Razr V",
+        "Title": "Motorola Razr V",
         "OS": "Google Android",
         "OS Version": "4.0",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6549,7 +6549,7 @@
         "Dimensions": "129 x 66 x 8mm(5.06 x 2.59 x 0.33\u2033)"
     },
     {
-        "Title: ": "HTC Droid Incredib",
+        "Title": "HTC Droid Incredib",
         "OS": "Google Android",
         "OS Version": "Android (2.3.4, 2.2, 2.1)",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6593,7 +6593,7 @@
         "Dimensions": "118 x 59 x 12mm(4.63 x 2.3 x 0.47\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S5 Min",
+        "Title": "Samsung Galaxy S5 Min",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6633,7 +6633,7 @@
         "Available colors": "Charcoal Black, Shimmery White, Electric Blue and Copper Gold"
     },
     {
-        "Title: ": "Apple iPhone 4",
+        "Title": "Apple iPhone 4",
         "OS": "Apple iOS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -6679,7 +6679,7 @@
         "Available colors": "White, Black"
     },
     {
-        "Title: ": "Apple iPhone X",
+        "Title": "Apple iPhone X",
         "OS": "Apple iOS",
         "OS Version": "11",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -6727,7 +6727,7 @@
         "Available colors": "Silver, Space Gray"
     },
     {
-        "Title: ": "HTC One X",
+        "Title": "HTC One X",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -6774,7 +6774,7 @@
         "Available colors": "White"
     },
     {
-        "Title: ": "HTC Windows Phone 8X",
+        "Title": "HTC Windows Phone 8X",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "8megapixels",
         "Rear camera resolution": "3264 x 2448",
@@ -6818,7 +6818,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Xiaomi Mi 5",
+        "Title": "Xiaomi Mi 5",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -6859,7 +6859,7 @@
         "Available colors": "Black, White, Gold, Ceramic"
     },
     {
-        "Title: ": "HTC H",
+        "Title": "HTC H",
         "OS": "Google Android",
         "OS Version": "1.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -6900,7 +6900,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy S20 Plu",
+        "Title": "Samsung Galaxy S20 Plu",
         "OS": "Google Android",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -6945,7 +6945,7 @@
         "Dimensions": "162 x 74 x 8mm(6.37 x 2.9 x 0.31\u2033)"
     },
     {
-        "Title: ": "Sony Xperia XA U",
+        "Title": "Sony Xperia XA U",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "22megapixels",
@@ -6986,7 +6986,7 @@
         "Available colors": "White, Graphite Black, Lime Gold"
     },
     {
-        "Title: ": "Motorola Droid Raz",
+        "Title": "Motorola Droid Raz",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7031,7 +7031,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Motorola Trium",
+        "Title": "Motorola Trium",
         "OS": "Google Android",
         "OS Version": "2.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -7068,7 +7068,7 @@
         "Dimensions": "122 x 66 x 10mm(4.8 x 2.6 x 0.39\u2033)"
     },
     {
-        "Title: ": "Motorola Droid 3",
+        "Title": "Motorola Droid 3",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7110,7 +7110,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Sony X",
+        "Title": "Sony X",
         "OS": "Google Android",
         "OS Version": "11",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7151,7 +7151,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "HTC In",
+        "Title": "HTC In",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7197,7 +7197,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Sony Xperia Z1",
+        "Title": "Sony Xperia Z1",
         "OS": "Google Android",
         "OS Version": "4.3",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -7241,7 +7241,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Apple iPhone 6 Plu",
+        "Title": "Apple iPhone 6 Plu",
         "OS": "Apple iOS",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7281,7 +7281,7 @@
         "Available colors": "Space Gray, Silver, Gold"
     },
     {
-        "Title: ": "Apple iPhone 6s Plu",
+        "Title": "Apple iPhone 6s Plu",
         "OS": "Apple iOS",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7321,7 +7321,7 @@
         "Available colors": "Space Gray, Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "Apple iPhone 7 Plu",
+        "Title": "Apple iPhone 7 Plu",
         "OS": "Apple iOS",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7364,7 +7364,7 @@
         "Available colors": "Rose Gold, Gold, Silver, Black, Jet Black"
     },
     {
-        "Title: ": "Motorola Mileston",
+        "Title": "Motorola Mileston",
         "OS": "Google Android",
         "OS Version": "2.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -7407,7 +7407,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Apple iPhone 5",
+        "Title": "Apple iPhone 5",
         "OS": "Apple iOS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7456,7 +7456,7 @@
         "Available colors": "White & Silver, Black & Slate"
     },
     {
-        "Title: ": "Hasselblad True Zoom",
+        "Title": "Hasselblad True Zoom",
         "OS": "Google Android",
         "OS Version": "phone-dependent",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7490,7 +7490,7 @@
         "Available colors": "black/gray"
     },
     {
-        "Title: ": "Oppo R7 Plu",
+        "Title": "Oppo R7 Plu",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -7532,7 +7532,7 @@
         "Available colors": "Golden, Silver"
     },
     {
-        "Title: ": "Sony Xperia Z3 Com",
+        "Title": "Sony Xperia Z3 Com",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -7575,7 +7575,7 @@
         "Dimensions": "127 x 65 x 9mm(5.01 x 2.56 x 0.34\u2033)"
     },
     {
-        "Title: ": "HTC 10",
+        "Title": "HTC 10",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7617,7 +7617,7 @@
         "Available colors": "Carbon Gray, Topaz Gold, Glacier Silver"
     },
     {
-        "Title: ": "Samsung Galaxy Blaz",
+        "Title": "Samsung Galaxy Blaz",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -7662,7 +7662,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Motorola Atrix",
+        "Title": "Motorola Atrix",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -7707,7 +7707,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "OnePlus 3",
+        "Title": "OnePlus 3",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -7748,7 +7748,7 @@
         "Available colors": "Graphite, Soft Gold"
     },
     {
-        "Title: ": "Samsung Galaxy Mega 5.8",
+        "Title": "Samsung Galaxy Mega 5.8",
         "OS": "Google Android",
         "OS Version": "4.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7772,7 +7772,7 @@
         "Dimensions": "163 x 82 x 9mm(6.4 x 3.24 x 0.35\u2033)"
     },
     {
-        "Title: ": "ZTE nubia Z11",
+        "Title": "ZTE nubia Z11",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -7812,7 +7812,7 @@
         "Available colors": "Silver, Gray, Gold, Rose Gold"
     },
     {
-        "Title: ": "Lenovo P90",
+        "Title": "Lenovo P90",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -7846,7 +7846,7 @@
         "Available colors": "Pearl White, Lava Red, Onyx Black"
     },
     {
-        "Title: ": "HTC Titan",
+        "Title": "HTC Titan",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -7892,7 +7892,7 @@
         "Available colors": "Carbon Grey"
     },
     {
-        "Title: ": "Oppo U3",
+        "Title": "Oppo U3",
         "OS": "Google Android",
         "OS Version": "4.4.4 with Color OS 2.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -7928,7 +7928,7 @@
         "Available colors": "white, dark blue"
     },
     {
-        "Title: ": "Google Pix",
+        "Title": "Google Pix",
         "OS": "Google Android",
         "OS Version": "7.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -7967,7 +7967,7 @@
         "Dimensions": "155 x 76 x 9mm(6.09 x 2.98 x 0.34\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy Note 5",
+        "Title": "Samsung Galaxy Note 5",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8010,7 +8010,7 @@
         "Available colors": "Black Sapphire, Gold Platinum, Silver Titan, White Pearl"
     },
     {
-        "Title: ": "HTC 8XT",
+        "Title": "HTC 8XT",
         "OS": "Microsoft Windows Phone",
         "OS Version": "Microsoft Windows Phone 8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -8035,7 +8035,7 @@
         "Dimensions": "132 x 66 x 10mm(5.2 x 2.6 x 0.39\u2033)"
     },
     {
-        "Title: ": "HTC Evo 3",
+        "Title": "HTC Evo 3",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -8081,7 +8081,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Lenovo Phab2",
+        "Title": "Lenovo Phab2",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8119,7 +8119,7 @@
         "Available colors": "Gunmetal Grey, Champagne Gold"
     },
     {
-        "Title: ": "Samsung Galaxy S7",
+        "Title": "Samsung Galaxy S7",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -8161,7 +8161,7 @@
         "Available colors": "Black, White, Gold, Silver"
     },
     {
-        "Title: ": "Samsung Galaxy S6 A",
+        "Title": "Samsung Galaxy S6 A",
         "OS": "Google Android",
         "OS Version": "5.0.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8198,7 +8198,7 @@
         "Available colors": "camo-blue, camo-gray, gray"
     },
     {
-        "Title: ": "HTC One E8",
+        "Title": "HTC One E8",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -8238,7 +8238,7 @@
         "Dimensions": "146 x 71 x 10mm(5.76 x 2.78 x 0.39\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Z1 Com",
+        "Title": "Sony Xperia Z1 Com",
         "OS": "Google Android",
         "OS Version": "4.3",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -8282,7 +8282,7 @@
         "Available colors": "Black, White, Lime, Pink"
     },
     {
-        "Title: ": "Apple iPhone 3G",
+        "Title": "Apple iPhone 3G",
         "OS": "Apple iOS",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "2megapixels",
@@ -8323,7 +8323,7 @@
         "Available colors": "White, Black"
     },
     {
-        "Title: ": "Sony Xperia Pro-I",
+        "Title": "Sony Xperia Pro-I",
         "OS": "Google Android",
         "OS Version": "11",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -8372,7 +8372,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy S9",
+        "Title": "Samsung Galaxy S9",
         "OS": "Google Android",
         "OS Version": "8.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -8412,7 +8412,7 @@
         "Dimensions": "148 x 69 x 9mm(5.81 x 2.7 x 0.33\u2033)"
     },
     {
-        "Title: ": "HTC Radar 4G",
+        "Title": "HTC Radar 4G",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -8455,7 +8455,7 @@
         "Dimensions": "121 x 62 x 11mm(4.76 x 2.44 x 0.43\u2033)"
     },
     {
-        "Title: ": "Apple iPhone 5",
+        "Title": "Apple iPhone 5",
         "OS": "Apple iOS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -8505,7 +8505,7 @@
         "Available colors": "White, pink, yellow, blue, green"
     },
     {
-        "Title: ": "ZTE Grand Memo II",
+        "Title": "ZTE Grand Memo II",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -8543,7 +8543,7 @@
         "Available colors": "White"
     },
     {
-        "Title: ": "HTC Evo LTE 4G",
+        "Title": "HTC Evo LTE 4G",
         "OS": "Google Android",
         "OS Version": "4.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -8589,7 +8589,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Xiaomi Redm",
+        "Title": "Xiaomi Redm",
         "OS": "Google Android",
         "OS Version": "6.0 Marshmallow",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -8623,7 +8623,7 @@
         "Dimensions": "152 x 76 x 8mm(5.96 x 3 x 0.32\u2033)"
     },
     {
-        "Title: ": "OnePlus 3T",
+        "Title": "OnePlus 3T",
         "OS": "Google Android",
         "OS Version": "Android 7.0 with Oxygen OS 4.0.2",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8667,7 +8667,7 @@
         "Available colors": "Gunmetal, Soft Gold"
     },
     {
-        "Title: ": "HTC Rezound",
+        "Title": "HTC Rezound",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -8712,7 +8712,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "HTC Titan II",
+        "Title": "HTC Titan II",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8758,7 +8758,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "LG G7 ThinQ",
+        "Title": "LG G7 ThinQ",
         "OS": "Google Android",
         "OS Version": "Oreo",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8803,7 +8803,7 @@
         "Dimensions": "153 x 72 x 8mm(6.03 x 2.83 x 0.31\u2033)"
     },
     {
-        "Title: ": "HTC T",
+        "Title": "HTC T",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -8843,7 +8843,7 @@
         "Dimensions": "119 x 62 x 12mm(4.69 x 2.44 x 0.47\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Advance (Xperia Go)",
+        "Title": "Sony Xperia Advance (Xperia Go)",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -8887,7 +8887,7 @@
         "Available colors": "Black, White, Yellow"
     },
     {
-        "Title: ": "Lenovo Moto Z",
+        "Title": "Lenovo Moto Z",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -8927,7 +8927,7 @@
         "Available colors": "Black/Silver/Black Slate White/Fine Gold/Sugar White"
     },
     {
-        "Title: ": "Google Pixel 2",
+        "Title": "Google Pixel 2",
         "OS": "Google Android",
         "OS Version": "8.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -8966,7 +8966,7 @@
         "Dimensions": "146 x 70 x 8mm(5.74 x 2.74 x 0.31\u2033)"
     },
     {
-        "Title: ": "Apple iPhone 11",
+        "Title": "Apple iPhone 11",
         "OS": "Apple iOS",
         "OS Version": "13",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -9014,7 +9014,7 @@
         "Available colors": "Midnight Green, Silver, Space Gray, Gold"
     },
     {
-        "Title: ": "OnePlus 5",
+        "Title": "OnePlus 5",
         "OS": "Google Android",
         "OS Version": "7.1.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -9055,7 +9055,7 @@
         "Dimensions": "154 x 74 x 7mm(6.07 x 2.92 x 0.29\u2033)"
     },
     {
-        "Title: ": "OnePlus 2",
+        "Title": "OnePlus 2",
         "OS": "Google Android",
         "OS Version": "5.1 with OxygenOS",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -9097,7 +9097,7 @@
         "Available colors": "Sandstone Black"
     },
     {
-        "Title: ": "HTC Evo Design",
+        "Title": "HTC Evo Design",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -9140,7 +9140,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Focus 2",
+        "Title": "Samsung Focus 2",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -9186,7 +9186,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Google Nexus 6",
+        "Title": "Google Nexus 6",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -9227,7 +9227,7 @@
         "Dimensions": "159 x 83 x 10mm(6.27 x 3.27 x 0.4\u2033)"
     },
     {
-        "Title: ": "Motorola Moto X",
+        "Title": "Motorola Moto X",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "10megapixels",
@@ -9272,7 +9272,7 @@
         "Available colors": "Black, White (front panel), 18 color options (back panel)"
     },
     {
-        "Title: ": "Oppo Find 7",
+        "Title": "Oppo Find 7",
         "OS": "Google Android",
         "Rear camera effective pixels (Primary)": "13megapixels",
         "Rear camera resolution": "4128 x 3096",
@@ -9309,7 +9309,7 @@
         "Dimensions": "153 x 75 x 9mm(6.01 x 2.95 x 0.36\u2033)"
     },
     {
-        "Title: ": "Huawei P20",
+        "Title": "Huawei P20",
         "OS": "Google Android",
         "OS Version": "8.1",
         "Rear camera effective pixels (Primary)": "10megapixels",
@@ -9350,7 +9350,7 @@
         "Dimensions": "155 x 74 x 8mm(6.1 x 2.91 x 0.31\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S20",
+        "Title": "Samsung Galaxy S20",
         "OS": "Google Android",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -9395,7 +9395,7 @@
         "Dimensions": "152 x 69 x 8mm(5.97 x 2.72 x 0.31\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S6",
+        "Title": "Samsung Galaxy S6",
         "OS": "Google Android",
         "OS Version": "Android 5.02",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -9437,7 +9437,7 @@
         "Available colors": "White Pearl, Black Sapphire, Gold Platinum, Blue Topaz"
     },
     {
-        "Title: ": "Samsung Galaxy Note 4",
+        "Title": "Samsung Galaxy Note 4",
         "OS": "Google Android",
         "OS Version": "4.4",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -9479,7 +9479,7 @@
         "Available colors": "Frosted white, Charcoal black, Bronze Gold, Blossom Pink"
     },
     {
-        "Title: ": "Lenovo Vib",
+        "Title": "Lenovo Vib",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -9518,7 +9518,7 @@
         "Available colors": "Crimson, Pearl White, Graphite Grey"
     },
     {
-        "Title: ": "LG Optimus F5",
+        "Title": "LG Optimus F5",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -9540,7 +9540,7 @@
         "Dimensions": "126 x 65 x 9mm(4.96 x 2.54 x 0.37\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Z5 Com",
+        "Title": "Sony Xperia Z5 Com",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -9584,7 +9584,7 @@
         "Available colors": "White, Graphite Black, Gold, Green"
     },
     {
-        "Title: ": "Microsoft Lumia 950",
+        "Title": "Microsoft Lumia 950",
         "OS": "Microsoft Windows Phone",
         "OS Version": "Windows 10",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -9624,7 +9624,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Sony Xperia L",
+        "Title": "Sony Xperia L",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -9650,7 +9650,7 @@
         "Dimensions": "129 x 65 x 10mm(5.07 x 2.56 x 0.38\u2033)"
     },
     {
-        "Title: ": "Samsung ATIV Od",
+        "Title": "Samsung ATIV Od",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -9678,7 +9678,7 @@
         "Dimensions": "122 x 64 x 11mm(4.8 x 2.52 x 0.43\u2033)"
     },
     {
-        "Title: ": "Huawei Ascend P7",
+        "Title": "Huawei Ascend P7",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -9718,7 +9718,7 @@
         "Available colors": "Black, white, pink"
     },
     {
-        "Title: ": "Huawei Honor 6",
+        "Title": "Huawei Honor 6",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -9757,7 +9757,7 @@
         "Available colors": "Black, white"
     },
     {
-        "Title: ": "vivo Xplay 5 E",
+        "Title": "vivo Xplay 5 E",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -9796,7 +9796,7 @@
         "Available colors": "Silver, Gold, Rose Gold"
     },
     {
-        "Title: ": "HTC Butterfly 3",
+        "Title": "HTC Butterfly 3",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -9834,7 +9834,7 @@
         "Available colors": "Blue, Red, White"
     },
     {
-        "Title: ": "LG Optimus L9 II",
+        "Title": "LG Optimus L9 II",
         "OS": "Google Android",
         "OS Version": "4.1.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -9870,7 +9870,7 @@
         "Available colors": "White, Black"
     },
     {
-        "Title: ": "Sony Xperia 5",
+        "Title": "Sony Xperia 5",
         "OS": "Google Android",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -9915,7 +9915,7 @@
         "Available colors": "Black, purple"
     },
     {
-        "Title: ": "Asus Zenfone 3 Delux",
+        "Title": "Asus Zenfone 3 Delux",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -9954,7 +9954,7 @@
         "Available colors": "Glacier Silver, Titanium Gray, Shimmer Gold"
     },
     {
-        "Title: ": "Huawei P9",
+        "Title": "Huawei P9",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -9996,7 +9996,7 @@
         "Available colors": "Ceramic White, Haze Gold, Rose Gold, Titanium Grey, Mystic Silver, Prestige Gold"
     },
     {
-        "Title: ": "Oppo N1 Min",
+        "Title": "Oppo N1 Min",
         "OS": "Google Android",
         "OS Version": "4.3",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10034,7 +10034,7 @@
         "Dimensions": "148 x 72 x 9mm(5.84 x 2.84 x 0.36\u2033)"
     },
     {
-        "Title: ": "Motorola Moto X Play / Motorola Droid Maxx 2",
+        "Title": "Motorola Moto X Play / Motorola Droid Maxx 2",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -10074,7 +10074,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Motorola Droid Razr Maxx",
+        "Title": "Motorola Droid Razr Maxx",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -10117,7 +10117,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "HTC One A9",
+        "Title": "HTC One A9",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10158,7 +10158,7 @@
         "Available colors": "Carbon Gray, Opal Silver, Topaz Gold, Deep Garnet"
     },
     {
-        "Title: ": "LG Optimus L3 II",
+        "Title": "LG Optimus L3 II",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -10179,7 +10179,7 @@
         "Dimensions": "103 x 61 x 12mm(4.04 x 2.41 x 0.47\u2033)"
     },
     {
-        "Title: ": "Google Pixel 3 XL",
+        "Title": "Google Pixel 3 XL",
         "OS": "Google Android",
         "OS Version": "9",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -10222,7 +10222,7 @@
         "Available colors": "Just Black, Clearly White, Not Pink"
     },
     {
-        "Title: ": "Sony X",
+        "Title": "Sony X",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -10268,7 +10268,7 @@
         "Available colors": "Black, Silver, Red"
     },
     {
-        "Title: ": "LG Optimus L7 II",
+        "Title": "LG Optimus L7 II",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -10293,7 +10293,7 @@
         "Dimensions": "122 x 67 x 10mm(4.78 x 2.62 x 0.38\u2033)"
     },
     {
-        "Title: ": "Samsung Galaxy S7 ed",
+        "Title": "Samsung Galaxy S7 ed",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -10335,7 +10335,7 @@
         "Available colors": "Black, White, Gold, Silver"
     },
     {
-        "Title: ": "Nokia Lumia 610",
+        "Title": "Nokia Lumia 610",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "5megapixels",
         "Camera sensor type": "Unknown",
@@ -10376,7 +10376,7 @@
         "Available colors": "Black, Blue, Purple, White"
     },
     {
-        "Title: ": "Lenovo Moto Z",
+        "Title": "Lenovo Moto Z",
         "OS": "Google Android",
         "OS Version": "6.0.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10416,7 +10416,7 @@
         "Dimensions": "153 x 75 x 5mm(6.04 x 2.96 x 0.2\u2033)"
     },
     {
-        "Title: ": "Huawei Honor 7",
+        "Title": "Huawei Honor 7",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -10455,7 +10455,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "Apple iPhone 4",
+        "Title": "Apple iPhone 4",
         "OS": "Apple iOS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -10503,7 +10503,7 @@
         "Available colors": "White, Black"
     },
     {
-        "Title: ": "Apple iPhone 12 min",
+        "Title": "Apple iPhone 12 min",
         "OS": "Apple iOS",
         "OS Version": "14",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -10551,7 +10551,7 @@
         "Available colors": "Black, White, (Product) Red, Green, Blue"
     },
     {
-        "Title: ": "BlackBerry Q5",
+        "Title": "BlackBerry Q5",
         "OS": "BlackBerry OS",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -10573,7 +10573,7 @@
         "Dimensions": "120 x 66 x 11mm(4.72 x 2.6 x 0.43\u2033)"
     },
     {
-        "Title: ": "HTC A",
+        "Title": "HTC A",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7.5",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -10612,7 +10612,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Oppo R5",
+        "Title": "Oppo R5",
         "OS": "Google Android",
         "OS Version": "4.4.4 with ColorOS 2.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10651,7 +10651,7 @@
         "Dimensions": "149 x 75 x 5mm(5.86 x 2.93 x 0.19\u2033)"
     },
     {
-        "Title: ": "HTC HD7",
+        "Title": "HTC HD7",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -10695,7 +10695,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Sony Xperia T",
+        "Title": "Sony Xperia T",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "3megapixels",
@@ -10740,7 +10740,7 @@
         "Available colors": "Black and Grey"
     },
     {
-        "Title: ": "Nokia Lumia 820",
+        "Title": "Nokia Lumia 820",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -10789,7 +10789,7 @@
         "Available colors": "Red, Yellow, White, Blue, Purple, Grey, Black"
     },
     {
-        "Title: ": "Sony Xperia X Performan",
+        "Title": "Sony Xperia X Performan",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -10831,7 +10831,7 @@
         "Dimensions": "144 x 70 x 9mm(5.66 x 2.77 x 0.34\u2033)"
     },
     {
-        "Title: ": "Xiaomi Mi 4",
+        "Title": "Xiaomi Mi 4",
         "OS": "Google Android",
         "OS Version": "5.1.1 with MIUI 6",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10871,7 +10871,7 @@
         "Available colors": "White, grey, pink, yellow, blue"
     },
     {
-        "Title: ": "Apple iPhon",
+        "Title": "Apple iPhon",
         "OS": "Apple iOS",
         "OS Version": "3",
         "Rear camera effective pixels (Primary)": "2megapixels",
@@ -10913,7 +10913,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Huawei Honor 7",
+        "Title": "Huawei Honor 7",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -10955,7 +10955,7 @@
         "Available colors": "Black, White, Gold"
     },
     {
-        "Title: ": "Apple iPhone 12",
+        "Title": "Apple iPhone 12",
         "OS": "Apple iOS",
         "OS Version": "14",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -11003,7 +11003,7 @@
         "Available colors": "Black, White, (Product) Red, Green, Blue"
     },
     {
-        "Title: ": "Nokia XL",
+        "Title": "Nokia XL",
         "OS": "Google Android",
         "OS Version": "4.1.2",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -11035,7 +11035,7 @@
         "Available colors": "Bright green, orange, cyan, yellow, black, white"
     },
     {
-        "Title: ": "Blackberry P'9981",
+        "Title": "Blackberry P'9981",
         "OS": "BlackBerry OS",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -11077,7 +11077,7 @@
         "Available colors": "Silver"
     },
     {
-        "Title: ": "Motorola Moto G (3rd Generation)",
+        "Title": "Motorola Moto G (3rd Generation)",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -11113,7 +11113,7 @@
         "Available colors": "Black, White"
     },
     {
-        "Title: ": "Motorola Moto X Style / Motorola Moto X Pure Edition",
+        "Title": "Motorola Moto X Style / Motorola Moto X Pure Edition",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -11153,7 +11153,7 @@
         "Available colors": "Black, White, customizable through Moto Maker"
     },
     {
-        "Title: ": "Samsung Galaxy S6 Ed",
+        "Title": "Samsung Galaxy S6 Ed",
         "OS": "Google Android",
         "OS Version": "Android 5.02",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -11195,7 +11195,7 @@
         "Available colors": "White Pearl, Black Sapphire, Gold Platinum, Blue Topaz"
     },
     {
-        "Title: ": "Huawei P8",
+        "Title": "Huawei P8",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -11237,7 +11237,7 @@
         "Available colors": "Titanium Grey, Mystic Champagne"
     },
     {
-        "Title: ": "Huawei Honor 6 Plu",
+        "Title": "Huawei Honor 6 Plu",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -11273,7 +11273,7 @@
         "Available colors": "Black, White / Gold (4G model)"
     },
     {
-        "Title: ": "Sony Xperia X",
+        "Title": "Sony Xperia X",
         "OS": "Google Android",
         "OS Version": "6.01",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -11316,7 +11316,7 @@
         "Available colors": "White, Graphite Black, Lime Gold, Rose Gold"
     },
     {
-        "Title: ": "Google Pixel XL",
+        "Title": "Google Pixel XL",
         "OS": "Google Android",
         "OS Version": "7.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -11355,7 +11355,7 @@
         "Dimensions": "155 x 76 x 9mm(6.09 x 2.98 x 0.34\u2033)"
     },
     {
-        "Title: ": "Sony Xperia Z5",
+        "Title": "Sony Xperia Z5",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "23megapixels",
@@ -11399,7 +11399,7 @@
         "Available colors": "White, Graphite Black, Gold, Green"
     },
     {
-        "Title: ": "Motorola Atrix 2",
+        "Title": "Motorola Atrix 2",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -11446,7 +11446,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Sony Xperia Z2",
+        "Title": "Sony Xperia Z2",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -11488,7 +11488,7 @@
         "Available colors": "Black, White, Purple"
     },
     {
-        "Title: ": "Samsung Focu",
+        "Title": "Samsung Focu",
         "OS": "Microsoft Windows Phone",
         "OS Version": "7",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -11522,7 +11522,7 @@
         "Dimensions": "125 x 64 x 10mm(4.92 x 2.52 x 0.39\u2033)"
     },
     {
-        "Title: ": "LG G Flex",
+        "Title": "LG G Flex",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -11564,7 +11564,7 @@
         "Available colors": "Titan Silver"
     },
     {
-        "Title: ": "LG G3",
+        "Title": "LG G3",
         "OS": "Google Android",
         "OS Version": "4.4.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -11606,7 +11606,7 @@
         "Available colors": "Metallic Black, Silk White, Shine Gold, Moon Violet, Burgundy Red"
     },
     {
-        "Title: ": "HTC Rhym",
+        "Title": "HTC Rhym",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -11652,7 +11652,7 @@
         "Available colors": "Black, Purple"
     },
     {
-        "Title: ": "LG G4",
+        "Title": "LG G4",
         "OS": "Google Android",
         "OS Version": "5.1",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -11694,7 +11694,7 @@
         "Available colors": "Grey, White, Gold, Leather Black, Leather Brown, Leather RedGrey, White, Gold, Leather Black, Leather Brown, Leather Red"
     },
     {
-        "Title: ": "Motorola Droid Bion",
+        "Title": "Motorola Droid Bion",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -11738,7 +11738,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy S20 U",
+        "Title": "Samsung Galaxy S20 U",
         "OS": "Google Android",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "108megapixels",
@@ -11783,7 +11783,7 @@
         "Dimensions": "167 x 76 x 9mm(6.57 x 2.99 x 0.35\u2033)"
     },
     {
-        "Title: ": "Meizu MX5",
+        "Title": "Meizu MX5",
         "OS": "Google Android",
         "OS Version": "5",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -11825,7 +11825,7 @@
         "Available colors": "Gray, Gold, Silver, Black/Silver"
     },
     {
-        "Title: ": "Huawei Ascend P6",
+        "Title": "Huawei Ascend P6",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -11847,7 +11847,7 @@
         "Available colors": "black, white or pink"
     },
     {
-        "Title: ": "Amazon Fire Phon",
+        "Title": "Amazon Fire Phon",
         "OS": "Google Android",
         "OS Version": "Fire OS 3.5",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -11885,7 +11885,7 @@
         "Dimensions": "139 x 67 x 9mm(5.48 x 2.62 x 0.35\u2033)"
     },
     {
-        "Title: ": "Nokia Lumia 930",
+        "Title": "Nokia Lumia 930",
         "OS": "Microsoft Windows Phone",
         "OS Version": "8.1",
         "Rear camera effective pixels (Primary)": "20megapixels",
@@ -11929,7 +11929,7 @@
         "Available colors": "Bright orange, bright green, white, black"
     },
     {
-        "Title: ": "BlackBerry Q10",
+        "Title": "BlackBerry Q10",
         "OS": "BlackBerry OS",
         "OS Version": "10",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -11959,7 +11959,7 @@
         "Dimensions": "120 x 67 x 10mm(4.71 x 2.63 x 0.41\u2033)"
     },
     {
-        "Title: ": "LG G5",
+        "Title": "LG G5",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -12000,7 +12000,7 @@
         "Available colors": "Silver, Titan, Gold, Pink"
     },
     {
-        "Title: ": "Samsung Galaxy S A",
+        "Title": "Samsung Galaxy S A",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -12046,7 +12046,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "LG G2",
+        "Title": "LG G2",
         "OS": "Google Android",
         "OS Version": "4.2.2",
         "Rear camera effective pixels (Primary)": "13megapixels",
@@ -12073,7 +12073,7 @@
         "Dimensions": "139 x 71 x 9mm(5.45 x 2.79 x 0.35\u2033)"
     },
     {
-        "Title: ": "LG V30",
+        "Title": "LG V30",
         "OS": "Google Android",
         "OS Version": "7.1.2",
         "Rear camera effective pixels (Primary)": "16megapixels",
@@ -12118,7 +12118,7 @@
         "Available colors": "Aurora Black, Cloud Silver, Moroccan Blue, Lavender Violet"
     },
     {
-        "Title: ": "HTC Droid Incredible 4G LTE",
+        "Title": "HTC Droid Incredible 4G LTE",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -12163,7 +12163,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Motorola Droid Turbo 2 / Motorola Moto X F",
+        "Title": "Motorola Droid Turbo 2 / Motorola Moto X F",
         "OS": "Google Android",
         "OS Version": "5.1.1",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -12206,7 +12206,7 @@
         "Available colors": "black, white"
     },
     {
-        "Title: ": "Sony Xperia Z3",
+        "Title": "Sony Xperia Z3",
         "OS": "Google Android",
         "OS Version": "4.4.4",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -12249,7 +12249,7 @@
         "Dimensions": "146 x 72 x 7mm(5.75 x 2.83 x 0.29\u2033)"
     },
     {
-        "Title: ": "LG Optimus G",
+        "Title": "LG Optimus G",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Front camera effective pixels": "1megapixels",
@@ -12274,7 +12274,7 @@
         "Battery talk time": "10hrs"
     },
     {
-        "Title: ": "Sony Xperia Z4",
+        "Title": "Sony Xperia Z4",
         "OS": "Google Android",
         "OS Version": "5.0",
         "Rear camera effective pixels (Primary)": "21megapixels",
@@ -12314,7 +12314,7 @@
         "Available colors": "White, black, copper, aqua green"
     },
     {
-        "Title: ": "Blackberry Torch 9800",
+        "Title": "Blackberry Torch 9800",
         "OS": "BlackBerry OS",
         "OS Version": "6",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -12356,7 +12356,7 @@
         "Available colors": "Black, White, Orange"
     },
     {
-        "Title: ": "Huawei P10",
+        "Title": "Huawei P10",
         "OS": "Google Android",
         "OS Version": "7.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -12404,7 +12404,7 @@
         "Available colors": "Mystic Silver, Rose Gold, Graphite Black, Dazzling Gold, Dazzling Blue, Greenery"
     },
     {
-        "Title: ": "Sony X",
+        "Title": "Sony X",
         "OS": "Google Android",
         "OS Version": "4.1",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -12433,7 +12433,7 @@
         "Dimensions": "131 x 67 x 10mm(5.14 x 2.64 x 0.39\u2033)"
     },
     {
-        "Title: ": "Nokia Lumia 900",
+        "Title": "Nokia Lumia 900",
         "OS": "Microsoft Windows Phone",
         "Rear camera effective pixels (Primary)": "8megapixels",
         "Rear camera resolution": "3264 x 2448",
@@ -12475,7 +12475,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Samsung Galaxy S7 A",
+        "Title": "Samsung Galaxy S7 A",
         "OS": "Google Android",
         "OS Version": "6.0",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -12517,7 +12517,7 @@
         "Available colors": "Black, White, Gold, Silver"
     },
     {
-        "Title: ": "Motorola Photon",
+        "Title": "Motorola Photon",
         "OS": "Google Android",
         "OS Version": "4",
         "Rear camera effective pixels (Primary)": "8megapixels",
@@ -12562,7 +12562,7 @@
         "Available colors": "Black"
     },
     {
-        "Title: ": "Nokia 700",
+        "Title": "Nokia 700",
         "OS": "Symbian OS",
         "OS Version": "Belle",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -12607,7 +12607,7 @@
         "Available colors": "White"
     },
     {
-        "Title: ": "Huawei Mate 10",
+        "Title": "Huawei Mate 10",
         "OS": "Google Android",
         "OS Version": "7.1",
         "Rear camera effective pixels (Primary)": "12megapixels",
@@ -12653,7 +12653,7 @@
         "Dimensions": "154 x 75 x 8mm(6.07 x 2.93 x 0.31\u2033)"
     },
     {
-        "Title: ": "Sony X",
+        "Title": "Sony X",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "5megapixels",
@@ -12698,7 +12698,7 @@
         "Available colors": "Black, White, Red"
     },
     {
-        "Title: ": "Samsung Galaxy S II",
+        "Title": "Samsung Galaxy S II",
         "OS": "Google Android",
         "OS Version": "2.3",
         "Rear camera effective pixels (Primary)": "8megapixels",
