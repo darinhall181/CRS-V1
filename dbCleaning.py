@@ -58,7 +58,7 @@ for separator in data:
         camera_body.append(separator)
     elif "Focal length" in separator and "Body type" not in separator:
         lens.append(separator)
-    elif data["label"] == "Teleconverter" in separator:
+    elif data[label] == "Teleconverter" in separator:
         teleconverter.append(separator)
     else:
         misc.append(separator)
