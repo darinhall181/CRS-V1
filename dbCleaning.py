@@ -13,6 +13,7 @@ def extract_specs(filepath):
         soup = BeautifulSoup(file, 'lxml')
 
         specs = {}
+        '''
         for row in soup.find("title"):
             item_title = row.get_text(strip=True).rstrip(" Specs: Digital Photography Review") # Clean item title
             specs["Title"] = item_title
@@ -24,6 +25,21 @@ def extract_specs(filepath):
             if label_tag and value_tag:
                 label = label_tag.get_text(strip=True)  # Clean label
                 value = value_tag.get_text(strip=True)  # Clean value
+                specs[label] = value
+
+        return specs'''
+        title_tag = soup.find("title")
+        if title_tag:
+            item_title = title_tag.get_text(strip=True).rstrip(" Specs: Digital Photography Review")
+            specs["Title"] = item_title
+
+        for row in soup.find_all("tr"):
+            label_tag = row.find("th", class_="label")
+            value_tag = row.find("td", class_="value")
+
+            if label_tag and value_tag:
+                label = label_tag.get_text(strip=True)
+                value = value_tag.get_text(strip=True)
                 specs[label] = value
 
         return specs
@@ -47,6 +63,7 @@ for filename in os.listdir(html_folder):
 # Sort extracted data into categories
 
 for separator in data:
+
     if "Printer type" in separator:
         printer.append(separator)
     elif "OS" in separator:
@@ -58,7 +75,8 @@ for separator in data:
         camera_body.append(separator)
     elif "Focal length" in separator and "Body type" not in separator:
         lens.append(separator)
-    elif data[label] == "Teleconverter" in separator:
+    elif separator.get("Lens type", "").strip() == "Teleconverter" in separator:
+        print(f"Teleconverter detected: {separator.get('Title', 'Unknown Title')}")
         teleconverter.append(separator)
     else:
         misc.append(separator)
@@ -102,4 +120,3 @@ print(f"Extracted {len(data)} overall datapoints. These were separated into thre
       f" {len(misc)} miscellaneously categorized data points. "
       " Saved to JSON. ")
 
-#okay so the issue is that the sums are not adding up correctly; need to find out a way to (once a category is found) to not add it to the misc category; also
