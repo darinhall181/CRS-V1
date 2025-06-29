@@ -8,12 +8,12 @@ ALL_SPECS_FILE = "all_specs.json"
 
 '''
 Category explanation:
-
-camera_body: cameras with interchangable lenses
-lens: camera lenses that are standalone and can be attached to a camera body
-ptinter: just printers lol, has "Printer type" in the specs
-fixed_lens: fixed-lens cameras are cameras with a non-interchangeable lenses, when comparing to camera_body they have focal length and aperture in the specs
-mobile_device: 
+__camera_body__: cameras with interchangable lenses
+__lens__: camera lenses that are standalone and can be attached to a camera body
+__printer__: just printers lol, has "Printer type" in the specs
+__fixed_lens__: fixed-lens cameras are cameras with a non-interchangeable lenses, when comparing to camera_body they have focal length and aperture in the specs
+__mobile_device__: mobile devices, has "OS" in the specs
+__teleconverter__: magnifiers that attach to other lenses to increase focal length
 '''
 
 CATEGORY_FILES = {
