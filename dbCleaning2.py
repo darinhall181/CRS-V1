@@ -38,6 +38,7 @@ def extract_specs(filepath):
 
     return specs
 
+
 def categorize_item(item):
     """Categorize a single item based on its specs."""
     lens_type = item.get("Lens type", "").strip().lower()
@@ -56,6 +57,17 @@ def categorize_item(item):
         return "teleconverter"
     else:
         return "misc"
+    
+def reclassify_misc(categories):
+    still_misc = []
+    for item in categories["misc"]:
+        if ("Exposure compensation" in item):
+            categories["camera_body"].append(item)
+        else:
+            still_misc.append(item)
+
+    categories["misc"] = still_misc
+
 
 def save_json(data, filename):
     with open(filename, 'w', encoding='utf-8') as f:
@@ -71,9 +83,9 @@ def main():
         data.append(extracted_data)
 
         category = categorize_item(extracted_data)
-        if category == "teleconverter":
-            print(f"Teleconverter detected: {extracted_data.get('Title', 'Unknown Title')}")
         categories[category].append(extracted_data)
+    
+    reclassify_misc(categories)
 
     save_json(data, ALL_SPECS_FILE)
 
