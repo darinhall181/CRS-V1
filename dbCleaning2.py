@@ -6,12 +6,22 @@ from bs4 import BeautifulSoup
 HTML_FOLDER = "/Users/darinhall/IdeaProjects/CRS_Database/dpreview-data-specs/dpreview-data-specs/"
 ALL_SPECS_FILE = "all_specs.json"
 
+'''
+Category explanation:
+
+camera_body: cameras with interchangable lenses
+lens: camera lenses that are standalone and can be attached to a camera body
+ptinter: just printers lol, has "Printer type" in the specs
+fixed_lens: fixed-lens cameras are cameras with a non-interchangeable lenses, when comparing to camera_body they have focal length and aperture in the specs
+mobile_device: 
+'''
+
 CATEGORY_FILES = {
     "camera_body": "camera_body.json",
     "lens": "lens.json",
     "printer": "printer.json",
     "fixed_lens": "fixed_lens.json",
-    "mobileDevice": "mobileDevice.json",
+    "mobile_device": "mobile_device.json",
     "teleconverter": "teleconverter.json",
     "misc": "misc.json"
 }
@@ -46,7 +56,7 @@ def categorize_item(item):
     if "Printer type" in item:
         return "printer"
     elif "OS" in item:
-        return "mobileDevice"
+        return "mobile_device"
     elif "Focal length" and "Body type" in item and "Lens mount" not in item:
         return "fixed_lens"
     elif "Viewfinder coverage" in item or ("Timelapse Recording" in item and "GPS" in item):
@@ -74,7 +84,7 @@ def save_json(data, filename):
         json.dump(data, f, indent=4)
 
 def main():
-    data = []
+    data = [] # List of extracted specs (no separation)
     categories = {key: [] for key in CATEGORY_FILES}
 
     for filename in os.listdir(HTML_FOLDER):
