@@ -1,0 +1,10 @@
+{
+  "website_results": [],
+  "pdf_results": [],
+  "summary": {
+    "website_success_rate": 0.0,
+    "pdf_success_rate": 0.0,
+    "avg_website_specs": 0.0,
+    "avg_pdf_specs": 0.0
+  }
+}
