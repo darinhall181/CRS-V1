@@ -1,4 +1,4 @@
-# CRS-V1 / Altoscope
+# Altoscope
 
 Altoscope is a workflow SaaS designed to streamline the research, discovery, and acquisition of professional camera equipment for commercial productions. By leveraging the industry's most robust and user-friendly database of gear specifications, Altoscope turns fragmented public specs into actionable, compatibility-checked RFQs. We empower visual creators to move beyond simple comparison, enabling them to make informed decisions and build validated production kits with confidence. 
 
