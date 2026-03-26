@@ -1,25 +1,27 @@
 # Environment Setup Guide
 
-This document explains the different approaches for setting up and managing the CRS-V1 development environment.
+This document explains the different approaches for setting up and managing the Altoscope development environment.
 
-## Option 1: Virtual Environment with Custom Location (Recommended for Development)
+## Option 1: Virtual Environment with Custom Location (Current Setup)
 
-### Setup
+The active environment lives at `~/Documents/VirtualEnvironments/altoscope/`.
+
+### Activation
+```bash
+# fish shell (current)
+source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish
+
+# bash / zsh
+source ~/Documents/VirtualEnvironments/altoscope/bin/activate
+```
+
+### Setup from scratch
 ```bash
 # Set a custom location for your virtual environment
 export ENV_PATH=/path/to/your/environments
 
 # Run the setup script
 ./scripts/setup_env.sh
-```
-
-### Activation
-```bash
-# Use the smart activation script (finds environment automatically)
-source ./scripts/activate_env.sh
-
-# Or activate manually if you know the location
-source /path/to/your/environments/website_scrapers_env/bin/activate
 ```
 
 ### Benefits
@@ -122,22 +124,21 @@ export DATABASE_URL='postgresql://postgres:<password>@db.<project_ref>.supabase.
 
 ## Common Locations
 
-The activation script checks these locations for the environment:
-- `./website_scrapers_env/` (project root)
-- `~/website_scrapers_env/` (home directory)
-- `~/.virtualenvs/website_scrapers_env/` (virtualenvs directory)
-- `~/Environments/website_scrapers_env/` (Environments directory)
-- `/opt/virtualenvs/website_scrapers_env/` (system-wide)
+The current active environment:
+- `~/Documents/VirtualEnvironments/altoscope/` ← **use this one**
+
+Legacy name (no longer used):
+- `~/Documents/VirtualEnvironments/website_scraper_env/` (old name, can be deleted)
 
 ## Troubleshooting
 
 ### Environment Not Found
 ```bash
 # Check if environment exists
-ls -la /path/to/your/environments/website_scrapers_env/
+ls -la ~/Documents/VirtualEnvironments/altoscope/
 
 # Recreate if needed
-export ENV_PATH=/path/to/your/environments
+export ENV_PATH=~/Documents/VirtualEnvironments
 ./scripts/setup_env.sh
 ```
 

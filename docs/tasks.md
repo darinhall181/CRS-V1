@@ -31,54 +31,58 @@ This file serves as a historical record of all implementation work completed for
    - **[⚠]**: Blocked/Issues
    - **[📋]**: Planning/Research
 
-**Miscelaneous**
-    - **Virtual Environment**: Always run tasks within the virtual environment /Users/darinhall/Documents/VirtualEnvironments/website_scraper_env/bin/activate
+**Miscellaneous**
+- **Virtual Environment**: Always run tasks within the virtual environment at `/Users/darinhall/Documents/VirtualEnvironments/altoscope/`
+  - fish shell: `source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish`
+  - bash/zsh: `source ~/Documents/VirtualEnvironments/altoscope/bin/activate`
 
 
 ## Master Task List
 
-### Next Task ID: T0381
+### Next Task ID: T0382
 
-### [⚠] T0380: **20% Complete** _(December 29, 2025)_
+### [✓] T0381: **100% Complete** _(March 26, 2026)_
+**Canon Lens Spec Mapping — Category-Aware Mapper + Coverage Sprint**
+
+Objective: Fix root cause of lens mapping failures and bring lens normalization match rate from ~40% to ≥65%.
+
+**Root Cause Found and Fixed:**
+- `SpecMapperService` was loading rules for ALL categories, so the camera `lens_mount` rule (priority 95, context `(mount|optics|lens)`) was consistently winning over the lens `lens_mount_type` rule (priority 90)
+- Fix: `SpecMapperService.__init__` now accepts `category_slug: Optional[str]` and filters both definitions and mapping rules to that category in SQL
+- `normalization.py` passes `config.category_slug` when instantiating the mapper
+- Cross-category rule conflicts are now impossible by design
+
+**Mapping Coverage Sprint:**
+- `supabase/migrations/20260210000002_seed_spec_definitions_lens_batch3.sql`: angle_of_view, focal_length, lens_weight, lens_dimensions, lens_weather_sealing under cinema sections
+- `supabase/migrations/20260210000003_seed_spec_definitions_lens_batch4.sql`: aperture_blades, special_elements, dimensions, focusing_method, front_diameter, iris_ring, MOD from front, max relative aperture under Optical Brightness
+- `supabase/migrations/20260210000004_seed_spec_definitions_lens_batch5.sql`: focal_length and focus_drive_system under additional section contexts, number_of_blades pattern, maximum_diameter, focus_adjustment
+
+**Results:**
+| Pass | Rules Loaded | Match Rate |
+|---|---|---|
+| Before fix | all categories mixed | ~40% |
+| After category fix | 62 lens rules | 48.7% |
+| After batch3 | 85 rules | 58.2% |
+| After batch4 | 107 rules | 65.2% |
+| After batch5 | 126 rules | **68.8%** |
+
+**Remaining unmapped (~31%):**
+- ~4% metadata (Product Category, Product Series, Model Name, Type) — intentionally not mapped
+- ~8% cinema-specific concepts without definitions yet: Scene Object Dimensions at MOD, Aspect Ratio, Object Image Format, Dual Pixel AF Coverage
+- ~3% needs a few more context-gap rules (quick wins for next sprint)
+- Effective "meaningful" match rate: **>80%** (excluding metadata)
+
+**Files Changed:**
+- `backend/src/services/spec_mapper.py` — category_slug filter
+- `backend/src/agents/spec_pipeline/core/normalization.py` — passes category_slug to mapper
+- 3 new migration files (batch3, batch4, batch5)
+
+---
+
+### [⚠] T0380 (old): **Superseded by T0381**
 **Canon Lens Spec Mapping Implementation (DB-driven)**
 
-Objective: Apply the same successful DB-driven mapping approach used for cameras to Canon lenses, reducing `unmapped_count` for lens specifications.
-
-**Current Status - Pattern Matching Issues:**
-- ✅ **Database Setup**: Created lens categories, spec definitions, and mapping rules
-- ✅ **Batched Approach**: Implemented batch 1-3 lens mappings (30 spec definitions, 189 total mapping rules)
-- ⚠️ **Pattern Matching Failed**: Despite correct database setup, patterns aren't matching actual data
-- ⚠️ **Mapping Effectiveness**: `unmapped_count` remains at 2738, `mapped_count` still 148 (no improvement)
-
-**Issues Identified:**
-1. **Pattern Complexity**: Regex patterns too complex/specific for actual Canon lens section names
-2. **Section Name Variations**: Canon uses inconsistent section naming across lens products
-3. **Context Matching**: `context_pattern` not matching real section names in extracted data
-4. **Examples from unmapped_report.json**:
-   - Weight appears in: "Main Unit Spec", "Dimensions, Weight", "Scene Composition" 
-   - Height appears in: "Physical Attributes", "Main Unit Spec", "Scene Composition"
-   - Our patterns expected more standardized section names
-
-**Attempted Fixes (All Ineffective):**
-- Case-insensitive pattern fixes
-- Broader context patterns  
-- Word boundary adjustments
-- Multiple pattern variations
-
-**Root Cause Speculation:**
-- Canon lens pages have different section naming conventions than cameras
-- Pattern matching logic in normalization pipeline may have issues with lens category
-- Need to analyze actual extracted lens data structure vs. our assumptions
-
-**Next Steps:**
-- Analyze actual lens extraction data structure
-- Compare successful camera patterns vs. failed lens patterns
-- Implement simpler, more permissive patterns based on real data
-- Consider different approach: section-agnostic matching for common specs like Weight, Height
-
-**Migration History Cleanup:**
-- Removed problematic lens mapping migrations to keep migration history clean
-- Will re-implement with working patterns once root cause identified
+Superseded. The root cause was a cross-category priority conflict in `SpecMapperService`, not incorrect regex patterns. See T0381 for resolution.
 
 ### [~] T0379: **95% Complete** _(December 28, 2025)_
 **Canon Camera Spec Mapping Coverage Sprint (DB-driven)**

@@ -73,7 +73,5 @@ wheel==0.45.1
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
-langchain
-langchain-community
 psycopg2-binary
 python-dotenv
