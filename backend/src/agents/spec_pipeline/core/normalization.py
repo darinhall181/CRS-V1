@@ -173,7 +173,7 @@ def normalize_extractions(
 
     conn = psycopg2.connect(db_url)
     try:
-        mapper = SpecMapperService(conn)
+        mapper = SpecMapperService(conn, category_slug=config.category_slug)
         normalized_items: List[Dict[str, Any]] = []
         pdf_queue: List[Dict[str, Any]] = []
 

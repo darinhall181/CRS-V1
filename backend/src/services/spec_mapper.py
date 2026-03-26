@@ -5,19 +5,37 @@ from typing import List, Dict, Optional, Tuple, Any
 logger = logging.getLogger(__name__)
 
 class SpecMapperService:
-    def __init__(self, db_connection):
+    def __init__(self, db_connection, category_slug: Optional[str] = None):
         self.conn = db_connection
+        self.category_slug = category_slug
         self.mappings = []
-        self.definitions = {} # cache definitions
+        self.definitions = {}
         self._load_rules()
 
     def _load_rules(self):
-        """Loads mappings and definitions from the database."""
+        """Loads mappings and definitions from the database.
+
+        When category_slug is provided only rules whose spec_definition belongs
+        to that category are loaded.  This prevents cross-category rules (e.g.
+        a camera lens_mount rule) from hijacking specs scraped for a different
+        category (e.g. lenses).
+        """
         try:
             with self.conn.cursor() as cur:
-                # Load Definitions
-                # NOTE: schema uses singular table names (spec_definition/spec_mapping)
-                cur.execute("SELECT id, normalized_key, display_name, data_type, unit FROM spec_definition")
+                # Load Definitions (filtered by category when provided)
+                if self.category_slug:
+                    cur.execute(
+                        """
+                        SELECT sd.id, sd.normalized_key, sd.display_name, sd.data_type, sd.unit
+                        FROM spec_definition sd
+                        JOIN product_category pc ON pc.id = sd.category_id
+                        WHERE pc.slug = %s
+                        """,
+                        (self.category_slug,),
+                    )
+                else:
+                    cur.execute("SELECT id, normalized_key, display_name, data_type, unit FROM spec_definition")
+
                 for row in cur.fetchall():
                     self.definitions[row[0]] = {
                         "normalized_key": row[1],
@@ -26,12 +44,25 @@ class SpecMapperService:
                         "unit": row[4],
                     }
 
-                # Load Mappings
-                cur.execute("""
-                    SELECT spec_definition_id, extraction_pattern, context_pattern, priority 
-                    FROM spec_mapping 
-                    ORDER BY priority DESC
-                """)
+                # Load Mappings (filtered to the same set of definitions)
+                if self.category_slug:
+                    cur.execute(
+                        """
+                        SELECT sm.spec_definition_id, sm.extraction_pattern, sm.context_pattern, sm.priority
+                        FROM spec_mapping sm
+                        JOIN spec_definition sd ON sd.id = sm.spec_definition_id
+                        JOIN product_category pc ON pc.id = sd.category_id
+                        WHERE pc.slug = %s
+                        ORDER BY sm.priority DESC
+                        """,
+                        (self.category_slug,),
+                    )
+                else:
+                    cur.execute("""
+                        SELECT spec_definition_id, extraction_pattern, context_pattern, priority 
+                        FROM spec_mapping 
+                        ORDER BY priority DESC
+                    """)
 
                 def _normalize_pattern(p: str) -> str:
                     """

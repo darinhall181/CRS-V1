@@ -1,51 +1,166 @@
 # Altoscope
 
-Altoscope is a workflow SaaS designed to streamline the research, discovery, and acquisition of professional camera equipment for commercial productions. By leveraging the industry's most robust and user-friendly database of gear specifications, Altoscope turns fragmented public specs into actionable, compatibility-checked RFQs. We empower visual creators to move beyond simple comparison, enabling them to make informed decisions and build validated production kits with confidence. 
+**Altoscope is a workflow SaaS that turns fragmented public camera specs into compatibility-checked, professional RFQs for commercial productions — monetized through repeat planning, not transaction fees.**
 
-## Current progress
+---
 
-- **Normalized Postgres/Supabase schema** for gear specs:
-  - `brand`, `product_category`, `product`, `spec_section`, `spec_definition`, `spec_mapping`, `product_spec`
-  - matrix/table specs in `product_spec_matrix` (`dims` is JSONB)
-  - PDFs tracked in `product_document` (URLs stored; download/parse later)
-- **End-to-end ingestion pipeline (Canon mirrorless cameras)**:
-  - discovery → extraction (cache-first) → normalization (DB mapping + text cleanup) → persistence (DB upserts)
-  - currently ingests **15 Canon mirrorless cameras** from `https://www.usa.canon.com/shop/cameras/mirrorless-cameras`
-- **Table → matrix conversions implemented** (persisted into `product_spec_matrix`):
-  - `still_image_file_size_table`
-  - `playback_display_format_table`
-  - `wifi_security_table`
-- **UI-friendly SQL views** exist to support frontend payloads and grids (see Supabase migrations).
+## What It Does
 
-## Local dev workflow (high level)
+Commercial producers and production managers spend hours reconciling gear lists from 10 different freelancers across 10 different spreadsheets. A wrong lens mount or missing card reader costs real money on shoot day. Altoscope solves this.
 
-- Start local Supabase + Studio:
-  - `supabase start` (requires Docker)
-  - Studio runs at `http://127.0.0.1:54323`
-- Apply migrations locally:
-  - `supabase db push --local`
-- Note: `supabase db push` applies **schema migrations only** (it does not copy scraped data).
-- Run the pipeline (Canon defaults):
-  - `python3 backend/scripts/run.py --stage discovery`
-  - `python3 backend/scripts/run.py --stage extraction`
-  - `DATABASE_URL="postgresql://postgres:postgres@127.0.0.1:54322/postgres" python3 backend/scripts/run.py --stage normalize`
-  - `DATABASE_URL="postgresql://postgres:postgres@127.0.0.1:54322/postgres" python3 backend/scripts/run.py --stage persist`
+The product is a **Smart List Builder**: a tool that lets producers build production gear kits, run automated compatibility checks (mount, media, power, physical), and export standardized RFQs to rental houses — all from a single source of structured, spec-verified data.
 
-## Persisting to Supabase cloud (data, not migrations)
+---
 
-To write scraped products/specs into **Supabase cloud**, set `DATABASE_URL` to the cloud Postgres connection string (Project Settings → Database → Connection string, use `sslmode=require`).
+## Business Model
 
-- With storing `DATABASE_URL` in `.env`, `backend/scripts/run.py` will auto-load it (it checks `.env` / `.env.local` in repo root and `backend/`).
-- zsh tip: if your password contains `!`, wrap the whole URL in **single quotes** to avoid `event not found`:
-  - `export DATABASE_URL='postgresql://...:p@ssw0rd\!@db.<ref>.supabase.co:5432/postgres?sslmode=require'`
+### Ideal Customer
+**Non-unionized commercial producers / production managers / coordinators** at small production companies (5–15 FTE, $15k–$100k commercial budgets). Primary pain: formatting 10 different gear lists from 10 different freelancers, and the "change order" cycle when incompatible gear shows up on shoot day.
 
-Then run:
+### Revenue Tiers
 
-- `python3 backend/scripts/run.py --stage persist`
+| Tier | Price | Key Features |
+|---|---|---|
+| **Solo** | $15–25/mo | DB access, manual list building, basic compatibility checks, exported RFQ |
+| **Small Production Co.** | $49–79/mo | Multiple projects, saved kits, full checker system, RFQ links, change tracking |
+| **Team / Coordinator-heavy** | $149–199/mo | Multiple users, version history, commenting, audit trail, rental-house collaboration |
 
-## Next steps
+### Core Value Proposition
+> "Deterministic correctness based on published specs, then real-world intelligence layered in through usage."
 
-- **Mapping coverage sprint**: reduce `unmapped[]` by adding `spec_mapping` rules as migrations.
-- **More table→matrix converters** for high-value Canon tables, then expand brand coverage.
-- **PDF download + parsing** : currently storing PDF URLs, planniong to parse deterministically later.
-- **Possible agentic structure changing**: considering migrating to n8n with Typescript integration after 100% defined schema for spec attributes
+Altoscope is explicitly **not** a marketplace, live availability engine, or pricing authority. It sits between producers and rental houses — giving rental houses uniform RFQs and giving producers a verified, error-checked kit before they ever pick up the phone.
+
+### Long-term Vision
+Starts with scraped public specs → over time, refined with sticky industry expert knowledge and partnerships with rental houses for live inventory availability.
+
+---
+
+## Checker System (MVP Features)
+
+1. **Mount Check** — validates that bodies and lenses are physically compatible
+2. **Media Check** — confirms card reader compatibility and wired transfer speeds
+3. **Power Check** — verifies battery coverage and flags edge cases from manufacturer docs
+4. **Physical Check** — validates accessory dimensions, sums payload for gimbals/drones/tripods, totals weight for travel
+
+### Customer Workflow
+1. Build a gear list (from scratch, scenario matcher, or LLM Advisor [Beta])
+2. Run the Checker System
+3. Export formatted PDF or Altoscope link → send to rental house or match to rental houses that carry the gear
+
+---
+
+## Current Status
+
+### Database (Supabase / Postgres)
+
+| Table | Count |
+|---|---|
+| Brands | 66 |
+| Product Categories | 27 |
+| Products | 183 (15 cameras + 168 lenses) |
+| Spec Definitions | 199 |
+| Spec Mapping Rules | 315 |
+| Product Specs (mapped rows) | 2,515 |
+| Product Images | 4,634 |
+| Product Documents (PDFs) | 96 |
+| Spec Matrix Cells | 213 |
+
+### Ingestion Pipeline
+
+| Stage | Cameras | Lenses |
+|---|---|---|
+| Discovery | ✅ 15 Canon mirrorless | ✅ 168 Canon lenses |
+| Extraction (HTML cache-first) | ✅ | ✅ |
+| Normalization (DB mapping) | ✅ ~85%+ mapped | ✅ ~69% mapped (68.8%) |
+| Persistence (DB upserts) | ✅ | ✅ |
+
+**Mapping rules by category:**
+- Canon mirrorless cameras: 189 rules across 8 migration batches
+- Canon lenses: 126 rules across 5 migration batches (batch1–5)
+
+**Spec mapping architecture:**
+- `SpecMapperService` is now **category-aware**: when normalizing lenses, only lens rules are loaded — preventing camera rules from hijacking lens-specific specs (the root cause of prior unmapped issues).
+
+### Key Schema Tables
+
+```
+brand                 → product_category → product
+spec_section          → spec_definition  → spec_mapping  (the rule engine)
+product               → product_spec     (normalized, mapped spec values)
+product               → product_spec_matrix  (matrix/table specs, JSONB dims)
+product               → product_image
+product               → product_document (PDF URLs, download later)
+```
+
+### Table → Matrix Conversions (implemented)
+- `still_image_file_size_table`
+- `playback_display_format_table`
+- `wifi_security_table`
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Database | Supabase (Postgres) |
+| Migrations | Supabase CLI (`supabase db push`) |
+| Scraping pipeline | Python — Playwright, BeautifulSoup4, psycopg2 |
+| ORM (planned, frontend) | Drizzle ORM (TypeScript) |
+| Frontend (planned) | Next.js (Server Components + Route Handlers) |
+| Auth (planned) | Supabase Auth |
+
+---
+
+## Local Dev Workflow
+
+### Prerequisites
+- Docker (for local Supabase)
+- Python venv at `~/Documents/VirtualEnvironments/altoscope/`
+
+### Start local Supabase
+```bash
+supabase start
+# Studio: http://127.0.0.1:54323
+# DB: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+```
+
+### Apply migrations
+```bash
+supabase db push --include-all
+```
+
+### Activate Python environment
+```fish
+source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish
+```
+
+### Run the pipeline
+```bash
+# Full pipeline (all stages)
+python3 backend/scripts/run.py --brand canon --product-type lens --stage discovery
+python3 backend/scripts/run.py --brand canon --product-type lens --stage extraction
+python3 backend/scripts/run.py --brand canon --product-type lens --stage normalize
+python3 backend/scripts/run.py --brand canon --product-type lens --stage persist
+
+# Quick normalize-only (re-runs mapping without re-scraping)
+python3 backend/scripts/run.py --brand canon --product-type lens --stage normalize
+```
+
+### Write to Supabase cloud
+Set `DATABASE_URL` in `backend/.env` to the cloud connection string (Project Settings → Database → Connection string, `sslmode=require`). The pipeline auto-loads it.
+
+> **zsh tip:** If your password contains `!`, use single quotes to avoid `event not found`:
+> `export DATABASE_URL='postgresql://...:<password>@db.<ref>.supabase.co:5432/postgres?sslmode=require'`
+
+---
+
+## Next Steps
+
+- **Lens mapping coverage**: resolve remaining ~31% unmapped (mostly cinematic specs needing new `spec_definition` rows: `Scene Object Dimensions at MOD`, `Aspect Ratio`, `Object Image Format`)
+- **Canon camera persist refresh**: re-run persist for cameras with latest mapping rules
+- **Expand brands**: Sony, Nikon, ARRI, RED
+- **PDF download + parsing**: PDF URLs are stored in `product_document`; deterministic parse pass needed
+- **Frontend**: Next.js app with Drizzle ORM, Supabase Auth, compatibility checker API routes
+- **Drizzle ORM setup**: after schema finalization, generate TypeScript schema from Postgres for frontend queries
+- **User/project schema**: gear lists, saved kits, RFQ outputs, subscription tiers, version history
