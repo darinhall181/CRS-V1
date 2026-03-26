@@ -26,9 +26,9 @@ def main() -> int:
         "EXTRACTIONS_JSON",
         "data/company_product/canon/processed_data/camera/extractions.json",
     )
-    db_url = os.environ.get("DATABASE_URL") or os.environ.get("SUPABASE_DB_URL")
+    db_url = os.environ.get("SUPABASE_DB_URL") or os.environ.get("DATABASE_URL")
     if not db_url:
-        raise RuntimeError("Set DATABASE_URL (or SUPABASE_DB_URL) to a Postgres connection string.")
+        raise RuntimeError("Set SUPABASE_DB_URL in backend/.env (or DATABASE_URL as fallback).")
 
     payload = json.loads(Path(extraction_path).read_text(encoding="utf-8"))
     items = payload.get("items", [])

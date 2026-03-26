@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -15,20 +16,20 @@ export default function HomePage() {
               <span className="text-2xl font-bold text-foreground">Altoscope</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#database" className="text-muted-foreground hover:text-foreground transition-colors">
-                Database
+              <Link href="/gear" className="text-muted-foreground hover:text-foreground transition-colors">
+                Gear Database
+              </Link>
+              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+                Features
               </a>
-              <a href="#guides" className="text-muted-foreground hover:text-foreground transition-colors">
-                Guides
-              </a>
-              <a href="#community" className="text-muted-foreground hover:text-foreground transition-colors">
-                Community
+              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+                Pricing
               </a>
               <Button variant="outline" size="sm">
                 Sign In
               </Button>
-              <Button size="sm" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                Get Started
+              <Button size="sm" asChild>
+                <Link href="/gear">Explore Gear</Link>
               </Button>
             </div>
           </div>
@@ -40,21 +41,21 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <Badge variant="secondary" className="mb-6 bg-secondary/10 text-secondary border-secondary/20">
-              Knowledge Hub for Visual Creators
+              Smart Kit Builder for Commercial Productions
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance mb-6">
-              Empower your vision with <span className="text-secondary">comprehensive</span> camera knowledge.
+              Build validated production kits with <span className="text-secondary">confidence.</span>
             </h1>
             <p className="text-xl text-muted-foreground text-balance max-w-3xl mx-auto mb-8">
-              Discover, research, and master professional camera equipment through the industry's most robust database
-              and educational resources. From concept to completion, we support every creative workflow.
+              Altoscope turns fragmented public camera specs into compatibility-checked, professional RFQs.
+              Stop wrestling with 10 spreadsheets from 10 freelancers — build your kit, run the checks, send the quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                Explore the Hub
+              <Button size="lg" asChild>
+                <Link href="/gear">Browse Gear Database</Link>
               </Button>
               <Button variant="outline" size="lg">
-                View Database
+                See How It Works
               </Button>
             </div>
           </div>
@@ -66,20 +67,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary mb-2">10,000+</div>
-              <div className="text-muted-foreground">Equipment Specs</div>
+              <div className="text-3xl font-bold text-secondary mb-2">2,500+</div>
+              <div className="text-muted-foreground">Mapped Specs</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary mb-2">500+</div>
-              <div className="text-muted-foreground">Learning Guides</div>
+              <div className="text-3xl font-bold text-secondary mb-2">183</div>
+              <div className="text-muted-foreground">Products Indexed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary mb-2">50,000+</div>
-              <div className="text-muted-foreground">Visual Creators</div>
+              <div className="text-3xl font-bold text-secondary mb-2">4</div>
+              <div className="text-muted-foreground">Compatibility Checks</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary mb-2">99%</div>
-              <div className="text-muted-foreground">Accuracy Rate</div>
+              <div className="text-3xl font-bold text-secondary mb-2">Canon</div>
+              <div className="text-muted-foreground">Brand (more coming)</div>
             </div>
           </div>
         </div>
@@ -89,9 +90,9 @@ export default function HomePage() {
       <section id="database" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything you need to make informed decisions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">From fragmented specs to a validated kit</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our comprehensive platform combines detailed specifications, educational content, and community insights.
+              Every tool a producer needs to go from "what do I rent?" to a clean, verified RFQ — without the guesswork.
             </p>
           </div>
 
@@ -99,30 +100,10 @@ export default function HomePage() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <Search className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Comprehensive Database</h3>
+                <h3 className="text-xl font-bold mb-2">Gear Database</h3>
                 <p className="text-muted-foreground">
-                  Access detailed specifications for thousands of cameras, lenses, and accessories from every major
-                  manufacturer.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <BookOpen className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Educational Guides</h3>
-                <p className="text-muted-foreground">
-                  Learn from expert tutorials, comparison guides, and in-depth reviews to master your craft.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <Users className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Community Insights</h3>
-                <p className="text-muted-foreground">
-                  Connect with fellow creators, share experiences, and get recommendations from the community.
+                  Structured, normalized specs for cameras, lenses, and accessories — scraped and verified from
+                  manufacturer pages.
                 </p>
               </CardContent>
             </Card>
@@ -130,9 +111,10 @@ export default function HomePage() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <Zap className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Smart Comparisons</h3>
+                <h3 className="text-xl font-bold mb-2">Mount Check</h3>
                 <p className="text-muted-foreground">
-                  Compare equipment side-by-side with intelligent filtering and recommendation algorithms.
+                  Instantly validate that every body and lens pairing in your kit is physically compatible, including
+                  adapter requirements.
                 </p>
               </CardContent>
             </Card>
@@ -140,9 +122,32 @@ export default function HomePage() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <Target className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Project Planning</h3>
+                <h3 className="text-xl font-bold mb-2">Media & Power Check</h3>
                 <p className="text-muted-foreground">
-                  Plan your shoots with equipment recommendations based on your specific project requirements.
+                  Verify card reader compatibility, transfer speeds, and battery coverage across your entire kit before
+                  shoot day.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border">
+              <CardContent className="p-6">
+                <BookOpen className="h-12 w-12 text-secondary mb-4" />
+                <h3 className="text-xl font-bold mb-2">Smart List Builder</h3>
+                <p className="text-muted-foreground">
+                  Build from scratch, use scenario presets, or let the AI advisor suggest gear based on your shoot
+                  requirements.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border-border">
+              <CardContent className="p-6">
+                <Users className="h-12 w-12 text-secondary mb-4" />
+                <h3 className="text-xl font-bold mb-2">Standardized RFQ Output</h3>
+                <p className="text-muted-foreground">
+                  Export a clean PDF or shareable link with SKUs and verified specs — ready to send to any rental
+                  house.
                 </p>
               </CardContent>
             </Card>
@@ -150,9 +155,10 @@ export default function HomePage() {
             <Card className="bg-card border-border">
               <CardContent className="p-6">
                 <Camera className="h-12 w-12 text-secondary mb-4" />
-                <h3 className="text-xl font-bold mb-2">Latest Updates</h3>
+                <h3 className="text-xl font-bold mb-2">Physical Check</h3>
                 <p className="text-muted-foreground">
-                  Stay current with the latest equipment releases, firmware updates, and industry trends.
+                  Validate accessory dimensions, sum gimbal / drone payload, and get total travel weight — all from
+                  spec data.
                 </p>
               </CardContent>
             </Card>
@@ -163,13 +169,13 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to elevate your creative workflow?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop chasing down gear lists. Start shipping shoots.</h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join thousands of visual creators who trust Altoscope for their equipment research and education.
+            Built for commercial producers who need a verified kit fast — not another spreadsheet.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-              Start Exploring
+            <Button size="lg" asChild>
+              <Link href="/gear">Browse Gear Database</Link>
             </Button>
             <Button variant="outline" size="lg">
               View Pricing

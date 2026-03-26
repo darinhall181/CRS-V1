@@ -1,4 +1,4 @@
-# Core dependencies for the CRS-V1 package
+# Core dependencies for the Altoscope package
 beautifulsoup4==4.13.4
 certifi==2025.7.14
 charset-normalizer==3.4.2
@@ -13,10 +13,11 @@ typing_extensions==4.14.1
 urllib3==2.5.0
 
 # Database & AI
-langchain
-langchain-community
 psycopg2-binary
 python-dotenv
+
+# Cloudflare R2 / S3-compatible object storage
+boto3
 
 # Development dependencies
 pip-tools

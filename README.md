@@ -148,10 +148,10 @@ python3 backend/scripts/run.py --brand canon --product-type lens --stage normali
 ```
 
 ### Write to Supabase cloud
-Set `DATABASE_URL` in `backend/.env` to the cloud connection string (Project Settings → Database → Connection string, `sslmode=require`). The pipeline auto-loads it.
+Set `SUPABASE_DB_URL` in `backend/.env` to the cloud connection string (Project Settings → Database → Connection string, `sslmode=require`). The pipeline auto-loads it.
 
 > **zsh tip:** If your password contains `!`, use single quotes to avoid `event not found`:
-> `export DATABASE_URL='postgresql://...:<password>@db.<ref>.supabase.co:5432/postgres?sslmode=require'`
+> `export SUPABASE_DB_URL='postgresql://...:<password>@db.<ref>.supabase.co:5432/postgres?sslmode=require'`
 
 ---
 

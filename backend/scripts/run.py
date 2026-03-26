@@ -15,7 +15,7 @@ def _load_env_files(repo_root: Path) -> None:
     """
     Load environment variables from common .env locations (best-effort).
 
-    This lets the pipeline run without requiring manual `export DATABASE_URL=...`
+    This lets the pipeline run without requiring manual `export SUPABASE_DB_URL=...`
     in every shell session.
     """
     try:
@@ -80,9 +80,9 @@ def main() -> int:
         return 0
 
     # stages requiring DB access
-    db_url = os.environ.get("DATABASE_URL") or os.environ.get("SUPABASE_DB_URL")
+    db_url = os.environ.get("SUPABASE_DB_URL") or os.environ.get("DATABASE_URL")
     if args.stage in {"normalize", "persist"} and not db_url:
-        raise RuntimeError("Set DATABASE_URL (or SUPABASE_DB_URL).")
+        raise RuntimeError("Set SUPABASE_DB_URL in backend/.env (or DATABASE_URL as fallback).")
 
     if args.stage == "persist":
         from agents.spec_pipeline.core.persistence import (  # noqa: WPS433

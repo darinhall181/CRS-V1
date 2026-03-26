@@ -7,7 +7,18 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      // Cloudflare R2 — primary image CDN after running upload_images_to_r2.py
+      { protocol: "https", hostname: "*.r2.dev" },
+      // Custom R2 domain (add your domain here once configured)
+      // { protocol: "https", hostname: "images.yourdomain.com" },
+
+      // Canon USA CDN — fallback while images are still on manufacturer servers
+      { protocol: "https", hostname: "**.canon.com" },
+      { protocol: "https", hostname: "**.usa.canon.com" },
+      // Generic fallback for any other scraped image host
+      { protocol: "https", hostname: "**" },
+    ],
   },
 }
 
