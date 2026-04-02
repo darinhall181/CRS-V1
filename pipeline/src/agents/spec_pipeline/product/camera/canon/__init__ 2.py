@@ -1,0 +1,4 @@
+"""
+Canon camera plugin package.
+"""
+

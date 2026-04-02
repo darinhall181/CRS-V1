@@ -1,0 +1,32 @@
+# ─── Supabase / Postgres ──────────────────────────────────────────────────────
+# Get from: Supabase → Project Settings → Database → Connection string
+# Use the "Session" mode pooler (port 5432) for the Python pipeline.
+# zsh tip: if your password contains '!', wrap the whole value in single quotes.
+SUPABASE_DB_URL=postgresql://postgres.[PROJECT-REF]:[PASSWORD]@aws-1-us-east-1.pooler.supabase.com:5432/postgres
+
+# ─── Cloudflare R2 ────────────────────────────────────────────────────────────
+# Create an R2 API token at: Cloudflare Dashboard → R2 → Manage R2 API Tokens
+# Permissions needed: Object Read & Write on your bucket.
+
+# Your Cloudflare account ID (top-right of the Cloudflare dashboard)
+CF_ACCOUNT_ID=your_cloudflare_account_id
+
+# R2 API credentials (from the token you create)
+R2_ACCESS_KEY_ID=your_r2_access_key_id
+R2_SECRET_ACCESS_KEY=your_r2_secret_access_key
+
+# Name of the R2 bucket you created
+R2_BUCKET_NAME=altoscope-images
+
+# S3-compatible endpoint — always this format, substitute your account ID
+R2_ENDPOINT_URL=https://your_cloudflare_account_id.r2.cloudflarestorage.com
+
+# Public URL for the bucket.
+# Option A (R2 dev subdomain — free, enable "Public access" on the bucket):
+#   https://pub-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.r2.dev
+# Option B (custom domain — add a domain in the R2 bucket settings):
+#   https://images.yourdomain.com
+R2_PUBLIC_URL=https://pub-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.r2.dev
+
+# ─── Optional / AI ────────────────────────────────────────────────────────────
+LANGCHAIN_API=lsv2_pt_your_key_here
