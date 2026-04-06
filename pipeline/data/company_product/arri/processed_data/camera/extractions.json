@@ -1,0 +1,1093 @@
+{
+  "brand": "arri",
+  "product_type": "camera",
+  "generated_at": "2026-04-03T04:47:18.018825+00:00",
+  "total_items": 6,
+  "items": [
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/live-cameras/alexa-35-live",
+      "product_slug": "alexa-35-live",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-35-live.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-03T04:44:04.523214+00:00"
+    },
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+      "product_slug": "amira-live",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/amira-live.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Technical Specifications",
+          "attributes": [
+            {
+              "raw_key": "Model",
+              "raw_value": "AMIRA Live"
+            },
+            {
+              "raw_key": "Sensor Type",
+              "raw_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array"
+            },
+            {
+              "raw_key": "Sensor Maximum Number of Photosites and Size",
+              "raw_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\""
+            },
+            {
+              "raw_key": "Sensor Frame Rates",
+              "raw_value": "0.75 - 200 fps"
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "\u223c5.2 kg / \u223c11.5 lbs (camera body with DTS Fiber Adapter and PL lens mount)"
+            },
+            {
+              "raw_key": "Photosite Pitch",
+              "raw_value": "8.25 \u03bcm"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (photosites)",
+              "raw_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (dimensions)",
+              "raw_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\""
+            },
+            {
+              "raw_key": "Recording File Container Size (pixel)",
+              "raw_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Recording File Image Content (pixel)",
+              "raw_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Dynamic Range",
+              "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)+L6"
+            },
+            {
+              "raw_key": "Exposure Index",
+              "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity"
+            },
+            {
+              "raw_key": "Shutter",
+              "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s"
+            },
+            {
+              "raw_key": "Recording Formats",
+              "raw_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD"
+            },
+            {
+              "raw_key": "Recording Media",
+              "raw_value": "CFast 2.0 Cards"
+            },
+            {
+              "raw_key": "Recording Frame Rates",
+              "raw_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps"
+            },
+            {
+              "raw_key": "Recording Modes",
+              "raw_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion"
+            },
+            {
+              "raw_key": "Viewfinder Type",
+              "raw_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1"
+            },
+            {
+              "raw_key": "Viewfinder Technology",
+              "raw_value": "OLED viewfinder display LCD flip-out monitor"
+            },
+            {
+              "raw_key": "Viewfinder Resolution (pixel)",
+              "raw_value": "1280 x 720"
+            },
+            {
+              "raw_key": "Viewfinder Diopter",
+              "raw_value": "Adjustable from -5 to +5 diopters"
+            },
+            {
+              "raw_key": "Color Output",
+              "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)"
+            },
+            {
+              "raw_key": "Look Control",
+              "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values"
+            },
+            {
+              "raw_key": "Filters",
+              "raw_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter"
+            },
+            {
+              "raw_key": "Image Outputs",
+              "raw_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out via D-SUB 24W7 on camera rear: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata"
+            },
+            {
+              "raw_key": "Lens Squeeze Factors",
+              "raw_value": "1.00, 1.30"
+            },
+            {
+              "raw_key": "Exposure and Focus Tools",
+              "raw_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track"
+            },
+            {
+              "raw_key": "Audio Output",
+              "raw_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)"
+            },
+            {
+              "raw_key": "Audio Recording",
+              "raw_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track"
+            },
+            {
+              "raw_key": "Remote Control Options",
+              "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces"
+            },
+            {
+              "raw_key": "Interfaces",
+              "raw_value": "1x D-SUB 24W7 (LTC Timecode, Ret/Sync In, Genlock, Ethernet, Power In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 2x USB 2.0 (for user setups, look files etc)"
+            },
+            {
+              "raw_key": "Wireless Interfaces",
+              "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module"
+            },
+            {
+              "raw_key": "Lens Mounts",
+              "raw_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount"
+            },
+            {
+              "raw_key": "Flange Focal Depth",
+              "raw_value": "PL mount: 52 mm LPL mount: 44 mm"
+            },
+            {
+              "raw_key": "Power Input",
+              "raw_value": "10.5-34 V DC via Fibre on FCA 12.0 V to 17.0 V DC via Lemo 2-pin on FCA"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "min. 52 W max. 84 W (Camera body with MVF-1)"
+            },
+            {
+              "raw_key": "Power Outputs",
+              "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V"
+            },
+            {
+              "raw_key": "Measurements (HxWxL)",
+              "raw_value": "182 x 147 x 374 mm / 7.2 x 5.8 x 14.7\" (camera body with DTS Fiber Adapter and PL lens mount)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F"
+            },
+            {
+              "raw_key": "Sound Level",
+              "raw_value": "< 20 dB(A) at 24fps"
+            },
+            {
+              "raw_key": "Software Licenses",
+              "raw_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/226148/landscape_ratio1x0_38/1920/737/7bdea3cab21ab7f03341f0fc0624c8a3/29D734A434D927B18FC43641B92F298D/amira-live-keyvisual-1-beams.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 44,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T04:44:40.850668+00:00"
+    },
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+      "product_slug": "alexa-35-xtreme",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-35-xtreme.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Technical Specifications",
+          "attributes": [
+            {
+              "raw_key": "Model",
+              "raw_value": "ALEXA 35 Xtreme"
+            },
+            {
+              "raw_key": "Sensor Type",
+              "raw_value": "Super 35 format ARRI ALEV 4 CMOS sensor with Bayer pattern color filter array"
+            },
+            {
+              "raw_key": "Sensor Maximum Number of Photosites and Size",
+              "raw_value": "4608 x 3164 27.99 x 19.22 mm / 1.102 x 0.757\" \u00d8 33.96 mm / 1.337\""
+            },
+            {
+              "raw_key": "Sensor Frame Rates",
+              "raw_value": "0.75 - 660 fps*"
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "\u223c3.0 kg / 6.6 lbs (camera body with three antennas and LPL Mount (LBUS))"
+            },
+            {
+              "raw_key": "Photosite Pitch",
+              "raw_value": "6.075 \u03bcm"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (photosites)",
+              "raw_value": "4.6K 3:2 Open Gate: 4608 x 3164* 4.6K 16:9: 4608 x 2592* 4K 16:9: 4096 x 2304 3.8K 16:9: 3840 x 2160 3.8K 2.39:1: 3840 x 1608 3.3K 6:5: 3328 x 2790* 2K 16:9 S16: 2048 x 1152 HD 16:9 S16: 1920 x 1080"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (dimensions)",
+              "raw_value": "4.6K 3:2 Open Gate: 28.0 x 19.2 mm / 1.102 x 0.756\" 4.6K 16:9: 28.0 x 15.7 mm / 1.102 x 0.618\" 4K 16:9: 24.9 x 14.0 mm / 0.980 x 0.551\" 3.8K 16:9: 23.3 x 13.1 mm / 0,918 x 0.516\" 3.8K 2.39:1: 23.3 x 9.8 mm / 0.918 x 0.386\" 3.3K 6:5: 20.22 x 16.95 mm / 0.796 x 0.693\" 2K 16:9 S16: 12.4 x 7.0 mm / 0.490 x 0.276\" HD 16:9 S16: 11.7 x 6.6 mm / 0.461 x 0.260\""
+            },
+            {
+              "raw_key": "Recording File Container Size (pixel)",
+              "raw_value": "4.6K 3:2 Open Gate: 4.6K (4608 x 3164) 4.6K 16:9: 4.6K (4608 x 2592) 4K 16:9: 4K (4096 x 2304) 3.8K 16:9: UHD (3840 x 2160) 3.8K 2.39:1: 3.8K (3840 x 1608) 3.3K 6:5: 3.3K (3328 x 2790), 4K (4096 x 1716) 2K 16:9 S16: 2K (2048 x 1152) HD 16:9 S16: HD (1920 x 1080)"
+            },
+            {
+              "raw_key": "Recording File Image Content (pixel)",
+              "raw_value": "Identical to Recording File Container Size"
+            },
+            {
+              "raw_key": "Dynamic Range",
+              "raw_value": "17 stops"
+            },
+            {
+              "raw_key": "Exposure Index",
+              "raw_value": "Adjustable from EI 160 - 6400 in 1/3 stops"
+            },
+            {
+              "raw_key": "Shutter",
+              "raw_value": "Electronic shutter, 1.0\u00b0- 356\u00b0 or 1s - 1/8000s"
+            },
+            {
+              "raw_key": "Recording Formats",
+              "raw_value": "MXF/ARRIRAW* MXF/ARRICORE MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ"
+            },
+            {
+              "raw_key": "Recording Media",
+              "raw_value": "Codex Compact Drive 1TB (CA08-1024) Codex Compact Drive 2TB (CB16-2048) Codex Compact Drive Express 1TB (CP08-1024)"
+            },
+            {
+              "raw_key": "Recording Frame Rates",
+              "raw_value": "ARRIRAW 4.6K 3:2 Open Gate: 35 / 80 fps ARRIRAW 4.6K 16:9: 45 / 95 fps ARRIRAW 4K 16:9: 55 / 125 fps ARRIRAW 3.8K 16:9: 65 / 140 fps ARRIRAW 3.8K 2.39:1: 85 / 190 fps ARRIRAW 3.3K 6:5 - 3.3K: 55 / 120 fps ARRIRAW 2K 16:9 S16: 230 / 330 fps ARRIRAW HD 16:9 S16: 260 / 330 fps ARRICORE 4.6K 3:2 Open Gate: 80 / 120 - 80* / 165* fps ARRICORE 4.6K 16:9: 100 / 150 / - 100* / 200* fps ARRICORE 4K 16:9: 125 / 150 - 125* / 210* fps ARRICORE 3.8K 16:9: 145 / 150 - 145* / 240* fps ARRICORE 3.8K 2.39:1: 195 / 240 - 195* / 240* fps ARRICORE 3.3K 6:5 - 3.3K: 120 / 120 - 125* / 210* fps ARRICORE 2K 16:9 S16: 330 / 330 - 505* / 660* fps ARRICORE HD 16:9 S16: 330 / 330 - 590* / 660* fps Apple ProRes 4444 4.6K 3:2 Open Gate: 90 / 120 fps Apple ProRes 4444 4.6K 16:9: 110 / 150 fps Apple ProRes 4444 4K 16:9: 135 / 150 fps Apple ProRes 4444 3.8K 16:9: 150 / 150 fps Apple ProRes 4444 3.8K 2.39:1: 210 / 240 fps Apple ProRes 4444W 3.3K 6:5 - 3.3K: 120 / 120 fps Apple ProRes 4444 2K 16:9 S16: 330 / 330 fps Apple ProRes 4444 HD 16:9 S16: 330 / 330 fps Compact Drive 1TB / 2TB, *with Sensor Overdrive"
+            },
+            {
+              "raw_key": "Recording Modes",
+              "raw_value": "Standard real-time recording Pre-recording*"
+            },
+            {
+              "raw_key": "Viewfinder Type",
+              "raw_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor"
+            },
+            {
+              "raw_key": "Viewfinder Technology",
+              "raw_value": "OLED viewfinder display LCD flip-out monitor"
+            },
+            {
+              "raw_key": "Viewfinder Resolution (pixel)",
+              "raw_value": "OLED: 1920 x 1080"
+            },
+            {
+              "raw_key": "Viewfinder Diopter",
+              "raw_value": "Adjustable from -5 to +5 diopters"
+            },
+            {
+              "raw_key": "Color Output",
+              "raw_value": "1. ARRI Color Management Display Render Transforms: - Rec 709 - Rec 2020 - Rec 2100 PQ - Rec 2100 HLG 2. LogC4 3. Custom Color Management*"
+            },
+            {
+              "raw_key": "Look Control",
+              "raw_value": "ARRI Look File ALF-4: - Import of custom 3D LUT - ASC CDL parameters (slope, offset, power, saturation) ARRI Look Library* ARRI Textures*"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values"
+            },
+            {
+              "raw_key": "Filters",
+              "raw_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter"
+            },
+            {
+              "raw_key": "Image Outputs",
+              "raw_value": "2x VF custom CoaXPress connectors for MVF-2 viewfinder 2x 12G SDI (BNC): 422 1.5G HD, 422 3G HD, 444 3G HD, 422 6G UHD, 422 12G UHD, 444 12G UHD"
+            },
+            {
+              "raw_key": "Lens Squeeze Factors",
+              "raw_value": "1.00, 1.25, 1.30, 1.33, 1.50, 1.65, 1.80, 1.85, 2.00*"
+            },
+            {
+              "raw_key": "Exposure and Focus Tools",
+              "raw_value": "False Color Zoom Aperture and Color Peaking"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "1x LEMO 6pin balanced stereo line in with 12V power output (line input max. level +24 dBu correlating to 0 dBFS) Two built-in microphones for scratch audio With Audio Extension Module AEM-1: additional 3x TA3 connectors (MIC/Line, +48 V, AES) With LPS-1 Fiber Camera Adapter FCA-1: additional 2x TA3 connectors (MIC/Line, +48 V, AES)"
+            },
+            {
+              "raw_key": "Audio Output",
+              "raw_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)"
+            },
+            {
+              "raw_key": "Audio Recording",
+              "raw_value": "4 channel linear PCM, 24 bit 48 kHz"
+            },
+            {
+              "raw_key": "Remote Control Options",
+              "raw_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1 Camera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces Skaarhoj Remote Control Panel"
+            },
+            {
+              "raw_key": "Interfaces",
+              "raw_value": "1x LBUS (LEMO 4-pin) for lens motors, daisy chainable 1x SERIAL (LEMO 4-pin) for distance measuring accessories 1x TC (LEMO 5-pin) for timecode In/Out 1x ETH (LEMO 10-pin) for remote control and service 1x SYNC IN (BNC) for Genlock synchronization 1x RET IN (BNC, switchable on SDI 2) 1x USB-C for user setups, look files etc. 1x Rear Interface (18-pin Pogo) for connection of modules and battery adapters"
+            },
+            {
+              "raw_key": "Wireless Interfaces",
+              "raw_value": "Built-in WiFi module (IEEE 802.11a/ac/b/g/n/k/r/v) Built-in White Radio for ARRI ECS lens and camera remote control"
+            },
+            {
+              "raw_key": "Lens Mounts",
+              "raw_value": "ARRI LPL Mount (LBUS) ARRI PL-to-LPL Adapter ARRI PL Mount (LBUS) ARRI PL Mount (Hirose) ARRI EF Mount (LBUS) Leitz M Mount for ARRI"
+            },
+            {
+              "raw_key": "Flange Focal Depth",
+              "raw_value": "LPL mount: 44 mm PL mount: 52 mm"
+            },
+            {
+              "raw_key": "Power Input",
+              "raw_value": "1x PWR (LEMO 8-pin) 1x BAT (camera rear interface / battery adapter) 20.5 - 33.6 V DC"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "~ 81 W (Camera body and MVF-2)"
+            },
+            {
+              "raw_key": "Power Outputs",
+              "raw_value": "1x RS (Fischer 3-pin) for 24 V accessory power out, start/stop and shutter pulse 1x 12 V (LEMO 2-pin) for 12 V accessory power out 1x LBUS (LEMO 4-pin) for lens motors & 24 V power out, daisy-chainable 1x AUDIO (LEMO 6-pin) for balanced stereo line in and 12 V accessory power out 1x ETH (LEMO 10-pin) for remote control, service and 24 V accessory power out With Power Distribution Module PDM-1: additionally 4x 24 V, 2x 12 V and 1x D-Tap With LPS-1 Fiber Camera Adapter: additionally 1x 24 V and 3x 12 V"
+            },
+            {
+              "raw_key": "Measurements (HxWxL)",
+              "raw_value": "147 x 152.5 x 203 mm / 5.8 x 6.0 x 8.0\" (camera body with LPL lens mount)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "General: '-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F When using more than 120 fps or more than 90 fps in 4.6K and 3.3K Sensor Modes: '-20\u00b0 C to +40\u00b0 C / -4\u00b0 F to +113\u00b0 F both @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics, IP 51"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F"
+            },
+            {
+              "raw_key": "Sound Level",
+              "raw_value": "< 20 dB(A) at 30fps, recording 4K 16:9, Apple ProRes 4444 XQ, \u2264 +30\u00b0 ambient temperature"
+            },
+            {
+              "raw_key": "Software Licenses",
+              "raw_value": "ALEXA 35 Xtreme Premium License ALEXA 35 Xtreme Look License ALEXA 35 Xtreme ARRIRAW License ALEXA 35 Xtreme Open Gate/Anamorphic License ALEXA 35 Xtreme Highspeed License ALEXA 35 Xtreme Pre-record License ALEXA 35 Xtreme Multicam License (optional) *Feature requires licensing and is not initially activated in the ALEXA 35 with Base License"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/398900/landscape_ratio1x0_38/1920/737/e93b62c12a3208f4ddb8881aea242002/64B16ECC9D85DC03E6180EDEB2E10CB5/k1-0053455-1-.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 44,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T04:45:18.536468+00:00"
+    },
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+      "product_slug": "alexa-mini-lf",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-mini-lf.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Technical Specifications",
+          "attributes": [
+            {
+              "raw_key": "Model",
+              "raw_value": "ALEXA Mini LF"
+            },
+            {
+              "raw_key": "Sensor Type",
+              "raw_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array"
+            },
+            {
+              "raw_key": "Sensor Maximum Number of Photosites and Size",
+              "raw_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\""
+            },
+            {
+              "raw_key": "Sensor Frame Rates",
+              "raw_value": "0.75 - 90 fps"
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "\u223c2.6 kg / \u223c5.7 lbs (camera body with LPL lens mount) 800 g (MVF-2)"
+            },
+            {
+              "raw_key": "Photosite Pitch",
+              "raw_value": "8.25 \u03bcm"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (photosites)",
+              "raw_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 4320 x 2430 3.8K LF 16:9: 3840 x 2160 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 2880 x 1620"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (dimensions)",
+              "raw_value": "4.5K LF 3:2 Open Gate: 36.70 x 25.54 mm / 1.445 x 1.006\u201c 4.5K LF 2.39:1: 36.70 x 15.31 mm / 1.445 x 0.603\u201c 4.3K LF 16:9: 35.64 x 20.05 mm / 1.403 x 0.789\u201c 3.8K LF 16:9: 31.68 x 17.82 mm / 1.247 x 0.702\u201c 2.8K LF 1:1: 23.76 x 23.76 mm / 0.935 x 0.935\u201c 3.4K S35 3:2: 28.25 x 18.16 mm / 1.112 x 0.714\u201c 3.2K S35 16:9: 26.40 x 14.85 mm / 1.039 x 0.585\u201c 2.8K S35 4:3: 23.76 x 17.81 mm / 0.935 x 0.701\u201c 2.8K S35 16:9: 23.76 x 13.36 mm / 0.935 x 0.526\u201c"
+            },
+            {
+              "raw_key": "Recording File Container Size (pixel)",
+              "raw_value": "4.5K LF 3:2 Open Gate ARRIRAW: 4448 x 3096 4.5K LF 3:2 Open Gate Apple ProRes: 4480 x 3096 4.5K LF 2.39:1 ARRIRAW: 4448 x 1856 4.5K LF 2.39:1 Apple ProRes: 4480 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1 ARRIRAW: 2880 x 2880 2.8K LF 1:1 Apple ProRes: 3072 x 3024 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080"
+            },
+            {
+              "raw_key": "Recording File Image Content (pixel)",
+              "raw_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080"
+            },
+            {
+              "raw_key": "Dynamic Range",
+              "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)"
+            },
+            {
+              "raw_key": "Exposure Index",
+              "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity"
+            },
+            {
+              "raw_key": "Shutter",
+              "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s"
+            },
+            {
+              "raw_key": "Recording Formats",
+              "raw_value": "MXF/ARRIRAW MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ"
+            },
+            {
+              "raw_key": "Recording Media",
+              "raw_value": "Codex Compact Drives"
+            },
+            {
+              "raw_key": "Recording Frame Rates",
+              "raw_value": "4.5K LF 3:2 Open Gate: 0.75 - 40 fps 4.5K LF 2.39:1: 0.75 - 60 fps 4.3K LF 16:9: 0.75 - 48 fps 3.8K LF 16:9: 0.75 - 60 fps 2.8K LF 1:1: 0.75 - 60 fps 3.4K S35 3:2: 0.75 - 60 fps 3.2K S35 16:9: 0.75 - 75 fps 2.8K S35 4:3: 0.75 - 75 fps 2.8K S35 16:9: 0.75 - 100 fps"
+            },
+            {
+              "raw_key": "Recording Modes",
+              "raw_value": "Standard real-time recording No Pre-recording No Intervalometer"
+            },
+            {
+              "raw_key": "Viewfinder Type",
+              "raw_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor"
+            },
+            {
+              "raw_key": "Viewfinder Technology",
+              "raw_value": "OLED viewfinder display LCD flip-out monitor"
+            },
+            {
+              "raw_key": "Viewfinder Resolution (pixel)",
+              "raw_value": "1920 x 1080"
+            },
+            {
+              "raw_key": "Viewfinder Diopter",
+              "raw_value": "Adjustable from -5 to +5 diopters"
+            },
+            {
+              "raw_key": "Color Output",
+              "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)"
+            },
+            {
+              "raw_key": "Look Control",
+              "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values"
+            },
+            {
+              "raw_key": "Filters",
+              "raw_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter"
+            },
+            {
+              "raw_key": "Image Outputs",
+              "raw_value": "1x proprietary signal output for MVF-2 viewfinder on VF CoaXPress connector (video, audio, power, control signals) SDI 1: -HD only, Processed or Clean, with or without a look file applied -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, progessive (p) or progressive segmented frame (psf)) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) SDI 2: -HD or UHD, Clean only, with or without a look file applied, or SDI 1 clone -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, p or psf) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) -6G 422 UHD (SMPTE ST2081-10, up to 30 fps, p) \u201cClean\u201d is an image without surround view or overlays (status, false color, zebra, framelines, etc.) \u201cProcessed\u201d is an image with surround view or overlays."
+            },
+            {
+              "raw_key": "Lens Squeeze Factors",
+              "raw_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00"
+            },
+            {
+              "raw_key": "Exposure and Focus Tools",
+              "raw_value": "False Color Zebra Zoom Aperture and Color Peaking"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "1x LEMO 6pin balanced stereo line in with 12V power output (Line input max. level +24dBu correlating to 0dBFS) Two built-in microphones for scratch audio"
+            },
+            {
+              "raw_key": "Audio Output",
+              "raw_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)"
+            },
+            {
+              "raw_key": "Audio Recording",
+              "raw_value": "2 channel linear PCM, 24 bit 48 kHz"
+            },
+            {
+              "raw_key": "Remote Control Options",
+              "raw_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1{lineBreak}\nCamera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces"
+            },
+            {
+              "raw_key": "Interfaces",
+              "raw_value": "1x LEMO 5pin LTC Timecode In/Out 1x LEMO 10pin Ethernet for remote control and service 1x BNC SYNC IN 1x LEMO 7pin EXT multi purpose accessory interface w. RS pin and 24V power output 1x LEMO 4pin LBUS (on lens mount) for lens motors, daisy chainable 1x USB 2.0 in media bay (for user setups, look files etc)"
+            },
+            {
+              "raw_key": "Wireless Interfaces",
+              "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control"
+            },
+            {
+              "raw_key": "Lens Mounts",
+              "raw_value": "LPL lens mount with LBUS connector PL-to-LPL adapter EF Mount (LBUS) Leitz M mount (availbale from Leitz)"
+            },
+            {
+              "raw_key": "Flange Focal Depth",
+              "raw_value": "LPL mount: 44 mm with PL-to-LPL adapter: 52 mm"
+            },
+            {
+              "raw_key": "Power Input",
+              "raw_value": "1x LEMO 8pin (11-34 V DC)"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "Around 65 W when recording ARRIRAW at 24 fps with MVF-2 attached (preliminary information)"
+            },
+            {
+              "raw_key": "Power Outputs",
+              "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x LEMO 7pin EXT 24V power output"
+            },
+            {
+              "raw_key": "Measurements (HxWxL)",
+              "raw_value": "140 x 143 x 188 mm / 5.5 x 5.6 x 7.4\" (camera body with LPL lens mount)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F"
+            },
+            {
+              "raw_key": "Sound Level",
+              "raw_value": "< 20 dB(A) at 24fps"
+            },
+            {
+              "raw_key": "Software Licenses",
+              "raw_value": "-"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/83566/landscape_ratio1x0_38/1920/737/e0d0c3b14d8089ad5b4420cf2a17ca8d/B78BBB86B355C816619CB86FAA162A51/cr-2019-alexa-mini-lf-product-image-1920x833.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 44,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T04:45:56.030882+00:00"
+    },
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+      "product_slug": "alexa-lf",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-lf.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Technical Specifications",
+          "attributes": [
+            {
+              "raw_key": "Model",
+              "raw_value": "ALEXA LF"
+            },
+            {
+              "raw_key": "Sensor Type",
+              "raw_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array"
+            },
+            {
+              "raw_key": "Sensor Maximum Number of Photosites and Size",
+              "raw_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\""
+            },
+            {
+              "raw_key": "Sensor Frame Rates",
+              "raw_value": "0.75 - 150 fps"
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "\u223c7.8 kg / \u223c17.2 lbs (camera body with LPL lens mount)"
+            },
+            {
+              "raw_key": "Photosite Pitch",
+              "raw_value": "8.25 \u03bcm"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (photosites)",
+              "raw_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 3840 x 2160 LF 16:9 ProRes 2K: 3840 x 2160 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (dimensions)",
+              "raw_value": "LF Open Gate ProRes 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF Open Gate ARRIRAW 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF 16:9 ProRes HD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes 2K: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ARRIRAW UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 2.39:1 ProRes 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\" LF 2.39:1 ARRIRAW 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\""
+            },
+            {
+              "raw_key": "Recording File Container Size (pixel)",
+              "raw_value": "LF Open Gate ProRes 4.5K: 4480 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4480 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856"
+            },
+            {
+              "raw_key": "Recording File Image Content (pixel)",
+              "raw_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856"
+            },
+            {
+              "raw_key": "Dynamic Range",
+              "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)"
+            },
+            {
+              "raw_key": "Exposure Index",
+              "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity"
+            },
+            {
+              "raw_key": "Shutter",
+              "raw_value": "Electronic shutter, 5.0\u00b0- 358\u00b0"
+            },
+            {
+              "raw_key": "Recording Formats",
+              "raw_value": "ARRIRAW (.ari) Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422"
+            },
+            {
+              "raw_key": "Recording Media",
+              "raw_value": "SXR Capture Drives SxS PRO+ Cards"
+            },
+            {
+              "raw_key": "Recording Frame Rates",
+              "raw_value": "LF Open Gate ProRes 4.5K: 0.75 - 60 fps LF Open Gate ARRIRAW 4.5K: 0.75 - 90 fps LF 16:9 ProRes HD: 0.75 - 60 fps LF 16:9 ProRes 2K: 0.75 - 60 fps LF 16:9 ProRes UHD: 0.75 - 60 fps LF 16:9 ARRIRAW UHD: 0.75 - 90 fps LF 2.39:1 ProRes 4.5K: 0.75 - 100 fps LF 2.39:1 ARRIRAW 4.5K: 0.75 - 150 fps"
+            },
+            {
+              "raw_key": "Recording Modes",
+              "raw_value": "Standard real-time recording No Pre-recording No Intervalometer"
+            },
+            {
+              "raw_key": "Viewfinder Type",
+              "raw_value": "Electronic Viewfinder EVF-1 with 235 eyepiece Electronic Viewfinder EVF-2 with ARRICAM eyepiece"
+            },
+            {
+              "raw_key": "Viewfinder Technology",
+              "raw_value": "EVF-1: F-LCOS viewfinder display EVF-2: OLED viewfinder display"
+            },
+            {
+              "raw_key": "Viewfinder Resolution (pixel)",
+              "raw_value": "EVF-1: 1280 x 784 EVF-2: 1920 x 1080"
+            },
+            {
+              "raw_key": "Viewfinder Diopter",
+              "raw_value": "Adjustable from -5 to +5 diopters"
+            },
+            {
+              "raw_key": "Color Output",
+              "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)"
+            },
+            {
+              "raw_key": "Look Control",
+              "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 100K steps Color correction adjustable range from -12 to +12 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values"
+            },
+            {
+              "raw_key": "Filters",
+              "raw_value": "Manual behind the lens FSND filters: Optical Clear, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4 Fixed optical low pass, UV, IR filter"
+            },
+            {
+              "raw_key": "Image Outputs",
+              "raw_value": "1x proprietary signal output for EVF-1/EVF-2 viewfinder 4x MON OUT: 1,5G (SMPTE ST292-1) and 6G (SMPTE ST2081-10) uncompressed HD video with embedded audio and metadata,"
+            },
+            {
+              "raw_key": "Lens Squeeze Factors",
+              "raw_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00"
+            },
+            {
+              "raw_key": "Exposure and Focus Tools",
+              "raw_value": "False Color Peaking Zoom"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "1x XLR 5pin balanced stereo line in (Line input max. level +24dBu correlating to 0dBFS)"
+            },
+            {
+              "raw_key": "Audio Output",
+              "raw_value": "3,5mm stereo headphone jack SDI (embedded)"
+            },
+            {
+              "raw_key": "Audio Recording",
+              "raw_value": "2 channel linear PCM, 24 bit 48 kHz"
+            },
+            {
+              "raw_key": "Remote Control Options",
+              "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet WCU-4 hand-unit with control over lens motors and operational parameters via built-in white radio Remote Control Unit RCU-4 via Ethernet"
+            },
+            {
+              "raw_key": "Interfaces",
+              "raw_value": "1x LEMO 5pin LTC Timecode In/Out 1x BNC SDI Return In 1x LEMO 16pin EXT for accessories and sync 1x LEMO 10pin Ethernet for remote control and sync 1x SD Card (for user setups, look files etc) 3x Fischer 12pin connectors for CLM lens motors 2x Fischer 5pin LCS Lens Control System connectors for hand units"
+            },
+            {
+              "raw_key": "Wireless Interfaces",
+              "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control Built-in Wireless Video System: 1920 x 1080, range 600m (2,000 ft) line of sight, OFDM (Orthogonal Frequency-Division Multiplexing) Bandwidth 40MHz, latency <1ms"
+            },
+            {
+              "raw_key": "Lens Mounts",
+              "raw_value": "LPL lens mount PL lens mount"
+            },
+            {
+              "raw_key": "Flange Focal Depth",
+              "raw_value": "LPL mount: 44 mm PL mount: 52 mm"
+            },
+            {
+              "raw_key": "Power Input",
+              "raw_value": "1x Fischer 2pin BAT connector (18.5-34 V DC) 1x On-board battery interface (19.5-34 V DC)"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "ca. 120 W (recording ProRes 4444 at 24 fps in LF 16:9 sensor mode onto an SxS PRO+ 256 GB card with EVF-1 and wireless video on but without accessories) ca. 160 W (recording ARRIRAW at 90 fps in LF Open Gate sensor mode onto an SXR Capture Drive 2 TB with EVF-1 and wireless video on but without\naccessories)"
+            },
+            {
+              "raw_key": "Power Outputs",
+              "raw_value": "4x Fischer 3pin 24V RS 1x LEMO 2pin 12V"
+            },
+            {
+              "raw_key": "Measurements (HxWxL)",
+              "raw_value": "158 x 201 x 351 mm / 6.22 x 7.91 x 14.33\" (camera body with LPL lens mount)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F"
+            },
+            {
+              "raw_key": "Sound Level",
+              "raw_value": "< 20 dB(A) at 24fps"
+            },
+            {
+              "raw_key": "Software Licenses",
+              "raw_value": "-"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/223780/landscape_ratio1x0_38/1920/737/c1043e28d4e92fa3667beb86ababdc23/425EF359B1BCBBDB5E17EB1D1F8A4FA2/alexalf-on-the-set-of-netflix-jingle-jangle-.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 44,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T04:46:31.205900+00:00"
+    },
+    {
+      "product_url": "https://www.arri.com/en/camera-systems/cameras/amira",
+      "product_slug": "amira",
+      "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/amira.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Technical Specifications",
+          "attributes": [
+            {
+              "raw_key": "Model",
+              "raw_value": "AMIRA"
+            },
+            {
+              "raw_key": "Sensor Type",
+              "raw_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array"
+            },
+            {
+              "raw_key": "Sensor Maximum Number of Photosites and Size",
+              "raw_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\""
+            },
+            {
+              "raw_key": "Sensor Frame Rates",
+              "raw_value": "0.75 - 200 fps"
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "\u223c4.1 kg / \u223c9.2 lbs (camera body with PL lens mount)"
+            },
+            {
+              "raw_key": "Photosite Pitch",
+              "raw_value": "8.25 \u03bcm"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (photosites)",
+              "raw_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Sensor Active Image Area (dimensions)",
+              "raw_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\""
+            },
+            {
+              "raw_key": "Recording File Container Size (pixel)",
+              "raw_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Recording File Image Content (pixel)",
+              "raw_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620"
+            },
+            {
+              "raw_key": "Dynamic Range",
+              "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)"
+            },
+            {
+              "raw_key": "Exposure Index",
+              "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity"
+            },
+            {
+              "raw_key": "Shutter",
+              "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s"
+            },
+            {
+              "raw_key": "Recording Formats",
+              "raw_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD"
+            },
+            {
+              "raw_key": "Recording Media",
+              "raw_value": "CFast 2.0 Cards"
+            },
+            {
+              "raw_key": "Recording Frame Rates",
+              "raw_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps"
+            },
+            {
+              "raw_key": "Recording Modes",
+              "raw_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion"
+            },
+            {
+              "raw_key": "Viewfinder Type",
+              "raw_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1"
+            },
+            {
+              "raw_key": "Viewfinder Technology",
+              "raw_value": "OLED viewfinder display LCD flip-out monitor"
+            },
+            {
+              "raw_key": "Viewfinder Resolution (pixel)",
+              "raw_value": "1280 x 720"
+            },
+            {
+              "raw_key": "Viewfinder Diopter",
+              "raw_value": "Adjustable from -5 to +5 diopters"
+            },
+            {
+              "raw_key": "Color Output",
+              "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)"
+            },
+            {
+              "raw_key": "Look Control",
+              "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values"
+            },
+            {
+              "raw_key": "Filters",
+              "raw_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter"
+            },
+            {
+              "raw_key": "Image Outputs",
+              "raw_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata"
+            },
+            {
+              "raw_key": "Lens Squeeze Factors",
+              "raw_value": "1.00, 1.30"
+            },
+            {
+              "raw_key": "Exposure and Focus Tools",
+              "raw_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track"
+            },
+            {
+              "raw_key": "Audio Output",
+              "raw_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)"
+            },
+            {
+              "raw_key": "Audio Recording",
+              "raw_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track"
+            },
+            {
+              "raw_key": "Remote Control Options",
+              "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces"
+            },
+            {
+              "raw_key": "Interfaces",
+              "raw_value": "1x BNC LTC Timecode In/Out 1x BNC SDI Ret/Sync In (opt. separate analog Genlock In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 1x RJ45 Ethernet for remote control and service 2x USB 2.0 (for user setups, look files etc)"
+            },
+            {
+              "raw_key": "Wireless Interfaces",
+              "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module"
+            },
+            {
+              "raw_key": "Lens Mounts",
+              "raw_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount"
+            },
+            {
+              "raw_key": "Flange Focal Depth",
+              "raw_value": "PL mount: 52 mm LPL mount: 44 mm"
+            },
+            {
+              "raw_key": "Power Input",
+              "raw_value": "1x LEMO 8pin (10.5-34 V DC) 1x On-board battery interface (10.5-24 V DC)"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "min. 52 W max. 84 W (Camera body with MVF-1)"
+            },
+            {
+              "raw_key": "Power Outputs",
+              "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V"
+            },
+            {
+              "raw_key": "Measurements (HxWxL)",
+              "raw_value": "149 x 139 x 309 mm / 5.8 x 5.4 x 12.1\" (camera body with PL lens mount)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F"
+            },
+            {
+              "raw_key": "Sound Level",
+              "raw_value": "< 20 dB(A) at 24fps"
+            },
+            {
+              "raw_key": "Software Licenses",
+              "raw_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/33916/landscape_ratio1x0_38/1920/737/90123bcf69e3bf5f9549d80209b40075/902F6A544FCACBE2AA88B0B4C4BD8E00/amira-product-image.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 44,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T04:47:13.640333+00:00"
+    }
+  ]
+}

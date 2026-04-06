@@ -94,15 +94,24 @@ class SpecMapperService:
         best_match = None
 
         for rule in self.mappings:
-            # Check context first if it exists
+            # Check context if the rule requires it.
+            # Try the section name first; fall back to the raw_key itself.
+            # This lets brands like ARRI (all specs in one flat "Technical
+            # Specifications" section) still match rules whose context patterns
+            # are terms like "sensor", "recording", "physical" that appear in
+            # the spec label rather than the section heading.
             if rule["context"]:
-                if not raw_context or not rule["context"].search(raw_context):
+                context_hit = (
+                    (raw_context and rule["context"].search(raw_context))
+                    or (raw_key and rule["context"].search(raw_key))
+                )
+                if not context_hit:
                     continue
-            
+
             # Check key pattern
             if rule["pattern"].search(raw_key):
                 best_match = rule
-                break # Since we ordered by priority DESC, the first match is the best
+                break  # ordered by priority DESC; first match is best
 
         if not best_match:
             return None

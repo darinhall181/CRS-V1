@@ -6,6 +6,8 @@ from typing import Dict, Tuple
 _PLUGIN_IMPORT_PATHS: Dict[Tuple[str, str], str] = {
     ("canon", "camera"): "agents.spec_pipeline.product.camera.canon.plugin",
     ("canon", "lens"): "agents.spec_pipeline.product.lens.canon.plugin",
+    ("arri", "camera"): "agents.spec_pipeline.product.camera.arri.plugin",
+    ("sony", "camera"): "agents.spec_pipeline.product.camera.sony.plugin",
 }
 
 
