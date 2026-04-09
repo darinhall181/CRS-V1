@@ -28,7 +28,13 @@ def _normalize_url(url: str) -> str:
 def _slug_from_url(url: str) -> str:
     parsed = urlparse(url)
     parts = [p for p in parsed.path.split("/") if p]
-    return parts[-1] if parts else "unknown"
+    slug = parts[-1] if parts else "unknown"
+    # Strip common page extensions so slugs stay clean (e.g. Zeiss URLs end in .html)
+    for ext in (".html", ".htm", ".php", ".aspx"):
+        if slug.lower().endswith(ext):
+            slug = slug[: -len(ext)]
+            break
+    return slug or "unknown"
 
 
 @dataclass
@@ -129,6 +135,118 @@ class CanonCameraExtractor(BaseExtractor):
                 # exponential-ish backoff
                 time.sleep(min(10, 2 ** (attempt - 1)))
         return None, last_error
+
+    def _parse_generic_spec_table(self, soup: BeautifulSoup, base_url: str) -> List[Dict[str, Any]]:
+        """
+        Generic fallback parser for pages where specs are in a plain <table>.
+        Handles two layouts:
+
+        WIDE (rows=products, cols=specs) — e.g. Zeiss, Cooke:
+            Row 0: ['', 'Aperture', 'Close Focus', 'Weight', ...]
+            Row 1: ['15mm T2.9', 'T2.9', '0.3m', '0.87kg', ...]
+          → Emits one section per data row named after col-0 cell.
+          → Each section gets one attribute per column.
+
+        TALL (rows=specs, cols=values) — e.g. 2-column key/value tables:
+            Row n: ['Sensor Type', 'CMOS']
+          → Emits one "Specifications" section with one attr per row.
+        """
+        _SPEC_KEYWORDS = {
+            "aperture", "sensor", "resolution", "fps", "frame rate", "lens mount",
+            "weight", "close focus", "length", "focal length", "dynamic range",
+            "iso", "recording", "mount", "angle of view", "t-stop", "t stop",
+        }
+
+        sections: List[Dict[str, Any]] = []
+
+        for table in soup.find_all("table"):
+            rows = table.find_all("tr")
+            if len(rows) < 2:
+                continue
+
+            # Build a 2D list of cell text
+            grid: List[List[str]] = []
+            for row in rows:
+                cells = [c.get_text(" ", strip=True) for c in row.find_all(["th", "td"])]
+                if cells:
+                    grid.append(cells)
+
+            if not grid:
+                continue
+
+            header_row = grid[0]
+            max_cols = max(len(r) for r in grid)
+
+            # Decide layout: WIDE if first row has >2 cells and >1 keyword hit
+            header_text = " ".join(header_row).lower()
+            kw_hits = sum(1 for kw in _SPEC_KEYWORDS if kw in header_text)
+            is_wide = max_cols >= 3 and kw_hits >= 1
+
+            if is_wide:
+                # First column = product/variant identifier, rest = spec columns
+                spec_headers = header_row[1:]  # skip empty first cell
+                for data_row in grid[1:]:
+                    if not data_row or not any(data_row):
+                        continue
+                    section_name = data_row[0] or "Variant"
+                    attrs: List[Dict[str, Any]] = []
+                    for col_idx, header in enumerate(spec_headers, start=1):
+                        if not header:
+                            continue
+                        value = data_row[col_idx] if col_idx < len(data_row) else ""
+                        if value:
+                            attrs.append({"raw_key": header, "raw_value": value})
+                    if attrs:
+                        sections.append({"section_name": section_name, "attributes": attrs})
+
+            else:
+                # TALL: each row is a key-value pair
+                tall_attrs: List[Dict[str, Any]] = []
+                for row in grid:
+                    if len(row) < 2:
+                        continue
+                    raw_key = row[0]
+                    raw_value = " | ".join(row[1:]) if len(row) > 2 else row[1]
+                    if raw_key and raw_value:
+                        tall_attrs.append({"raw_key": raw_key, "raw_value": raw_value})
+                if tall_attrs:
+                    sections.append({"section_name": "Specifications", "attributes": tall_attrs})
+
+            # Only use the first spec-looking table found
+            if sections:
+                break
+
+        return sections
+
+    def _parse_generic_dl_specs(self, soup: BeautifulSoup) -> List[Dict[str, Any]]:
+        """
+        Generic fallback for <dl>/<dt>/<dd> definition list spec pages
+        (e.g. ARRI-style pages, some Blackmagic pages).
+        Groups consecutive dt/dd pairs under the nearest preceding heading.
+        """
+        sections: List[Dict[str, Any]] = []
+        current_section = "Specifications"
+        current_attrs: List[Dict[str, Any]] = []
+
+        for el in soup.find_all(["h2", "h3", "h4", "dt"]):
+            if el.name in {"h2", "h3", "h4"}:
+                heading = el.get_text(strip=True)
+                if heading:
+                    if current_attrs:
+                        sections.append({"section_name": current_section, "attributes": current_attrs})
+                    current_section = heading
+                    current_attrs = []
+            elif el.name == "dt":
+                dd = el.find_next_sibling("dd")
+                raw_key = el.get_text(strip=True)
+                raw_value = dd.get_text(" ", strip=True) if dd else ""
+                if raw_key and raw_value:
+                    current_attrs.append({"raw_key": raw_key, "raw_value": raw_value})
+
+        if current_attrs:
+            sections.append({"section_name": current_section, "attributes": current_attrs})
+
+        return sections
 
     def _parse_canon_tech_specs(self, soup: BeautifulSoup, base_url: str) -> List[Dict[str, Any]]:
         """
@@ -357,6 +475,48 @@ class CanonCameraExtractor(BaseExtractor):
 
         return None
 
+    def _parse_pdf_download_links(self, soup: BeautifulSoup, base_url: str) -> List[Dict[str, Any]]:
+        """
+        Scan the full page for PDF download links (e.g. Cooke's "DOWNLOAD
+        SPECIFICATIONS" button, ARRI/Zeiss/Angenieux spec sheet links, etc.).
+
+        Returns document dicts compatible with persistence._upsert_document:
+          [{"document_kind": "spec_sheet", "title": str, "url": str, "source": {"url": base_url}}]
+        """
+        _DOWNLOAD_TEXT_PATTERNS = [
+            "download spec",
+            "download technical",
+            "technical data",
+            "spec sheet",
+            "specifications pdf",
+        ]
+        docs: List[Dict[str, Any]] = []
+        seen: set = set()
+
+        for a in soup.find_all("a", href=True):
+            href: str = a.get("href", "")
+            text: str = a.get_text(" ", strip=True).lower()
+            abs_url = urljoin(base_url, href)
+
+            is_pdf_href = href.lower().endswith(".pdf") or ".pdf?" in href.lower()
+            is_dl_text = any(pat in text for pat in _DOWNLOAD_TEXT_PATTERNS)
+
+            if not (is_pdf_href or is_dl_text):
+                continue
+            if abs_url in seen:
+                continue
+            seen.add(abs_url)
+
+            title = a.get_text(" ", strip=True) or "Specification Sheet"
+            docs.append({
+                "document_kind": "spec_sheet",
+                "title": title,
+                "url": abs_url,
+                "source": {"url": base_url},
+            })
+
+        return docs
+
     def _compute_completeness(self, manufacturer_sections: List[Dict[str, Any]], errors: List[str]) -> Dict[str, Any]:
         total_sections = len(manufacturer_sections)
         total_attributes = 0
@@ -471,8 +631,14 @@ class CanonCameraExtractor(BaseExtractor):
                     if raw_html_path is None:
                         raw_html_path = self._save_raw_html(slug, html)
                     soup = BeautifulSoup(html, "html.parser")
+                    # Parser fallback chain: Canon-specific → generic table → generic dl
                     manufacturer_sections = self._parse_canon_tech_specs(soup, base_url=url)
+                    if not manufacturer_sections:
+                        manufacturer_sections = self._parse_generic_spec_table(soup, base_url=url)
+                    if not manufacturer_sections:
+                        manufacturer_sections = self._parse_generic_dl_specs(soup)
                     images = self._parse_canon_product_images(soup, base_url=url)
+                    documents = self._parse_pdf_download_links(soup, base_url=url)
                     msrp_usd = self._parse_canon_msrp_usd(soup)
                     errors: List[str] = []
 
@@ -483,6 +649,7 @@ class CanonCameraExtractor(BaseExtractor):
                             "raw_html_path": raw_html_path,
                             "manufacturer_sections": manufacturer_sections,
                             "images": images,
+                            "documents": documents,
                             "msrp_usd": msrp_usd,
                             "errors": errors,
                             "completeness": self._compute_completeness(manufacturer_sections, errors),
@@ -1122,5 +1289,10 @@ def extract(config: ExtractionConfig, product_urls: List[str]) -> Dict[str, Any]
         return ARRICameraExtractor(config).extract(product_urls)
     if brand == "sony" and config.product_type == "camera":
         return SonyCameraExtractor(config).extract(product_urls)
+    # Generic fallback: CanonCameraExtractor handles arbitrary spec pages
+    # (table rows, <dl>/<dt>/<dd>, "Specifications" tab click) and is not
+    # Canon-specific in its HTML parsing logic.
+    if config.product_type in {"camera", "lens"}:
+        return CanonCameraExtractor(config).extract(product_urls)
     raise ValueError(f"No extractor implementation for brand={config.brand_slug} product_type={config.product_type}")
 

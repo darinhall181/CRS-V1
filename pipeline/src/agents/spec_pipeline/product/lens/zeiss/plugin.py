@@ -1,10 +1,16 @@
 """
 Carl Zeiss AG cinema lens plugin.
 
-Zeiss hosts cinema lens specs at zeiss.com/consumer-products under the
-"Cinematography" section. Pages are JS-rendered so headless=False is used.
-Discovery uses a curated static list by lens family; the spec section on each
-page contains a downloadable PDF link and an inline spec table.
+Zeiss moved their cinematography pages from zeiss.com/consumer-products to
+zeiss.com/photonics-and-optics in 2024. Pages are JS-rendered so headless=False
+is used. Discovery uses a curated static list by lens family; each page covers
+the full focal length range for that series as a spec table.
+
+NOTE on focal-length splitting: each series page (e.g. CP.3) lists specs for
+multiple focal lengths in a matrix table. During extraction, the entire series
+is stored as one item with a product_spec_matrix. A future "splitter" pass will
+generate one product row per focal length (e.g. zeiss-cp3-21mm-t2-9). For now,
+one item per series page is correct and sufficient.
 """
 
 import json
@@ -18,25 +24,27 @@ BRAND_SLUG = "zeiss"
 PRODUCT_TYPE = "lens"
 CATEGORY_SLUG = "cinema-lenses"
 
+# URLs confirmed against zeiss.com/photonics-and-optics (post-2024 restructure).
+# The old /consumer-products/ path now redirects or 404s.
 _ZEISS_LENS_URLS = [
-    # Supreme Prime — LF/S35 T1.5 primes (flagship)
-    "https://www.zeiss.com/consumer-products/us/cinematography/lenses/supreme-prime.html",
-    # Supreme Prime Radiance — flared variant
-    "https://www.zeiss.com/consumer-products/us/cinematography/lenses/supreme-prime-radiance.html",
-    # CP.3 — compact S35 primes (affordable entry)
-    "https://www.zeiss.com/consumer-products/us/cinematography/lenses/cp3.html",
-    # CP.3 XD — CP.3 with eXtended Data metadata
-    "https://www.zeiss.com/consumer-products/us/cinematography/lenses/cp3-xd.html",
-    # Milvus — photo-to-cine crossover (PL adapter compatible)
-    # Omitted — not primary cinema stock.
+    # CP.3 — compact S35 primes (EF/PL/E, affordable entry point)
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html",
+    # AATMA — new large format primes (LPL/PL, T1.5)
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html",
+    # Supreme Prime — flagship LF/S35 T1.5 primes
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html",
+    # Supreme Prime Radiance — flared/vintage variant of Supreme Prime
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html",
+    # CP.3 XD — CP.3 with eXtended Data lens metadata protocol
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp3-xd-lenses.html",
 ]
 
 DISCOVERY_CONFIG = DiscoveryConfig(
     brand_slug=BRAND_SLUG,
     product_type=PRODUCT_TYPE,
     category_slug=CATEGORY_SLUG,
-    listing_urls=["https://www.zeiss.com/consumer-products/us/cinematography/lenses.html"],
-    product_url_pattern="zeiss.com/consumer-products",
+    listing_urls=["https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses.html"],
+    product_url_pattern="zeiss.com/photonics-and-optics",
     static_product_urls=_ZEISS_LENS_URLS,
     exclude_slug_substrings=["accessories", "service", "support"],
     output_path="data/url_lists/zeiss_lens_urls.json",

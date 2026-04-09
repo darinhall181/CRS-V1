@@ -4,10 +4,10 @@ Cooke Optics cinema lens plugin.
 Cooke's website lists each lens series on a dedicated page, with specs in
 definition lists or tables within a "Specifications" section. Discovery uses
 a curated static list of lens series pages. Each series page covers the full
-focal length range for that set.
+focal length range for that set. Each page also has a "Download Specifications"
+PDF link which the extractor captures for the pdf_queue.
 
-Extraction targets the specifications section on each page. Individual focal
-lengths are often listed in a table within that section.
+URL pattern (post-2023 site): cookeoptics.com/lens/{slug}/  (no www, /lens/ not /lenses/)
 """
 
 import json
@@ -21,31 +21,33 @@ BRAND_SLUG = "cooke"
 PRODUCT_TYPE = "lens"
 CATEGORY_SLUG = "cinema-lenses"
 
-# Cooke's spec pages are per lens series. Individual focal length pages (where
-# they exist) are appended separately.
+# Current Cooke lens lineup. URLs confirmed from cookeoptics.com/lens/{slug}/.
+# The old /lenses/ path (www.cookeoptics.com) now 404s — site restructured.
 _COOKE_LENS_URLS = [
-    # S4/i — workhorse S35 prime set
-    "https://www.cookeoptics.com/lenses/s4i/",
+    # S8/i FF — flagship T1.4 full-frame primes (18–135mm)
+    "https://cookeoptics.com/lens/s8-i-ff/",
+    # S7/i FF — large format primes
+    "https://cookeoptics.com/lens/s7-i-ff/",
+    # S4/i — classic S35 workhorse primes
+    "https://cookeoptics.com/lens/s4-i/",
     # miniS4/i — compact S35 primes
-    "https://www.cookeoptics.com/lenses/minis4i/",
-    # S7/i — large format primes
-    "https://www.cookeoptics.com/lenses/s7i/",
-    # Anamorphic/i SF — anamorphic set
-    "https://www.cookeoptics.com/lenses/anamorphic/",
+    "https://cookeoptics.com/lens/minis4-i/",
+    # Anamorphic/i SF — 2x anamorphic PL primes
+    "https://cookeoptics.com/lens/anamorphic-i-sf/",
     # Panchro/i Classic — vintage character primes
-    "https://www.cookeoptics.com/lenses/panchro-classic/",
-    # 5/i — large format primes
-    "https://www.cookeoptics.com/lenses/5i/",
-    # Varotal/i — large format zoom
-    "https://www.cookeoptics.com/lenses/varotal/",
+    "https://cookeoptics.com/lens/panchro-i-classic/",
+    # 5/i — large format primes (T1.4)
+    "https://cookeoptics.com/lens/5-i/",
+    # Varotal/i FF — full-frame zooms (19-40, 30-95, 85-215mm)
+    "https://cookeoptics.com/lens/varotal-i-ff/",
 ]
 
 DISCOVERY_CONFIG = DiscoveryConfig(
     brand_slug=BRAND_SLUG,
     product_type=PRODUCT_TYPE,
     category_slug=CATEGORY_SLUG,
-    listing_urls=["https://www.cookeoptics.com/lenses/"],
-    product_url_pattern="cookeoptics.com/lenses/",
+    listing_urls=["https://cookeoptics.com/lenses/"],
+    product_url_pattern="cookeoptics.com/lens/",
     static_product_urls=_COOKE_LENS_URLS,
     exclude_slug_substrings=["news", "case-studies", "contact"],
     output_path="data/url_lists/cooke_lens_urls.json",

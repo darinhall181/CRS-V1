@@ -1,0 +1,274 @@
+{
+  "brand": "red",
+  "product_type": "camera",
+  "generated_at": "2026-04-09T06:27:50.930827+00:00",
+  "source_extractions_path": "data/company_product/red/processed_data/camera/extractions.json",
+  "items": [
+    {
+      "product": {
+        "brand_slug": "red",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "v-raptor-xl",
+        "manufacturer_url": "https://www.red.com/v-raptor-xl",
+        "msrp_usd": null,
+        "primary_image_url": "https://images.red.com/og/v-raptor-xl.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor-xl.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/v-raptor-xl.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor-xl"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "red",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "v-raptor",
+        "manufacturer_url": "https://www.red.com/v-raptor",
+        "msrp_usd": null,
+        "primary_image_url": "https://images.red.com/og/v-raptor.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/v-raptor.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "red",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "v-raptor-xe",
+        "manufacturer_url": "https://www.red.com/v-raptor-xe",
+        "msrp_usd": null,
+        "primary_image_url": "https://images.red.com/articles/thumbnails/v-raptor-xe-thumb.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor-xe.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://images.red.com/articles/thumbnails/v-raptor-xe-thumb.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor-xe"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "red",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "komodo-x",
+        "manufacturer_url": "https://www.red.com/komodo-x",
+        "msrp_usd": null,
+        "primary_image_url": "https://images.red.com/og/komodo-x.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/komodo-x.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/komodo-x.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/komodo-x"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "red",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "komodo",
+        "manufacturer_url": "https://www.red.com/komodo",
+        "msrp_usd": null,
+        "primary_image_url": "https://images.red.com/og/komodo.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/komodo.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/komodo.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/komodo"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    }
+  ],
+  "pdf_queue": []
+}

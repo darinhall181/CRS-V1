@@ -1,0 +1,617 @@
+{
+  "generated_at": "2026-04-09T06:46:23.659066+00:00",
+  "brand": "cooke",
+  "product_type": "lens",
+  "item_count": 8,
+  "totals": {
+    "items": 8,
+    "mapped_count": 0,
+    "unmapped_count": 30,
+    "tables_count": 0,
+    "documents_count": 0
+  },
+  "top_unmapped": [
+    {
+      "raw_label": "270°",
+      "normalized_label": "270°",
+      "count": 2,
+      "sections": {
+        "Specifications": 2
+      },
+      "raw_label_variants": {
+        "270°": 2
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "270°",
+          "raw_value": "300° | 270° | 300° | 270° | 300° | 270° | 300° | 300° | 300° | 300° | 300° | 300° | 300° | 300° | 340° | 320° | 320° | 320°"
+        },
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "270°",
+          "raw_value": "268° | 270° | 270° | 270° | 270° | 270° | 270° | 340°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "110 mm 4.33 in",
+      "normalized_label": "110 mm 4.33 in",
+      "count": 2,
+      "sections": {
+        "Specifications": 2
+      },
+      "raw_label_variants": {
+        "110 mm 4.33 in": 2
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "110 mm 4.33 in",
+          "raw_value": "87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in"
+        },
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "110 mm 4.33 in",
+          "raw_value": "110 mm 4.33 in | 110 mm 4.33 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 136 mm 5.3 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "12mm",
+      "normalized_label": "12mm",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "12mm": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "12mm",
+          "raw_value": "14mm | 16mm | 18mm | 21mm | 25mm | 27mm | 32mm | 35mm | 40mm | 50mm | 65mm | 65SFmm | 75mm | 100mm | 135mm | 150mm | 180mm | 300mm"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "T2-T22",
+      "normalized_label": "t2-t22",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "T2-T22": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "T2-T22",
+          "raw_value": "T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2.8-T22"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "96°",
+      "normalized_label": "96°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "96°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "96°",
+          "raw_value": "96° | 96° | 96° | 96° | 96° | 96° | 96° | 95° | 94° | 93° | 92° | 92° | 92° | 91° | 92° | 92° | 94° | 78°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "225 mm 9 in",
+      "normalized_label": "225 mm 9 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "225 mm 9 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "225 mm 9 in",
+          "raw_value": "225 mm 9 in | 225 mm 9 in | 250 mm 9 in | 250 mm 9 in | 250 mm 9 in | 250 mm 10 in | 325 mm 12 in | 350 mm 14 in | 450 mm 16 in | 550 mm 20 in | 700 mm 27 in | 700 mm 27 in | 800 mm 30 in | 950 mm 36 in | 850 mm 33 in | …"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "47 mm 2.0 in",
+      "normalized_label": "47 mm 2.0 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "47 mm 2.0 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "47 mm 2.0 in",
+          "raw_value": "46 mm 2 in | 46 mm 2 in | 60 mm 2.5 in | 60 mm 2.5 in | 60 mm 2.5 in | 85 mm 3.5 in | 119 mm 4.9 in | 169 mm 6.9 in | 207 mm 8.4 in | 323 mm 13 in | 509 mm 20 in | 489 mm 19.2 in | 573 mm 23 in | 707 mm 28 in | 564 mm 20…"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "103°",
+      "normalized_label": "103°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "103°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "103°",
+          "raw_value": "94° | 86° | 80° | 71° | 62° | 58° | 50° | 46° | 41° | 34° | 26° | 26° | 22° | 17° | 13° | 11.5° | 9.5° | 5.7°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "126 mm 5.0 in",
+      "normalized_label": "126 mm 5.0 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "126 mm 5.0 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "126 mm 5.0 in",
+          "raw_value": "127 mm 5.0 in | 127 mm 5 in | 113 mm 4.5 in | 113 mm 4.5 in | 113 mm 4.5 in | 113 mm 4.5 in | 129 mm 5 in | 129 mm 5 in | 141 mm 5.5 in | 125 mm 4.9 in | 125 mm 4.9 in | 145 mm 5.7 in | 125 mm 4.9 in | 141 mm 5.5 in | 18…"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "156 mm",
+      "normalized_label": "156 mm",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "156 mm": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "156 mm",
+          "raw_value": "110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 125 mm | 136 mm | 136 mm"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "3 kg 6.5 lbs",
+      "normalized_label": "3 kg 6.5 lbs",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "3 kg 6.5 lbs": 1
+      },
+      "examples": [
+        {
+          "product_slug": "s4-i",
+          "product_url": "https://cookeoptics.com/lens/s4-i/",
+          "section": "Specifications",
+          "label": "3 kg 6.5 lbs",
+          "raw_value": "2.2 kg 4.8 lbs | 2.45 kg 5.40 lbs | 1.75 kg 3.85 lbs | 2.0 kg 4.4 lbs | 1.6 kg 3.5 lbs | 1.60 kg 3.55 lbs | 1.85 kg 4.0 lbs | 1.90 kg 4.20 lbs | 2 kg 4.4 lbs | 1.5 kg 3.3 lbs | 1.6 kg 3.55 lbs | 2.25 kg 4.95 lbs | 1.75 k…"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "18mm",
+      "normalized_label": "18mm",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "18mm": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "18mm",
+          "raw_value": "21mm | 25mm | 32mm | 40mm | 50mm | 65mm | 75mm | 100mm | 135mm"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "T2.8-T22",
+      "normalized_label": "t2.8-t22",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "T2.8-T22": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "T2.8-T22",
+          "raw_value": "T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "77°",
+      "normalized_label": "77°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "77°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "77°",
+          "raw_value": "77° | 77° | 77° | 77° | 77° | 77° | 77° | 77° | 96°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "250 mm 10 in",
+      "normalized_label": "250 mm 10 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "250 mm 10 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "250 mm 10 in",
+          "raw_value": "250 mm 10 in | 250 mm 10 in | 300 mm 12 in | 440 mm 16 in | 500 mm 20 in | 700 mm 27 in | 750 mm 30 in | 900 mm 36 in | 1000 mm 39 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "80 mm 3 in",
+      "normalized_label": "80 mm 3 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "80 mm 3 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "80 mm 3 in",
+          "raw_value": "80 mm 3 in | 93 mm 4 in | 139 mm 5 in | 240 mm 9.5 in | 311 mm 12 in | 500 mm 20 in | 564 mm 22 in | 711 mm 28 in | 790 mm 31 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "300°",
+      "normalized_label": "300°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "300°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "300°",
+          "raw_value": "300° | 300° | 300° | 300° | 300° | 300° | 300° | 300° | 300°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "80°",
+      "normalized_label": "80°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "80°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "80°",
+          "raw_value": "73° | 62° | 50° | 41° | 34° | 26° | 22° | 17° | 14.16°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "120 mm 4.72 in",
+      "normalized_label": "120 mm 4.72 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "120 mm 4.72 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "120 mm 4.72 in",
+          "raw_value": "110 mm 4.33 in | 106 mm 4.17 in | 110 mm 4.33 in | 110 mm 4.33 in | 137 mm 5.39 in | 135 mm 5.32 in | 137 mm 5.39 in | 137 mm 5.39 in | 157.8 mm 6.211 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "1.3 kg 2.86 lbs",
+      "normalized_label": "1.3 kg 2.86 lbs",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "1.3 kg 2.86 lbs": 1
+      },
+      "examples": [
+        {
+          "product_slug": "minis4-i",
+          "product_url": "https://cookeoptics.com/lens/minis4-i/",
+          "section": "Specifications",
+          "label": "1.3 kg 2.86 lbs",
+          "raw_value": "1.56 kg 3.44 lbs | 1.4 kg 3.08 lbs | 1.60 kg 3.52 lbs | 1.7 kg 3.74 lbs | 1.50 kg 3.30 lbs | 1.6 kg 3.52 lbs | 1.6 kg 3.52 lbs | 1.60 kg 3.52 lbs | 1.80 kg 3.96 lbs"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "18",
+      "normalized_label": "18",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "18": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "18",
+          "raw_value": "25 | 32 | 40 | 50 | 65 | 75 | 100 | 135"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "T1.4-T22",
+      "normalized_label": "t1.4-t22",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "T1.4-T22": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "T1.4-T22",
+          "raw_value": "T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "90°",
+      "normalized_label": "90°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "90°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "90°",
+          "raw_value": "90° | 90° | 90° | 90° | 90° | 90° | 90° | 90°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "350 mm 14 in",
+      "normalized_label": "350 mm 14 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "350 mm 14 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "350 mm 14 in",
+          "raw_value": "350 mm 14 in | 350 mm 13 in | 400 mm 16 in | 500 mm 20 in | 600 mm 2 ft | 650 mm 2 ft 3 in | 750 mm 2 ft 6 in | 800 mm 2 ft 9 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "120 mm 5 in",
+      "normalized_label": "120 mm 5 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "120 mm 5 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "120 mm 5 in",
+          "raw_value": "120 mm 5 in | 120 mm 5 in | 171 mm 7 in | 270 mm 11 in | 370 mm 1 ft 3 in | 420 mm 1 ft 4 in | 520 mm 1 ft 8 in | 531 mm 1 ft 8 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "79.3°",
+      "normalized_label": "79.3°",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "79.3°": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "79.3°",
+          "raw_value": "61.9° | 50.5° | 41° | 33.7° | 26.1° | 21.6° | 17.1° | 12.68°"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "171 mm 6.73 in",
+      "normalized_label": "171 mm 6.73 in",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "171 mm 6.73 in": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "171 mm 6.73 in",
+          "raw_value": "171 mm 6.79 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 219mm 8.6 in"
+        }
+      ],
+      "suggested_action": "map_existing"
+    },
+    {
+      "raw_label": "3.03 kg 6.67 lbs",
+      "normalized_label": "3.03 kg 6.67 lbs",
+      "count": 1,
+      "sections": {
+        "Specifications": 1
+      },
+      "raw_label_variants": {
+        "3.03 kg 6.67 lbs": 1
+      },
+      "examples": [
+        {
+          "product_slug": "5-i",
+          "product_url": "https://cookeoptics.com/lens/5-i/",
+          "section": "Specifications",
+          "label": "3.03 kg 6.67 lbs",
+          "raw_value": "2.89 kg 6.56 lbs | 2.7 kg 6.1 lbs | 2.7 kg 6.1 lbs | 3.2 kg 7.1 lbs | 3 kg 6.8 lbs | 2.9 kg 6.6 lbs | 2.8 kg 6.4 lbs | 5.1 kg 11.2 lbs"
+        }
+      ],
+      "suggested_action": "map_existing"
+    }
+  ]
+}

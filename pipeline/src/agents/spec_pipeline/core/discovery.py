@@ -553,13 +553,17 @@ class SonyDiscovery(BaseDiscovery):
 def discover(config: DiscoveryConfig) -> Dict[str, Any]:
     """
     Dispatch to the correct discovery implementation.
+
+    Brands that use a curated static URL list (SPA sites, anti-bot sites, or
+    per-family listing pages) all go through SonyDiscovery, which simply
+    returns config.static_product_urls as the URL inventory.
     """
     brand = (config.brand_slug or "").lower()
     if brand == "canon":
         payload = CanonDiscovery(config).discover()
     elif brand == "arri":
         payload = ARRIDiscovery(config).discover()
-    elif brand == "sony":
+    elif brand in {"sony", "red", "blackmagic", "cooke", "zeiss", "angenieux"}:
         payload = SonyDiscovery(config).discover()
     else:
         raise ValueError(f"No discovery implementation for brand={config.brand_slug}")

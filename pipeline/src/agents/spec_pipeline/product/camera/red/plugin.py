@@ -19,15 +19,15 @@ BRAND_SLUG = "red"
 PRODUCT_TYPE = "camera"
 CATEGORY_SLUG = "cinema-cameras"
 
+# Current RED lineup post-Nikon acquisition (2024+).
+# Old sensor-in-URL naming (e.g. v-raptor-8k-vv) was retired; pages now use
+# clean model-name slugs.
 _RED_CINEMA_CAMERA_URLS = [
-    "https://www.red.com/v-raptor-8k-vv",
-    "https://www.red.com/v-raptor-x-8k-vv",
-    "https://www.red.com/v-raptor-8k-s35",
-    "https://www.red.com/komodo-x-6k",
-    "https://www.red.com/komodo-6k",
-    "https://www.red.com/monstro-8k-vv",
-    "https://www.red.com/helium-8k-s35",
-    "https://www.red.com/gemini-5k-s35",
+    "https://www.red.com/v-raptor-xl",   # V-RAPTOR XL [X] — top of line VV
+    "https://www.red.com/v-raptor",       # V-RAPTOR [X] — VV body
+    "https://www.red.com/v-raptor-xe",    # V-RAPTOR XE — S35 variant
+    "https://www.red.com/komodo-x",       # KOMODO-X — S35 6K
+    "https://www.red.com/komodo",         # KOMODO — compact S35
 ]
 
 DISCOVERY_CONFIG = DiscoveryConfig(

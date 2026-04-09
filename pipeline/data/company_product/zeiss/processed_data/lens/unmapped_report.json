@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-09T06:46:03.248342+00:00",
+  "brand": "zeiss",
+  "product_type": "lens",
+  "item_count": 5,
+  "totals": {
+    "items": 5,
+    "mapped_count": 348,
+    "unmapped_count": 0,
+    "tables_count": 0,
+    "documents_count": 0
+  },
+  "top_unmapped": []
+}
