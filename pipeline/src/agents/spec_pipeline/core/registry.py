@@ -4,10 +4,15 @@ from typing import Dict, Tuple
 
 
 _PLUGIN_IMPORT_PATHS: Dict[Tuple[str, str], str] = {
-    ("canon", "camera"): "agents.spec_pipeline.product.camera.canon.plugin",
-    ("canon", "lens"): "agents.spec_pipeline.product.lens.canon.plugin",
-    ("arri", "camera"): "agents.spec_pipeline.product.camera.arri.plugin",
-    ("sony", "camera"): "agents.spec_pipeline.product.camera.sony.plugin",
+    ("canon", "camera"):      "agents.spec_pipeline.product.camera.canon.plugin",
+    ("canon", "lens"):        "agents.spec_pipeline.product.lens.canon.plugin",
+    ("arri", "camera"):       "agents.spec_pipeline.product.camera.arri.plugin",
+    ("sony", "camera"):       "agents.spec_pipeline.product.camera.sony.plugin",
+    ("red", "camera"):        "agents.spec_pipeline.product.camera.red.plugin",
+    ("blackmagic", "camera"): "agents.spec_pipeline.product.camera.blackmagic.plugin",
+    ("cooke", "lens"):        "agents.spec_pipeline.product.lens.cooke.plugin",
+    ("zeiss", "lens"):        "agents.spec_pipeline.product.lens.zeiss.plugin",
+    ("angenieux", "lens"):    "agents.spec_pipeline.product.lens.angenieux.plugin",
 }
 
 
