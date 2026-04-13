@@ -103,6 +103,9 @@ class DiscoveryConfig:
     long_break_max: float = 12.0
     # Output path (repo-root relative)
     output_path: str = "data/url_lists/canon_camera_urls.json"
+    # If set, skip all web crawling and return these URLs directly.
+    # Useful for brands whose listing pages block automated access (e.g. Sony).
+    static_product_urls: Optional[List[str]] = None
 
 
 def validate_discovery_output(payload: Dict[str, Any]) -> Tuple[bool, List[str]]:
@@ -411,13 +414,157 @@ class CanonDiscovery(BaseDiscovery):
         return payload
 
 
+class ARRIDiscovery(BaseDiscovery):
+    """
+    ARRI camera discovery.
+
+    Scrapes /en/camera-systems/cameras and /en/camera-systems/live-cameras.
+    ARRI's lineup is small and stable; no pagination or Load More logic needed.
+    """
+
+    # URL depth for a valid product page relative to the site root.
+    # /en/camera-systems/cameras/alexa-mini-lf  →  4 segments
+    # /en/camera-systems/live-cameras/alexa-35-live  →  4 segments
+    _VALID_PRODUCT_DEPTH = 4
+    _PRODUCT_SUBFOLDER = {"cameras", "live-cameras"}
+
+    def _random_delay(self, is_long_break: bool = False) -> None:
+        if is_long_break:
+            time.sleep(random.uniform(self.config.long_break_min, self.config.long_break_max))
+        else:
+            time.sleep(random.uniform(self.config.delay_min, self.config.delay_max))
+
+    def _is_product_url(self, url: str) -> bool:
+        parsed = urlparse(url)
+        if parsed.query or parsed.fragment:
+            return False
+        segments = [s for s in parsed.path.split("/") if s]
+        if len(segments) != self._VALID_PRODUCT_DEPTH:
+            return False
+        # segments: ["en", "camera-systems", "cameras"|"live-cameras", "<model-slug>"]
+        if segments[2] not in self._PRODUCT_SUBFOLDER:
+            return False
+        slug = segments[3].lower()
+        for excl in (self.config.exclude_slug_substrings or []):
+            if excl and excl.lower() in slug:
+                return False
+        return True
+
+    def _extract_product_links(self, soup: BeautifulSoup, base_url: str) -> List[str]:
+        product_urls: List[str] = []
+        for link in soup.find_all("a", href=True):
+            href = link.get("href") or ""
+            full_url = urljoin(base_url, href)
+            full_url = urlunparse(urlparse(full_url)._replace(fragment=""))
+            if self._is_product_url(full_url) and full_url not in product_urls:
+                product_urls.append(full_url)
+        return product_urls
+
+    def discover(self) -> Dict[str, Any]:
+        all_urls: List[str] = []
+        errors: List[Dict[str, Any]] = []
+        stats: Dict[str, Any] = {"listing_urls": {}}
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=self.config.headless,
+                args=["--no-sandbox", "--disable-blink-features=AutomationControlled", "--disable-dev-shm-usage"],
+            )
+            page = browser.new_page()
+            page.set_viewport_size({"width": 1920, "height": 1080})
+            page.set_extra_http_headers({
+                "User-Agent": (
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/120.0.0.0 Safari/537.36"
+                ),
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                "Accept-Language": "en-US,en;q=0.9",
+            })
+            try:
+                for listing_url in self.config.listing_urls:
+                    try:
+                        logger.info("ARRI discovery: visiting %s", listing_url)
+                        page.goto(listing_url, wait_until="domcontentloaded", timeout=30000)
+                        self._random_delay()
+                        html = page.content()
+                        soup = BeautifulSoup(html, "html.parser")
+                        urls = self._extract_product_links(soup, listing_url)
+                        stats["listing_urls"][listing_url] = {"found": len(urls)}
+                        all_urls.extend(urls)
+                        self._random_delay(is_long_break=True)
+                    except Exception as e:
+                        errors.append({"listing_url": listing_url, "error": str(e)})
+            finally:
+                browser.close()
+
+        final_urls = _dedupe_preserve_order(all_urls)
+        if self.config.max_products:
+            final_urls = final_urls[: self.config.max_products]
+
+        payload: Dict[str, Any] = {
+            "brand": self.config.brand_slug,
+            "product_type": self.config.product_type,
+            "category_slug": self.config.category_slug,
+            "listing_urls": self.config.listing_urls,
+            "product_url_pattern": self.config.product_url_pattern,
+            "discovery_date": _utc_now_iso(),
+            "total_urls": len(final_urls),
+            "urls": final_urls,
+            "stats": stats,
+        }
+        if errors:
+            payload["errors"] = errors
+        return payload
+
+
+class SonyDiscovery(BaseDiscovery):
+    """
+    Sony digital cinema camera discovery.
+
+    Sony's pro site blocks automated crawling (HTTP 403).
+    Returns the static inventory from config.static_product_urls directly.
+    To add cameras, update static_product_urls in the plugin.
+    """
+
+    def discover(self) -> Dict[str, Any]:
+        if not self.config.static_product_urls:
+            raise RuntimeError(
+                "SonyDiscovery requires static_product_urls in DiscoveryConfig "
+                "(Sony's pro site blocks automated crawling)."
+            )
+        urls = _dedupe_preserve_order(self.config.static_product_urls)
+        if self.config.max_products:
+            urls = urls[: self.config.max_products]
+
+        return {
+            "brand": self.config.brand_slug,
+            "product_type": self.config.product_type,
+            "category_slug": self.config.category_slug,
+            "listing_urls": self.config.listing_urls,
+            "product_url_pattern": self.config.product_url_pattern,
+            "discovery_date": _utc_now_iso(),
+            "total_urls": len(urls),
+            "urls": urls,
+            "stats": {"source": "static_inventory", "note": "Sony pro site blocks automated crawling"},
+        }
+
+
 def discover(config: DiscoveryConfig) -> Dict[str, Any]:
     """
     Dispatch to the correct discovery implementation.
+
+    Brands that use a curated static URL list (SPA sites, anti-bot sites, or
+    per-family listing pages) all go through SonyDiscovery, which simply
+    returns config.static_product_urls as the URL inventory.
     """
     brand = (config.brand_slug or "").lower()
     if brand == "canon":
         payload = CanonDiscovery(config).discover()
+    elif brand == "arri":
+        payload = ARRIDiscovery(config).discover()
+    elif brand in {"sony", "red", "blackmagic", "cooke", "zeiss", "angenieux"}:
+        payload = SonyDiscovery(config).discover()
     else:
         raise ValueError(f"No discovery implementation for brand={config.brand_slug}")
 

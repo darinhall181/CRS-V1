@@ -1,0 +1,1921 @@
+{
+  "brand": "zeiss",
+  "product_type": "lens",
+  "generated_at": "2026-04-09T06:42:31.645477+00:00",
+  "total_items": 5,
+  "items": [
+    {
+      "product_url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html",
+      "product_slug": "compact-prime-cp-3-lenses",
+      "raw_html_path": "data/company_product/zeiss/processed_data/lens/raw_html/compact-prime-cp-3-lenses.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "CP.3 & CP.3 XD 15 mm/T2.9",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.9 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.3 m | 12\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.87 kg | 1.9 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "100\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "90\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "79\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "73\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "73\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "60\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 18 mm/T2.9",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.9 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.3 m | 12\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.86 kg | 1.9 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "89\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "80\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "69\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "63\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "64\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "51\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 21 mm/T2.9",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.9 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.24 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.82 kg | 1.8 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "81\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "71\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "61\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "55\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "56\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "45\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 25 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.26 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.82 kg | 1.8 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "72\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "62\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "53\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "47\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "48\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "38\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 28 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.24 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.84 kg | 1.9 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "65\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "57\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "48\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "43\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "43\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "34\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 35 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.3 m | 12\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.80 kg | 1.8 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "54\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "47\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "39\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "35\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "35\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "28\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 50 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.45 m | 18\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.77 kg | 1.7 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "40\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "34\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "28\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "25\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "25\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "20\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 85 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.0 m | 3'3\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "83.7 mm | 3.30\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "0.88 kg | 1.9 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "24\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "20\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "17\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "15\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "15\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "12\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 100 mm/T2.1 CF 9",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.7 m | 2'6\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "126.5 mm | 4.98\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.01 kg | 2.2 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "20\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "17\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "14\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "13\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "13\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "10\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "CP.3 & CP.3 XD 135 mm/T2.1",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T 2.1 to T 22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.0 m | 3'3\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "126.5 mm | 4.98\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.15 kg | 2.5 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "15\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-H 4",
+              "raw_value": "13\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 5",
+              "raw_value": "11\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Normal 35 6",
+              "raw_value": "9\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view APS-C 7",
+              "raw_value": "9\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view MFT 8",
+              "raw_value": "7\u00b0"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.zeiss.com/content/dam/pno/images/cinematography/products/compact-prime-cp-3-lenses/stage/vlcsnap-2025-12-15-16h28m35s834.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "documents": [
+        {
+          "document_kind": "spec_sheet",
+          "title": "Technical Data",
+          "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html#data",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/brochures/brochure-zeiss-compact-prime-cp3-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/mount-change-instructions/manual-mount-change-instructions-zeiss-compact-prime-cp3-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/depth-of-field-tables/manual-depth-of-field-tables-zeiss-compact-prime-cp3-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html"
+          }
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 10,
+        "total_attributes": 110,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-09T06:41:45.134835+00:00"
+    },
+    {
+      "product_url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html",
+      "product_slug": "aatma-lenses",
+      "raw_html_path": "data/company_product/zeiss/processed_data/lens/raw_html/aatma-lenses.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Aatma 18 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "163 mm | 6.4\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "88.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "67.9\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 25 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.26 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "70.8\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "52.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 35 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.32 m | 13\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.40 kg | 3.09 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "55\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "39.6\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 40 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.43 m | 17\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.49 kg | 3.28 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "47.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "33.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 50 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.46 m | 18\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.22 kg | 2.69 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "39\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "27.5\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 65 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.61 m | 2'"
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.63 kg | 3.59 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "30.5\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "21.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 85 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.84 m | 2'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "24\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "16.7\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 100 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.1 m | 3'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.70 kg | 3.74 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "20.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "14.2\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Aatma 135 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.4 m | 4'6\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "146 mm | 5.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "15.6\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "10.9\u00b0"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.zeiss.com/content/dam/pno/images/cinematography/products/aatma-lenses/stages/stage_still.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "documents": [
+        {
+          "document_kind": "spec_sheet",
+          "title": "Technical Data",
+          "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html#data",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/brochures/film-and-digital-times-zeiss-aatma-report.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/depth-of-field-tables/manual-depth-of-field-tables-zeiss-aatma-lenses-feet.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/depth-of-field-tables/manual-depth-of-field-tables-zeiss-aatma-lenses-meter.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html"
+          }
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 9,
+        "total_attributes": 63,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-09T06:41:53.580861+00:00"
+    },
+    {
+      "product_url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html",
+      "product_slug": "supreme-prime-lenses",
+      "raw_html_path": "data/company_product/zeiss/processed_data/lens/raw_html/supreme-prime-lenses.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Supreme Prime 15 mm T1.8",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.8 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "149 mm | 5.9\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.24 kg | 4.94 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "98.9\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "77.9\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 18 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "163 mm | 6.4\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "88.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "67.9\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 21 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "120 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.61 kg | 3.54 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "79.5\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "59.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 25 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.26 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "70.8\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "52.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 29 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.33 m | 13\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.61 kg | 3.55 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "64\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "46.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 35 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.32 m | 13\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.40 kg | 3.09 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "55\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "39.6\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 40 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.42 m | 17\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.49 kg | 3.28 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "47.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "33.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 50 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.45 m | 18\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.22 kg | 2.69 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "39\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "27.5\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 65 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.6 m | 2'"
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.63 kg | 3.59 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "30.5\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "21.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 85 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.84 m | 2'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "24\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "16.7\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 100 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.1 m | 3'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.70 kg | 3.74 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "20.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "14.2\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 135 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.4 m | 4'6\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "146 mm | 5.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "15.6\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "10.9\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 150 mm T1.8",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.8 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.5 m | 5'"
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "146 mm | 5.7\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "13.7\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "9.5\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime 200 mm T2.2",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T2.2 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "2 m | 6'6\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "183 mm | 7.2\""
+            },
+            {
+              "raw_key": "Front diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.87 kg | 6.33 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "10.7\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "7.1\u00b0"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.zeiss.com/content/dam/pno/images/cinematography/products/supreme-prime-lenses/footage/vlcsnap-2025-12-15-15h14m53s793.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "documents": [
+        {
+          "document_kind": "spec_sheet",
+          "title": "Technical Data",
+          "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html#data",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/brochures/brochure-zeiss-supreme-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/mount-change-instructions/manual-mount-change-instructions-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/depth-of-field-tables/manual-depth-of-field-tables-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/scale-change-instructions/manual-scale-change-instructions-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html"
+          }
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 14,
+        "total_attributes": 98,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-09T06:42:01.444770+00:00"
+    },
+    {
+      "product_url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html",
+      "product_slug": "supreme-prime-radiance-lenses",
+      "raw_html_path": "data/company_product/zeiss/processed_data/lens/raw_html/supreme-prime-radiance-lenses.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Supreme Prime Radiance 18 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "163 mm | 6.4\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "88.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "67.9\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 21 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.35 m | 14\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.5 kg | 3.3 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "79.5\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "59.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 25 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.26 m | 10\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "70.8\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "52.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 29 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.33 m | 13\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.61 kg | 3.55 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "64\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "46.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 35 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.32 m | 13\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.40 kg | 3.09 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "55\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "39.6\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 40 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.42 m | 17\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.49 kg | 3.28 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "47.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "33.8\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 50 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.45 m | 18\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.22 kg | 2.69 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "39\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "27.5\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 65 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.6 m | 2'"
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "121 mm | 4.8\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.63 kg | 3.59 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "30.5\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "21.3\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 85 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "0.84 m | 2'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.42 kg | 3.13 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "24\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "16.7\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 100 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.1 m | 3'9\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "119 mm | 4.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "95 mm | 3.7\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "1.7 kg | 3.74 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "20.4\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "14.2\u00b0"
+            }
+          ]
+        },
+        {
+          "section_name": "Supreme Prime Radiance 135 mm T1.5",
+          "attributes": [
+            {
+              "raw_key": "Aperture",
+              "raw_value": "T1.5 to T22"
+            },
+            {
+              "raw_key": "Close Focus 1",
+              "raw_value": "1.4 m | 4'6\""
+            },
+            {
+              "raw_key": "Length 2",
+              "raw_value": "146 mm | 5.7\""
+            },
+            {
+              "raw_key": "Front Diameter",
+              "raw_value": "114 mm | 4.5\""
+            },
+            {
+              "raw_key": "Weight",
+              "raw_value": "2.27 kg | 5.00 lbs"
+            },
+            {
+              "raw_key": "Horizontal angle of view Full Frame 3",
+              "raw_value": "15.6\u00b0"
+            },
+            {
+              "raw_key": "Horizontal angle of view Super 35 4",
+              "raw_value": "10.9\u00b0"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://www.zeiss.com/content/dam/pno/images/cinematography/products/supreme-prime-radiance-lenses/stage/vlcsnap-2025-12-16-13h48m21s081.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "documents": [
+        {
+          "document_kind": "spec_sheet",
+          "title": "Technical Data",
+          "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html#data",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/brochures/brochure-zeiss-supreme-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/mount-change-instructions/manual-mount-change-instructions-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/depth-of-field-tables/manual-depth-of-field-tables-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          }
+        },
+        {
+          "document_kind": "spec_sheet",
+          "title": "Specification Sheet",
+          "url": "https://www.zeiss.com/content/dam/pno/downloads/cine-lenses/manuals/scale-change-instructions/manual-scale-change-instructions-zeiss-supreme-prime-lenses.pdf",
+          "source": {
+            "url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html"
+          }
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 11,
+        "total_attributes": 77,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-09T06:42:11.421852+00:00"
+    },
+    {
+      "product_url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp3-xd-lenses.html",
+      "product_slug": "compact-prime-cp3-xd-lenses",
+      "raw_html_path": "data/company_product/zeiss/processed_data/lens/raw_html/compact-prime-cp3-xd-lenses.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "documents": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T06:42:21.761061+00:00"
+    }
+  ]
+}

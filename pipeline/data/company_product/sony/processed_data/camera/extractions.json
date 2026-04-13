@@ -1,0 +1,623 @@
+{
+  "brand": "sony",
+  "product_type": "camera",
+  "generated_at": "2026-04-03T05:24:27.206408+00:00",
+  "total_items": 3,
+  "items": [
+    {
+      "product_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+      "product_slug": "burano",
+      "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/burano.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Specifications",
+          "attributes": [
+            {
+              "raw_key": "Camera type",
+              "raw_value": "Digital motion picture camera"
+            },
+            {
+              "raw_key": "Lens mount",
+              "raw_value": "PL Mount (detachable)/E-mount (lever lock type)"
+            },
+            {
+              "raw_key": "Type",
+              "raw_value": "35\u00a0mm full frame (35.9 x 24.0\u00a0mm), Exmor RS CMOS image sensor"
+            },
+            {
+              "raw_key": "Number of pixels (effective)",
+              "raw_value": "Approx. 41.9 megapixels"
+            },
+            {
+              "raw_key": "Optical low pass filter",
+              "raw_value": "Yes"
+            },
+            {
+              "raw_key": "Built-in ND filter",
+              "raw_value": "CLEAR, linear variable ND (0.6(1/4) - 2.1(1/128))"
+            },
+            {
+              "raw_key": "Gain control",
+              "raw_value": "-3 to 18\u00a0dB (every 1\u00a0dB)"
+            },
+            {
+              "raw_key": "Latitude",
+              "raw_value": "16 stops"
+            },
+            {
+              "raw_key": "Color temperature range",
+              "raw_value": "2000\u00a0K - 15000\u00a0K"
+            },
+            {
+              "raw_key": "Video compression",
+              "raw_value": "X-OCN(LT), XAVC H Intra HQ, XAVC H Intra SQ, XAVC H Long, XAVC Intra, XAVC Long"
+            },
+            {
+              "raw_key": "Audio recording format",
+              "raw_value": "LPCM 4ch (48\u00a0kHz 24\u00a0bit)"
+            },
+            {
+              "raw_key": "Slow & Quick Motion (S&Q)",
+              "raw_value": "Yes"
+            },
+            {
+              "raw_key": "Proxy recording",
+              "raw_value": "Yes"
+            },
+            {
+              "raw_key": "TC/UB",
+              "raw_value": "Yes"
+            },
+            {
+              "raw_key": "Memory card slot",
+              "raw_value": "SLOT A: Slot for CFexpress Type B card, SLOT B: Slot for CFexpress Type B card, Slot for Utility SD card"
+            },
+            {
+              "raw_key": "Type",
+              "raw_value": "Fast Hybrid AF (phase-detection AF / contrast-detection AF)"
+            },
+            {
+              "raw_key": "Focus point",
+              "raw_value": "Max. 627 points (phase-detection AF)"
+            },
+            {
+              "raw_key": "Recognition target (Movies)",
+              "raw_value": "Human"
+            },
+            {
+              "raw_key": "Other features",
+              "raw_value": "AF Subj. Shift Sensitivity AF Transition Speed AF Assist"
+            },
+            {
+              "raw_key": "ISO sensitivity",
+              "raw_value": "ISO 800/3200 (Cine EI mode, D55 Light source)"
+            },
+            {
+              "raw_key": "Type",
+              "raw_value": "8.8\u00a0cm (3.5 type) TFT"
+            },
+            {
+              "raw_key": "Touch panel",
+              "raw_value": "Yes"
+            },
+            {
+              "raw_key": "Number of dots (total)",
+              "raw_value": "2,764,800 dots"
+            },
+            {
+              "raw_key": "Shutter speed",
+              "raw_value": "Angle Mode: 5.6\u00b0to 360\u00b0, 2F to 64F Speed Mode: 1/8000 sec to 64F"
+            },
+            {
+              "raw_key": "Type",
+              "raw_value": "Image Sensor-Shift mechanism with 5-axis compensation (Compensation depends on lens specifications)"
+            },
+            {
+              "raw_key": "Mode",
+              "raw_value": "PL mount: High / Low / Off E-mount: Active / Standard / Off"
+            },
+            {
+              "raw_key": "PC interface",
+              "raw_value": "Mass-storage"
+            },
+            {
+              "raw_key": "USB Type-C\u00ae Terminal",
+              "raw_value": "Yes (SuperSpeed USB 5 Gbps (USB 3.2) compatible)"
+            },
+            {
+              "raw_key": "Wireless LAN (built-in)",
+              "raw_value": "Yes (Wi-Fi Compatible, IEEE 802.11a/b/g/n/ac (2.4\u00a0GHz band/5 GHz band))*2*3"
+            },
+            {
+              "raw_key": "HDMI output",
+              "raw_value": "HDMI connector (Type-A)"
+            },
+            {
+              "raw_key": "XLR audio input",
+              "raw_value": "Yes (3-pin (female) x2)"
+            },
+            {
+              "raw_key": "Headphone terminal",
+              "raw_value": "Yes (3.5\u00a0mm Stereo mini jack)"
+            },
+            {
+              "raw_key": "Remote terminal",
+              "raw_value": "2.5\u00a0mm, 3-pole sub-mini type"
+            },
+            {
+              "raw_key": "SDI output",
+              "raw_value": "SDI OUT1: BNC, 12G-SDI, 6G-SDI, 3G-SDI (Level A/B), HD-SDI SDI OUT2: BNC, 3G-SDI (Level A/B), HD-SDI"
+            },
+            {
+              "raw_key": "DC input",
+              "raw_value": "XLR, 11\u00a0V to 17\u00a0V"
+            },
+            {
+              "raw_key": "TC input/TC output",
+              "raw_value": "BNC, TC IN/OUT Switchable"
+            },
+            {
+              "raw_key": "Genlock input/Ref output",
+              "raw_value": "BNC, REF IN/OUT Switchable"
+            },
+            {
+              "raw_key": "Grip remote control connector",
+              "raw_value": "3.5\u00a0mm, 4-pole mini jack"
+            },
+            {
+              "raw_key": "LAN terminal",
+              "raw_value": "Yes (1000BASE-T, 100BASE-TX, 10BASE-T)"
+            },
+            {
+              "raw_key": "Microphone",
+              "raw_value": "Built-in, monaural"
+            },
+            {
+              "raw_key": "Speaker",
+              "raw_value": "Built-in, monaural"
+            },
+            {
+              "raw_key": "Lens compensation",
+              "raw_value": "E-mount: Shading, Chromatic Aberration, Distortion, Breathing"
+            },
+            {
+              "raw_key": "Battery",
+              "raw_value": "Battery pack BP-GL95B (Sold separately)"
+            },
+            {
+              "raw_key": "With LCD screen",
+              "raw_value": "Unit nominal power consumption: Approx. 50.0\u00a0W (lens, 6K 17:9, 59.94P, X-OCN LT recording, auto fan, excluding grip remote control and peripheral devices) Unit maximum power consumption: Approx. 66.0\u00a0W (lens, 6K 17:9, 59.94P, X-OCN LT recording, 40\u00a0\u00b0C (104\u00a0\u00b0F) environment, ND filter (1/4), proxy recording on, Wi-Fi on, auto fan, including grip remote control and peripheral devices)"
+            },
+            {
+              "raw_key": "Body only",
+              "raw_value": "Approx. 2.4\u00a0kg (body only, excluding PL-mount adapter)"
+            },
+            {
+              "raw_key": "Body only (oz.)",
+              "raw_value": "Approx. 5\u00a0lb 4.7\u00a0oz (body only, excluding PL-mount adapter)"
+            },
+            {
+              "raw_key": "Dimensions (W x H x D)",
+              "raw_value": "145.7\u00a0mm x 142.5\u00a0mm x 218.1\u00a0mm (body without protrusions)"
+            },
+            {
+              "raw_key": "Dimensions (W x H x D) (in)",
+              "raw_value": "5 3/4 x 5 5/8 x 8 5/8\u00a0inches (body without protrusions)"
+            },
+            {
+              "raw_key": "Operating temperature",
+              "raw_value": "0 - 40 \u2103 / 32 - 104 \u00b0F"
+            },
+            {
+              "raw_key": "Storage temperature",
+              "raw_value": "-20 to 60\u00a0\u2103 / -4 to 140\u00a0\u00b0F"
+            },
+            {
+              "raw_key": "Supplied Accessory",
+              "raw_value": "Handle (with viewfinder arm) (1) Handle mounting screws (4) LCD monitor (1) Viewfinder loupe (1) Viewfinder mount adapter (1) Shim (circular) (1) Shim (1/3 arc) (15) E-mount cap (1) PL mount cap (1)"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2023/08/01092149/burano-master-thumbnail.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 51,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T05:24:12.598713+00:00"
+    },
+    {
+      "product_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+      "product_slug": "venice2",
+      "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/venice2.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Specifications",
+          "attributes": [
+            {
+              "raw_key": "Power Requirements",
+              "raw_value": "DC\u00a012\u00a0V (11.0 to 17.0\u00a0V) DC\u00a024\u00a0V (22.0 to 32.0\u00a0V)"
+            },
+            {
+              "raw_key": "Power Consumption (Condition: 12\u00a0V\u00a0DC Input, Temp 25\u00a0\u00b0C, without accessories)",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx. 76\u00a0W (When recording X-OCN XT, 8.6K 3:2, 24\u00a0fps) VENICE 2 with 6K image sensor (MPC-3626): Approx. 73\u00a0W (When recording X-OCN XT, 6K 3:2, 24\u00a0fps)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "0 to 40 \u00b0C"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-20 \u00b0C to 60 \u00b0C"
+            },
+            {
+              "raw_key": "Mass (without lens, handle, VF attachment, and accessories)",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx: 4.3\u00a0kg (9\u00a0lb 6.6\u00a0oz) VENICE 2 with 6K image sensor (MPC-3626): Approx: 4.2\u00a0kg (9\u00a0lb 4.2\u00a0oz)"
+            },
+            {
+              "raw_key": "Dimensions",
+              "raw_value": "5.98 x 6.22 x 9.84\u00a0in (W x H x D, excluding protrusions)"
+            },
+            {
+              "raw_key": "Imaging Device",
+              "raw_value": "35\u00a0mm full size, single-chip CMOS imager sensor"
+            },
+            {
+              "raw_key": "Imaging Device Pixel Count",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 50.0\u00a0M (Total) VENICE 2 with 6K image sensor (MPC-3626): 24.8\u00a0M (Total)"
+            },
+            {
+              "raw_key": "Built-In ND Filters",
+              "raw_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64), 2.1 (1/128), 2.4 (1/256)"
+            },
+            {
+              "raw_key": "ISO Sensitivity",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): ISO800, ISO3200 (Dual Base ISO) VENICE 2 with 6K image sensor (MPC-3626): ISO500, ISO2500 (Dual Base ISO)"
+            },
+            {
+              "raw_key": "Lens Mount",
+              "raw_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)"
+            },
+            {
+              "raw_key": "Latitude",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 16 Stop VENICE 2 with 6K image sensor (MPC-3626): 15+ Stop"
+            },
+            {
+              "raw_key": "Select FPS",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 5.4K 16:9 1-90FPS 5.5K 2.39:1 1-120FPS 5.8K 17:9 1-90FPS 5.8K 4:3 1-60FPS** 5.8K 6:5 1-48FPS** 7.6K 16:9 1-60FPS*** 8.1K 16:9 1-48FPS*** 8.2K 17:9 1-60FPS*** 8.2K 2.39:1 1-72FPS*** 8.6K 17:9 1-48FPS*** 8.6K 3:2 1-30FPS*** VENICE 2 with 6K image sensor (MPC-3626): 3.8K 16:9 1-110FPS 3.8K 16:9 SV 1-48FPS 4K 2.39:1 1-120FPS 4K 17:9/3.8K 16:9 1-110FPS 4K 17:9 SV 1-48FPS 4K 4:3 1-75FPS** 4K 4:3 SV 1-30FPS** 4K 6:5 1-72FPS** 5.7K 16:9 1-72FPS 6K 2.39:1 1-90FPS*** 6K 17:9/6K 1.85:1/5.7K 16:9 1-72FPS*** 6K 3:2 1-60FPS***"
+            },
+            {
+              "raw_key": "Recording Format (X-OCN)",
+              "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): X-OCN XT/ST/LT: 8.6K 3:2 (8640 x 5760): 23.98p, 24p, 25p, 29.97p 8.6K 17:9 (8640x4556): 23.98p, 24p, 25p, 29.97p, 47.95p* 8.2K 2.39:1 (8192x3432): 23.98p, 24p, 25p, 29.97p, 47.95p, 50p, 59.94p* 8.2K 17:9 (8192 x 4320): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 8.1K 16:9 (8100x4556): 23.98p, 24p, 25p, 29.97p 7.6K 16:9 (7680x 4320): 23.98p, 24p, 25p, 29.97p, 50p*, 59.94p* 5.8K 4:3 (5792x4276): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 5.8K 6:5 (5792 x 4854): 23.98p, 24p, 25p, 29.97p, 47.95p 5.8K 17:9 (5792 x 3056): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p*"
+            },
+            {
+              "raw_key": "Recording Format (ProRes)",
+              "raw_value": "ProRes 4444/ProRes 422 HQ ProRes 4444 / ProRes 422 HQ / ProRes 4444 XQ QFHD (3160\u00d72160) QFHD (3840\u00d72160)"
+            },
+            {
+              "raw_key": "Recording Format (Audio)",
+              "raw_value": "LPCM 4ch, 24-bit 48-kHz"
+            },
+            {
+              "raw_key": "DC Input",
+              "raw_value": "XLR-type 4 pin (male)"
+            },
+            {
+              "raw_key": "Battery DC Input",
+              "raw_value": "Square-shaped 5 pin connector"
+            },
+            {
+              "raw_key": "DC Output",
+              "raw_value": "12\u00a0V: Lemo 2 pin x1 24\u00a0V: Fischer 3 pin x2"
+            },
+            {
+              "raw_key": "SDI Output",
+              "raw_value": "BNC x4, (12G, 6G, 3G, 1.5G-SDI)"
+            },
+            {
+              "raw_key": "HD MONI Output",
+              "raw_value": "BNC x1 (3G, 1.5G-SDI)"
+            },
+            {
+              "raw_key": "HDMI Output",
+              "raw_value": "Type A x1"
+            },
+            {
+              "raw_key": "VF",
+              "raw_value": "LEMO 26 pin"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "XLR-type 5 pin (female) x1 (LINE/AES/EBU/MIC/MIC+48\u00a0V selectable) Internal mic x1"
+            },
+            {
+              "raw_key": "Timecode Input",
+              "raw_value": "BNC x1"
+            },
+            {
+              "raw_key": "Genlock Input",
+              "raw_value": "BNC x1"
+            },
+            {
+              "raw_key": "AUX",
+              "raw_value": "BNC x1 (Timecode Output)"
+            },
+            {
+              "raw_key": "Remote",
+              "raw_value": "8 pin x1"
+            },
+            {
+              "raw_key": "Lens",
+              "raw_value": "12 pin x1"
+            },
+            {
+              "raw_key": "Lens Mount Hot Shoe",
+              "raw_value": "4 pin x2, supporting Cooke /i Intelligent Electronic Lens System and ZEISS eXtended Data"
+            },
+            {
+              "raw_key": "Network",
+              "raw_value": "RJ-45 type x1, 10BASE-T, 100BASE-TX"
+            },
+            {
+              "raw_key": "USB",
+              "raw_value": "USB host, type-A x1"
+            },
+            {
+              "raw_key": "Headphone Output",
+              "raw_value": "Stereo mini jack x1"
+            },
+            {
+              "raw_key": "Speaker Output",
+              "raw_value": "Monoral"
+            },
+            {
+              "raw_key": "Media type",
+              "raw_value": "AXS Memory A-Series slot x2 SD card slot x1"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2021/10/05105043/venice-thumbnail.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 35,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T05:24:18.423936+00:00"
+    },
+    {
+      "product_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+      "product_slug": "venice",
+      "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/venice.html",
+      "manufacturer_sections": [
+        {
+          "section_name": "Specifications",
+          "attributes": [
+            {
+              "raw_key": "Power Requirements",
+              "raw_value": "DC12 V (11\u201317.0 V) DC24 V (22\u201332.0 V)"
+            },
+            {
+              "raw_key": "Operating Temperature",
+              "raw_value": "0 \uff5e 40\u2103"
+            },
+            {
+              "raw_key": "Storage Temperature",
+              "raw_value": "-20\u2103\u201360\u2103"
+            },
+            {
+              "raw_key": "Mass",
+              "raw_value": "Approx. 3.9 kg (8 lb 9.6 oz) (excluding handle, VF attachment, bottom cover)"
+            },
+            {
+              "raw_key": "Dimensions: H x W x L",
+              "raw_value": "158 x 147 x 235 mm (6 1/4 x 5 7/8 x 9 3/8 inch) (excluding protrusions)"
+            },
+            {
+              "raw_key": "Power Consumption",
+              "raw_value": "Approx. 60 W"
+            },
+            {
+              "raw_key": "Imaging Device",
+              "raw_value": "35 mm full size, single-chip CMOS image sensor"
+            },
+            {
+              "raw_key": "Imaging Device Pixel Count",
+              "raw_value": "24.8 M (total)"
+            },
+            {
+              "raw_key": "Imaging Device Size",
+              "raw_value": "36.2 x 24.1 mm 43.5 mm Diagonal"
+            },
+            {
+              "raw_key": "Built-In ND Filters",
+              "raw_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64) 2.1 (1/128), 2.4 (1/256)"
+            },
+            {
+              "raw_key": "ISO Sensitivity",
+              "raw_value": "ISO 500, ISO 2500 (Dual Base ISO)"
+            },
+            {
+              "raw_key": "Lens Mount",
+              "raw_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)"
+            },
+            {
+              "raw_key": "Latitude",
+              "raw_value": "15+ Stop"
+            },
+            {
+              "raw_key": "Select FPS",
+              "raw_value": "4K 2.39:1 1-120FPS, 4K 17:9 1-110FPS, 3.8K 16:9 1-110 FPS 4K 4:3 1-75 FPS, 4K 6:5 1-72 FPS 6K 2.39:1 1-90 FPS, 6K 17:9/1.85:1 1-72 FPS, 5.7K 16:9 1-72 FPS 6K 3:2 1-60 FPS"
+            },
+            {
+              "raw_key": "White Balance",
+              "raw_value": "2000\u201315000 Kelvin and Green/Magenta adjust, AWB"
+            },
+            {
+              "raw_key": "Gamma Curve",
+              "raw_value": "S-Log3"
+            },
+            {
+              "raw_key": "Recording Format (SxS Memory)",
+              "raw_value": "XAVC 4K Class 480: 23.98p, 24p, 25p, 29.97p XAVC 4K Class 300: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p XAVC QFHD Class 480: 23.98p, 25p, 29.97p XAVC QFHD Class 300: 23.98p, 25p, 29.97p, 50p, 59.94p MPEG HD422 (1920 x 1080): 23.98p, 25p, 29.97p, 50i, 59.94i HD ProRes 422HQ: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422 Proxy: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 4444: 23.98p, 24p, 25p, 29.97p"
+            },
+            {
+              "raw_key": "Recording Format (X-OCN ST/LT) Required AXS-R7",
+              "raw_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p"
+            },
+            {
+              "raw_key": "Recording Format (X-OCN XT) Required AXS-R7",
+              "raw_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p"
+            },
+            {
+              "raw_key": "Recording Format (RAW SQ) Required AXS-R7",
+              "raw_value": "4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p"
+            },
+            {
+              "raw_key": "Recording Format (Audio)",
+              "raw_value": "LPCM 4ch , 24-bit\u200248-kHz"
+            },
+            {
+              "raw_key": "DC Input",
+              "raw_value": "XLR-type 4pin (male)"
+            },
+            {
+              "raw_key": "Battery DC Input",
+              "raw_value": "Square-shaped 5pin connector"
+            },
+            {
+              "raw_key": "DC Output",
+              "raw_value": "12 V: Hirose 4 pin x 1 24 V: Fischer 3 pin x 2"
+            },
+            {
+              "raw_key": "SDI Output",
+              "raw_value": "BNC x 4, (12G, 3G, 1.5G-SDI)"
+            },
+            {
+              "raw_key": "HD MONI Output",
+              "raw_value": "BNC x 1 (1.5G-SDI)"
+            },
+            {
+              "raw_key": "HDMI Output",
+              "raw_value": "Type A x 1"
+            },
+            {
+              "raw_key": "VF",
+              "raw_value": "LEMO 26pin"
+            },
+            {
+              "raw_key": "Audio Input",
+              "raw_value": "XLR-type 5 pin (female) x 1 (LINE / AES/EBU / MIC / MIC + 48 V selectable)"
+            },
+            {
+              "raw_key": "Timecode Input",
+              "raw_value": "BNC x 1"
+            },
+            {
+              "raw_key": "Genlock Input",
+              "raw_value": "BNC x 1"
+            },
+            {
+              "raw_key": "AUX",
+              "raw_value": "LEMO 5 pin (female) x 1 (Timecode Output)"
+            },
+            {
+              "raw_key": "Remote",
+              "raw_value": "8 pin x 1"
+            },
+            {
+              "raw_key": "Lens",
+              "raw_value": "12 pin x 1"
+            },
+            {
+              "raw_key": "Lens Mount Hot Shoe",
+              "raw_value": "4 pin x 2, conforming to Cooke /i Intelligent Electronic Lens System"
+            },
+            {
+              "raw_key": "Network",
+              "raw_value": "RJ-45 type x 1, 10BASE-T, 100BASE-TX"
+            },
+            {
+              "raw_key": "USB",
+              "raw_value": "USB host, type-A x 1"
+            },
+            {
+              "raw_key": "Headphone Output",
+              "raw_value": "Stereo mini jack x 1"
+            },
+            {
+              "raw_key": "Speaker Output",
+              "raw_value": "Monoral"
+            },
+            {
+              "raw_key": "Media type",
+              "raw_value": "ExpressCard/34 slot x 2 SD card slot x 1"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2020/10/30064645/VENICE-thm.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 1,
+        "total_attributes": 40,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": true,
+        "meets_min_attributes": true,
+        "needs_pdf": false,
+        "score": 1.0
+      },
+      "scraped_at": "2026-04-03T05:24:23.946211+00:00"
+    }
+  ]
+}

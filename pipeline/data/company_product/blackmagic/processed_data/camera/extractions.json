@@ -1,0 +1,148 @@
+{
+  "brand": "blackmagic",
+  "product_type": "camera",
+  "generated_at": "2026-04-09T05:53:12.773349+00:00",
+  "total_items": 7,
+  "items": [
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicursaminipro",
+      "product_slug": "blackmagicursaminipro",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/blackmagicursaminipro.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:52:20.306676+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicursacine",
+      "product_slug": "blackmagicursacine",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/blackmagicursacine.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:52:28.164883+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinemacamera/6K",
+      "product_slug": "6K",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/6K.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:52:34.659736+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinemacamera/6KG2",
+      "product_slug": "6KG2",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/6KG2.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:52:41.850161+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinemacamera/6KPro",
+      "product_slug": "6KPro",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/6KPro.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:52:50.489712+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/blackmagicpocketcinemacamera",
+      "product_slug": "blackmagicpocketcinemacamera",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/blackmagicpocketcinemacamera.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:53:02.218417+00:00"
+    },
+    {
+      "product_url": "https://www.blackmagicdesign.com/products/cinema",
+      "product_slug": "cinema",
+      "raw_html_path": "data/company_product/blackmagic/processed_data/camera/raw_html/cinema.html",
+      "manufacturer_sections": [],
+      "images": [],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:53:08.007080+00:00"
+    }
+  ]
+}

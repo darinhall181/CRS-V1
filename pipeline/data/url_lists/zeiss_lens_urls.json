@@ -1,0 +1,22 @@
+{
+  "brand": "zeiss",
+  "product_type": "lens",
+  "category_slug": "cinema-lenses",
+  "listing_urls": [
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses.html"
+  ],
+  "product_url_pattern": "zeiss.com/photonics-and-optics",
+  "discovery_date": "2026-04-09T06:09:36.752995+00:00",
+  "total_urls": 5,
+  "urls": [
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp-3-lenses.html",
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/aatma-lenses.html",
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-lenses.html",
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/supreme-prime-radiance-lenses.html",
+    "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses/compact-prime-cp3-xd-lenses.html"
+  ],
+  "stats": {
+    "source": "static_inventory",
+    "note": "Sony pro site blocks automated crawling"
+  }
+}

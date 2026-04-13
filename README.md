@@ -48,11 +48,11 @@ Altoscope is explicitly **not** a marketplace, live availability engine, or pric
 
 ## Repository Structure
 
-This is a monorepo with two self-contained top-level directories — `web/` for the Next.js app and `pipeline/` for the Python scraping pipeline — plus a shared `supabase/` directory at the root.
+This is a monorepo with two self-contained top-level directories — `www/` for the Next.js app and `pipeline/` for the Python scraping pipeline — plus a shared `supabase/` directory at the root.
 
 ```
 Altoscope/
-├── web/                          # Next.js app
+├── www/                          # Next.js app
 │   ├── src/
 │   │   ├── app/                  # App Router routes
 │   │   │   ├── (marketing)/      # Route group — public pages (landing page at /)
@@ -117,7 +117,7 @@ Altoscope/
 
 ### Why two `src/` folders?
 
-`web/src/` belongs to **Next.js** (TypeScript). `pipeline/src/` belongs to **Python**. They are independent package systems that never interact. The Python `src/` layout is the [officially recommended structure](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) — placing source inside `src/` prevents accidental un-installed imports. `setup.py` + `pip install -e .` makes `pipeline/src/` importable throughout the scraping pipeline.
+`www/src/` belongs to **Next.js** (TypeScript). `pipeline/src/` belongs to **Python**. They are independent package systems that never interact. The Python `src/` layout is the [officially recommended structure](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) — placing source inside `src/` prevents accidental un-installed imports. `setup.py` + `pip install -e .` makes `pipeline/src/` importable throughout the scraping pipeline.
 
 ### Route groups `(marketing)` and `(app)`
 
@@ -265,16 +265,16 @@ supabase db push --include-all
 
 ### 3. Start the Next.js app
 ```bash
-cd web
+cd www
 bun dev
 # http://localhost:3000
 ```
 
-> `web/.env.local` contains `SUPABASE_DB_URL`. Point it at local (`127.0.0.1:54322`) or cloud to switch environments. The cloud DB is always available — no `supabase start` needed for it.
+> `www/.env.local` contains `SUPABASE_DB_URL`. Point it at local (`127.0.0.1:54322`) or cloud to switch environments. The cloud DB is always available — no `supabase start` needed for it.
 
 ### 4. Run DB scripts
 ```bash
-cd web
+cd www
 bun run db:studio     # visual DB browser (Drizzle Studio)
 bun run db:generate   # generate SQL migration from schema.ts changes
 bun run db:push       # apply migration to DB

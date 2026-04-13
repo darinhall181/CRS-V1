@@ -26,9 +26,10 @@ def _load_env_files(repo_root: Path) -> None:
 
     # Precedence: backend/ .env should win over repo-root .env (common when backend
     # has its own service-specific secrets).
+    pipeline_root = Path(__file__).resolve().parents[1]
     candidates = [
-        repo_root / "backend" / ".env.local",
-        repo_root / "backend" / ".env",
+        pipeline_root / ".env.local",
+        pipeline_root / ".env",
         repo_root / ".env.local",
         repo_root / ".env",
     ]
@@ -44,8 +45,8 @@ def main() -> int:
     repo_root = _repo_root()
     _load_env_files(repo_root)
 
-    # Ensure backend/src is importable (agents.*)
-    backend_src = repo_root / "backend" / "src"
+    # Ensure pipeline/src is importable (agents.*)
+    backend_src = Path(__file__).resolve().parents[1] / "src"
     sys.path.insert(0, str(backend_src))
 
     from agents.spec_pipeline.core.discovery import discover  # noqa: WPS433
@@ -69,9 +70,11 @@ def main() -> int:
     plugin = load_plugin(args.brand, args.product_type)
     discovery_config = getattr(plugin, "DISCOVERY_CONFIG")
 
+    pipeline_root = Path(__file__).resolve().parents[1]
+
     if args.stage == "discovery":
         payload = discover(discovery_config)
-        out_path = repo_root / discovery_config.output_path
+        out_path = pipeline_root / discovery_config.output_path
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
@@ -82,7 +85,7 @@ def main() -> int:
     # stages requiring DB access
     db_url = os.environ.get("SUPABASE_DB_URL") or os.environ.get("DATABASE_URL")
     if args.stage in {"normalize", "persist"} and not db_url:
-        raise RuntimeError("Set SUPABASE_DB_URL in backend/.env (or DATABASE_URL as fallback).")
+        raise RuntimeError("Set SUPABASE_DB_URL in pipeline/.env (or DATABASE_URL as fallback).")
 
     if args.stage == "persist":
         from agents.spec_pipeline.core.persistence import (  # noqa: WPS433
@@ -97,7 +100,7 @@ def main() -> int:
         normalized_abs = (
             normalized_path_str
             if normalized_path_str.startswith("/")
-            else str(repo_root / normalized_path_str)
+            else str(pipeline_root / normalized_path_str)
         )
 
         report = persist_normalized_json(
@@ -109,7 +112,7 @@ def main() -> int:
         return 0
 
     # stages requiring the discovery URL inventory
-    url_inventory_path = repo_root / discovery_config.output_path
+    url_inventory_path = pipeline_root / discovery_config.output_path
     if not url_inventory_path.exists():
         raise FileNotFoundError(
             f"URL inventory not found at {url_inventory_path}. Run discovery stage first."
