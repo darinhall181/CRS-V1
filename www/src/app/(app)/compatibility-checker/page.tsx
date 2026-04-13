@@ -3,6 +3,8 @@ import { getProductsByCategory, checkCompatibility } from "@/lib/db/queries"
 import { CompatibilityCheckerClient } from "./compatibility-checker-client"
 import { Loader2 } from "lucide-react"
 
+export const dynamic = "force-dynamic"
+
 interface PageProps {
   searchParams: { camera?: string; lens?: string }
 }

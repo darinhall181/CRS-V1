@@ -30,6 +30,7 @@ export interface GearItem {
   dayRate: number
   specSummary: string
   status: PackageItemStatus
+  imageUrl?: string
   specs: [string, string][]
   compatibility: CompatibilityNote[]
 }

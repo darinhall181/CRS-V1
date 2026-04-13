@@ -56,9 +56,18 @@ function GearCard({
         border: `0.5px solid ${isSelected ? '#3D55A8' : 'rgba(255,255,255,0.07)'}`,
       }}
     >
-      {/* Image placeholder */}
-      <div className="h-16 flex items-center justify-center" style={{ background: '#2E2E34' }}>
-        <div className="text-[10px] font-mono" style={{ color: '#555560' }}>{item.category.toUpperCase()}</div>
+      {/* Product image */}
+      <div className="h-16 flex items-center justify-center overflow-hidden" style={{ background: '#2E2E34' }}>
+        {item.imageUrl ? (
+          <img
+            src={item.imageUrl}
+            alt={item.name}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: 'center' }}
+          />
+        ) : (
+          <div className="text-[10px] font-mono" style={{ color: '#555560' }}>{item.category.toUpperCase()}</div>
+        )}
       </div>
       <div className="p-2">
         <div className="text-[11px] font-medium leading-tight mb-0.5" style={{ color: '#EAEAEA' }}>{item.name}</div>
@@ -338,19 +347,13 @@ export default function PackageBuilderPage() {
         {/* Budget tracker */}
         <div
           className="flex items-center gap-2 rounded-md px-3 py-1.5"
-          style={{ background: '#242428', border: '0.5px solid rgba(255,255,255,0.08)' }}
+          style={{ background: '#3A2020', border: '0.5px solid rgba(224,107,107,0.25)' }}
         >
-          <span className="text-[11px]" style={{ color: '#555560' }}>Budget</span>
-          <div className="w-18 h-1 rounded-full" style={{ background: '#2E2E34', width: 72 }}>
-            <div
-              className="h-full rounded-full transition-all"
-              style={{
-                width: `${budgetPct}%`,
-                background: budgetPct > 80 ? '#F0BA4A' : '#4ABA82',
-              }}
-            />
+          <span className="text-[11px] font-medium" style={{ color: '#E06B6B' }}>Over budget</span>
+          <div className="h-1 rounded-full overflow-hidden" style={{ background: '#2E2E34', width: 72 }}>
+            <div className="h-full w-full rounded-full" style={{ background: '#E06B6B' }} />
           </div>
-          <span className="text-xs font-mono font-medium" style={{ color: '#EAEAEA' }}>${fmt(totalDayRate)}</span>
+          <span className="text-xs font-mono font-medium" style={{ color: '#E06B6B' }}>$20,000</span>
         </div>
 
         <div className="w-px h-4" style={{ background: 'rgba(255,255,255,0.1)' }} />
@@ -475,14 +478,22 @@ export default function PackageBuilderPage() {
             {/* ── Detail tab ── */}
             {contextTab === 'detail' && activeItem && (
               <>
-                {/* Image placeholder */}
+                {/* Product image */}
                 <div
-                  className="w-full h-24 rounded-lg mb-2.5 flex items-center justify-center"
+                  className="w-full h-24 rounded-lg mb-2.5 overflow-hidden flex items-center justify-center"
                   style={{ background: '#2E2E34' }}
                 >
-                  <span className="text-[11px] font-mono" style={{ color: '#555560' }}>
-                    {activeItem.category.toUpperCase()}
-                  </span>
+                  {activeItem.imageUrl ? (
+                    <img
+                      src={activeItem.imageUrl}
+                      alt={activeItem.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-[11px] font-mono" style={{ color: '#555560' }}>
+                      {activeItem.category.toUpperCase()}
+                    </span>
+                  )}
                 </div>
 
                 <p className="text-[13px] font-medium leading-snug mb-0.5" style={{ color: '#EAEAEA' }}>{activeItem.name}</p>

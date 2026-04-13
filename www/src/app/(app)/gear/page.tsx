@@ -2,6 +2,8 @@ import { getProducts, getCategoriesWithCounts } from "@/lib/db/queries"
 import Image from "next/image"
 import Link from "next/link"
 
+export const dynamic = "force-dynamic"
+
 export const metadata = {
   title: "Gear — Altoscope",
   description: "Browse all cameras and lenses in the Altoscope database.",

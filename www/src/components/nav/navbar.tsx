@@ -1,14 +1,15 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Camera } from "lucide-react"
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/compatibility-checker", label: "Compatibility Checker" },
   { href: "/gear", label: "Gear" },
+  { href: "/package-builder", label: "Package Builder" },
 ]
 
 export function Navbar() {
@@ -17,9 +18,9 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-semibold">
-          <Camera className="h-5 w-5" />
-          <span>Altoscope</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.png" alt="Altoscope" width={28} height={28} className="h-7 w-auto" />
+          <span className="font-semibold text-sm">Altoscope</span>
         </Link>
 
         <nav className="flex items-center gap-1">
