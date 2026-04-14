@@ -14,8 +14,9 @@ const nextConfig = {
       // Canon USA CDN — fallback while images are still on manufacturer servers
       { protocol: "https", hostname: "**.canon.com" },
       { protocol: "https", hostname: "**.usa.canon.com" },
-      // Generic fallback for any other scraped image host
+      // Generic fallback for any other scraped image host (http + https)
       { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "**" },
     ],
   },
 }

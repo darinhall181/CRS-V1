@@ -1,0 +1,3 @@
+"""
+Sony camera plugin package.
+"""
