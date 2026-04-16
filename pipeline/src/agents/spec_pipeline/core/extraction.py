@@ -403,6 +403,28 @@ class CanonCameraExtractor(BaseExtractor):
             )
         return out
 
+    def _parse_canon_sku(self, soup: BeautifulSoup) -> Optional[str]:
+        """
+        Extract manufacturer SKU/part number from JSON-LD on Canon shop pages.
+        Canon includes a top-level "sku" field in their Product JSON-LD block.
+        """
+        for s in soup.find_all("script", attrs={"type": "application/ld+json"}):
+            txt = (s.string or s.get_text() or "").strip()
+            if not txt:
+                continue
+            try:
+                data = json.loads(txt)
+            except Exception:
+                continue
+            nodes = data if isinstance(data, list) else [data]
+            for node in nodes:
+                if not isinstance(node, dict):
+                    continue
+                sku = node.get("sku")
+                if sku and isinstance(sku, str):
+                    return sku.strip()
+        return None
+
     def _parse_canon_msrp_usd(self, soup: BeautifulSoup) -> Optional[float]:
         """
         Best-effort MSRP/price extraction from Canon shop HTML.
@@ -640,6 +662,7 @@ class CanonCameraExtractor(BaseExtractor):
                     images = self._parse_canon_product_images(soup, base_url=url)
                     documents = self._parse_pdf_download_links(soup, base_url=url)
                     msrp_usd = self._parse_canon_msrp_usd(soup)
+                    sku = self._parse_canon_sku(soup)
                     errors: List[str] = []
 
                     items.append(
@@ -651,6 +674,7 @@ class CanonCameraExtractor(BaseExtractor):
                             "images": images,
                             "documents": documents,
                             "msrp_usd": msrp_usd,
+                            "sku": sku,
                             "errors": errors,
                             "completeness": self._compute_completeness(manufacturer_sections, errors),
                             "scraped_at": _utc_now_iso(),

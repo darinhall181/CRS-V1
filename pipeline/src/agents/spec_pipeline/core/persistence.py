@@ -93,6 +93,7 @@ def _upsert_product(
     slug: str,
     manufacturer_url: Optional[str],
     msrp_usd: Optional[float] = None,
+    sku: Optional[str] = None,
     primary_image_url: Optional[str] = None,
     raw_payload: Dict[str, Any],
 ) -> str:
@@ -107,6 +108,7 @@ def _upsert_product(
             model,
             full_name,
             slug,
+            sku,
             msrp_usd,
             primary_image_url,
             manufacturer_url,
@@ -118,12 +120,13 @@ def _upsert_product(
             created_at,
             updated_at
         )
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 'success', TRUE, %s, %s)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 'success', TRUE, %s, %s)
         ON CONFLICT (slug) DO UPDATE SET
             brand_id = EXCLUDED.brand_id,
             category_id = EXCLUDED.category_id,
             model = EXCLUDED.model,
             full_name = EXCLUDED.full_name,
+            sku = COALESCE(EXCLUDED.sku, product.sku),
             msrp_usd = COALESCE(EXCLUDED.msrp_usd, product.msrp_usd),
             primary_image_url = COALESCE(EXCLUDED.primary_image_url, product.primary_image_url),
             manufacturer_url = COALESCE(EXCLUDED.manufacturer_url, product.manufacturer_url),
@@ -144,6 +147,7 @@ def _upsert_product(
                 model,
                 full_name,
                 slug,
+                sku,
                 msrp_usd,
                 primary_image_url,
                 manufacturer_url,
@@ -461,6 +465,7 @@ def persist_normalized_json(
                 slug=product_slug,
                 manufacturer_url=manufacturer_url,
                 msrp_usd=product.get("msrp_usd"),
+                sku=product.get("sku"),
                 primary_image_url=product.get("primary_image_url"),
                 raw_payload={
                     "pipeline": {

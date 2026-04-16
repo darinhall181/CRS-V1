@@ -184,6 +184,7 @@ def normalize_extractions(
             extraction_errors = item.get("errors", []) or []
             extraction_completeness = item.get("completeness", {}) or {}
             msrp_usd = item.get("msrp_usd")
+            sku = item.get("sku")
 
             spec_records: List[Dict[str, Any]] = []
             unmapped: List[Dict[str, Any]] = []
@@ -371,6 +372,7 @@ def normalize_extractions(
                         "slug": product_slug,
                         "manufacturer_url": product_url,
                         "msrp_usd": msrp_usd,
+                        "sku": sku,
                         "primary_image_url": primary_image_url,
                     },
                     "extraction": {
