@@ -16,9 +16,11 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: { enabled: true },
-  advanced: {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore – generateId is supported at runtime but missing from the type definition
-    generateId: () => crypto.randomUUID(),
+  databaseHooks: {
+    user: {
+      create: {
+        before: async (user) => ({ data: { ...user, id: crypto.randomUUID() } }),
+      },
+    },
   },
 })
