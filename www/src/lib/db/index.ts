@@ -5,7 +5,7 @@ import * as schema from "./schema"
 // Singleton pattern — reuse the connection across hot reloads in dev.
 const globalForDb = globalThis as unknown as { _pgClient: postgres.Sql }
 
-const dbUrl = process.env.SUPABASE_DB_URL!
+const dbUrl = process.env.DATABASE_URL!
 
 const isLocal = dbUrl?.includes("127.0.0.1") || dbUrl?.includes("localhost")
 
