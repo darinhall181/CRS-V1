@@ -68,6 +68,19 @@ export const specDefinition = pgTable("spec_definition", {
   importance: integer("importance").default(0),
 })
 
+// ─── spec_mapping ─────────────────────────────────────────────────────────────
+
+export const specMapping = pgTable("spec_mapping", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  specDefinitionId: uuid("spec_definition_id").notNull().references(() => specDefinition.id),
+  extractionPattern: text("extraction_pattern").notNull(),
+  contextPattern: text("context_pattern"),
+  manufacturerKey: text("manufacturer_key"),
+  priority: integer("priority").default(0),
+  notes: text("notes"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+})
+
 // ─── product ──────────────────────────────────────────────────────────────────
 
 export const product = pgTable("product", {
@@ -78,9 +91,17 @@ export const product = pgTable("product", {
   fullName: text("full_name").notNull(),
   slug: text("slug").notNull().unique(),
   sku: text("sku"),
+  upc: text("upc"),
+  announceDate: date("announce_date"),
   msrpUsd: numeric("msrp_usd"),
+  currentPriceUsd: numeric("current_price_usd"),
   primaryImageUrl: text("primary_image_url"),
+  thumbnailUrl: text("thumbnail_url"),
   manufacturerUrl: text("manufacturer_url"),
+  sourceUrl: text("source_url"),
+  rawData: jsonb("raw_data"),
+  lastScrapedAt: timestamp("last_scraped_at", { withTimezone: true }),
+  scrapingStatus: text("scraping_status").default("pending"),
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
@@ -104,6 +125,29 @@ export const productSpec = pgTable("product_spec", {
   scrapedAt: timestamp("scraped_at", { withTimezone: true }).defaultNow(),
 })
 
+// ─── product_spec_matrix ──────────────────────────────────────────────────────
+
+export const productSpecMatrix = pgTable(
+  "product_spec_matrix",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    productId: uuid("product_id").notNull().references(() => product.id, { onDelete: "cascade" }),
+    specDefinitionId: uuid("spec_definition_id").notNull().references(() => specDefinition.id, { onDelete: "cascade" }),
+    dims: jsonb("dims").notNull(),
+    valueText: text("value_text"),
+    numericValue: numeric("numeric_value"),
+    unitUsed: text("unit_used"),
+    widthPx: integer("width_px"),
+    heightPx: integer("height_px"),
+    isAvailable: boolean("is_available").notNull().default(true),
+    isInexactProportion: boolean("is_inexact_proportion").notNull().default(false),
+    notes: text("notes"),
+    extractionConfidence: doublePrecision("extraction_confidence"),
+    scrapedAt: timestamp("scraped_at", { withTimezone: true }).defaultNow(),
+  },
+  (t) => [unique().on(t.productId, t.specDefinitionId, t.dims)]
+)
+
 // ─── product_image ────────────────────────────────────────────────────────────
 
 export const productImage = pgTable("product_image", {
@@ -112,17 +156,29 @@ export const productImage = pgTable("product_image", {
   url: text("url").notNull(),
   kind: text("kind"),
   sortOrder: integer("sort_order").default(0),
+  sourceUrl: text("source_url"),
   source: jsonb("source"),
   rawMetadata: jsonb("raw_metadata"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 })
 
 // ─── product_document ─────────────────────────────────────────────────────────
 
 export const productDocument = pgTable("product_document", {
   id: uuid("id").primaryKey().defaultRandom(),
-  productId: uuid("product_id").notNull(),
-  documentKind: text("document_kind"),
+  productId: uuid("product_id"),
+  brandSlug: text("brand_slug"),
+  productType: text("product_type"),
+  productSlug: text("product_slug"),
+  documentKind: text("document_kind").notNull(),
+  title: text("title"),
   url: text("url").notNull(),
+  sourceUrl: text("source_url"),
+  status: text("status").default("discovered"),
+  discoveredAt: timestamp("discovered_at", { withTimezone: true }).defaultNow(),
+  downloadedAt: timestamp("downloaded_at", { withTimezone: true }),
+  localPath: text("local_path"),
+  rawMetadata: jsonb("raw_metadata"),
 })
 
 // ─── compatibility_axis ───────────────────────────────────────────────────────
@@ -251,7 +307,13 @@ export const packageItemStatusEnum = pgEnum("package_item_status", [
 // ─── users ────────────────────────────────────────────────────────────────────
 
 export const users = pgTable("users", {
-  id: uuid("id").primaryKey(),
+  id: uuid("id").primaryKey().defaultRandom(),
+  // Better Auth required fields
+  name: text("name").notNull().default(""),
+  email: text("email").notNull().unique(),
+  emailVerified: boolean("email_verified").notNull().default(false),
+  image: text("image"),
+  // App-specific fields
   fullName: text("full_name"),
   avatarUrl: text("avatar_url"),
   appRole: text("app_role").notNull().default("user"),
@@ -259,6 +321,44 @@ export const users = pgTable("users", {
   defaultProductionRole: productionRoleEnum("default_production_role"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+})
+
+// ─── Better Auth tables ───────────────────────────────────────────────────────
+
+export const session = pgTable("session", {
+  id: text("id").primaryKey(),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  token: text("token").notNull().unique(),
+  ipAddress: text("ip_address"),
+  userAgent: text("user_agent"),
+  userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+})
+
+export const account = pgTable("account", {
+  id: text("id").primaryKey(),
+  accountId: text("account_id").notNull(),
+  providerId: text("provider_id").notNull(),
+  userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  accessToken: text("access_token"),
+  refreshToken: text("refresh_token"),
+  idToken: text("id_token"),
+  accessTokenExpiresAt: timestamp("access_token_expires_at", { withTimezone: true }),
+  refreshTokenExpiresAt: timestamp("refresh_token_expires_at", { withTimezone: true }),
+  scope: text("scope"),
+  password: text("password"),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+})
+
+export const verification = pgTable("verification", {
+  id: text("id").primaryKey(),
+  identifier: text("identifier").notNull(),
+  value: text("value").notNull(),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
 })
 
 // ─── companies ────────────────────────────────────────────────────────────────
@@ -421,6 +521,7 @@ export const rentalHouseLocation = pgTable("rental_house_location", {
   addressLine1: text("address_line_1"),
   phone: text("phone"),
   email: text("email"),
+  contactEmail: text("contact_email"),
   isPrimary: boolean("is_primary").default(false),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 })
