@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-04-09T06:27:50.930827+00:00",
+  "brand": "red",
+  "product_type": "camera",
+  "item_count": 5,
+  "totals": {
+    "items": 5,
+    "mapped_count": 0,
+    "unmapped_count": 0,
+    "tables_count": 0,
+    "documents_count": 0
+  },
+  "top_unmapped": []
+}

@@ -1,0 +1,25 @@
+{
+  "brand": "cooke",
+  "product_type": "lens",
+  "category_slug": "cinema-lenses",
+  "listing_urls": [
+    "https://cookeoptics.com/lenses/"
+  ],
+  "product_url_pattern": "cookeoptics.com/lens/",
+  "discovery_date": "2026-04-09T05:57:46.933757+00:00",
+  "total_urls": 8,
+  "urls": [
+    "https://cookeoptics.com/lens/s8-i-ff/",
+    "https://cookeoptics.com/lens/s7-i-ff/",
+    "https://cookeoptics.com/lens/s4-i/",
+    "https://cookeoptics.com/lens/minis4-i/",
+    "https://cookeoptics.com/lens/anamorphic-i-sf/",
+    "https://cookeoptics.com/lens/panchro-i-classic/",
+    "https://cookeoptics.com/lens/5-i/",
+    "https://cookeoptics.com/lens/varotal-i-ff/"
+  ],
+  "stats": {
+    "source": "static_inventory",
+    "note": "Sony pro site blocks automated crawling"
+  }
+}

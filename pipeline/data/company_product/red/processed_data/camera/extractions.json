@@ -1,0 +1,163 @@
+{
+  "brand": "red",
+  "product_type": "camera",
+  "generated_at": "2026-04-09T05:51:22.495736+00:00",
+  "total_items": 5,
+  "items": [
+    {
+      "product_url": "https://www.red.com/v-raptor-xl",
+      "product_slug": "v-raptor-xl",
+      "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor-xl.html",
+      "manufacturer_sections": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/v-raptor-xl.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor-xl"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:50:18.747086+00:00"
+    },
+    {
+      "product_url": "https://www.red.com/v-raptor",
+      "product_slug": "v-raptor",
+      "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor.html",
+      "manufacturer_sections": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/v-raptor.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:50:34.394105+00:00"
+    },
+    {
+      "product_url": "https://www.red.com/v-raptor-xe",
+      "product_slug": "v-raptor-xe",
+      "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/v-raptor-xe.html",
+      "manufacturer_sections": [],
+      "images": [
+        {
+          "url": "https://images.red.com/articles/thumbnails/v-raptor-xe-thumb.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/v-raptor-xe"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:50:47.917579+00:00"
+    },
+    {
+      "product_url": "https://www.red.com/komodo-x",
+      "product_slug": "komodo-x",
+      "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/komodo-x.html",
+      "manufacturer_sections": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/komodo-x.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/komodo-x"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:51:00.654431+00:00"
+    },
+    {
+      "product_url": "https://www.red.com/komodo",
+      "product_slug": "komodo",
+      "raw_html_path": "data/company_product/red/processed_data/camera/raw_html/komodo.html",
+      "manufacturer_sections": [],
+      "images": [
+        {
+          "url": "https://images.red.com/og/komodo.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.red.com/komodo"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "msrp_usd": null,
+      "errors": [],
+      "completeness": {
+        "total_sections": 0,
+        "total_attributes": 0,
+        "tables_found": 0,
+        "pdf_urls_found": 0,
+        "meets_min_sections": false,
+        "meets_min_attributes": false,
+        "needs_pdf": true,
+        "score": 0.0
+      },
+      "scraped_at": "2026-04-09T05:51:14.172955+00:00"
+    }
+  ]
+}

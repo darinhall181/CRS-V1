@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-04-03T05:11:09.831972+00:00",
+  "brand": "arri",
+  "product_type": "camera",
+  "item_count": 6,
+  "totals": {
+    "items": 6,
+    "mapped_count": 215,
+    "unmapped_count": 5,
+    "tables_count": 0,
+    "documents_count": 0
+  },
+  "top_unmapped": [
+    {
+      "raw_label": "Model",
+      "normalized_label": "model",
+      "count": 5,
+      "sections": {
+        "Technical Specifications": 5
+      },
+      "raw_label_variants": {
+        "Model": 5
+      },
+      "examples": [
+        {
+          "product_slug": "amira-live",
+          "product_url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "AMIRA Live"
+        },
+        {
+          "product_slug": "alexa-35-xtreme",
+          "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA 35 Xtreme"
+        },
+        {
+          "product_slug": "alexa-mini-lf",
+          "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA Mini LF"
+        },
+        {
+          "product_slug": "alexa-lf",
+          "product_url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA LF"
+        },
+        {
+          "product_slug": "amira",
+          "product_url": "https://www.arri.com/en/camera-systems/cameras/amira",
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "AMIRA"
+        }
+      ],
+      "suggested_action": "map_existing"
+    }
+  ]
+}

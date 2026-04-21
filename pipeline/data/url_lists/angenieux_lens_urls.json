@@ -1,0 +1,23 @@
+{
+  "brand": "angenieux",
+  "product_type": "lens",
+  "category_slug": "cinema-lenses",
+  "listing_urls": [
+    "https://www.angenieux.com/lenses/"
+  ],
+  "product_url_pattern": "angenieux.com/",
+  "discovery_date": "2026-04-09T05:43:29.174119+00:00",
+  "total_urls": 6,
+  "urls": [
+    "https://www.angenieux.com/optimo/",
+    "https://www.angenieux.com/optimo-zoom-lenses/",
+    "https://www.angenieux.com/optimo-prime/",
+    "https://www.angenieux.com/ez-series/",
+    "https://www.angenieux.com/type-ef/",
+    "https://www.angenieux.com/type-ep/"
+  ],
+  "stats": {
+    "source": "static_inventory",
+    "note": "Sony pro site blocks automated crawling"
+  }
+}

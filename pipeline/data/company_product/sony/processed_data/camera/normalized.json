@@ -1,0 +1,2154 @@
+{
+  "brand": "sony",
+  "product_type": "camera",
+  "generated_at": "2026-04-03T19:32:35.292229+00:00",
+  "source_extractions_path": "data/company_product/sony/processed_data/camera/extractions.json",
+  "items": [
+    {
+      "product": {
+        "brand_slug": "sony",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "burano",
+        "manufacturer_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+        "msrp_usd": null,
+        "primary_image_url": "https://pro.sony/s3/2023/08/01092149/burano-master-thumbnail.png"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/burano.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 51,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "Digital motion picture camera",
+          "raw_value": "Digital motion picture camera",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Camera type"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "PL Mount (detachable)/E-mount (lever lock type)",
+          "raw_value": "PL Mount (detachable)/E-mount (lever lock type)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Lens mount"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "35 mm full frame (35.9 x 24.0 mm), Exmor RS CMOS image sensor",
+          "raw_value": "35\u00a0mm full frame (35.9 x 24.0\u00a0mm), Exmor RS CMOS image sensor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Type"
+          }
+        },
+        {
+          "spec_definition_id": "12b9d7fd-5d61-42d2-be8e-6ecd0b4e9537",
+          "normalized_key": "cinema_pixel_count",
+          "spec_value": "Approx. 41.9 megapixels",
+          "raw_value": "Approx. 41.9 megapixels",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "MP",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Number of pixels (effective)"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Yes",
+          "raw_value": "Yes",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Optical low pass filter"
+          }
+        },
+        {
+          "spec_definition_id": "035ce534-881e-4580-a1ff-b3c0f1f0eefa",
+          "normalized_key": "cinema_internal_nd",
+          "spec_value": "CLEAR, linear variable ND (0.6(1/4) - 2.1(1/128))",
+          "raw_value": "CLEAR, linear variable ND (0.6(1/4) - 2.1(1/128))",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Built-in ND filter"
+          }
+        },
+        {
+          "spec_definition_id": "2dee7ee5-9223-401d-a205-ee5344c3baac",
+          "normalized_key": "cinema_gain",
+          "spec_value": "-3 to 18 dB (every 1 dB)",
+          "raw_value": "-3 to 18\u00a0dB (every 1\u00a0dB)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Gain control"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "16 stops",
+          "raw_value": "16 stops",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Latitude"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "2000 K - 15000 K",
+          "raw_value": "2000\u00a0K - 15000\u00a0K",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Color temperature range"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "X-OCN(LT), XAVC H Intra HQ, XAVC H Intra SQ, XAVC H Long, XAVC Intra, XAVC Long",
+          "raw_value": "X-OCN(LT), XAVC H Intra HQ, XAVC H Intra SQ, XAVC H Long, XAVC Intra, XAVC Long",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Video compression"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "LPCM 4ch (48 kHz 24 bit)",
+          "raw_value": "LPCM 4ch (48\u00a0kHz 24\u00a0bit)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Audio recording format"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Yes",
+          "raw_value": "Yes",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Slow & Quick Motion (S&Q)"
+          }
+        },
+        {
+          "spec_definition_id": "1ae6f1bc-9387-47fd-9d69-fbda34c79fb5",
+          "normalized_key": "cinema_proxy_recording",
+          "spec_value": "Yes",
+          "raw_value": "Yes",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Proxy recording"
+          }
+        },
+        {
+          "spec_definition_id": "84805a7e-44dc-4eb5-a5c8-83f98e533c6a",
+          "normalized_key": "cinema_timecode_io",
+          "spec_value": "Yes",
+          "raw_value": "Yes",
+          "numeric_value": null,
+          "boolean_value": true,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "TC/UB"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "SLOT A: Slot for CFexpress Type B card, SLOT B: Slot for CFexpress Type B card, Slot for Utility SD card",
+          "raw_value": "SLOT A: Slot for CFexpress Type B card, SLOT B: Slot for CFexpress Type B card, Slot for Utility SD card",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Memory card slot"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "Fast Hybrid AF (phase-detection AF / contrast-detection AF)",
+          "raw_value": "Fast Hybrid AF (phase-detection AF / contrast-detection AF)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Type"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "Human",
+          "raw_value": "Human",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Recognition target (Movies)"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "ISO 800/3200 (Cine EI mode, D55 Light source)",
+          "raw_value": "ISO 800/3200 (Cine EI mode, D55 Light source)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "ISO sensitivity"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "8.8 cm (3.5 type) TFT",
+          "raw_value": "8.8\u00a0cm (3.5 type) TFT",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Yes",
+          "raw_value": "Yes",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Touch panel"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "2,764,800 dots",
+          "raw_value": "2,764,800 dots",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Number of dots (total)"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Angle Mode: 5.6\u00b0to 360\u00b0, 2F to 64F Speed Mode: 1/8000 sec to 64F",
+          "raw_value": "Angle Mode: 5.6\u00b0to 360\u00b0, 2F to 64F Speed Mode: 1/8000 sec to 64F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Shutter speed"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "Image Sensor-Shift mechanism with 5-axis compensation (Compensation depends on lens specifications)",
+          "raw_value": "Image Sensor-Shift mechanism with 5-axis compensation (Compensation depends on lens specifications)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Type"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "Mass-storage",
+          "raw_value": "Mass-storage",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "PC interface"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "Yes (SuperSpeed USB 5 Gbps (USB 3.2) compatible)",
+          "raw_value": "Yes (SuperSpeed USB 5 Gbps (USB 3.2) compatible)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "USB Type-C\u00ae Terminal"
+          }
+        },
+        {
+          "spec_definition_id": "f0b407c9-6d11-44ff-9844-9a43467af419",
+          "normalized_key": "cinema_wifi",
+          "spec_value": "Yes (Wi-Fi Compatible, IEEE 802.11a/b/g/n/ac (2.4 GHz band/5 GHz band))*2*3",
+          "raw_value": "Yes (Wi-Fi Compatible, IEEE 802.11a/b/g/n/ac (2.4\u00a0GHz band/5 GHz band))*2*3",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Wireless LAN (built-in)"
+          }
+        },
+        {
+          "spec_definition_id": "53856867-65b5-4ddd-968a-ea2fbdc0d233",
+          "normalized_key": "cinema_hdmi",
+          "spec_value": "HDMI connector (Type-A)",
+          "raw_value": "HDMI connector (Type-A)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "HDMI output"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "Yes (3-pin (female) x2)",
+          "raw_value": "Yes (3-pin (female) x2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "XLR audio input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Yes (3.5 mm Stereo mini jack)",
+          "raw_value": "Yes (3.5\u00a0mm Stereo mini jack)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Headphone terminal"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "2.5 mm, 3-pole sub-mini type",
+          "raw_value": "2.5\u00a0mm, 3-pole sub-mini type",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Remote terminal"
+          }
+        },
+        {
+          "spec_definition_id": "bc3c80bc-7813-451f-9d80-1af24e621fb4",
+          "normalized_key": "cinema_sdi_outputs",
+          "spec_value": "SDI OUT1: BNC, 12G-SDI, 6G-SDI, 3G-SDI (Level A/B), HD-SDI SDI OUT2: BNC, 3G-SDI (Level A/B), HD-SDI",
+          "raw_value": "SDI OUT1: BNC, 12G-SDI, 6G-SDI, 3G-SDI (Level A/B), HD-SDI SDI OUT2: BNC, 3G-SDI (Level A/B), HD-SDI",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "SDI output"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "XLR, 11 V to 17 V",
+          "raw_value": "XLR, 11\u00a0V to 17\u00a0V",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "DC input"
+          }
+        },
+        {
+          "spec_definition_id": "84805a7e-44dc-4eb5-a5c8-83f98e533c6a",
+          "normalized_key": "cinema_timecode_io",
+          "spec_value": "BNC, TC IN/OUT Switchable",
+          "raw_value": "BNC, TC IN/OUT Switchable",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "TC input/TC output"
+          }
+        },
+        {
+          "spec_definition_id": "26628b1d-b87f-4331-8916-4a7edd415f98",
+          "normalized_key": "cinema_genlock",
+          "spec_value": "BNC, REF IN/OUT Switchable",
+          "raw_value": "BNC, REF IN/OUT Switchable",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Genlock input/Ref output"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "3.5 mm, 4-pole mini jack",
+          "raw_value": "3.5\u00a0mm, 4-pole mini jack",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Grip remote control connector"
+          }
+        },
+        {
+          "spec_definition_id": "66686201-c199-4dd6-ab83-f9dd4784afb5",
+          "normalized_key": "cinema_ethernet",
+          "spec_value": "Yes (1000BASE-T, 100BASE-TX, 10BASE-T)",
+          "raw_value": "Yes (1000BASE-T, 100BASE-TX, 10BASE-T)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "LAN terminal"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "Built-in, monaural",
+          "raw_value": "Built-in, monaural",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Microphone"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Built-in, monaural",
+          "raw_value": "Built-in, monaural",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Speaker"
+          }
+        },
+        {
+          "spec_definition_id": "e0c42b52-8bce-4f65-a91d-1701b5f81605",
+          "normalized_key": "cinema_lens_metadata",
+          "spec_value": "E-mount: Shading, Chromatic Aberration, Distortion, Breathing",
+          "raw_value": "E-mount: Shading, Chromatic Aberration, Distortion, Breathing",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Lens compensation"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "Battery pack BP-GL95B (Sold separately)",
+          "raw_value": "Battery pack BP-GL95B (Sold separately)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Battery"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Unit nominal power consumption: Approx. 50.0 W (lens, 6K 17:9, 59.94P, X-OCN LT recording, auto fan, excluding grip remote control and peripheral devices) Unit maximum power consumption: Approx. 66.0 W (lens, 6K 17:9, 59.94P, X-OCN LT recording, 40 \u00b0C (104 \u00b0F) environment, ND filter (1/4), proxy recording on, Wi-Fi on, auto fan, including grip remote control and peripheral devices)",
+          "raw_value": "Unit nominal power consumption: Approx. 50.0\u00a0W (lens, 6K 17:9, 59.94P, X-OCN LT recording, auto fan, excluding grip remote control and peripheral devices) Unit maximum power consumption: Approx. 66.0\u00a0W (lens, 6K 17:9, 59.94P, X-OCN LT recording, 40\u00a0\u00b0C (104\u00a0\u00b0F) environment, ND filter (1/4), proxy recording on, Wi-Fi on, auto fan, including grip remote control and peripheral devices)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "With LCD screen"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "Approx. 2.4 kg (body only, excluding PL-mount adapter)",
+          "raw_value": "Approx. 2.4\u00a0kg (body only, excluding PL-mount adapter)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Body only"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "Approx. 5 lb 4.7 oz (body only, excluding PL-mount adapter)",
+          "raw_value": "Approx. 5\u00a0lb 4.7\u00a0oz (body only, excluding PL-mount adapter)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Body only (oz.)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "145.7 mm x 142.5 mm x 218.1 mm (body without protrusions)",
+          "raw_value": "145.7\u00a0mm x 142.5\u00a0mm x 218.1\u00a0mm (body without protrusions)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Dimensions (W x H x D)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "5 3/4 x 5 5/8 x 8 5/8 inches (body without protrusions)",
+          "raw_value": "5 3/4 x 5 5/8 x 8 5/8\u00a0inches (body without protrusions)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Dimensions (W x H x D) (in)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "0 - 40 \u2103 / 32 - 104 \u00b0F",
+          "raw_value": "0 - 40 \u2103 / 32 - 104 \u00b0F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Operating temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-20 to 60 \u2103 / -4 to 140 \u00b0F",
+          "raw_value": "-20 to 60\u00a0\u2103 / -4 to 140\u00a0\u00b0F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Storage temperature"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2023/08/01092149/burano-master-thumbnail.png",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "Focus point",
+          "raw_value": "Max. 627 points (phase-detection AF)",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Focus point"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "Other features",
+          "raw_value": "AF Subj. Shift Sensitivity AF Transition Speed AF Assist",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Other features"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "Mode",
+          "raw_value": "PL mount: High / Low / Off E-mount: Active / Standard / Off",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Mode"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "Supplied Accessory",
+          "raw_value": "Handle (with viewfinder arm) (1) Handle mounting screws (4) LCD monitor (1) Viewfinder loupe (1) Viewfinder mount adapter (1) Shim (circular) (1) Shim (1/3 arc) (15) E-mount cap (1) PL mount cap (1)",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/burano",
+            "section": "Specifications",
+            "label": "Supplied Accessory"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 47,
+        "unmapped_count": 4,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "sony",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "venice2",
+        "manufacturer_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+        "msrp_usd": null,
+        "primary_image_url": "https://pro.sony/s3/2021/10/05105043/venice-thumbnail.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/venice2.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 35,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "DC 12 V (11.0 to 17.0 V) DC 24 V (22.0 to 32.0 V)",
+          "raw_value": "DC\u00a012\u00a0V (11.0 to 17.0\u00a0V) DC\u00a024\u00a0V (22.0 to 32.0\u00a0V)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Power Requirements"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx. 76 W (When recording X-OCN XT, 8.6K 3:2, 24 fps) VENICE 2 with 6K image sensor (MPC-3626): Approx. 73 W (When recording X-OCN XT, 6K 3:2, 24 fps)",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx. 76\u00a0W (When recording X-OCN XT, 8.6K 3:2, 24\u00a0fps) VENICE 2 with 6K image sensor (MPC-3626): Approx. 73\u00a0W (When recording X-OCN XT, 6K 3:2, 24\u00a0fps)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Power Consumption (Condition: 12 V DC Input, Temp 25 \u00b0C, without accessories)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "0 to 40 \u00b0C",
+          "raw_value": "0 to 40 \u00b0C",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-20 \u00b0C to 60 \u00b0C",
+          "raw_value": "-20 \u00b0C to 60 \u00b0C",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx: 4.3 kg (9 lb 6.6 oz) VENICE 2 with 6K image sensor (MPC-3626): Approx: 4.2 kg (9 lb 4.2 oz)",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): Approx: 4.3\u00a0kg (9\u00a0lb 6.6\u00a0oz) VENICE 2 with 6K image sensor (MPC-3626): Approx: 4.2\u00a0kg (9\u00a0lb 4.2\u00a0oz)",
+          "numeric_value": 2.0,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Mass (without lens, handle, VF attachment, and accessories)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "5.98 x 6.22 x 9.84 in (W x H x D, excluding protrusions)",
+          "raw_value": "5.98 x 6.22 x 9.84\u00a0in (W x H x D, excluding protrusions)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Dimensions"
+          }
+        },
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "35 mm full size, single-chip CMOS imager sensor",
+          "raw_value": "35\u00a0mm full size, single-chip CMOS imager sensor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Imaging Device"
+          }
+        },
+        {
+          "spec_definition_id": "12b9d7fd-5d61-42d2-be8e-6ecd0b4e9537",
+          "normalized_key": "cinema_pixel_count",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 50.0 M (Total) VENICE 2 with 6K image sensor (MPC-3626): 24.8 M (Total)",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 50.0\u00a0M (Total) VENICE 2 with 6K image sensor (MPC-3626): 24.8\u00a0M (Total)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "MP",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Imaging Device Pixel Count"
+          }
+        },
+        {
+          "spec_definition_id": "035ce534-881e-4580-a1ff-b3c0f1f0eefa",
+          "normalized_key": "cinema_internal_nd",
+          "spec_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64), 2.1 (1/128), 2.4 (1/256)",
+          "raw_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64), 2.1 (1/128), 2.4 (1/256)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Built-In ND Filters"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): ISO800, ISO3200 (Dual Base ISO) VENICE 2 with 6K image sensor (MPC-3626): ISO500, ISO2500 (Dual Base ISO)",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): ISO800, ISO3200 (Dual Base ISO) VENICE 2 with 6K image sensor (MPC-3626): ISO500, ISO2500 (Dual Base ISO)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "ISO Sensitivity"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)",
+          "raw_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Lens Mount"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 16 Stop VENICE 2 with 6K image sensor (MPC-3626): 15+ Stop",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 16 Stop VENICE 2 with 6K image sensor (MPC-3626): 15+ Stop",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Latitude"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 5.4K 16:9 1-90FPS 5.5K 2.39:1 1-120FPS 5.8K 17:9 1-90FPS 5.8K 4:3 1-60FPS** 5.8K 6:5 1-48FPS** 7.6K 16:9 1-60FPS*** 8.1K 16:9 1-48FPS*** 8.2K 17:9 1-60FPS*** 8.2K 2.39:1 1-72FPS*** 8.6K 17:9 1-48FPS*** 8.6K 3:2 1-30FPS*** VENICE 2 with 6K image sensor (MPC-3626): 3.8K 16:9 1-110FPS 3.8K 16:9 SV 1-48FPS 4K 2.39:1 1-120FPS 4K 17:9/3.8K 16:9 1-110FPS 4K 17:9 SV 1-48FPS 4K 4:3 1-75FPS** 4K 4:3 SV 1-30FPS** 4K 6:5 1-72FPS** 5.7K 16:9 1-72FPS 6K 2.39:1 1-90FPS*** 6K 17:9/6K 1.85:1/5.7K 16:9 1-72FPS*** 6K 3:2 1-60FPS***",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): 5.4K 16:9 1-90FPS 5.5K 2.39:1 1-120FPS 5.8K 17:9 1-90FPS 5.8K 4:3 1-60FPS** 5.8K 6:5 1-48FPS** 7.6K 16:9 1-60FPS*** 8.1K 16:9 1-48FPS*** 8.2K 17:9 1-60FPS*** 8.2K 2.39:1 1-72FPS*** 8.6K 17:9 1-48FPS*** 8.6K 3:2 1-30FPS*** VENICE 2 with 6K image sensor (MPC-3626): 3.8K 16:9 1-110FPS 3.8K 16:9 SV 1-48FPS 4K 2.39:1 1-120FPS 4K 17:9/3.8K 16:9 1-110FPS 4K 17:9 SV 1-48FPS 4K 4:3 1-75FPS** 4K 4:3 SV 1-30FPS** 4K 6:5 1-72FPS** 5.7K 16:9 1-72FPS 6K 2.39:1 1-90FPS*** 6K 17:9/6K 1.85:1/5.7K 16:9 1-72FPS*** 6K 3:2 1-60FPS***",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Select FPS"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "VENICE 2 with 8.6K image sensor (MPC-3628): X-OCN XT/ST/LT: 8.6K 3:2 (8640 x 5760): 23.98p, 24p, 25p, 29.97p 8.6K 17:9 (8640x4556): 23.98p, 24p, 25p, 29.97p, 47.95p* 8.2K 2.39:1 (8192x3432): 23.98p, 24p, 25p, 29.97p, 47.95p, 50p, 59.94p* 8.2K 17:9 (8192 x 4320): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 8.1K 16:9 (8100x4556): 23.98p, 24p, 25p, 29.97p 7.6K 16:9 (7680x 4320): 23.98p, 24p, 25p, 29.97p, 50p*, 59.94p* 5.8K 4:3 (5792x4276): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 5.8K 6:5 (5792 x 4854): 23.98p, 24p, 25p, 29.97p, 47.95p 5.8K 17:9 (5792 x 3056): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p*",
+          "raw_value": "VENICE 2 with 8.6K image sensor (MPC-3628): X-OCN XT/ST/LT: 8.6K 3:2 (8640 x 5760): 23.98p, 24p, 25p, 29.97p 8.6K 17:9 (8640x4556): 23.98p, 24p, 25p, 29.97p, 47.95p* 8.2K 2.39:1 (8192x3432): 23.98p, 24p, 25p, 29.97p, 47.95p, 50p, 59.94p* 8.2K 17:9 (8192 x 4320): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 8.1K 16:9 (8100x4556): 23.98p, 24p, 25p, 29.97p 7.6K 16:9 (7680x 4320): 23.98p, 24p, 25p, 29.97p, 50p*, 59.94p* 5.8K 4:3 (5792x4276): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p* 5.8K 6:5 (5792 x 4854): 23.98p, 24p, 25p, 29.97p, 47.95p 5.8K 17:9 (5792 x 3056): 23.98p, 24p, 25p, 29.97p, 47.95p*, 50p*, 59.94p*",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Recording Format (X-OCN)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "ProRes 4444/ProRes 422 HQ ProRes 4444 / ProRes 422 HQ / ProRes 4444 XQ QFHD (3160\u00d72160) QFHD (3840\u00d72160)",
+          "raw_value": "ProRes 4444/ProRes 422 HQ ProRes 4444 / ProRes 422 HQ / ProRes 4444 XQ QFHD (3160\u00d72160) QFHD (3840\u00d72160)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Recording Format (ProRes)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "LPCM 4ch, 24-bit 48-kHz",
+          "raw_value": "LPCM 4ch, 24-bit 48-kHz",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Recording Format (Audio)"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "XLR-type 4 pin (male)",
+          "raw_value": "XLR-type 4 pin (male)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "DC Input"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "Square-shaped 5 pin connector",
+          "raw_value": "Square-shaped 5 pin connector",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Battery DC Input"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "12 V: Lemo 2 pin x1 24 V: Fischer 3 pin x2",
+          "raw_value": "12\u00a0V: Lemo 2 pin x1 24\u00a0V: Fischer 3 pin x2",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "DC Output"
+          }
+        },
+        {
+          "spec_definition_id": "bc3c80bc-7813-451f-9d80-1af24e621fb4",
+          "normalized_key": "cinema_sdi_outputs",
+          "spec_value": "BNC x4, (12G, 6G, 3G, 1.5G-SDI)",
+          "raw_value": "BNC x4, (12G, 6G, 3G, 1.5G-SDI)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "SDI Output"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "BNC x1 (3G, 1.5G-SDI)",
+          "raw_value": "BNC x1 (3G, 1.5G-SDI)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "HD MONI Output"
+          }
+        },
+        {
+          "spec_definition_id": "53856867-65b5-4ddd-968a-ea2fbdc0d233",
+          "normalized_key": "cinema_hdmi",
+          "spec_value": "Type A x1",
+          "raw_value": "Type A x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "HDMI Output"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "LEMO 26 pin",
+          "raw_value": "LEMO 26 pin",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "VF"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "XLR-type 5 pin (female) x1 (LINE/AES/EBU/MIC/MIC+48 V selectable) Internal mic x1",
+          "raw_value": "XLR-type 5 pin (female) x1 (LINE/AES/EBU/MIC/MIC+48\u00a0V selectable) Internal mic x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "84805a7e-44dc-4eb5-a5c8-83f98e533c6a",
+          "normalized_key": "cinema_timecode_io",
+          "spec_value": "BNC x1",
+          "raw_value": "BNC x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Timecode Input"
+          }
+        },
+        {
+          "spec_definition_id": "26628b1d-b87f-4331-8916-4a7edd415f98",
+          "normalized_key": "cinema_genlock",
+          "spec_value": "BNC x1",
+          "raw_value": "BNC x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Genlock Input"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "BNC x1 (Timecode Output)",
+          "raw_value": "BNC x1 (Timecode Output)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "AUX"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "8 pin x1",
+          "raw_value": "8 pin x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Remote"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "4 pin x2, supporting Cooke /i Intelligent Electronic Lens System and ZEISS eXtended Data",
+          "raw_value": "4 pin x2, supporting Cooke /i Intelligent Electronic Lens System and ZEISS eXtended Data",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Lens Mount Hot Shoe"
+          }
+        },
+        {
+          "spec_definition_id": "66686201-c199-4dd6-ab83-f9dd4784afb5",
+          "normalized_key": "cinema_ethernet",
+          "spec_value": "RJ-45 type x1, 10BASE-T, 100BASE-TX",
+          "raw_value": "RJ-45 type x1, 10BASE-T, 100BASE-TX",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Network"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "USB host, type-A x1",
+          "raw_value": "USB host, type-A x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "USB"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Stereo mini jack x1",
+          "raw_value": "Stereo mini jack x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Headphone Output"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Monoral",
+          "raw_value": "Monoral",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Speaker Output"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "AXS Memory A-Series slot x2 SD card slot x1",
+          "raw_value": "AXS Memory A-Series slot x2 SD card slot x1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Media type"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2021/10/05105043/venice-thumbnail.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "Lens",
+          "raw_value": "12 pin x1",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice2",
+            "section": "Specifications",
+            "label": "Lens"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 34,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "sony",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "venice",
+        "manufacturer_url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+        "msrp_usd": null,
+        "primary_image_url": "https://pro.sony/s3/2020/10/30064645/VENICE-thm.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/sony/processed_data/camera/raw_html/venice.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 40,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "DC12 V (11-17.0 V) DC24 V (22-32.0 V)",
+          "raw_value": "DC12 V (11\u201317.0 V) DC24 V (22\u201332.0 V)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Power Requirements"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "0 \uff5e 40\u2103",
+          "raw_value": "0 \uff5e 40\u2103",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-20\u2103-60\u2103",
+          "raw_value": "-20\u2103\u201360\u2103",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "Approx. 3.9 kg (8 lb 9.6 oz) (excluding handle, VF attachment, bottom cover)",
+          "raw_value": "Approx. 3.9 kg (8 lb 9.6 oz) (excluding handle, VF attachment, bottom cover)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Mass"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "158 x 147 x 235 mm (6 1/4 x 5 7/8 x 9 3/8 inch) (excluding protrusions)",
+          "raw_value": "158 x 147 x 235 mm (6 1/4 x 5 7/8 x 9 3/8 inch) (excluding protrusions)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Dimensions: H x W x L"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "Approx. 60 W",
+          "raw_value": "Approx. 60 W",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "35 mm full size, single-chip CMOS image sensor",
+          "raw_value": "35 mm full size, single-chip CMOS image sensor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Imaging Device"
+          }
+        },
+        {
+          "spec_definition_id": "12b9d7fd-5d61-42d2-be8e-6ecd0b4e9537",
+          "normalized_key": "cinema_pixel_count",
+          "spec_value": "24.8 M (total)",
+          "raw_value": "24.8 M (total)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "MP",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Imaging Device Pixel Count"
+          }
+        },
+        {
+          "spec_definition_id": "d6fe2324-79ef-47f7-91e9-6542c3951c35",
+          "normalized_key": "cinema_sensor_size",
+          "spec_value": "36.2 x 24.1 mm 43.5 mm Diagonal",
+          "raw_value": "36.2 x 24.1 mm 43.5 mm Diagonal",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Imaging Device Size"
+          }
+        },
+        {
+          "spec_definition_id": "035ce534-881e-4580-a1ff-b3c0f1f0eefa",
+          "normalized_key": "cinema_internal_nd",
+          "spec_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64) 2.1 (1/128), 2.4 (1/256)",
+          "raw_value": "Clear, 0.3 (1/2), 0.6 (1/4), 0.9 (1/8), 1.2 (1/16), 1.5 (1/32), 1.8 (1/64) 2.1 (1/128), 2.4 (1/256)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Built-In ND Filters"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "ISO 500, ISO 2500 (Dual Base ISO)",
+          "raw_value": "ISO 500, ISO 2500 (Dual Base ISO)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "ISO Sensitivity"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)",
+          "raw_value": "PL Mount E-mount (lever lock type, without supplied PL lens mount adaptor)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Lens Mount"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "15+ Stop",
+          "raw_value": "15+ Stop",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Latitude"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "4K 2.39:1 1-120FPS, 4K 17:9 1-110FPS, 3.8K 16:9 1-110 FPS 4K 4:3 1-75 FPS, 4K 6:5 1-72 FPS 6K 2.39:1 1-90 FPS, 6K 17:9/1.85:1 1-72 FPS, 5.7K 16:9 1-72 FPS 6K 3:2 1-60 FPS",
+          "raw_value": "4K 2.39:1 1-120FPS, 4K 17:9 1-110FPS, 3.8K 16:9 1-110 FPS 4K 4:3 1-75 FPS, 4K 6:5 1-72 FPS 6K 2.39:1 1-90 FPS, 6K 17:9/1.85:1 1-72 FPS, 5.7K 16:9 1-72 FPS 6K 3:2 1-60 FPS",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Select FPS"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "2000-15000 Kelvin and Green/Magenta adjust, AWB",
+          "raw_value": "2000\u201315000 Kelvin and Green/Magenta adjust, AWB",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "0a4d0697-e65d-4d07-95c3-735c64ca1e6e",
+          "normalized_key": "cinema_log_format",
+          "spec_value": "S-Log3",
+          "raw_value": "S-Log3",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Gamma Curve"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "XAVC 4K Class 480: 23.98p, 24p, 25p, 29.97p XAVC 4K Class 300: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p XAVC QFHD Class 480: 23.98p, 25p, 29.97p XAVC QFHD Class 300: 23.98p, 25p, 29.97p, 50p, 59.94p MPEG HD422 (1920 x 1080): 23.98p, 25p, 29.97p, 50i, 59.94i HD ProRes 422HQ: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422 Proxy: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 4444: 23.98p, 24p, 25p, 29.97p",
+          "raw_value": "XAVC 4K Class 480: 23.98p, 24p, 25p, 29.97p XAVC 4K Class 300: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p XAVC QFHD Class 480: 23.98p, 25p, 29.97p XAVC QFHD Class 300: 23.98p, 25p, 29.97p, 50p, 59.94p MPEG HD422 (1920 x 1080): 23.98p, 25p, 29.97p, 50i, 59.94i HD ProRes 422HQ: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 422 Proxy: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p, 50i, 59.94i HD ProRes 4444: 23.98p, 24p, 25p, 29.97p",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Recording Format (SxS Memory)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "raw_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Recording Format (X-OCN ST/LT) Required AXS-R7"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "raw_value": "6K 3:2 (6048 x 4032): 23.98p, 24p, 25p, 29.97p 6K 2.39:1 (6048 x 2534): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 6K 1.85:1 (6054 x 3272): 23.98p, 24p, 25p, 29.97p, 50p 6K 17:9 (6054 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 5.7K 16:9 (5674 x 3192): 23.98p, 24p, 25p, 29.97p, 50p 4K 6:5 (4096 x 3432): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 4:3 (4096 x 3024): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 4K 2.39:1: 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Recording Format (X-OCN XT) Required AXS-R7"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "raw_value": "4K 17:9 (4096 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p 3.8K 16:9 (3840 x 2160): 23.98p, 24p, 25p, 29.97p, 50p, 59.94p",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Recording Format (RAW SQ) Required AXS-R7"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "LPCM 4ch , 24-bit\u200248-kHz",
+          "raw_value": "LPCM 4ch , 24-bit\u200248-kHz",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Recording Format (Audio)"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "XLR-type 4pin (male)",
+          "raw_value": "XLR-type 4pin (male)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "DC Input"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "Square-shaped 5pin connector",
+          "raw_value": "Square-shaped 5pin connector",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Battery DC Input"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "12 V: Hirose 4 pin x 1 24 V: Fischer 3 pin x 2",
+          "raw_value": "12 V: Hirose 4 pin x 1 24 V: Fischer 3 pin x 2",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "DC Output"
+          }
+        },
+        {
+          "spec_definition_id": "bc3c80bc-7813-451f-9d80-1af24e621fb4",
+          "normalized_key": "cinema_sdi_outputs",
+          "spec_value": "BNC x 4, (12G, 3G, 1.5G-SDI)",
+          "raw_value": "BNC x 4, (12G, 3G, 1.5G-SDI)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "SDI Output"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "BNC x 1 (1.5G-SDI)",
+          "raw_value": "BNC x 1 (1.5G-SDI)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "HD MONI Output"
+          }
+        },
+        {
+          "spec_definition_id": "53856867-65b5-4ddd-968a-ea2fbdc0d233",
+          "normalized_key": "cinema_hdmi",
+          "spec_value": "Type A x 1",
+          "raw_value": "Type A x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "HDMI Output"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "LEMO 26pin",
+          "raw_value": "LEMO 26pin",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "VF"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "XLR-type 5 pin (female) x 1 (LINE / AES/EBU / MIC / MIC + 48 V selectable)",
+          "raw_value": "XLR-type 5 pin (female) x 1 (LINE / AES/EBU / MIC / MIC + 48 V selectable)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "84805a7e-44dc-4eb5-a5c8-83f98e533c6a",
+          "normalized_key": "cinema_timecode_io",
+          "spec_value": "BNC x 1",
+          "raw_value": "BNC x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Timecode Input"
+          }
+        },
+        {
+          "spec_definition_id": "26628b1d-b87f-4331-8916-4a7edd415f98",
+          "normalized_key": "cinema_genlock",
+          "spec_value": "BNC x 1",
+          "raw_value": "BNC x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Genlock Input"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "LEMO 5 pin (female) x 1 (Timecode Output)",
+          "raw_value": "LEMO 5 pin (female) x 1 (Timecode Output)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "AUX"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "8 pin x 1",
+          "raw_value": "8 pin x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Remote"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "4 pin x 2, conforming to Cooke /i Intelligent Electronic Lens System",
+          "raw_value": "4 pin x 2, conforming to Cooke /i Intelligent Electronic Lens System",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Lens Mount Hot Shoe"
+          }
+        },
+        {
+          "spec_definition_id": "66686201-c199-4dd6-ab83-f9dd4784afb5",
+          "normalized_key": "cinema_ethernet",
+          "spec_value": "RJ-45 type x 1, 10BASE-T, 100BASE-TX",
+          "raw_value": "RJ-45 type x 1, 10BASE-T, 100BASE-TX",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Network"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "USB host, type-A x 1",
+          "raw_value": "USB host, type-A x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "USB"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Stereo mini jack x 1",
+          "raw_value": "Stereo mini jack x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Headphone Output"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "Monoral",
+          "raw_value": "Monoral",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Speaker Output"
+          }
+        },
+        {
+          "spec_definition_id": "eb230e78-ccba-48f9-85e8-396ab14fd3e6",
+          "normalized_key": "cinema_body_type",
+          "spec_value": "ExpressCard/34 slot x 2 SD card slot x 1",
+          "raw_value": "ExpressCard/34 slot x 2 SD card slot x 1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Media type"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://pro.sony/s3/2020/10/30064645/VENICE-thm.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "Lens",
+          "raw_value": "12 pin x 1",
+          "source": {
+            "type": "web",
+            "url": "https://pro.sony/ue_US/products/digital-cinema-cameras/venice",
+            "section": "Specifications",
+            "label": "Lens"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 39,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    }
+  ],
+  "pdf_queue": []
+}

@@ -1,0 +1,779 @@
+{
+  "brand": "cooke",
+  "product_type": "lens",
+  "generated_at": "2026-04-09T06:46:23.659066+00:00",
+  "source_extractions_path": "data/company_product/cooke/processed_data/lens/extractions.json",
+  "items": [
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "s8-i-ff",
+        "manufacturer_url": "https://cookeoptics.com/lens/s8-i-ff/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/S8.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/s8-i-ff.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/S8.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s8-i-ff/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "s7-i-ff",
+        "manufacturer_url": "https://cookeoptics.com/lens/s7-i-ff/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/S7.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/s7-i-ff.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/S7.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s7-i-ff/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "s4-i",
+        "manufacturer_url": "https://cookeoptics.com/lens/s4-i/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2021/11/S4-Feature-image.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/s4-i.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 10,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2021/11/S4-Feature-image.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/"
+          },
+          "raw_metadata": {}
+        },
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2021/11/S4-Feature-image-768x512.jpg",
+          "kind": "gallery",
+          "sort_order": 1,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "12mm",
+          "raw_value": "14mm | 16mm | 18mm | 21mm | 25mm | 27mm | 32mm | 35mm | 40mm | 50mm | 65mm | 65SFmm | 75mm | 100mm | 135mm | 150mm | 180mm | 300mm",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "12mm"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "T2-T22",
+          "raw_value": "T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2-T22 | T2.8-T22",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "T2-T22"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "96\u00b0",
+          "raw_value": "96\u00b0 | 96\u00b0 | 96\u00b0 | 96\u00b0 | 96\u00b0 | 96\u00b0 | 96\u00b0 | 95\u00b0 | 94\u00b0 | 93\u00b0 | 92\u00b0 | 92\u00b0 | 92\u00b0 | 91\u00b0 | 92\u00b0 | 92\u00b0 | 94\u00b0 | 78\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "96\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "225 mm 9 in",
+          "raw_value": "225 mm 9 in | 225 mm 9 in | 250 mm 9 in | 250 mm 9 in | 250 mm 9 in | 250 mm 10 in | 325 mm 12 in | 350 mm 14 in | 450 mm 16 in | 550 mm 20 in | 700 mm 27 in | 700 mm 27 in | 800 mm 30 in | 950 mm 36 in | 850 mm 33 in | 1050 mm 42 in | 1300 mm 51 in | 2100 mm 84 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "225 mm 9 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "47 mm 2.0 in",
+          "raw_value": "46 mm 2 in | 46 mm 2 in | 60 mm 2.5 in | 60 mm 2.5 in | 60 mm 2.5 in | 85 mm 3.5 in | 119 mm 4.9 in | 169 mm 6.9 in | 207 mm 8.4 in | 323 mm 13 in | 509 mm 20 in | 489 mm 19.2 in | 573 mm 23 in | 707 mm 28 in | 564 mm 20.7 in | 834 mm 32.8 in | 1058 mm 41.7 in | 1846 mm 74 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "47 mm 2.0 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "270\u00b0",
+          "raw_value": "300\u00b0 | 270\u00b0 | 300\u00b0 | 270\u00b0 | 300\u00b0 | 270\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 340\u00b0 | 320\u00b0 | 320\u00b0 | 320\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "270\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "103\u00b0",
+          "raw_value": "94\u00b0 | 86\u00b0 | 80\u00b0 | 71\u00b0 | 62\u00b0 | 58\u00b0 | 50\u00b0 | 46\u00b0 | 41\u00b0 | 34\u00b0 | 26\u00b0 | 26\u00b0 | 22\u00b0 | 17\u00b0 | 13\u00b0 | 11.5\u00b0 | 9.5\u00b0 | 5.7\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "103\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "126 mm 5.0 in",
+          "raw_value": "127 mm 5.0 in | 127 mm 5 in | 113 mm 4.5 in | 113 mm 4.5 in | 113 mm 4.5 in | 113 mm 4.5 in | 129 mm 5 in | 129 mm 5 in | 141 mm 5.5 in | 125 mm 4.9 in | 125 mm 4.9 in | 145 mm 5.7 in | 125 mm 4.9 in | 141 mm 5.5 in | 184 mm 7.3 in | 157 mm 6.2 in | 185 mm 7.3 in | 202 mm 7.9 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "126 mm 5.0 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "156 mm",
+          "raw_value": "110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 110 mm | 125 mm | 136 mm | 136 mm",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "156 mm"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "3 kg 6.5 lbs",
+          "raw_value": "2.2 kg 4.8 lbs | 2.45 kg 5.40 lbs | 1.75 kg 3.85 lbs | 2.0 kg 4.4 lbs | 1.6 kg 3.5 lbs | 1.60 kg 3.55 lbs | 1.85 kg 4.0 lbs | 1.90 kg 4.20 lbs | 2 kg 4.4 lbs | 1.5 kg 3.3 lbs | 1.6 kg 3.55 lbs | 2.25 kg 4.95 lbs | 1.75 kg 3.85 lbs | 2 kg 4.4 lbs | 2.25 kg 4.95 lbs | 3.5 kg 7.7 lbs | 4.3 kg 9.45 lbs | 4.7 kg 10.35 lbs",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/s4-i/",
+            "section": "Specifications",
+            "label": "3 kg 6.5 lbs"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 10,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 2
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "minis4-i",
+        "manufacturer_url": "https://cookeoptics.com/lens/minis4-i/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/Mini-s4.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/minis4-i.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 10,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/Mini-s4.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/"
+          },
+          "raw_metadata": {}
+        },
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/Mini-s4-768x512.jpg",
+          "kind": "gallery",
+          "sort_order": 1,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "18mm",
+          "raw_value": "21mm | 25mm | 32mm | 40mm | 50mm | 65mm | 75mm | 100mm | 135mm",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "18mm"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "T2.8-T22",
+          "raw_value": "T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22 | T2.8-T22",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "T2.8-T22"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "77\u00b0",
+          "raw_value": "77\u00b0 | 77\u00b0 | 77\u00b0 | 77\u00b0 | 77\u00b0 | 77\u00b0 | 77\u00b0 | 77\u00b0 | 96\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "77\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "250 mm 10 in",
+          "raw_value": "250 mm 10 in | 250 mm 10 in | 300 mm 12 in | 440 mm 16 in | 500 mm 20 in | 700 mm 27 in | 750 mm 30 in | 900 mm 36 in | 1000 mm 39 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "250 mm 10 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "80 mm 3 in",
+          "raw_value": "80 mm 3 in | 93 mm 4 in | 139 mm 5 in | 240 mm 9.5 in | 311 mm 12 in | 500 mm 20 in | 564 mm 22 in | 711 mm 28 in | 790 mm 31 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "80 mm 3 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "300\u00b0",
+          "raw_value": "300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0 | 300\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "300\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "80\u00b0",
+          "raw_value": "73\u00b0 | 62\u00b0 | 50\u00b0 | 41\u00b0 | 34\u00b0 | 26\u00b0 | 22\u00b0 | 17\u00b0 | 14.16\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "80\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "120 mm 4.72 in",
+          "raw_value": "110 mm 4.33 in | 106 mm 4.17 in | 110 mm 4.33 in | 110 mm 4.33 in | 137 mm 5.39 in | 135 mm 5.32 in | 137 mm 5.39 in | 137 mm 5.39 in | 157.8 mm 6.211 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "120 mm 4.72 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "110 mm 4.33 in",
+          "raw_value": "87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in | 87 mm 3.43 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "110 mm 4.33 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "1.3 kg 2.86 lbs",
+          "raw_value": "1.56 kg 3.44 lbs | 1.4 kg 3.08 lbs | 1.60 kg 3.52 lbs | 1.7 kg 3.74 lbs | 1.50 kg 3.30 lbs | 1.6 kg 3.52 lbs | 1.6 kg 3.52 lbs | 1.60 kg 3.52 lbs | 1.80 kg 3.96 lbs",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/minis4-i/",
+            "section": "Specifications",
+            "label": "1.3 kg 2.86 lbs"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 10,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 2
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "anamorphic-i-sf",
+        "manufacturer_url": "https://cookeoptics.com/lens/anamorphic-i-sf/",
+        "msrp_usd": null,
+        "primary_image_url": null
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/anamorphic-i-sf.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 0
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "panchro-i-classic",
+        "manufacturer_url": "https://cookeoptics.com/lens/panchro-i-classic/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/Panchro-Classic-FF.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/panchro-i-classic.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/Panchro-Classic-FF.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/panchro-i-classic/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "5-i",
+        "manufacturer_url": "https://cookeoptics.com/lens/5-i/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/S5.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/5-i.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 10,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/S5.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/"
+          },
+          "raw_metadata": {}
+        },
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/S5-768x512.jpg",
+          "kind": "gallery",
+          "sort_order": 1,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Specifications",
+          "label": "18",
+          "raw_value": "25 | 32 | 40 | 50 | 65 | 75 | 100 | 135",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "18"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "T1.4-T22",
+          "raw_value": "T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22 | T1.4-T22",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "T1.4-T22"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "90\u00b0",
+          "raw_value": "90\u00b0 | 90\u00b0 | 90\u00b0 | 90\u00b0 | 90\u00b0 | 90\u00b0 | 90\u00b0 | 90\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "90\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "350 mm 14 in",
+          "raw_value": "350 mm 14 in | 350 mm 13 in | 400 mm 16 in | 500 mm 20 in | 600 mm 2 ft | 650 mm 2 ft 3 in | 750 mm 2 ft 6 in | 800 mm 2 ft 9 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "350 mm 14 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "120 mm 5 in",
+          "raw_value": "120 mm 5 in | 120 mm 5 in | 171 mm 7 in | 270 mm 11 in | 370 mm 1 ft 3 in | 420 mm 1 ft 4 in | 520 mm 1 ft 8 in | 531 mm 1 ft 8 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "120 mm 5 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "270\u00b0",
+          "raw_value": "268\u00b0 | 270\u00b0 | 270\u00b0 | 270\u00b0 | 270\u00b0 | 270\u00b0 | 270\u00b0 | 340\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "270\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "79.3\u00b0",
+          "raw_value": "61.9\u00b0 | 50.5\u00b0 | 41\u00b0 | 33.7\u00b0 | 26.1\u00b0 | 21.6\u00b0 | 17.1\u00b0 | 12.68\u00b0",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "79.3\u00b0"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "171 mm 6.73 in",
+          "raw_value": "171 mm 6.79 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 177 mm 6.9 in | 219mm 8.6 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "171 mm 6.73 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "110 mm 4.33 in",
+          "raw_value": "110 mm 4.33 in | 110 mm 4.33 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 110 mm 4.3 in | 136 mm 5.3 in",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "110 mm 4.33 in"
+          }
+        },
+        {
+          "section": "Specifications",
+          "label": "3.03 kg 6.67 lbs",
+          "raw_value": "2.89 kg 6.56 lbs | 2.7 kg 6.1 lbs | 2.7 kg 6.1 lbs | 3.2 kg 7.1 lbs | 3 kg 6.8 lbs | 2.9 kg 6.6 lbs | 2.8 kg 6.4 lbs | 5.1 kg 11.2 lbs",
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/5-i/",
+            "section": "Specifications",
+            "label": "3.03 kg 6.67 lbs"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 10,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 2
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "cooke",
+        "category_slug": "cinema-lenses",
+        "product_type": "lens",
+        "slug": "varotal-i-ff",
+        "manufacturer_url": "https://cookeoptics.com/lens/varotal-i-ff/",
+        "msrp_usd": null,
+        "primary_image_url": "https://cookeoptics.com/wp-content/uploads/2022/10/Varotal.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/cooke/processed_data/lens/raw_html/varotal-i-ff.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://cookeoptics.com/wp-content/uploads/2022/10/Varotal.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://cookeoptics.com/lens/varotal-i-ff/"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    }
+  ],
+  "pdf_queue": []
+}

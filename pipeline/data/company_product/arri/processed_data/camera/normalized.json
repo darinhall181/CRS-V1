@@ -1,0 +1,3811 @@
+{
+  "brand": "arri",
+  "product_type": "camera",
+  "generated_at": "2026-04-03T05:11:09.831972+00:00",
+  "source_extractions_path": "data/company_product/arri/processed_data/camera/extractions.json",
+  "items": [
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "alexa-35-live",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/live-cameras/alexa-35-live",
+        "msrp_usd": null,
+        "primary_image_url": null
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-35-live.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 0,
+          "total_attributes": 0,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": false,
+          "meets_min_attributes": false,
+          "needs_pdf": true,
+          "score": 0.0
+        }
+      },
+      "spec_records": [],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [],
+      "unmapped": [],
+      "run_summary": {
+        "mapped_count": 0,
+        "unmapped_count": 0,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 0
+      },
+      "needs_pdf": true,
+      "needs_pdf_reasons": [
+        "low_completeness"
+      ]
+    },
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "amira-live",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+        "msrp_usd": null,
+        "primary_image_url": "https://www.arri.com/resource/image/226148/landscape_ratio1x0_38/1920/737/7bdea3cab21ab7f03341f0fc0624c8a3/29D734A434D927B18FC43641B92F298D/amira-live-keyvisual-1-beams.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/amira-live.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 44,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array",
+          "raw_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sensor Type"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\"",
+          "raw_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sensor Maximum Number of Photosites and Size"
+          }
+        },
+        {
+          "spec_definition_id": "3dc6c0f1-292e-44e5-817d-c532a9ba601d",
+          "normalized_key": "cinema_max_fps",
+          "spec_value": "0.75 - 200 fps",
+          "raw_value": "0.75 - 200 fps",
+          "numeric_value": 0.75,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sensor Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "\u223c5.2 kg / \u223c11.5 lbs (camera body with DTS Fiber Adapter and PL lens mount)",
+          "raw_value": "\u223c5.2 kg / \u223c11.5 lbs (camera body with DTS Fiber Adapter and PL lens mount)",
+          "numeric_value": 5.2,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Weight"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "8.25 \u03bcm",
+          "raw_value": "8.25 \u03bcm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Photosite Pitch"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (photosites)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\"",
+          "raw_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (dimensions)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording File Container Size (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "0f2be5d7-e555-4e44-aa2c-b3bcf90ff699",
+          "normalized_key": "cinema_recording_resolutions",
+          "spec_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording File Image Content (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)+L6",
+          "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)+L6",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Dynamic Range"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Exposure Index"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Shutter"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD",
+          "raw_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording Formats"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "CFast 2.0 Cards",
+          "raw_value": "CFast 2.0 Cards",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording Media"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps",
+          "raw_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion",
+          "raw_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Recording Modes"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1",
+          "raw_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "OLED viewfinder display LCD flip-out monitor",
+          "raw_value": "OLED viewfinder display LCD flip-out monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Technology"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "1280 x 720",
+          "raw_value": "1280 x 720",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Resolution (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "253d36d8-97ec-4825-8aec-9ff57f85ed5d",
+          "normalized_key": "cinema_viewfinder_diopter",
+          "spec_value": "Adjustable from -5 to +5 diopters",
+          "raw_value": "Adjustable from -5 to +5 diopters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Diopter"
+          }
+        },
+        {
+          "spec_definition_id": "8476b8c4-5f3b-4246-9301-bc5c00312017",
+          "normalized_key": "cinema_color_output",
+          "spec_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Color Output"
+          }
+        },
+        {
+          "spec_definition_id": "599b007e-3255-45e1-88c9-3d59d0891eb4",
+          "normalized_key": "cinema_look_control",
+          "spec_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library",
+          "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Look Control"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter",
+          "raw_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Filters"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out via D-SUB 24W7 on camera rear: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata",
+          "raw_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out via D-SUB 24W7 on camera rear: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Image Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "b0da14e3-dfc1-4c0a-8e62-ebcda1c35ad2",
+          "normalized_key": "anamorphic_squeeze_factors",
+          "spec_value": "1.00, 1.30",
+          "raw_value": "1.00, 1.30",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Lens Squeeze Factors"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking",
+          "raw_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Exposure and Focus Tools"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track",
+          "raw_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)",
+          "raw_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Audio Output"
+          }
+        },
+        {
+          "spec_definition_id": "4ba02d7f-c219-4fb6-8654-8ab67f1ce7c0",
+          "normalized_key": "cinema_audio_channels",
+          "spec_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track",
+          "raw_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track",
+          "numeric_value": 4.0,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Audio Recording"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Remote Control Options"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "1x D-SUB 24W7 (LTC Timecode, Ret/Sync In, Genlock, Ethernet, Power In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 2x USB 2.0 (for user setups, look files etc)",
+          "raw_value": "1x D-SUB 24W7 (LTC Timecode, Ret/Sync In, Genlock, Ethernet, Power In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 2x USB 2.0 (for user setups, look files etc)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "7d5c5a40-7dfa-49b1-bbc7-a38f199f2a4d",
+          "normalized_key": "cinema_wireless_interfaces",
+          "spec_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module",
+          "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Wireless Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount",
+          "raw_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Lens Mounts"
+          }
+        },
+        {
+          "spec_definition_id": "7e7fe150-cb2d-454d-aa3a-97f891bcc8bd",
+          "normalized_key": "cinema_flange_focal_distance",
+          "spec_value": "PL mount: 52 mm LPL mount: 44 mm",
+          "raw_value": "PL mount: 52 mm LPL mount: 44 mm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Flange Focal Depth"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "10.5-34 V DC via Fibre on FCA 12.0 V to 17.0 V DC via Lemo 2-pin on FCA",
+          "raw_value": "10.5-34 V DC via Fibre on FCA 12.0 V to 17.0 V DC via Lemo 2-pin on FCA",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Power Input"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "min. 52 W max. 84 W (Camera body with MVF-1)",
+          "raw_value": "min. 52 W max. 84 W (Camera body with MVF-1)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V",
+          "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Power Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "182 x 147 x 374 mm / 7.2 x 5.8 x 14.7\" (camera body with DTS Fiber Adapter and PL lens mount)",
+          "raw_value": "182 x 147 x 374 mm / 7.2 x 5.8 x 14.7\" (camera body with DTS Fiber Adapter and PL lens mount)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Measurements (HxWxL)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "raw_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "3faf42e7-959f-4b14-a2d6-b3b72e158580",
+          "normalized_key": "cinema_sound_level",
+          "spec_value": "< 20 dB(A) at 24fps",
+          "raw_value": "< 20 dB(A) at 24fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "dB",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Sound Level"
+          }
+        },
+        {
+          "spec_definition_id": "070bf843-cebc-42e6-bdfb-9f625f3a91cc",
+          "normalized_key": "cinema_software_licenses",
+          "spec_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key",
+          "raw_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Software Licenses"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/226148/landscape_ratio1x0_38/1920/737/7bdea3cab21ab7f03341f0fc0624c8a3/29D734A434D927B18FC43641B92F298D/amira-live-keyvisual-1-beams.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "AMIRA Live",
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/live-cameras/amira-live",
+            "section": "Technical Specifications",
+            "label": "Model"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 43,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "alexa-35-xtreme",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+        "msrp_usd": null,
+        "primary_image_url": "https://www.arri.com/resource/image/398900/landscape_ratio1x0_38/1920/737/e93b62c12a3208f4ddb8881aea242002/64B16ECC9D85DC03E6180EDEB2E10CB5/k1-0053455-1-.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-35-xtreme.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 44,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "Super 35 format ARRI ALEV 4 CMOS sensor with Bayer pattern color filter array",
+          "raw_value": "Super 35 format ARRI ALEV 4 CMOS sensor with Bayer pattern color filter array",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sensor Type"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "4608 x 3164 27.99 x 19.22 mm / 1.102 x 0.757\" \u00d8 33.96 mm / 1.337\"",
+          "raw_value": "4608 x 3164 27.99 x 19.22 mm / 1.102 x 0.757\" \u00d8 33.96 mm / 1.337\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sensor Maximum Number of Photosites and Size"
+          }
+        },
+        {
+          "spec_definition_id": "3dc6c0f1-292e-44e5-817d-c532a9ba601d",
+          "normalized_key": "cinema_max_fps",
+          "spec_value": "0.75 - 660 fps*",
+          "raw_value": "0.75 - 660 fps*",
+          "numeric_value": 0.75,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sensor Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "\u223c3.0 kg / 6.6 lbs (camera body with three antennas and LPL Mount (LBUS))",
+          "raw_value": "\u223c3.0 kg / 6.6 lbs (camera body with three antennas and LPL Mount (LBUS))",
+          "numeric_value": 3.0,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Weight"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "6.075 \u03bcm",
+          "raw_value": "6.075 \u03bcm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Photosite Pitch"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "4.6K 3:2 Open Gate: 4608 x 3164* 4.6K 16:9: 4608 x 2592* 4K 16:9: 4096 x 2304 3.8K 16:9: 3840 x 2160 3.8K 2.39:1: 3840 x 1608 3.3K 6:5: 3328 x 2790* 2K 16:9 S16: 2048 x 1152 HD 16:9 S16: 1920 x 1080",
+          "raw_value": "4.6K 3:2 Open Gate: 4608 x 3164* 4.6K 16:9: 4608 x 2592* 4K 16:9: 4096 x 2304 3.8K 16:9: 3840 x 2160 3.8K 2.39:1: 3840 x 1608 3.3K 6:5: 3328 x 2790* 2K 16:9 S16: 2048 x 1152 HD 16:9 S16: 1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (photosites)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "4.6K 3:2 Open Gate: 28.0 x 19.2 mm / 1.102 x 0.756\" 4.6K 16:9: 28.0 x 15.7 mm / 1.102 x 0.618\" 4K 16:9: 24.9 x 14.0 mm / 0.980 x 0.551\" 3.8K 16:9: 23.3 x 13.1 mm / 0,918 x 0.516\" 3.8K 2.39:1: 23.3 x 9.8 mm / 0.918 x 0.386\" 3.3K 6:5: 20.22 x 16.95 mm / 0.796 x 0.693\" 2K 16:9 S16: 12.4 x 7.0 mm / 0.490 x 0.276\" HD 16:9 S16: 11.7 x 6.6 mm / 0.461 x 0.260\"",
+          "raw_value": "4.6K 3:2 Open Gate: 28.0 x 19.2 mm / 1.102 x 0.756\" 4.6K 16:9: 28.0 x 15.7 mm / 1.102 x 0.618\" 4K 16:9: 24.9 x 14.0 mm / 0.980 x 0.551\" 3.8K 16:9: 23.3 x 13.1 mm / 0,918 x 0.516\" 3.8K 2.39:1: 23.3 x 9.8 mm / 0.918 x 0.386\" 3.3K 6:5: 20.22 x 16.95 mm / 0.796 x 0.693\" 2K 16:9 S16: 12.4 x 7.0 mm / 0.490 x 0.276\" HD 16:9 S16: 11.7 x 6.6 mm / 0.461 x 0.260\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (dimensions)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "4.6K 3:2 Open Gate: 4.6K (4608 x 3164) 4.6K 16:9: 4.6K (4608 x 2592) 4K 16:9: 4K (4096 x 2304) 3.8K 16:9: UHD (3840 x 2160) 3.8K 2.39:1: 3.8K (3840 x 1608) 3.3K 6:5: 3.3K (3328 x 2790), 4K (4096 x 1716) 2K 16:9 S16: 2K (2048 x 1152) HD 16:9 S16: HD (1920 x 1080)",
+          "raw_value": "4.6K 3:2 Open Gate: 4.6K (4608 x 3164) 4.6K 16:9: 4.6K (4608 x 2592) 4K 16:9: 4K (4096 x 2304) 3.8K 16:9: UHD (3840 x 2160) 3.8K 2.39:1: 3.8K (3840 x 1608) 3.3K 6:5: 3.3K (3328 x 2790), 4K (4096 x 1716) 2K 16:9 S16: 2K (2048 x 1152) HD 16:9 S16: HD (1920 x 1080)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording File Container Size (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "0f2be5d7-e555-4e44-aa2c-b3bcf90ff699",
+          "normalized_key": "cinema_recording_resolutions",
+          "spec_value": "Identical to Recording File Container Size",
+          "raw_value": "Identical to Recording File Container Size",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording File Image Content (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "17 stops",
+          "raw_value": "17 stops",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Dynamic Range"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "Adjustable from EI 160 - 6400 in 1/3 stops",
+          "raw_value": "Adjustable from EI 160 - 6400 in 1/3 stops",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Exposure Index"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Electronic shutter, 1.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "raw_value": "Electronic shutter, 1.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Shutter"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "MXF/ARRIRAW* MXF/ARRICORE MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ",
+          "raw_value": "MXF/ARRIRAW* MXF/ARRICORE MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording Formats"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "Codex Compact Drive 1TB (CA08-1024) Codex Compact Drive 2TB (CB16-2048) Codex Compact Drive Express 1TB (CP08-1024)",
+          "raw_value": "Codex Compact Drive 1TB (CA08-1024) Codex Compact Drive 2TB (CB16-2048) Codex Compact Drive Express 1TB (CP08-1024)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording Media"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "ARRIRAW 4.6K 3:2 Open Gate: 35 / 80 fps ARRIRAW 4.6K 16:9: 45 / 95 fps ARRIRAW 4K 16:9: 55 / 125 fps ARRIRAW 3.8K 16:9: 65 / 140 fps ARRIRAW 3.8K 2.39:1: 85 / 190 fps ARRIRAW 3.3K 6:5 - 3.3K: 55 / 120 fps ARRIRAW 2K 16:9 S16: 230 / 330 fps ARRIRAW HD 16:9 S16: 260 / 330 fps ARRICORE 4.6K 3:2 Open Gate: 80 / 120 - 80* / 165* fps ARRICORE 4.6K 16:9: 100 / 150 / - 100* / 200* fps ARRICORE 4K 16:9: 125 / 150 - 125* / 210* fps ARRICORE 3.8K 16:9: 145 / 150 - 145* / 240* fps ARRICORE 3.8K 2.39:1: 195 / 240 - 195* / 240* fps ARRICORE 3.3K 6:5 - 3.3K: 120 / 120 - 125* / 210* fps ARRICORE 2K 16:9 S16: 330 / 330 - 505* / 660* fps ARRICORE HD 16:9 S16: 330 / 330 - 590* / 660* fps Apple ProRes 4444 4.6K 3:2 Open Gate: 90 / 120 fps Apple ProRes 4444 4.6K 16:9: 110 / 150 fps Apple ProRes 4444 4K 16:9: 135 / 150 fps Apple ProRes 4444 3.8K 16:9: 150 / 150 fps Apple ProRes 4444 3.8K 2.39:1: 210 / 240 fps Apple ProRes 4444W 3.3K 6:5 - 3.3K: 120 / 120 fps Apple ProRes 4444 2K 16:9 S16: 330 / 330 fps Apple ProRes 4444 HD 16:9 S16: 330 / 330 fps Compact Drive 1TB / 2TB, *with Sensor Overdrive",
+          "raw_value": "ARRIRAW 4.6K 3:2 Open Gate: 35 / 80 fps ARRIRAW 4.6K 16:9: 45 / 95 fps ARRIRAW 4K 16:9: 55 / 125 fps ARRIRAW 3.8K 16:9: 65 / 140 fps ARRIRAW 3.8K 2.39:1: 85 / 190 fps ARRIRAW 3.3K 6:5 - 3.3K: 55 / 120 fps ARRIRAW 2K 16:9 S16: 230 / 330 fps ARRIRAW HD 16:9 S16: 260 / 330 fps ARRICORE 4.6K 3:2 Open Gate: 80 / 120 - 80* / 165* fps ARRICORE 4.6K 16:9: 100 / 150 / - 100* / 200* fps ARRICORE 4K 16:9: 125 / 150 - 125* / 210* fps ARRICORE 3.8K 16:9: 145 / 150 - 145* / 240* fps ARRICORE 3.8K 2.39:1: 195 / 240 - 195* / 240* fps ARRICORE 3.3K 6:5 - 3.3K: 120 / 120 - 125* / 210* fps ARRICORE 2K 16:9 S16: 330 / 330 - 505* / 660* fps ARRICORE HD 16:9 S16: 330 / 330 - 590* / 660* fps Apple ProRes 4444 4.6K 3:2 Open Gate: 90 / 120 fps Apple ProRes 4444 4.6K 16:9: 110 / 150 fps Apple ProRes 4444 4K 16:9: 135 / 150 fps Apple ProRes 4444 3.8K 16:9: 150 / 150 fps Apple ProRes 4444 3.8K 2.39:1: 210 / 240 fps Apple ProRes 4444W 3.3K 6:5 - 3.3K: 120 / 120 fps Apple ProRes 4444 2K 16:9 S16: 330 / 330 fps Apple ProRes 4444 HD 16:9 S16: 330 / 330 fps Compact Drive 1TB / 2TB, *with Sensor Overdrive",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Standard real-time recording Pre-recording*",
+          "raw_value": "Standard real-time recording Pre-recording*",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Recording Modes"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor",
+          "raw_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "OLED viewfinder display LCD flip-out monitor",
+          "raw_value": "OLED viewfinder display LCD flip-out monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Technology"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "OLED: 1920 x 1080",
+          "raw_value": "OLED: 1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Resolution (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "253d36d8-97ec-4825-8aec-9ff57f85ed5d",
+          "normalized_key": "cinema_viewfinder_diopter",
+          "spec_value": "Adjustable from -5 to +5 diopters",
+          "raw_value": "Adjustable from -5 to +5 diopters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Diopter"
+          }
+        },
+        {
+          "spec_definition_id": "8476b8c4-5f3b-4246-9301-bc5c00312017",
+          "normalized_key": "cinema_color_output",
+          "spec_value": "1. ARRI Color Management Display Render Transforms: - Rec 709 - Rec 2020 - Rec 2100 PQ - Rec 2100 HLG 2. LogC4 3. Custom Color Management*",
+          "raw_value": "1. ARRI Color Management Display Render Transforms: - Rec 709 - Rec 2020 - Rec 2100 PQ - Rec 2100 HLG 2. LogC4 3. Custom Color Management*",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Color Output"
+          }
+        },
+        {
+          "spec_definition_id": "599b007e-3255-45e1-88c9-3d59d0891eb4",
+          "normalized_key": "cinema_look_control",
+          "spec_value": "ARRI Look File ALF-4: - Import of custom 3D LUT - ASC CDL parameters (slope, offset, power, saturation) ARRI Look Library* ARRI Textures*",
+          "raw_value": "ARRI Look File ALF-4: - Import of custom 3D LUT - ASC CDL parameters (slope, offset, power, saturation) ARRI Look Library* ARRI Textures*",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Look Control"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter",
+          "raw_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Filters"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "2x VF custom CoaXPress connectors for MVF-2 viewfinder 2x 12G SDI (BNC): 422 1.5G HD, 422 3G HD, 444 3G HD, 422 6G UHD, 422 12G UHD, 444 12G UHD",
+          "raw_value": "2x VF custom CoaXPress connectors for MVF-2 viewfinder 2x 12G SDI (BNC): 422 1.5G HD, 422 3G HD, 444 3G HD, 422 6G UHD, 422 12G UHD, 444 12G UHD",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Image Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "b0da14e3-dfc1-4c0a-8e62-ebcda1c35ad2",
+          "normalized_key": "anamorphic_squeeze_factors",
+          "spec_value": "1.00, 1.25, 1.30, 1.33, 1.50, 1.65, 1.80, 1.85, 2.00*",
+          "raw_value": "1.00, 1.25, 1.30, 1.33, 1.50, 1.65, 1.80, 1.85, 2.00*",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Lens Squeeze Factors"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "False Color Zoom Aperture and Color Peaking",
+          "raw_value": "False Color Zoom Aperture and Color Peaking",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Exposure and Focus Tools"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "1x LEMO 6pin balanced stereo line in with 12V power output (line input max. level +24 dBu correlating to 0 dBFS) Two built-in microphones for scratch audio With Audio Extension Module AEM-1: additional 3x TA3 connectors (MIC/Line, +48 V, AES) With LPS-1 Fiber Camera Adapter FCA-1: additional 2x TA3 connectors (MIC/Line, +48 V, AES)",
+          "raw_value": "1x LEMO 6pin balanced stereo line in with 12V power output (line input max. level +24 dBu correlating to 0 dBFS) Two built-in microphones for scratch audio With Audio Extension Module AEM-1: additional 3x TA3 connectors (MIC/Line, +48 V, AES) With LPS-1 Fiber Camera Adapter FCA-1: additional 2x TA3 connectors (MIC/Line, +48 V, AES)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)",
+          "raw_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Audio Output"
+          }
+        },
+        {
+          "spec_definition_id": "4ba02d7f-c219-4fb6-8654-8ab67f1ce7c0",
+          "normalized_key": "cinema_audio_channels",
+          "spec_value": "4 channel linear PCM, 24 bit 48 kHz",
+          "raw_value": "4 channel linear PCM, 24 bit 48 kHz",
+          "numeric_value": 4.0,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Audio Recording"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1 Camera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces Skaarhoj Remote Control Panel",
+          "raw_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1 Camera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces Skaarhoj Remote Control Panel",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Remote Control Options"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "1x LBUS (LEMO 4-pin) for lens motors, daisy chainable 1x SERIAL (LEMO 4-pin) for distance measuring accessories 1x TC (LEMO 5-pin) for timecode In/Out 1x ETH (LEMO 10-pin) for remote control and service 1x SYNC IN (BNC) for Genlock synchronization 1x RET IN (BNC, switchable on SDI 2) 1x USB-C for user setups, look files etc. 1x Rear Interface (18-pin Pogo) for connection of modules and battery adapters",
+          "raw_value": "1x LBUS (LEMO 4-pin) for lens motors, daisy chainable 1x SERIAL (LEMO 4-pin) for distance measuring accessories 1x TC (LEMO 5-pin) for timecode In/Out 1x ETH (LEMO 10-pin) for remote control and service 1x SYNC IN (BNC) for Genlock synchronization 1x RET IN (BNC, switchable on SDI 2) 1x USB-C for user setups, look files etc. 1x Rear Interface (18-pin Pogo) for connection of modules and battery adapters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "7d5c5a40-7dfa-49b1-bbc7-a38f199f2a4d",
+          "normalized_key": "cinema_wireless_interfaces",
+          "spec_value": "Built-in WiFi module (IEEE 802.11a/ac/b/g/n/k/r/v) Built-in White Radio for ARRI ECS lens and camera remote control",
+          "raw_value": "Built-in WiFi module (IEEE 802.11a/ac/b/g/n/k/r/v) Built-in White Radio for ARRI ECS lens and camera remote control",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Wireless Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "ARRI LPL Mount (LBUS) ARRI PL-to-LPL Adapter ARRI PL Mount (LBUS) ARRI PL Mount (Hirose) ARRI EF Mount (LBUS) Leitz M Mount for ARRI",
+          "raw_value": "ARRI LPL Mount (LBUS) ARRI PL-to-LPL Adapter ARRI PL Mount (LBUS) ARRI PL Mount (Hirose) ARRI EF Mount (LBUS) Leitz M Mount for ARRI",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Lens Mounts"
+          }
+        },
+        {
+          "spec_definition_id": "7e7fe150-cb2d-454d-aa3a-97f891bcc8bd",
+          "normalized_key": "cinema_flange_focal_distance",
+          "spec_value": "LPL mount: 44 mm PL mount: 52 mm",
+          "raw_value": "LPL mount: 44 mm PL mount: 52 mm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Flange Focal Depth"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "1x PWR (LEMO 8-pin) 1x BAT (camera rear interface / battery adapter) 20.5 - 33.6 V DC",
+          "raw_value": "1x PWR (LEMO 8-pin) 1x BAT (camera rear interface / battery adapter) 20.5 - 33.6 V DC",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Power Input"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "~ 81 W (Camera body and MVF-2)",
+          "raw_value": "~ 81 W (Camera body and MVF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "1x RS (Fischer 3-pin) for 24 V accessory power out, start/stop and shutter pulse 1x 12 V (LEMO 2-pin) for 12 V accessory power out 1x LBUS (LEMO 4-pin) for lens motors & 24 V power out, daisy-chainable 1x AUDIO (LEMO 6-pin) for balanced stereo line in and 12 V accessory power out 1x ETH (LEMO 10-pin) for remote control, service and 24 V accessory power out With Power Distribution Module PDM-1: additionally 4x 24 V, 2x 12 V and 1x D-Tap With LPS-1 Fiber Camera Adapter: additionally 1x 24 V and 3x 12 V",
+          "raw_value": "1x RS (Fischer 3-pin) for 24 V accessory power out, start/stop and shutter pulse 1x 12 V (LEMO 2-pin) for 12 V accessory power out 1x LBUS (LEMO 4-pin) for lens motors & 24 V power out, daisy-chainable 1x AUDIO (LEMO 6-pin) for balanced stereo line in and 12 V accessory power out 1x ETH (LEMO 10-pin) for remote control, service and 24 V accessory power out With Power Distribution Module PDM-1: additionally 4x 24 V, 2x 12 V and 1x D-Tap With LPS-1 Fiber Camera Adapter: additionally 1x 24 V and 3x 12 V",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Power Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "147 x 152.5 x 203 mm / 5.8 x 6.0 x 8.0\" (camera body with LPL lens mount)",
+          "raw_value": "147 x 152.5 x 203 mm / 5.8 x 6.0 x 8.0\" (camera body with LPL lens mount)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Measurements (HxWxL)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "General: '-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F When using more than 120 fps or more than 90 fps in 4.6K and 3.3K Sensor Modes: '-20\u00b0 C to +40\u00b0 C / -4\u00b0 F to +113\u00b0 F both @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics, IP 51",
+          "raw_value": "General: '-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F When using more than 120 fps or more than 90 fps in 4.6K and 3.3K Sensor Modes: '-20\u00b0 C to +40\u00b0 C / -4\u00b0 F to +113\u00b0 F both @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics, IP 51",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "3faf42e7-959f-4b14-a2d6-b3b72e158580",
+          "normalized_key": "cinema_sound_level",
+          "spec_value": "< 20 dB(A) at 30fps, recording 4K 16:9, Apple ProRes 4444 XQ, \u2264 +30\u00b0 ambient temperature",
+          "raw_value": "< 20 dB(A) at 30fps, recording 4K 16:9, Apple ProRes 4444 XQ, \u2264 +30\u00b0 ambient temperature",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "dB",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Sound Level"
+          }
+        },
+        {
+          "spec_definition_id": "070bf843-cebc-42e6-bdfb-9f625f3a91cc",
+          "normalized_key": "cinema_software_licenses",
+          "spec_value": "ALEXA 35 Xtreme Premium License ALEXA 35 Xtreme Look License ALEXA 35 Xtreme ARRIRAW License ALEXA 35 Xtreme Open Gate/Anamorphic License ALEXA 35 Xtreme Highspeed License ALEXA 35 Xtreme Pre-record License ALEXA 35 Xtreme Multicam License (optional) *Feature requires licensing and is not initially activated in the ALEXA 35 with Base License",
+          "raw_value": "ALEXA 35 Xtreme Premium License ALEXA 35 Xtreme Look License ALEXA 35 Xtreme ARRIRAW License ALEXA 35 Xtreme Open Gate/Anamorphic License ALEXA 35 Xtreme Highspeed License ALEXA 35 Xtreme Pre-record License ALEXA 35 Xtreme Multicam License (optional) *Feature requires licensing and is not initially activated in the ALEXA 35 with Base License",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Software Licenses"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/398900/landscape_ratio1x0_38/1920/737/e93b62c12a3208f4ddb8881aea242002/64B16ECC9D85DC03E6180EDEB2E10CB5/k1-0053455-1-.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA 35 Xtreme",
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-35-xtreme",
+            "section": "Technical Specifications",
+            "label": "Model"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 43,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "alexa-mini-lf",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+        "msrp_usd": null,
+        "primary_image_url": "https://www.arri.com/resource/image/83566/landscape_ratio1x0_38/1920/737/e0d0c3b14d8089ad5b4420cf2a17ca8d/B78BBB86B355C816619CB86FAA162A51/cr-2019-alexa-mini-lf-product-image-1920x833.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-mini-lf.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 44,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array",
+          "raw_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Type"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\"",
+          "raw_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Maximum Number of Photosites and Size"
+          }
+        },
+        {
+          "spec_definition_id": "3dc6c0f1-292e-44e5-817d-c532a9ba601d",
+          "normalized_key": "cinema_max_fps",
+          "spec_value": "0.75 - 90 fps",
+          "raw_value": "0.75 - 90 fps",
+          "numeric_value": 0.75,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "\u223c2.6 kg / \u223c5.7 lbs (camera body with LPL lens mount) 800 g (MVF-2)",
+          "raw_value": "\u223c2.6 kg / \u223c5.7 lbs (camera body with LPL lens mount) 800 g (MVF-2)",
+          "numeric_value": 2.6,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Weight"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "8.25 \u03bcm",
+          "raw_value": "8.25 \u03bcm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Photosite Pitch"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 4320 x 2430 3.8K LF 16:9: 3840 x 2160 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 2880 x 1620",
+          "raw_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 4320 x 2430 3.8K LF 16:9: 3840 x 2160 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (photosites)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "4.5K LF 3:2 Open Gate: 36.70 x 25.54 mm / 1.445 x 1.006\u201c 4.5K LF 2.39:1: 36.70 x 15.31 mm / 1.445 x 0.603\u201c 4.3K LF 16:9: 35.64 x 20.05 mm / 1.403 x 0.789\u201c 3.8K LF 16:9: 31.68 x 17.82 mm / 1.247 x 0.702\u201c 2.8K LF 1:1: 23.76 x 23.76 mm / 0.935 x 0.935\u201c 3.4K S35 3:2: 28.25 x 18.16 mm / 1.112 x 0.714\u201c 3.2K S35 16:9: 26.40 x 14.85 mm / 1.039 x 0.585\u201c 2.8K S35 4:3: 23.76 x 17.81 mm / 0.935 x 0.701\u201c 2.8K S35 16:9: 23.76 x 13.36 mm / 0.935 x 0.526\u201c",
+          "raw_value": "4.5K LF 3:2 Open Gate: 36.70 x 25.54 mm / 1.445 x 1.006\u201c 4.5K LF 2.39:1: 36.70 x 15.31 mm / 1.445 x 0.603\u201c 4.3K LF 16:9: 35.64 x 20.05 mm / 1.403 x 0.789\u201c 3.8K LF 16:9: 31.68 x 17.82 mm / 1.247 x 0.702\u201c 2.8K LF 1:1: 23.76 x 23.76 mm / 0.935 x 0.935\u201c 3.4K S35 3:2: 28.25 x 18.16 mm / 1.112 x 0.714\u201c 3.2K S35 16:9: 26.40 x 14.85 mm / 1.039 x 0.585\u201c 2.8K S35 4:3: 23.76 x 17.81 mm / 0.935 x 0.701\u201c 2.8K S35 16:9: 23.76 x 13.36 mm / 0.935 x 0.526\u201c",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (dimensions)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "4.5K LF 3:2 Open Gate ARRIRAW: 4448 x 3096 4.5K LF 3:2 Open Gate Apple ProRes: 4480 x 3096 4.5K LF 2.39:1 ARRIRAW: 4448 x 1856 4.5K LF 2.39:1 Apple ProRes: 4480 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1 ARRIRAW: 2880 x 2880 2.8K LF 1:1 Apple ProRes: 3072 x 3024 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080",
+          "raw_value": "4.5K LF 3:2 Open Gate ARRIRAW: 4448 x 3096 4.5K LF 3:2 Open Gate Apple ProRes: 4480 x 3096 4.5K LF 2.39:1 ARRIRAW: 4448 x 1856 4.5K LF 2.39:1 Apple ProRes: 4480 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1 ARRIRAW: 2880 x 2880 2.8K LF 1:1 Apple ProRes: 3072 x 3024 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording File Container Size (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "0f2be5d7-e555-4e44-aa2c-b3bcf90ff699",
+          "normalized_key": "cinema_recording_resolutions",
+          "spec_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080",
+          "raw_value": "4.5K LF 3:2 Open Gate: 4448 x 3096 4.5K LF 2.39:1: 4448 x 1856 4.3K LF 16:9: 3840 x 2160, 1920 x 1080 3.8K LF 16:9: 3840 x 2160, 2048 x 1152, 1920 x 1080 2.8K LF 1:1: 2880 x 2880 3.4K S35 3:2: 3424 x 2202 3.2K S35 16:9: 3200 x 1800 2.8K S35 4:3: 2880 x 2160 2.8K S35 16:9: 1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording File Image Content (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Dynamic Range"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Exposure Index"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Shutter"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "MXF/ARRIRAW MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ",
+          "raw_value": "MXF/ARRIRAW MXF/Apple ProRes 4444 XQ MXF/Apple ProRes 4444 MXF/Apple ProRes 422 HQ",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Formats"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "Codex Compact Drives",
+          "raw_value": "Codex Compact Drives",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Media"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "4.5K LF 3:2 Open Gate: 0.75 - 40 fps 4.5K LF 2.39:1: 0.75 - 60 fps 4.3K LF 16:9: 0.75 - 48 fps 3.8K LF 16:9: 0.75 - 60 fps 2.8K LF 1:1: 0.75 - 60 fps 3.4K S35 3:2: 0.75 - 60 fps 3.2K S35 16:9: 0.75 - 75 fps 2.8K S35 4:3: 0.75 - 75 fps 2.8K S35 16:9: 0.75 - 100 fps",
+          "raw_value": "4.5K LF 3:2 Open Gate: 0.75 - 40 fps 4.5K LF 2.39:1: 0.75 - 60 fps 4.3K LF 16:9: 0.75 - 48 fps 3.8K LF 16:9: 0.75 - 60 fps 2.8K LF 1:1: 0.75 - 60 fps 3.4K S35 3:2: 0.75 - 60 fps 3.2K S35 16:9: 0.75 - 75 fps 2.8K S35 4:3: 0.75 - 75 fps 2.8K S35 16:9: 0.75 - 100 fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Standard real-time recording No Pre-recording No Intervalometer",
+          "raw_value": "Standard real-time recording No Pre-recording No Intervalometer",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Modes"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor",
+          "raw_value": "Multi Viewfinder MVF-2 with 4\" flip-out touchscreen monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "OLED viewfinder display LCD flip-out monitor",
+          "raw_value": "OLED viewfinder display LCD flip-out monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Technology"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "1920 x 1080",
+          "raw_value": "1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Resolution (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "253d36d8-97ec-4825-8aec-9ff57f85ed5d",
+          "normalized_key": "cinema_viewfinder_diopter",
+          "spec_value": "Adjustable from -5 to +5 diopters",
+          "raw_value": "Adjustable from -5 to +5 diopters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Diopter"
+          }
+        },
+        {
+          "spec_definition_id": "8476b8c4-5f3b-4246-9301-bc5c00312017",
+          "normalized_key": "cinema_color_output",
+          "spec_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Color Output"
+          }
+        },
+        {
+          "spec_definition_id": "599b007e-3255-45e1-88c9-3d59d0891eb4",
+          "normalized_key": "cinema_look_control",
+          "spec_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)",
+          "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Look Control"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter",
+          "raw_value": "Four position built-in motorized ND filter: Clear, 0.6, 1.2, 1.8 Fixed optical low pass, UV, IR filter",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Filters"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "1x proprietary signal output for MVF-2 viewfinder on VF CoaXPress connector (video, audio, power, control signals) SDI 1: -HD only, Processed or Clean, with or without a look file applied -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, progessive (p) or progressive segmented frame (psf)) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) SDI 2: -HD or UHD, Clean only, with or without a look file applied, or SDI 1 clone -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, p or psf) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) -6G 422 UHD (SMPTE ST2081-10, up to 30 fps, p) \u201cClean\u201d is an image without surround view or overlays (status, false color, zebra, framelines, etc.) \u201cProcessed\u201d is an image with surround view or overlays.",
+          "raw_value": "1x proprietary signal output for MVF-2 viewfinder on VF CoaXPress connector (video, audio, power, control signals) SDI 1: -HD only, Processed or Clean, with or without a look file applied -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, progessive (p) or progressive segmented frame (psf)) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) SDI 2: -HD or UHD, Clean only, with or without a look file applied, or SDI 1 clone -1.5G 422 HD (SMPTE ST292-1, up to 30 fps, p or psf) -3G 422 HD (SMPTE ST425-1, up to 60 fps, p) -3G 444 HD (SMPTE ST425-3, up to 30 fps, p) -6G 422 UHD (SMPTE ST2081-10, up to 30 fps, p) \u201cClean\u201d is an image without surround view or overlays (status, false color, zebra, framelines, etc.) \u201cProcessed\u201d is an image with surround view or overlays.",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Image Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "b0da14e3-dfc1-4c0a-8e62-ebcda1c35ad2",
+          "normalized_key": "anamorphic_squeeze_factors",
+          "spec_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00",
+          "raw_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Lens Squeeze Factors"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "False Color Zebra Zoom Aperture and Color Peaking",
+          "raw_value": "False Color Zebra Zoom Aperture and Color Peaking",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Exposure and Focus Tools"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "1x LEMO 6pin balanced stereo line in with 12V power output (Line input max. level +24dBu correlating to 0dBFS) Two built-in microphones for scratch audio",
+          "raw_value": "1x LEMO 6pin balanced stereo line in with 12V power output (Line input max. level +24dBu correlating to 0dBFS) Two built-in microphones for scratch audio",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)",
+          "raw_value": "SDI (embedded) 3,5mm stereo headphone jack (on MVF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Output"
+          }
+        },
+        {
+          "spec_definition_id": "4ba02d7f-c219-4fb6-8654-8ab67f1ce7c0",
+          "normalized_key": "cinema_audio_channels",
+          "spec_value": "2 channel linear PCM, 24 bit 48 kHz",
+          "raw_value": "2 channel linear PCM, 24 bit 48 kHz",
+          "numeric_value": 2.0,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Recording"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1{lineBreak}\nCamera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "raw_value": "MVF-2 viewfinder as wired remote control with 10m/33ft cable Camera Control Monitor CCM-1{lineBreak}\nCamera Companion App ARRI Electronic Control System (ECS) Web-based remote control via Ethernet & WiFi (beta version) Camera Access Protocol (CAP) via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Remote Control Options"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "1x LEMO 5pin LTC Timecode In/Out 1x LEMO 10pin Ethernet for remote control and service 1x BNC SYNC IN 1x LEMO 7pin EXT multi purpose accessory interface w. RS pin and 24V power output 1x LEMO 4pin LBUS (on lens mount) for lens motors, daisy chainable 1x USB 2.0 in media bay (for user setups, look files etc)",
+          "raw_value": "1x LEMO 5pin LTC Timecode In/Out 1x LEMO 10pin Ethernet for remote control and service 1x BNC SYNC IN 1x LEMO 7pin EXT multi purpose accessory interface w. RS pin and 24V power output 1x LEMO 4pin LBUS (on lens mount) for lens motors, daisy chainable 1x USB 2.0 in media bay (for user setups, look files etc)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "7d5c5a40-7dfa-49b1-bbc7-a38f199f2a4d",
+          "normalized_key": "cinema_wireless_interfaces",
+          "spec_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control",
+          "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Wireless Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "LPL lens mount with LBUS connector PL-to-LPL adapter EF Mount (LBUS) Leitz M mount (availbale from Leitz)",
+          "raw_value": "LPL lens mount with LBUS connector PL-to-LPL adapter EF Mount (LBUS) Leitz M mount (availbale from Leitz)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Lens Mounts"
+          }
+        },
+        {
+          "spec_definition_id": "7e7fe150-cb2d-454d-aa3a-97f891bcc8bd",
+          "normalized_key": "cinema_flange_focal_distance",
+          "spec_value": "LPL mount: 44 mm with PL-to-LPL adapter: 52 mm",
+          "raw_value": "LPL mount: 44 mm with PL-to-LPL adapter: 52 mm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Flange Focal Depth"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "1x LEMO 8pin (11-34 V DC)",
+          "raw_value": "1x LEMO 8pin (11-34 V DC)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Power Input"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "Around 65 W when recording ARRIRAW at 24 fps with MVF-2 attached (preliminary information)",
+          "raw_value": "Around 65 W when recording ARRIRAW at 24 fps with MVF-2 attached (preliminary information)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x LEMO 7pin EXT 24V power output",
+          "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x LEMO 7pin EXT 24V power output",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Power Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "140 x 143 x 188 mm / 5.5 x 5.6 x 7.4\" (camera body with LPL lens mount)",
+          "raw_value": "140 x 143 x 188 mm / 5.5 x 5.6 x 7.4\" (camera body with LPL lens mount)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Measurements (HxWxL)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "raw_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "3faf42e7-959f-4b14-a2d6-b3b72e158580",
+          "normalized_key": "cinema_sound_level",
+          "spec_value": "< 20 dB(A) at 24fps",
+          "raw_value": "< 20 dB(A) at 24fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "dB",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Sound Level"
+          }
+        },
+        {
+          "spec_definition_id": "070bf843-cebc-42e6-bdfb-9f625f3a91cc",
+          "normalized_key": "cinema_software_licenses",
+          "spec_value": "-",
+          "raw_value": "-",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Software Licenses"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/83566/landscape_ratio1x0_38/1920/737/e0d0c3b14d8089ad5b4420cf2a17ca8d/B78BBB86B355C816619CB86FAA162A51/cr-2019-alexa-mini-lf-product-image-1920x833.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA Mini LF",
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-mini-lf",
+            "section": "Technical Specifications",
+            "label": "Model"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 43,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "alexa-lf",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+        "msrp_usd": null,
+        "primary_image_url": "https://www.arri.com/resource/image/223780/landscape_ratio1x0_38/1920/737/c1043e28d4e92fa3667beb86ababdc23/425EF359B1BCBBDB5E17EB1D1F8A4FA2/alexalf-on-the-set-of-netflix-jingle-jangle-.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/alexa-lf.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 44,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array",
+          "raw_value": "Large Format ARRI ALEV III (A2X) CMOS sensor with Bayer pattern color filter array",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Type"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\"",
+          "raw_value": "4448 x 3096 36.70 x 25.54 mm / 1.444 x 1.005\" \u2300 44.71 mm / 1.760\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Maximum Number of Photosites and Size"
+          }
+        },
+        {
+          "spec_definition_id": "3dc6c0f1-292e-44e5-817d-c532a9ba601d",
+          "normalized_key": "cinema_max_fps",
+          "spec_value": "0.75 - 150 fps",
+          "raw_value": "0.75 - 150 fps",
+          "numeric_value": 0.75,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "\u223c7.8 kg / \u223c17.2 lbs (camera body with LPL lens mount)",
+          "raw_value": "\u223c7.8 kg / \u223c17.2 lbs (camera body with LPL lens mount)",
+          "numeric_value": 7.8,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Weight"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "8.25 \u03bcm",
+          "raw_value": "8.25 \u03bcm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Photosite Pitch"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 3840 x 2160 LF 16:9 ProRes 2K: 3840 x 2160 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "raw_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 3840 x 2160 LF 16:9 ProRes 2K: 3840 x 2160 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (photosites)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "LF Open Gate ProRes 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF Open Gate ARRIRAW 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF 16:9 ProRes HD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes 2K: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ARRIRAW UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 2.39:1 ProRes 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\" LF 2.39:1 ARRIRAW 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\"",
+          "raw_value": "LF Open Gate ProRes 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF Open Gate ARRIRAW 4.5K: 36.70 x 25.54 mm / 1.445 x 1.006\" LF 16:9 ProRes HD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes 2K: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ProRes UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 16:9 ARRIRAW UHD: 31.68 x 17.82 mm / 1.247 x 0.702\" LF 2.39:1 ProRes 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\" LF 2.39:1 ARRIRAW 4.5K: 36.70 x 15.31 mm / 1.445 x 0.603\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (dimensions)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "LF Open Gate ProRes 4.5K: 4480 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4480 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "raw_value": "LF Open Gate ProRes 4.5K: 4480 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4480 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording File Container Size (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "0f2be5d7-e555-4e44-aa2c-b3bcf90ff699",
+          "normalized_key": "cinema_recording_resolutions",
+          "spec_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "raw_value": "LF Open Gate ProRes 4.5K: 4448 x 3096 LF Open Gate ARRIRAW 4.5K: 4448 x 3096 LF 16:9 ProRes HD: 1920 x 1080 LF 16:9 ProRes 2K: 2048 x 1152 LF 16:9 ProRes UHD: 3840 x 2160 LF 16:9 ARRIRAW UHD: 3840 x 2160 LF 2.39:1 ProRes 4.5K: 4448 x 1856 LF 2.39:1 ARRIRAW 4.5K: 4448 x 1856",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording File Image Content (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Dynamic Range"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Exposure Index"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Electronic shutter, 5.0\u00b0- 358\u00b0",
+          "raw_value": "Electronic shutter, 5.0\u00b0- 358\u00b0",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Shutter"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "ARRIRAW (.ari) Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422",
+          "raw_value": "ARRIRAW (.ari) Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Formats"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "SXR Capture Drives SxS PRO+ Cards",
+          "raw_value": "SXR Capture Drives SxS PRO+ Cards",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Media"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "LF Open Gate ProRes 4.5K: 0.75 - 60 fps LF Open Gate ARRIRAW 4.5K: 0.75 - 90 fps LF 16:9 ProRes HD: 0.75 - 60 fps LF 16:9 ProRes 2K: 0.75 - 60 fps LF 16:9 ProRes UHD: 0.75 - 60 fps LF 16:9 ARRIRAW UHD: 0.75 - 90 fps LF 2.39:1 ProRes 4.5K: 0.75 - 100 fps LF 2.39:1 ARRIRAW 4.5K: 0.75 - 150 fps",
+          "raw_value": "LF Open Gate ProRes 4.5K: 0.75 - 60 fps LF Open Gate ARRIRAW 4.5K: 0.75 - 90 fps LF 16:9 ProRes HD: 0.75 - 60 fps LF 16:9 ProRes 2K: 0.75 - 60 fps LF 16:9 ProRes UHD: 0.75 - 60 fps LF 16:9 ARRIRAW UHD: 0.75 - 90 fps LF 2.39:1 ProRes 4.5K: 0.75 - 100 fps LF 2.39:1 ARRIRAW 4.5K: 0.75 - 150 fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Standard real-time recording No Pre-recording No Intervalometer",
+          "raw_value": "Standard real-time recording No Pre-recording No Intervalometer",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Recording Modes"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Electronic Viewfinder EVF-1 with 235 eyepiece Electronic Viewfinder EVF-2 with ARRICAM eyepiece",
+          "raw_value": "Electronic Viewfinder EVF-1 with 235 eyepiece Electronic Viewfinder EVF-2 with ARRICAM eyepiece",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "EVF-1: F-LCOS viewfinder display EVF-2: OLED viewfinder display",
+          "raw_value": "EVF-1: F-LCOS viewfinder display EVF-2: OLED viewfinder display",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Technology"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "EVF-1: 1280 x 784 EVF-2: 1920 x 1080",
+          "raw_value": "EVF-1: 1280 x 784 EVF-2: 1920 x 1080",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Resolution (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "253d36d8-97ec-4825-8aec-9ff57f85ed5d",
+          "normalized_key": "cinema_viewfinder_diopter",
+          "spec_value": "Adjustable from -5 to +5 diopters",
+          "raw_value": "Adjustable from -5 to +5 diopters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Diopter"
+          }
+        },
+        {
+          "spec_definition_id": "8476b8c4-5f3b-4246-9301-bc5c00312017",
+          "normalized_key": "cinema_color_output",
+          "spec_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Color Output"
+          }
+        },
+        {
+          "spec_definition_id": "599b007e-3255-45e1-88c9-3d59d0891eb4",
+          "normalized_key": "cinema_look_control",
+          "spec_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)",
+          "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Look Control"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 100K steps Color correction adjustable range from -12 to +12 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 100K steps Color correction adjustable range from -12 to +12 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Manual behind the lens FSND filters: Optical Clear, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4 Fixed optical low pass, UV, IR filter",
+          "raw_value": "Manual behind the lens FSND filters: Optical Clear, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4 Fixed optical low pass, UV, IR filter",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Filters"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "1x proprietary signal output for EVF-1/EVF-2 viewfinder 4x MON OUT: 1,5G (SMPTE ST292-1) and 6G (SMPTE ST2081-10) uncompressed HD video with embedded audio and metadata,",
+          "raw_value": "1x proprietary signal output for EVF-1/EVF-2 viewfinder 4x MON OUT: 1,5G (SMPTE ST292-1) and 6G (SMPTE ST2081-10) uncompressed HD video with embedded audio and metadata,",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Image Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "b0da14e3-dfc1-4c0a-8e62-ebcda1c35ad2",
+          "normalized_key": "anamorphic_squeeze_factors",
+          "spec_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00",
+          "raw_value": "1.00, 1.25, 1.30, 1.50, 1.65, 1.80, 2.00",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Lens Squeeze Factors"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "False Color Peaking Zoom",
+          "raw_value": "False Color Peaking Zoom",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Exposure and Focus Tools"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "1x XLR 5pin balanced stereo line in (Line input max. level +24dBu correlating to 0dBFS)",
+          "raw_value": "1x XLR 5pin balanced stereo line in (Line input max. level +24dBu correlating to 0dBFS)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "3,5mm stereo headphone jack SDI (embedded)",
+          "raw_value": "3,5mm stereo headphone jack SDI (embedded)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Output"
+          }
+        },
+        {
+          "spec_definition_id": "4ba02d7f-c219-4fb6-8654-8ab67f1ce7c0",
+          "normalized_key": "cinema_audio_channels",
+          "spec_value": "2 channel linear PCM, 24 bit 48 kHz",
+          "raw_value": "2 channel linear PCM, 24 bit 48 kHz",
+          "numeric_value": 2.0,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Audio Recording"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet WCU-4 hand-unit with control over lens motors and operational parameters via built-in white radio Remote Control Unit RCU-4 via Ethernet",
+          "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet WCU-4 hand-unit with control over lens motors and operational parameters via built-in white radio Remote Control Unit RCU-4 via Ethernet",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Remote Control Options"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "1x LEMO 5pin LTC Timecode In/Out 1x BNC SDI Return In 1x LEMO 16pin EXT for accessories and sync 1x LEMO 10pin Ethernet for remote control and sync 1x SD Card (for user setups, look files etc) 3x Fischer 12pin connectors for CLM lens motors 2x Fischer 5pin LCS Lens Control System connectors for hand units",
+          "raw_value": "1x LEMO 5pin LTC Timecode In/Out 1x BNC SDI Return In 1x LEMO 16pin EXT for accessories and sync 1x LEMO 10pin Ethernet for remote control and sync 1x SD Card (for user setups, look files etc) 3x Fischer 12pin connectors for CLM lens motors 2x Fischer 5pin LCS Lens Control System connectors for hand units",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "7d5c5a40-7dfa-49b1-bbc7-a38f199f2a4d",
+          "normalized_key": "cinema_wireless_interfaces",
+          "spec_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control Built-in Wireless Video System: 1920 x 1080, range 600m (2,000 ft) line of sight, OFDM (Orthogonal Frequency-Division Multiplexing) Bandwidth 40MHz, latency <1ms",
+          "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in White Radio for ARRI lens and camera remote control Built-in Wireless Video System: 1920 x 1080, range 600m (2,000 ft) line of sight, OFDM (Orthogonal Frequency-Division Multiplexing) Bandwidth 40MHz, latency <1ms",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Wireless Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "LPL lens mount PL lens mount",
+          "raw_value": "LPL lens mount PL lens mount",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Lens Mounts"
+          }
+        },
+        {
+          "spec_definition_id": "7e7fe150-cb2d-454d-aa3a-97f891bcc8bd",
+          "normalized_key": "cinema_flange_focal_distance",
+          "spec_value": "LPL mount: 44 mm PL mount: 52 mm",
+          "raw_value": "LPL mount: 44 mm PL mount: 52 mm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Flange Focal Depth"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "1x Fischer 2pin BAT connector (18.5-34 V DC) 1x On-board battery interface (19.5-34 V DC)",
+          "raw_value": "1x Fischer 2pin BAT connector (18.5-34 V DC) 1x On-board battery interface (19.5-34 V DC)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Power Input"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "ca. 120 W (recording ProRes 4444 at 24 fps in LF 16:9 sensor mode onto an SxS PRO+ 256 GB card with EVF-1 and wireless video on but without accessories) ca. 160 W (recording ARRIRAW at 90 fps in LF Open Gate sensor mode onto an SXR Capture Drive 2 TB with EVF-1 and wireless video on but without\naccessories)",
+          "raw_value": "ca. 120 W (recording ProRes 4444 at 24 fps in LF 16:9 sensor mode onto an SxS PRO+ 256 GB card with EVF-1 and wireless video on but without accessories) ca. 160 W (recording ARRIRAW at 90 fps in LF Open Gate sensor mode onto an SXR Capture Drive 2 TB with EVF-1 and wireless video on but without\naccessories)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "4x Fischer 3pin 24V RS 1x LEMO 2pin 12V",
+          "raw_value": "4x Fischer 3pin 24V RS 1x LEMO 2pin 12V",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Power Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "158 x 201 x 351 mm / 6.22 x 7.91 x 14.33\" (camera body with LPL lens mount)",
+          "raw_value": "158 x 201 x 351 mm / 6.22 x 7.91 x 14.33\" (camera body with LPL lens mount)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Measurements (HxWxL)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing",
+          "raw_value": "-20\u00b0 C to +45\u00b0 C / -4\u00b0 F to +113\u00b0 F @ 95% relative humidity max, non condensing",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "3faf42e7-959f-4b14-a2d6-b3b72e158580",
+          "normalized_key": "cinema_sound_level",
+          "spec_value": "< 20 dB(A) at 24fps",
+          "raw_value": "< 20 dB(A) at 24fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "dB",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Sound Level"
+          }
+        },
+        {
+          "spec_definition_id": "070bf843-cebc-42e6-bdfb-9f625f3a91cc",
+          "normalized_key": "cinema_software_licenses",
+          "spec_value": "-",
+          "raw_value": "-",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Software Licenses"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/223780/landscape_ratio1x0_38/1920/737/c1043e28d4e92fa3667beb86ababdc23/425EF359B1BCBBDB5E17EB1D1F8A4FA2/alexalf-on-the-set-of-netflix-jingle-jangle-.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "ALEXA LF",
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/alexa-lf",
+            "section": "Technical Specifications",
+            "label": "Model"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 43,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    },
+    {
+      "product": {
+        "brand_slug": "arri",
+        "category_slug": "cinema-cameras",
+        "product_type": "camera",
+        "slug": "amira",
+        "manufacturer_url": "https://www.arri.com/en/camera-systems/cameras/amira",
+        "msrp_usd": null,
+        "primary_image_url": "https://www.arri.com/resource/image/33916/landscape_ratio1x0_38/1920/737/90123bcf69e3bf5f9549d80209b40075/902F6A544FCACBE2AA88B0B4C4BD8E00/amira-product-image.jpg"
+      },
+      "extraction": {
+        "raw_html_path": "data/company_product/arri/processed_data/camera/raw_html/amira.html",
+        "errors": [],
+        "completeness": {
+          "total_sections": 1,
+          "total_attributes": 44,
+          "tables_found": 0,
+          "pdf_urls_found": 0,
+          "meets_min_sections": true,
+          "meets_min_attributes": true,
+          "needs_pdf": false,
+          "score": 1.0
+        }
+      },
+      "spec_records": [
+        {
+          "spec_definition_id": "0d822c84-1154-4198-b087-ebb29a080493",
+          "normalized_key": "cinema_sensor_type",
+          "spec_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array",
+          "raw_value": "Super 35 format ARRI ALEV III CMOS sensor with Bayer pattern color filter array",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sensor Type"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\"",
+          "raw_value": "3200 x 1800 26.40 x 14.85 mm / 1.039 x 0.585\" \u2300 30.29 mm / 1.193\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sensor Maximum Number of Photosites and Size"
+          }
+        },
+        {
+          "spec_definition_id": "3dc6c0f1-292e-44e5-817d-c532a9ba601d",
+          "normalized_key": "cinema_max_fps",
+          "spec_value": "0.75 - 200 fps",
+          "raw_value": "0.75 - 200 fps",
+          "numeric_value": 0.75,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sensor Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "548b2527-9d02-4823-b29c-8f054d1f9e3d",
+          "normalized_key": "cinema_weight",
+          "spec_value": "\u223c4.1 kg / \u223c9.2 lbs (camera body with PL lens mount)",
+          "raw_value": "\u223c4.1 kg / \u223c9.2 lbs (camera body with PL lens mount)",
+          "numeric_value": 4.1,
+          "boolean_value": null,
+          "unit_used": "g",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Weight"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "8.25 \u03bcm",
+          "raw_value": "8.25 \u03bcm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Photosite Pitch"
+          }
+        },
+        {
+          "spec_definition_id": "790a10bc-4cef-46da-9f3a-8c4f8bf2b2b9",
+          "normalized_key": "cinema_sensor_dimensions",
+          "spec_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "S16 HD: 1600 x 900 HD: 2880 x 1620 2K: 2868 x 1612 3.2K: 3200 x 1800 4K UHD: 3200 x 1800 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (photosites)"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\"",
+          "raw_value": "S16 HD: 13.20 x 7.43 mm / 0.520 x 0.292\" HD: 23.76 x 13.37 mm / 0.935 x 0.526\" 2K: 23.66 x 13.30 mm / 0.932 x 0.524\" 3.2K: 26.40 x 14.85 mm / 1.039 x 0.585\" 4K UHD: 26.40 x 14.85 mm / 1.039 x 0.585\" ARRIRAW 16:9 2.8K: 23.76 x 13.37 mm / 0.935 x 0.526\"",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sensor Active Image Area (dimensions)"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "S16 HD: 1920 x 1080 HD: 1920 x 1080 2K: 2048 x 1152 3.2K: 3200 x 1800 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording File Container Size (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "0f2be5d7-e555-4e44-aa2c-b3bcf90ff699",
+          "normalized_key": "cinema_recording_resolutions",
+          "spec_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "raw_value": "ProRes S16 HD: 1920 x 1080 ProRes HD: 1920 x 1080 ProRes 2K: 2048 x 1152 ProRes 3.2K: 3200 x 1800 ProRes 4K UHD: 3840 x 2160 ARRIRAW 16:9 2.8K: 2880 x 1620",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording File Image Content (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "a3d4f310-ff2c-4b76-bf0d-623df4700854",
+          "normalized_key": "cinema_dynamic_range",
+          "spec_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "raw_value": "14+ stops over the entire sensitivity range from EI 160 to EI 3200 as measured with the ARRI Dynamic Range Test Chart (DRTC-1)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "stops",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Dynamic Range"
+          }
+        },
+        {
+          "spec_definition_id": "f5c624f1-f948-46d2-9e28-6a72a5f6ee30",
+          "normalized_key": "cinema_base_iso",
+          "spec_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "raw_value": "Adjustable from EI 160-3200 in 1/3 stops EI 800 base sensitivity",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Exposure Index"
+          }
+        },
+        {
+          "spec_definition_id": "555ba5f6-858a-41c5-8056-99ea8e33a3cb",
+          "normalized_key": "cinema_shutter",
+          "spec_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "raw_value": "Electronic shutter, 5.0\u00b0- 356\u00b0 or 1s - 1/8000s",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Shutter"
+          }
+        },
+        {
+          "spec_definition_id": "065968c5-3e74-45bf-8c3a-0bfe4bde0323",
+          "normalized_key": "cinema_recording_formats",
+          "spec_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD",
+          "raw_value": "MXF/ARRIRAW Apple ProRes 4444 XQ Apple ProRes 4444 Apple ProRes 422 HQ Apple ProRes 422 Apple ProRes 422 LT MPEG-2 HD",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording Formats"
+          }
+        },
+        {
+          "spec_definition_id": "d2e9ef17-eab1-43ef-8af1-5fe3811ffab1",
+          "normalized_key": "cinema_recording_media",
+          "spec_value": "CFast 2.0 Cards",
+          "raw_value": "CFast 2.0 Cards",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording Media"
+          }
+        },
+        {
+          "spec_definition_id": "bd6764c6-6758-485f-8219-5300ac1eb655",
+          "normalized_key": "cinema_recording_frame_rates",
+          "spec_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps",
+          "raw_value": "ProRes HD: 0.75 - 200 fps ProRes S16 HD: 0.75 - 200 fps ProRes 2K: 0.75 - 200 fps ProRes 3.2K: 0.75 - 60 fps ProRes UHD: 0.75 - 60 fps MFX/ARRIRAW 16:9 2.8K: 0.75 - 48 fps MPEG-2 HD: 23.976 - 59.94 fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "fps",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording Frame Rates"
+          }
+        },
+        {
+          "spec_definition_id": "abfd5c94-8358-49fb-a453-57bbcf0d71a3",
+          "normalized_key": "cinema_recording_modes",
+          "spec_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion",
+          "raw_value": "Standard real-time recording Pre-recording Intervalometer Stop Motion",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Recording Modes"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1",
+          "raw_value": "Multi Viewfinder MVF-1 with 3,2\" flip-out monitor Camera Control Panel (CCP-1) with option to daisy-chain MVF-1",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Type"
+          }
+        },
+        {
+          "spec_definition_id": "ad05991a-466a-453d-bcf9-06a8832eef16",
+          "normalized_key": "cinema_viewfinder_type",
+          "spec_value": "OLED viewfinder display LCD flip-out monitor",
+          "raw_value": "OLED viewfinder display LCD flip-out monitor",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Technology"
+          }
+        },
+        {
+          "spec_definition_id": "e8fcbb08-d843-4a85-a181-afb97af77537",
+          "normalized_key": "cinema_viewfinder_resolution",
+          "spec_value": "1280 x 720",
+          "raw_value": "1280 x 720",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Resolution (pixel)"
+          }
+        },
+        {
+          "spec_definition_id": "253d36d8-97ec-4825-8aec-9ff57f85ed5d",
+          "normalized_key": "cinema_viewfinder_diopter",
+          "spec_value": "Adjustable from -5 to +5 diopters",
+          "raw_value": "Adjustable from -5 to +5 diopters",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Viewfinder Diopter"
+          }
+        },
+        {
+          "spec_definition_id": "8476b8c4-5f3b-4246-9301-bc5c00312017",
+          "normalized_key": "cinema_color_output",
+          "spec_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "raw_value": "Rec 709 Rec 2020 Log C Custom Look (ARRI Look File ALF-2)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Color Output"
+          }
+        },
+        {
+          "spec_definition_id": "599b007e-3255-45e1-88c9-3d59d0891eb4",
+          "normalized_key": "cinema_look_control",
+          "spec_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library",
+          "raw_value": "Import of custom 3D LUT ASC CDL parameters (slope, offset, power, saturation) Knee, gamma, saturation, black gamma, saturation by hue Support of ARRI Look Library",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Look Control"
+          }
+        },
+        {
+          "spec_definition_id": "da150315-5ba2-4346-b0da-9e5a0e2f8935",
+          "normalized_key": "cinema_white_balance",
+          "spec_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "raw_value": "Manual and auto white balance, adjustable from 2000K to 11000K in 10K steps Color correction adjustable range from -16 to +16 CC 1 CC corresponds to 035 Kodak CC values or 1/8 Rosco values",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "White Balance"
+          }
+        },
+        {
+          "spec_definition_id": "72337e79-76f7-4cfe-99d9-befe9ed19f06",
+          "normalized_key": "cinema_filters",
+          "spec_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter",
+          "raw_value": "Built-in motorized ND filters 0.6, 1.2, 2.1 Fixed optical low pass, UV, IR filter",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Filters"
+          }
+        },
+        {
+          "spec_definition_id": "557e884f-9626-4ee4-8141-ed97871f5a9a",
+          "normalized_key": "cinema_image_outputs",
+          "spec_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata",
+          "raw_value": "1x proprietary signal output for MVF-1 viewfinder 2x SDI Out: 1,5G (SMPTE ST292-1), 3G (SMPTE ST425-1, ST425-3), 6G & DL 6G (SMPTE ST2081-10, ST2081-11) uncompressed video with embedded audio and metadata",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Image Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "b0da14e3-dfc1-4c0a-8e62-ebcda1c35ad2",
+          "normalized_key": "anamorphic_squeeze_factors",
+          "spec_value": "1.00, 1.30",
+          "raw_value": "1.00, 1.30",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Lens Squeeze Factors"
+          }
+        },
+        {
+          "spec_definition_id": "d821e1c7-bc66-46bc-a2c0-670a3be353b3",
+          "normalized_key": "cinema_exposure_tools",
+          "spec_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking",
+          "raw_value": "False Color Zebra Zoom Waveform Aperture and Color Peaking",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Exposure and Focus Tools"
+          }
+        },
+        {
+          "spec_definition_id": "a0894f2c-9512-47cf-8bf9-36d1e7841b2a",
+          "normalized_key": "cinema_audio_input",
+          "spec_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track",
+          "raw_value": "2x XLR 3pin Mic/Line Input with 48V Phantom Power, switchable to AES3 1x XLR 5pin Mic/Line Input with 48V Phantom Power (Line input max. level +24dBu correlating to 0dBFS) Bluetooth whisper track",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Audio Input"
+          }
+        },
+        {
+          "spec_definition_id": "223bfbed-c1e2-4331-9cac-e56981835f90",
+          "normalized_key": "cinema_audio_output",
+          "spec_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)",
+          "raw_value": "3,5mm stereo headphone jack Bluetooth audio SDI (embedded)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Audio Output"
+          }
+        },
+        {
+          "spec_definition_id": "4ba02d7f-c219-4fb6-8654-8ab67f1ce7c0",
+          "normalized_key": "cinema_audio_channels",
+          "spec_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track",
+          "raw_value": "4 channel linear PCM, 24 bit 48 kHz 1 channel Bluetooth whisper track",
+          "numeric_value": 4.0,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Audio Recording"
+          }
+        },
+        {
+          "spec_definition_id": "0380f7e5-bf23-407a-bbe3-9ba8f3b42260",
+          "normalized_key": "cinema_remote",
+          "spec_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "raw_value": "Web-based remote control from phones, tablets and laptops via WiFi & Ethernet Camera Access Protocol via Ethernet & WiFi GPIO interface for integration with custom control interfaces",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Remote Control Options"
+          }
+        },
+        {
+          "spec_definition_id": "1bc62dc7-1355-4eac-846e-cd20116a4666",
+          "normalized_key": "cinema_interfaces",
+          "spec_value": "1x BNC LTC Timecode In/Out 1x BNC SDI Ret/Sync In (opt. separate analog Genlock In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 1x RJ45 Ethernet for remote control and service 2x USB 2.0 (for user setups, look files etc)",
+          "raw_value": "1x BNC LTC Timecode In/Out 1x BNC SDI Ret/Sync In (opt. separate analog Genlock In) 1x LEMO 6pin EXT multi purpose accessory interface 1x Hirose 12pin (on PL lens mount) 1x RJ45 Ethernet for remote control and service 2x USB 2.0 (for user setups, look files etc)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "7d5c5a40-7dfa-49b1-bbc7-a38f199f2a4d",
+          "normalized_key": "cinema_wireless_interfaces",
+          "spec_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module",
+          "raw_value": "Built-in WiFi module (IEEE 802.11b/g) Built-in Bluetooth module",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Wireless Interfaces"
+          }
+        },
+        {
+          "spec_definition_id": "fab638eb-11ef-4e21-b8ab-25feec287a0f",
+          "normalized_key": "cinema_lens_mount",
+          "spec_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount",
+          "raw_value": "PL lens mount with Hirose connector and LDS EF lens mount B4 lens mount with Hirose connector LPL lens mount with LBUS connector Leitz Cine Wetzlar M lens mount",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Lens Mounts"
+          }
+        },
+        {
+          "spec_definition_id": "7e7fe150-cb2d-454d-aa3a-97f891bcc8bd",
+          "normalized_key": "cinema_flange_focal_distance",
+          "spec_value": "PL mount: 52 mm LPL mount: 44 mm",
+          "raw_value": "PL mount: 52 mm LPL mount: 44 mm",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "mm",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Flange Focal Depth"
+          }
+        },
+        {
+          "spec_definition_id": "3ab3c653-288d-4c15-9093-9fe67f5e6286",
+          "normalized_key": "cinema_power_input",
+          "spec_value": "1x LEMO 8pin (10.5-34 V DC) 1x On-board battery interface (10.5-24 V DC)",
+          "raw_value": "1x LEMO 8pin (10.5-34 V DC) 1x On-board battery interface (10.5-24 V DC)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Power Input"
+          }
+        },
+        {
+          "spec_definition_id": "934b8d96-e2c8-466a-95a4-5e70ca757cd9",
+          "normalized_key": "cinema_power_draw",
+          "spec_value": "min. 52 W max. 84 W (Camera body with MVF-1)",
+          "raw_value": "min. 52 W max. 84 W (Camera body with MVF-1)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "W",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Power Consumption"
+          }
+        },
+        {
+          "spec_definition_id": "9f0b9bcb-d76f-4e17-a8e4-6f4592c5e697",
+          "normalized_key": "cinema_power_outputs",
+          "spec_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V",
+          "raw_value": "1x Fischer 3pin 24V RS 1x LEMO 2pin 12V 1x Hirose 4pin 12V 1x LEMO 6pin EXT 24V",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Power Outputs"
+          }
+        },
+        {
+          "spec_definition_id": "973b8de8-79cc-42c0-b9de-9fb2ac7315d1",
+          "normalized_key": "cinema_dimensions",
+          "spec_value": "149 x 139 x 309 mm / 5.8 x 5.4 x 12.1\" (camera body with PL lens mount)",
+          "raw_value": "149 x 139 x 309 mm / 5.8 x 5.4 x 12.1\" (camera body with PL lens mount)",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Measurements (HxWxL)"
+          }
+        },
+        {
+          "spec_definition_id": "f3ebabc3-f5f3-445e-a79d-408ec8a5a026",
+          "normalized_key": "cinema_operating_temp",
+          "spec_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "raw_value": "-20\u00b0 C to +50\u00b0 C / -4\u00b0 F to +122\u00b0 F @ 95% relative humidity max, non condensing, splash and dust proof through sealed electronics",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Operating Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "d513d817-0c38-4df9-a400-31ff2d568b6c",
+          "normalized_key": "cinema_storage_temp",
+          "spec_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "raw_value": "-30\u00b0 C to +70\u00b0 C / -22\u00b0 F to +158\u00b0 F",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Storage Temperature"
+          }
+        },
+        {
+          "spec_definition_id": "3faf42e7-959f-4b14-a2d6-b3b72e158580",
+          "normalized_key": "cinema_sound_level",
+          "spec_value": "< 20 dB(A) at 24fps",
+          "raw_value": "< 20 dB(A) at 24fps",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": "dB",
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Sound Level"
+          }
+        },
+        {
+          "spec_definition_id": "070bf843-cebc-42e6-bdfb-9f625f3a91cc",
+          "normalized_key": "cinema_software_licenses",
+          "spec_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key",
+          "raw_value": "AMIRA Advanced License Key AMIRA Premium License Key AMIRA 4K UHD License Key AMIRA ARRIRAW License Key ARRI Look Library License Key",
+          "numeric_value": null,
+          "boolean_value": null,
+          "unit_used": null,
+          "extraction_confidence": 0.9,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Software Licenses"
+          }
+        }
+      ],
+      "table_records": [],
+      "matrix_records": [],
+      "documents": [],
+      "images": [
+        {
+          "url": "https://www.arri.com/resource/image/33916/landscape_ratio1x0_38/1920/737/90123bcf69e3bf5f9549d80209b40075/902F6A544FCACBE2AA88B0B4C4BD8E00/amira-product-image.jpg",
+          "kind": "primary",
+          "sort_order": 0,
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira"
+          },
+          "raw_metadata": {}
+        }
+      ],
+      "unmapped": [
+        {
+          "section": "Technical Specifications",
+          "label": "Model",
+          "raw_value": "AMIRA",
+          "source": {
+            "type": "web",
+            "url": "https://www.arri.com/en/camera-systems/cameras/amira",
+            "section": "Technical Specifications",
+            "label": "Model"
+          }
+        }
+      ],
+      "run_summary": {
+        "mapped_count": 43,
+        "unmapped_count": 1,
+        "tables_count": 0,
+        "documents_count": 0,
+        "images_count": 1
+      },
+      "needs_pdf": false,
+      "needs_pdf_reasons": []
+    }
+  ],
+  "pdf_queue": []
+}

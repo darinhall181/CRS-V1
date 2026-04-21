@@ -1,0 +1,25 @@
+import importlib
+from types import ModuleType
+from typing import Dict, Tuple
+
+
+_PLUGIN_IMPORT_PATHS: Dict[Tuple[str, str], str] = {
+    ("canon", "camera"):      "agents.spec_pipeline.product.camera.canon.plugin",
+    ("canon", "lens"):        "agents.spec_pipeline.product.lens.canon.plugin",
+    ("arri", "camera"):       "agents.spec_pipeline.product.camera.arri.plugin",
+    ("sony", "camera"):       "agents.spec_pipeline.product.camera.sony.plugin",
+    ("red", "camera"):        "agents.spec_pipeline.product.camera.red.plugin",
+    ("blackmagic", "camera"): "agents.spec_pipeline.product.camera.blackmagic.plugin",
+    ("cooke", "lens"):        "agents.spec_pipeline.product.lens.cooke.plugin",
+    ("zeiss", "lens"):        "agents.spec_pipeline.product.lens.zeiss.plugin",
+    ("angenieux", "lens"):    "agents.spec_pipeline.product.lens.angenieux.plugin",
+}
+
+
+def load_plugin(brand_slug: str, product_type: str) -> ModuleType:
+    key = ((brand_slug or "").lower(), (product_type or "").lower())
+    if key not in _PLUGIN_IMPORT_PATHS:
+        known = ", ".join([f"{b}:{t}" for (b, t) in sorted(_PLUGIN_IMPORT_PATHS.keys())])
+        raise ValueError(f"Unknown plugin {key[0]}:{key[1]}. Known: {known}")
+    return importlib.import_module(_PLUGIN_IMPORT_PATHS[key])
+
