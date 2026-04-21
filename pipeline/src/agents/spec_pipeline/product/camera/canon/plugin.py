@@ -45,10 +45,8 @@ EXTRACTION_CONFIG = ExtractionConfig(
     product_type=PRODUCT_TYPE,
     headless=False,
     max_products=15,  # full Canon mirrorless set from discovery
-    # Use your existing Canon HTML cache first.
-    html_cache_dir="data/company_product/canon/raw_html",
-    cache_only=True,
-    # If web fallback is needed later, set cache_only=False.
+    html_cache_dir="data/company_product/canon/processed_data/camera/raw_html",
+    cache_only=False,
     raw_html_dir="data/company_product/canon/processed_data/camera/raw_html",
     output_path="data/company_product/canon/processed_data/camera/extractions.json",
     # Completeness heuristics (used to decide if we likely need PDF fallback)
