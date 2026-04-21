@@ -116,7 +116,7 @@ product               → product_document (PDF URLs, download later)
 
 ### Prerequisites
 - Docker (for local Supabase)
-- Python venv at `~/Documents/VirtualEnvironments/altoscope/`
+- Python venv at `~/Environments/altoscope/`
 
 ### Start local Supabase
 ```bash
@@ -132,7 +132,7 @@ supabase db push --include-all
 
 ### Activate Python environment
 ```fish
-source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish
+source ~/Environments/altoscope/bin/activate.fish
 ```
 
 ### Run the pipeline

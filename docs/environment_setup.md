@@ -4,15 +4,15 @@ This document explains the different approaches for setting up and managing the 
 
 ## Option 1: Virtual Environment with Custom Location (Current Setup)
 
-The active environment lives at `~/Documents/VirtualEnvironments/altoscope/`.
+The active environment lives at `~/Environments/altoscope/`.
 
 ### Activation
 ```bash
 # fish shell (current)
-source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish
+source ~/Environments/altoscope/bin/activate.fish
 
 # bash / zsh
-source ~/Documents/VirtualEnvironments/altoscope/bin/activate
+source ~/Environments/altoscope/bin/activate
 ```
 
 ### Setup from scratch
@@ -125,20 +125,20 @@ export DATABASE_URL='postgresql://postgres:<password>@db.<project_ref>.supabase.
 ## Common Locations
 
 The current active environment:
-- `~/Documents/VirtualEnvironments/altoscope/` ← **use this one**
+- `~/Environments/altoscope/` ← **use this one**
 
 Legacy name (no longer used):
-- `~/Documents/VirtualEnvironments/website_scraper_env/` (old name, can be deleted)
+- `~/Environments/website_scraper_env/` (old name, can be deleted)
 
 ## Troubleshooting
 
 ### Environment Not Found
 ```bash
 # Check if environment exists
-ls -la ~/Documents/VirtualEnvironments/altoscope/
+ls -la ~/Environments/altoscope/
 
 # Recreate if needed
-export ENV_PATH=~/Documents/VirtualEnvironments
+export ENV_PATH=~/Environments
 ./scripts/setup_env.sh
 ```
 

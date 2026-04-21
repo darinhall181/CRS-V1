@@ -32,9 +32,9 @@ This file serves as a historical record of all implementation work completed for
    - **[📋]**: Planning/Research
 
 **Miscellaneous**
-- **Virtual Environment**: Always run tasks within the virtual environment at `/Users/darinhall/Documents/VirtualEnvironments/altoscope/`
-  - fish shell: `source ~/Documents/VirtualEnvironments/altoscope/bin/activate.fish`
-  - bash/zsh: `source ~/Documents/VirtualEnvironments/altoscope/bin/activate`
+- **Virtual Environment**: Always run tasks within the virtual environment at `~/Environments/altoscope/`
+  - fish shell: `source ~/Environments/altoscope/bin/activate.fish`
+  - bash/zsh: `source ~/Environments/altoscope/bin/activate`
 
 
 ## Master Task List
