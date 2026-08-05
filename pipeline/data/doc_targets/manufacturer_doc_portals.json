@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "purpose": "Seed config for PDF/document discovery. Entry points are support/download portals, NOT product marketing pages. Feed these to a doc-discovery stage alongside the existing product-page discovery.",
+    "authority_levels": {
+      "1": "tech_data_sheet / dimensional_drawing / mount_or_compatibility_note — authoritative, extract to structured specs",
+      "2": "user_manual / operation_guide — authoritative, dense, good for edge cases (power draw, media, metadata protocols)",
+      "3": "firmware_release_notes / white_paper — authoritative for behavior changes over time",
+      "4": "brochure / catalog — partial specs, marketing framing; embed but do not treat as spec source of truth"
+    },
+    "verified": "2026-07-30 via web search; entries marked verify_url=true need a manual check before scraping",
+    "etiquette": "Respect robots.txt, keep existing delay_min/delay_max patterns, cache aggressively, dedupe by sha256 before parsing"
+  },
+  "targets": [
+    {
+      "brand_slug": "arri",
+      "categories": ["camera", "lens", "accessory"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://www.arri.com/en/learn-help/learn-help-camera-system/technical-downloads", "kind": "tech_downloads_hub", "notes": "Central hub: tech data sheets, white papers, flange/mount docs. Highest-value single page in the industry."},
+        {"url": "https://www.arri.com/en/learn-help/arri-camera-technology/lens-mounts-and-lds-2", "kind": "compatibility_reference", "notes": "Lens mounts + LDS-2 protocol reference — directly feeds mount check."}
+      ],
+      "pdf_url_pattern": "arri.com/resource/blob/.*-data\\.pdf",
+      "notes": "Lens series also have per-series '.../technical-data' HTML pages (already partially covered by product scraper). PDF blobs are stable-URL and trivially fetchable once discovered."
+    },
+    {
+      "brand_slug": "red",
+      "categories": ["camera"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://www.red.com/downloads", "kind": "downloads_by_product", "notes": "Downloads organized by product; operation guides + firmware release notes."}
+      ],
+      "pdf_url_pattern": "docs\\.red\\.com/.*\\.pdf",
+      "notes": "docs.red.com hosts the actual PDFs with versioned paths (e.g. 955-0127_v6.2). Operation guides contain power/media/mount detail the spec pages omit."
+    },
+    {
+      "brand_slug": "sony",
+      "categories": ["camera"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://sony-cinematography.com/resources/", "kind": "cine_resources_hub", "notes": "Sony Cine resources: workflow guides, manuals for VENICE/BURANO/FX line."},
+        {"url": "https://www.sony.co.uk/electronics/support/professional-cameras-digital-cinema-cameras/manuals", "kind": "manuals_index", "notes": "Manuals index per model (MPC-3610, MPC-2610, etc.). pro.sony also hosts PDFs under pro.sony/s3/."}
+      ],
+      "pdf_url_pattern": "pro\\.sony/s3/.*\\.pdf",
+      "notes": "Operating instructions are the authority for media/power edge cases (e.g. AXS vs CFexpress per model)."
+    },
+    {
+      "brand_slug": "canon",
+      "categories": ["camera", "lens"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://www.usa.canon.com/support/user-manual-library", "kind": "manual_library", "notes": "Per-model support pages at usa.canon.com/support/p/<model> with manuals tab."}
+      ],
+      "pdf_url_pattern": "gdlp01\\.c-wss\\.com/gds/.*\\.pdf",
+      "notes": "Canon PDFs live on gdlp01.c-wss.com CDN. Cinema EOS lens spec sheets are sparse on the site — manuals are the better source."
+    },
+    {
+      "brand_slug": "blackmagic",
+      "categories": ["camera"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://www.blackmagicdesign.com/support/family/professional-cameras", "kind": "support_center", "notes": "JS-heavy support center; manuals per family. Needs Playwright, not plain fetch.", "verify_url": true}
+      ],
+      "pdf_url_pattern": "documents\\.blackmagicdesign\\.com/.*\\.pdf",
+      "notes": "Single combined camera manual covers many models — classification must map one PDF to many product_slugs."
+    },
+    {
+      "brand_slug": "zeiss",
+      "categories": ["lens"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/lenses.html", "kind": "product_hub", "notes": "Per-series pages link tech data sheets + user manuals in download sections; JS-rendered."},
+        {"url": "https://www.zeiss.com/photonics-and-optics/us/cinematography/cincraft.html", "kind": "metadata_protocol_docs", "notes": "eXtended Data / CinCraft documentation — feeds lens-data (FIZ/LDS) compatibility.", "verify_url": true}
+      ],
+      "pdf_url_pattern": "zeiss\\.com/.*\\.pdf",
+      "notes": "Brochures (like the Supreme brochure) are authority 4 — tech data sheets per series are the target. Distinguish by presence of image circle / mount / flange fields."
+    },
+    {
+      "brand_slug": "cooke",
+      "categories": ["lens"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://cookeoptics.com/product-support/", "kind": "product_support", "notes": "Downloads, guides, FAQs per product."},
+        {"url": "https://cookeoptics.com/i-technology/", "kind": "metadata_protocol_docs", "notes": "/i, /i2, /i3 protocol docs — the authority for lens-data compatibility (e.g. the Preston HU3 LDS-2 gap in the checker)."}
+      ],
+      "pdf_url_pattern": "cookeoptics\\.com/wp-content/uploads/.*\\.pdf",
+      "notes": "WordPress uploads dir is directly crawlable once URLs are known; Lens Specs Brochure PDF is a good full-line spec matrix."
+    },
+    {
+      "brand_slug": "angenieux",
+      "categories": ["lens"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://www.angenieux.com/service-and-support/downloads/", "kind": "downloads_hub", "notes": "User manuals, tech specs, depth-of-field charts per model. JS-rendered — plain fetch returns empty; use Playwright."}
+      ],
+      "pdf_url_pattern": "angenieux\\.com/wp-content/uploads/.*\\.pdf",
+      "notes": "Manuals include image circle and coverage per zoom position — exactly the open-gate vignette edge case in the checker mockup."
+    },
+    {
+      "brand_slug": "leitz",
+      "categories": ["lens"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://www.leitz-cine.com/", "kind": "site_root", "notes": "Locate downloads/tech-data section during first crawl.", "verify_url": true}
+      ],
+      "pdf_url_pattern": null,
+      "notes": "Not verified yet — discover via sitemap.xml first."
+    },
+    {
+      "brand_slug": "sigma",
+      "categories": ["lens"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://www.sigma-global.com/en/support/catalog/", "kind": "catalog_hub", "notes": "Brochures + dimensional drawings + illumination (coverage) PDFs for cine line."}
+      ],
+      "pdf_url_pattern": "sigma-global\\.com/.*\\.pdf",
+      "notes": "Illumination/coverage docs are rare gold: actual image-circle behavior vs marketing claims."
+    },
+    {
+      "brand_slug": "fujinon",
+      "categories": ["lens"],
+      "priority": 3,
+      "portals": [
+        {"url": "https://www.fujifilm.com/us/en/business/optical-devices/cinelens", "kind": "product_hub", "notes": "Catalog PDFs on asset.fujifilm.com CDN.", "verify_url": true}
+      ],
+      "pdf_url_pattern": "asset\\.fujifilm\\.com/.*\\.pdf",
+      "notes": null
+    },
+    {
+      "brand_slug": "preston",
+      "categories": ["accessory"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://prestoncinema.com/manuals/system-manual", "kind": "manuals", "notes": "HU3/HU4, MDR3/MDR4 manuals — lens-data protocol support per unit."},
+        {"url": "https://prestoncinema.com/downloads/firmware", "kind": "firmware_notes", "notes": "Firmware notes reveal added protocol support over time (e.g. LDS-2 mapping)."}
+      ],
+      "pdf_url_pattern": "prestoncinema\\.com/.*\\.pdf",
+      "notes": "Directly powers the FIZ/metadata compatibility warnings in the checker."
+    },
+    {
+      "brand_slug": "teradek",
+      "categories": ["accessory"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://teradek.com/pages/downloads", "kind": "downloads_hub", "notes": "Firmware + docs incl. Teradek RT (FIZ)."}
+      ],
+      "pdf_url_pattern": null,
+      "notes": "Much of the doc content is HTML (support.teradek.com Zendesk) — capture as HTML docs, not only PDFs."
+    },
+    {
+      "brand_slug": "smallhd",
+      "categories": ["accessory"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://guide.smallhd.com/", "kind": "html_guides", "notes": "Per-model user guides, HTML-first. Monitor power draw + input specs for power/monitoring chain checks."}
+      ],
+      "pdf_url_pattern": null,
+      "notes": null
+    },
+    {
+      "brand_slug": "antonbauer",
+      "categories": ["accessory"],
+      "priority": 1,
+      "portals": [
+        {"url": "https://www.antonbauer.com/en/product-support/download/", "kind": "downloads_hub", "notes": "Includes COMPATIBILITY DATASHEETS (Gold/V-mount matrices) — direct input to the battery-plate check."}
+      ],
+      "pdf_url_pattern": "antonbauer\\.com/.*\\.pdf",
+      "notes": null
+    },
+    {
+      "brand_slug": "coreswx",
+      "categories": ["accessory"],
+      "priority": 2,
+      "portals": [
+        {"url": "https://coreswx.com/pages/download", "kind": "downloads_hub", "notes": "Battery spec sheets + charger compatibility matrices."}
+      ],
+      "pdf_url_pattern": null,
+      "notes": null
+    }
+  ]
+}

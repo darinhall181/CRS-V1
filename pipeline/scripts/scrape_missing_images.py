@@ -43,9 +43,9 @@ for p in [repo_root / "pipeline" / ".env", repo_root / ".env"]:
         break
 
 import os
-DB_URL = os.environ.get("SUPABASE_DB_URL", "")
+DB_URL = os.environ.get("DATABASE_URL", "") or os.environ.get("SUPABASE_DB_URL", "")
 if not DB_URL:
-    sys.exit("SUPABASE_DB_URL not set")
+    sys.exit("DATABASE_URL not set")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)

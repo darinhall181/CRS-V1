@@ -9,7 +9,7 @@ Usage:
     python3 backend/scripts/upload_images_to_r2.py [--dry-run] [--brand canon]
 
 Required environment variables (set in backend/.env):
-    SUPABASE_DB_URL       Postgres connection string
+    DATABASE_URL          Postgres connection string (Neon)
     CF_ACCOUNT_ID         Cloudflare account ID
     R2_ACCESS_KEY_ID      R2 API token access key
     R2_SECRET_ACCESS_KEY  R2 API token secret key
@@ -120,7 +120,7 @@ def main() -> int:
     args = parser.parse_args()
 
     # Validate required env vars
-    required = ["SUPABASE_DB_URL", "R2_ENDPOINT_URL", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY",
+    required = ["DATABASE_URL", "R2_ENDPOINT_URL", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY",
                 "R2_BUCKET_NAME", "R2_PUBLIC_URL"]
     missing = [k for k in required if not os.environ.get(k)]
     if missing:
@@ -131,7 +131,7 @@ def main() -> int:
     r2_public_url = os.environ["R2_PUBLIC_URL"].rstrip("/")
 
     s3 = _r2_client()
-    conn = psycopg2.connect(os.environ["SUPABASE_DB_URL"])
+    conn = psycopg2.connect(os.environ["DATABASE_URL"])
 
     # ── Query: all product images + product metadata ──────────────────────────
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:

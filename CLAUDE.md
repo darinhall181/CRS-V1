@@ -111,8 +111,9 @@ When changing the DB schema: update the SQL migration first, then update `schema
 
 ## Environment Variables
 
-- `www/.env.local`: `SUPABASE_DB_URL` (points to local `127.0.0.1:54322` or cloud)
-- `pipeline/.env`: `SUPABASE_DB_URL` + Cloudflare R2 credentials (see `pipeline/.env.example`)
+- `www/.env.local`: `DATABASE_URL` (Neon Postgres) + Better Auth vars
+- `pipeline/.env`: `DATABASE_URL` (Neon Postgres) + Cloudflare R2 credentials (see `pipeline/.env.example`)
+- `SUPABASE_DB_URL` is deprecated — the database moved from Supabase to Neon. The `supabase/` folder (migrations SQL) remains the authoritative schema reference, but local Supabase Docker tooling is no longer the target.
 
 ## Key Dependencies
 
