@@ -1,17 +1,22 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
 
+const TITLE = "Altoscope: Gear Rental and Preproduction Software"
+const DESCRIPTION =
+  "A suite of intelligent tools to streamline your rental prep. Built for production companies."
+
 export const metadata: Metadata = {
-  title: "Altoscope — Where Productions Get Gear-Ready",
-  description:
-    "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
-    title: "Altoscope",
-    description: "Knowledge is your best equipment.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [{ url: "/marketing/og-banner.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/marketing/og-banner.jpg"],
   },
 }
@@ -108,10 +113,14 @@ export default function LandingPage() {
         fontFamily: "'Aktiv Grotesk', ui-sans-serif, system-ui, sans-serif",
         WebkitFontSmoothing: "antialiased",
         minHeight: "100vh",
-        scrollBehavior: "smooth",
       }}
     >
       <style>{`
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+        }
+        #top, .section-shell { scroll-margin-top: 72px; }
         .btn {
           transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
         }
@@ -124,6 +133,8 @@ export default function LandingPage() {
           transition: color 0.18s ease, opacity 0.18s ease;
         }
         .link:hover { color: #F4F4F5; opacity: 1; }
+        .nav-link { color: rgba(255,255,255,0.55); }
+        .nav-link:hover { color: #F4F4F5; }
         @media (prefers-reduced-motion: reduce) {
           .btn, .btn:hover, .btn:active, .link { transition: none !important; transform: none !important; }
         }
@@ -185,11 +196,11 @@ export default function LandingPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/marketing/logo-nav.png" alt="Altoscope" style={{ height: 22, width: "auto", display: "block" }} />
         </a>
-        <nav className="site-nav" style={{ display: "flex", alignItems: "center", fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-          <a href="#features" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+        <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+          <a href="#features" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             Features
           </a>
-          <a href="#about" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+          <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             About
           </a>
           <a
