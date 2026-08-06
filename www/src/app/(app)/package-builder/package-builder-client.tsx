@@ -28,6 +28,7 @@ import {
   type GearItem,
   type PackageLineItem,
 } from "./types"
+import { addPackageItemAction, removePackageItemAction } from "./actions"
 
 const VENDOR_NAME = "DaVinci Rentals"
 
@@ -52,6 +53,7 @@ export function PackageBuilderClient({
   initialLineItems,
   productionName,
   packageName,
+  packageId,
   shootDays,
   approvedBudget,
 }: {
@@ -59,6 +61,7 @@ export function PackageBuilderClient({
   initialLineItems: PackageLineItem[]
   productionName: string
   packageName: string
+  packageId: string | null
   shootDays: number
   approvedBudget: number
 }) {
@@ -115,18 +118,33 @@ export function PackageBuilderClient({
     setDrawerOpen(true)
   }
 
-  function addToPackage(gear: GearItem) {
+  async function addToPackage(gear: GearItem) {
+    const tempId = `temp-${gear.id}-${Date.now()}`
     const newLine: PackageLineItem = {
-      id: `line-${gear.id}-${Date.now()}`,
+      id: tempId,
       gearId: gear.id,
       qty: 1,
       days: shootDays,
       status: "draft",
       notesCount: 0,
     }
+    // Optimistic add — swap in the real DB id once the write confirms, or
+    // roll back if it fails.
     setLineItems((prev) => [...prev, newLine])
-    setSelectedLineId(newLine.id)
+    setSelectedLineId(tempId)
     setRightTab("detail")
+
+    if (!packageId) return // no real package to persist to (shouldn't happen in the demo)
+
+    try {
+      const { id: realId } = await addPackageItemAction(packageId, gear.id)
+      setLineItems((prev) => prev.map((l) => (l.id === tempId ? { ...l, id: realId } : l)))
+      setSelectedLineId((prev) => (prev === tempId ? realId : prev))
+    } catch (err) {
+      console.error("Failed to add package item:", err)
+      setLineItems((prev) => prev.filter((l) => l.id !== tempId))
+      setSelectedLineId((prev) => (prev === tempId ? null : prev))
+    }
   }
 
   function toggleCollapsed(category: GearCategory) {
@@ -147,9 +165,20 @@ export function PackageBuilderClient({
     })
   }
 
-  function removeBulkSelected() {
+  async function removeBulkSelected() {
+    const idsToRemove = Array.from(bulkSelected)
     setLineItems((prev) => prev.filter((l) => !bulkSelected.has(l.id)))
     setBulkSelected(new Set())
+
+    const realIds = idsToRemove.filter((id) => !id.startsWith("temp-"))
+    try {
+      await Promise.all(realIds.map((id) => removePackageItemAction(id)))
+    } catch (err) {
+      console.error("Failed to remove package item(s):", err)
+      // Not rolling back the optimistic removal here — a failed delete on an
+      // already-hidden row is a rarer, lower-stakes edge case than a failed
+      // add; surfacing a console error is enough for the current demo scope.
+    }
   }
 
   const drawerResults = catalog.filter((g) => {

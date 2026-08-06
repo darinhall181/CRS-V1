@@ -1,4 +1,4 @@
-import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
 
@@ -75,26 +75,19 @@ export default async function PackageBuilderPage() {
     .map((p) => toGearItem(p, vendorRates))
     .filter((g): g is GearItem => g !== null)
 
-  // Seed a starting package so the grid isn't empty on first load — prefer real
-  // DaVinci-stocked items so the demo leads with real numbers, then fall back to
-  // one estimate-rate lens so both rate sources are visible on first load.
-  const vendorCamera = catalog.find((g) => g.category === "camera" && g.rate.source === "vendor")
-  const vendorLens = catalog.find((g) => g.category === "lenses" && g.rate.source === "vendor")
-  const estimateLens = catalog.find(
-    (g) => g.category === "lenses" && g.rate.source === "estimate" && g.id !== vendorLens?.id
-  )
-  const seedGear = [vendorCamera, vendorLens, estimateLens].filter((g): g is GearItem => Boolean(g))
-
   const shootDays = production?.shootDays ?? 18
   const approvedBudget = production?.totalBudget ?? 105_880
 
-  const initialLineItems: PackageLineItem[] = seedGear.map((g, i) => ({
-    id: `seed-${g.id}`,
-    gearId: g.id,
-    qty: 1,
+  // Real persisted line items — see docs/tasks/T0005. Falls back to an empty
+  // package (not fake data) if the package row itself is somehow missing.
+  const packageItemRows = pkg ? await getPackageItems(pkg.id) : []
+  const initialLineItems: PackageLineItem[] = packageItemRows.map((row) => ({
+    id: row.id,
+    gearId: row.gearId,
+    qty: row.qty,
     days: shootDays,
-    status: i === 0 ? "sent" : "draft",
-    notesCount: i === 0 ? 1 : 0,
+    status: row.status as PackageLineItem["status"],
+    notesCount: 0, // no comment table yet — see docs/tasks/T0008
   }))
 
   return (
@@ -103,6 +96,7 @@ export default async function PackageBuilderPage() {
       initialLineItems={initialLineItems}
       productionName={production?.name ?? "Untitled Production"}
       packageName={pkg?.name ?? "Camera Package"}
+      packageId={pkg?.id ?? null}
       shootDays={shootDays}
       approvedBudget={approvedBudget}
     />

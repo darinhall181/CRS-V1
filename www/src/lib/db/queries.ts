@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems } from "./schema"
 import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -298,4 +298,50 @@ export async function getPackageByProduction(productionId: string): Promise<Pack
     .limit(1)
 
   return rows[0] ?? null
+}
+
+// ─── Package items ──────────────────────────────────────────────────────────
+
+export type PackageItemRow = {
+  id: string
+  gearId: string
+  qty: number
+  status: string
+}
+
+export async function getPackageItems(packageId: string): Promise<PackageItemRow[]> {
+  const rows = await db
+    .select({
+      id: packageItems.id,
+      gearId: packageItems.gearId,
+      qty: packageItems.quantity,
+      status: packageItems.status,
+    })
+    .from(packageItems)
+    .where(eq(packageItems.packageId, packageId))
+    .orderBy(asc(packageItems.sortOrder))
+
+  // gearId is nullable at the schema level (a line item not yet tied to a
+  // catalog product) — filter those out rather than surfacing a bad row,
+  // since every current write path always sets it.
+  return rows
+    .filter((r) => r.gearId !== null)
+    .map((r) => ({ ...r, gearId: r.gearId as string }))
+}
+
+export async function addPackageItem(
+  packageId: string,
+  gearId: string,
+  addedBy: string,
+  qty: number = 1
+): Promise<{ id: string }> {
+  const [row] = await db
+    .insert(packageItems)
+    .values({ packageId, gearId, quantity: qty, status: "draft", addedBy })
+    .returning({ id: packageItems.id })
+  return row
+}
+
+export async function removePackageItem(id: string): Promise<void> {
+  await db.delete(packageItems).where(eq(packageItems.id, id))
 }
