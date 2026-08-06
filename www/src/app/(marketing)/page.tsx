@@ -101,6 +101,23 @@ export default function LandingPage() {
         scrollBehavior: "smooth",
       }}
     >
+      <style>{`
+        .btn {
+          transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn:active { transform: translateY(0) scale(0.96); transition-duration: 0.08s; }
+        .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.28); }
+        .btn-primary:hover { background: #4a63bd; border-color: #4a63bd; }
+        .btn-cta:hover { background: #ffd98f; }
+        .link {
+          transition: color 0.18s ease, opacity 0.18s ease;
+        }
+        .link:hover { color: #F4F4F5; opacity: 1; }
+        @media (prefers-reduced-motion: reduce) {
+          .btn, .btn:hover, .btn:active, .link { transition: none !important; transform: none !important; }
+        }
+      `}</style>
       <header
         style={{
           position: "sticky",
@@ -120,14 +137,15 @@ export default function LandingPage() {
           Altoscope
         </a>
         <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-          <a href="#features" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+          <a href="#features" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
             Features
           </a>
-          <a href="#about" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+          <a href="#about" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
             About
           </a>
           <a
             href="#join"
+            className="btn btn-primary"
             style={{
               color: "#fff",
               background: "#3D55A8",
@@ -164,6 +182,7 @@ export default function LandingPage() {
           <div style={{ display: "flex", gap: 10 }}>
             <a
               href="#features"
+              className="btn btn-ghost"
               style={{
                 whiteSpace: "nowrap",
                 display: "inline-flex",
@@ -181,6 +200,7 @@ export default function LandingPage() {
             </a>
             <a
               href="#join"
+              className="btn btn-primary"
               style={{
                 whiteSpace: "nowrap",
                 display: "inline-flex",
@@ -373,7 +393,7 @@ export default function LandingPage() {
               ["#about", "About"],
               ["#join", "Waitlist"],
             ].map(([href, label]) => (
-              <a key={href} href={href} style={{ color: "#8FA3E0", textDecoration: "none" }}>
+              <a key={href} href={href} className="link" style={{ color: "#8FA3E0", textDecoration: "none" }}>
                 {label}
               </a>
             ))}

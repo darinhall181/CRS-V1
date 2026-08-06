@@ -8,6 +8,7 @@ export default function WaitlistForm() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState("")
   const [ok, setOk] = useState<boolean | null>(null)
+  const [submitting, setSubmitting] = useState(false)
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -19,6 +20,7 @@ export default function WaitlistForm() {
     }
     setStatus("Adding you…")
     setOk(null)
+    setSubmitting(true)
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
@@ -32,11 +34,24 @@ export default function WaitlistForm() {
     } catch {
       setStatus("Couldn’t reach the server. Try again in a moment.")
       setOk(false)
+    } finally {
+      setSubmitting(false)
     }
   }
 
   return (
     <>
+      <style>{`
+        .waitlist-input { transition: border-color 0.18s ease, background-color 0.18s ease; }
+        .waitlist-input:focus { border-color: rgba(255,255,255,0.28); background: #34343b; }
+        .waitlist-btn { transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.18s ease, opacity 0.18s ease; }
+        .waitlist-btn:hover:not(:disabled) { transform: translateY(-1px); background: #ffd98f; }
+        .waitlist-btn:active:not(:disabled) { transform: translateY(0) scale(0.96); transition-duration: 0.08s; }
+        .waitlist-btn:disabled { opacity: 0.6; cursor: default; }
+        @media (prefers-reduced-motion: reduce) {
+          .waitlist-input, .waitlist-btn, .waitlist-btn:hover, .waitlist-btn:active { transition: none !important; transform: none !important; }
+        }
+      `}</style>
       <form onSubmit={onSubmit} style={{ display: "flex", gap: 8, width: "100%", maxWidth: 480, marginTop: 8 }}>
         <input
           type="email"
@@ -48,6 +63,7 @@ export default function WaitlistForm() {
             setStatus("")
             setOk(null)
           }}
+          className="waitlist-input"
           style={{
             flex: 1,
             minWidth: 0,
@@ -64,6 +80,8 @@ export default function WaitlistForm() {
         />
         <button
           type="submit"
+          disabled={submitting}
+          className="waitlist-btn"
           style={{
             flex: "0 0 auto",
             whiteSpace: "nowrap",
@@ -79,7 +97,7 @@ export default function WaitlistForm() {
             cursor: "pointer",
           }}
         >
-          Join the waitlist ↗
+          {submitting ? "Adding…" : "Join the waitlist ↗"}
         </button>
       </form>
       <p
