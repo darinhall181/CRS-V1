@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages } from "./schema"
 import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -19,10 +19,11 @@ export type ProductCard = {
 
 export async function getProducts(opts: {
   categorySlug?: string
+  brandSlug?: string
   search?: string
   limit?: number
 } = {}): Promise<ProductCard[]> {
-  const { categorySlug, search, limit = 60 } = opts
+  const { categorySlug, brandSlug, search, limit = 60 } = opts
 
   const rows = await db
     .select({
@@ -44,6 +45,7 @@ export async function getProducts(opts: {
       and(
         eq(product.isActive, true),
         categorySlug ? eq(productCategory.slug, categorySlug) : undefined,
+        brandSlug ? eq(brand.slug, brandSlug) : undefined,
         search
           ? or(
               ilike(product.fullName, `%${search}%`),
@@ -213,4 +215,87 @@ export async function getCategoriesWithCounts(): Promise<CategoryCount[]> {
   }
 
   return Array.from(map.values())
+}
+
+// ─── Rental house inventory ───────────────────────────────────────────────────
+// Real vendor rates for products a given rental house actually stocks. Most of
+// the catalog has no matching row yet — callers should treat this as an overlay
+// on top of catalog data, not a full substitute for it.
+
+export type RentalHouseRate = {
+  productId: string
+  rentalHouseName: string
+  rentalHouseSlug: string
+  dayRate: number
+  weekRate: number | null
+  quantityOnHand: number | null
+  isAvailable: boolean | null
+}
+
+export async function getRentalHouseInventory(rentalHouseSlug: string): Promise<RentalHouseRate[]> {
+  const rows = await db
+    .select({
+      productId: rentalHouseInventory.productId,
+      rentalHouseName: rentalHouse.name,
+      rentalHouseSlug: rentalHouse.slug,
+      dayRate: rentalHouseInventory.dayRate,
+      weekRate: rentalHouseInventory.weekRate,
+      quantityOnHand: rentalHouseInventory.quantityOnHand,
+      isAvailable: rentalHouseInventory.isAvailable,
+    })
+    .from(rentalHouseInventory)
+    .innerJoin(rentalHouse, eq(rentalHouseInventory.rentalHouseId, rentalHouse.id))
+    .where(eq(rentalHouse.slug, rentalHouseSlug))
+
+  return rows.map((r) => ({
+    ...r,
+    dayRate: parseFloat(r.dayRate ?? "0"),
+    weekRate: r.weekRate !== null ? parseFloat(r.weekRate) : null,
+  }))
+}
+
+// ─── Productions & packages ────────────────────────────────────────────────────
+
+export type Production = {
+  id: string
+  name: string
+  shootType: string | null
+  shootDays: number | null
+  totalBudget: number | null
+  status: string
+}
+
+export async function getProduction(id: string): Promise<Production | null> {
+  const rows = await db
+    .select({
+      id: productions.id,
+      name: productions.name,
+      shootType: productions.shootType,
+      shootDays: productions.shootDays,
+      totalBudget: productions.totalBudget,
+      status: productions.status,
+    })
+    .from(productions)
+    .where(eq(productions.id, id))
+    .limit(1)
+
+  if (!rows[0]) return null
+  return { ...rows[0], totalBudget: rows[0].totalBudget !== null ? parseFloat(rows[0].totalBudget) : null }
+}
+
+export type PackageSummary = {
+  id: string
+  name: string
+}
+
+// A production can have multiple packages; for now this returns the first
+// one (matches the current single-package-per-production demo state).
+export async function getPackageByProduction(productionId: string): Promise<PackageSummary | null> {
+  const rows = await db
+    .select({ id: packages.id, name: packages.name })
+    .from(packages)
+    .where(eq(packages.productionId, productionId))
+    .limit(1)
+
+  return rows[0] ?? null
 }
