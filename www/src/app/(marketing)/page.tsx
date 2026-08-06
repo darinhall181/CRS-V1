@@ -1,246 +1,406 @@
-import Link from "next/link"
-import { ArrowRight, Camera, CheckCircle, Database, Layers, Search, Zap } from "lucide-react"
+import type { Metadata } from "next"
+import WaitlistForm from "./waitlist-form"
 
-export default function HomePage() {
+export const metadata: Metadata = {
+  title: "Altoscope — Where Productions Get Gear-Ready",
+  description:
+    "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
+}
+
+const HAIRLINE = "1px solid rgba(255,255,255,0.08)"
+const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace"
+
+const PROCESS = [
+  { n: "01", title: "Build", body: "Curate professional equipment lists for rent." },
+  { n: "02", title: "Collaborate", body: "Check and approve equipment lists before sending RFQs." },
+  { n: "03", title: "Send", body: "Send and receive dynamic RFQ links to finalize rental." },
+]
+
+const FEATURES = [
+  {
+    title: "Kit Builder",
+    body: "Build custom camera packages from scratch, or start fast with scenario-matched templates for studio and mobile shoots.",
+  },
+  {
+    title: "Compatibility Checker",
+    body: "Automatically check mounts, media, and power to catch technical mismatches before the prep day.",
+  },
+  {
+    title: "Budget Planner",
+    body: "Visualize your kit’s scale and swap out alternative gear options to stay within your production’s budget tier.",
+  },
+  {
+    title: "Centralized Research",
+    body: "Access a unified, searchable database of verified public specs for bodies, lenses, and accessories.",
+  },
+  {
+    title: "Instant RFQs",
+    body: "One click reaches every rental house in your area. Eliminating a messy inbox.",
+  },
+  {
+    title: "Team Collaboration",
+    body: "Invite your team to build, edit, and comment on gear lists in one shared workspace.",
+  },
+]
+
+const PRINCIPLES = [
+  {
+    title: "We’re obsessed with data accuracy.",
+    body: "Our mission is to turn the noise of the internet into a clean, verified signal. We aggregate and standardize fragmented specs so you can trust the gear you are looking at.",
+  },
+  {
+    title: "Confidence at the forefront",
+    body: "Every kit is processed through our compatibility checker to catch errors before they happen. We are committed to delivering RFQs that rental houses respect and producers rely on.",
+  },
+  {
+    title: "Focus on production speed",
+    body: "We design workflows that prioritize your time and mental energy. Our focus is on removing the friction of logistics so you can dedicate your full attention to the shoot.",
+  },
+]
+
+function SectionLabel({ label, num }: { label: string; num: string }) {
   return (
-    <div className="flex flex-col">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b bg-gradient-to-b from-background to-muted/30 py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-xs font-medium text-muted-foreground">
-              Canon cameras & lenses — more brands coming soon
-            </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-6xl">
-              Stop guessing if your gear works together.
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              Altoscope cross-references thousands of cameras, lenses, and accessories so you always
-              know what&apos;s compatible — before you buy or rent.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/compatibility-checker"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Try Compatibility Checker
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/gear"
-                className="inline-flex items-center gap-2 rounded-lg border px-6 py-3 text-sm font-semibold transition-colors hover:bg-accent"
-              >
-                Browse Gear
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div
+      style={{
+        position: "sticky",
+        top: 96,
+        alignSelf: "start",
+        display: "flex",
+        justifyContent: "space-between",
+        fontSize: 11,
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        color: "rgba(255,255,255,0.40)",
+      }}
+    >
+      <span>{label}</span>
+      <span style={{ fontFamily: MONO }}>{num}</span>
+    </div>
+  )
+}
 
-      {/* Stats */}
-      <section className="border-b py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {[
-              { value: "500+", label: "Products catalogued" },
-              { value: "60+", label: "Spec fields per product" },
-              { value: "5+", label: "Lens mounts covered" },
-              { value: "100%", label: "Structured data" },
-            ].map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <dt className="text-3xl font-bold tracking-tight">{value}</dt>
-                <dd className="mt-1 text-sm text-muted-foreground">{label}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+const sectionShell = {
+  maxWidth: 1240,
+  margin: "0 auto",
+  padding: "56px 40px",
+  display: "grid",
+  gridTemplateColumns: "200px 1fr",
+  gap: 48,
+  borderTop: HAIRLINE,
+} as const
 
-      {/* Features */}
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Everything you need to know, in one place.
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Our data pipeline scrapes manufacturer specs and normalises them into a structured
-              database you can actually query.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: Search,
-                title: "Compatibility Checker",
-                description:
-                  "Select a camera body and a lens to instantly see whether they share a mount, whether an adapter is needed, and what features you&apos;d lose.",
-              },
-              {
-                icon: Database,
-                title: "Structured Spec Database",
-                description:
-                  "Every spec — sensor size, mount type, focal length, aperture range — is stored as typed, queryable data, not a blob of HTML.",
-              },
-              {
-                icon: Layers,
-                title: "Multi-Brand Coverage",
-                description:
-                  "Canon EF, RF, CN-E, and EF Cinema lenses today. Nikon Z, Sony E, and ARRI PL support shipping soon.",
-              },
-              {
-                icon: Camera,
-                title: "Full Gear Detail Pages",
-                description:
-                  "Browse spec sheets for every camera body and lens with images, section-grouped specs, and links to official documentation.",
-              },
-              {
-                icon: Zap,
-                title: "Always Up-to-Date",
-                description:
-                  "Our automated scraping pipeline re-runs on demand to catch newly released products and spec corrections.",
-              },
-              {
-                icon: CheckCircle,
-                title: "Rental & Purchase Ready",
-                description:
-                  "Whether you&apos;re renting for a shoot or building a kit, get a definitive answer before money changes hands.",
-              },
-            ].map(({ icon: Icon, title, description }) => (
-              <div
-                key={title}
-                className="rounded-xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="mt-4 font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="border-t bg-muted/30 py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Simple pricing</h2>
-            <p className="mt-4 text-muted-foreground">
-              Free while we&apos;re in beta. Pro features coming soon.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Free */}
-            <div className="rounded-xl border bg-card p-8 shadow-sm">
-              <h3 className="font-semibold">Free</h3>
-              <p className="mt-2 text-4xl font-bold">
-                $0<span className="text-base font-normal text-muted-foreground">/mo</span>
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">Always free</p>
-              <ul className="mt-6 space-y-3 text-sm">
-                {[
-                  "Browse all gear specs",
-                  "Basic compatibility checks",
-                  "Up to 20 checks/day",
-                ].map((feat) => (
-                  <li key={feat} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/compatibility-checker"
-                className="mt-8 block rounded-lg border px-4 py-2 text-center text-sm font-medium transition-colors hover:bg-accent"
-              >
-                Get started free
-              </Link>
-            </div>
-
-            {/* Pro */}
-            <div className="relative rounded-xl border-2 border-primary bg-card p-8 shadow-md">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-0.5 text-xs font-semibold text-primary-foreground">
-                Coming soon
-              </span>
-              <h3 className="font-semibold">Pro</h3>
-              <p className="mt-2 text-4xl font-bold">
-                $12<span className="text-base font-normal text-muted-foreground">/mo</span>
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">Billed annually</p>
-              <ul className="mt-6 space-y-3 text-sm">
-                {[
-                  "Everything in Free",
-                  "Unlimited compatibility checks",
-                  "Save & share gear lists",
-                  "CSV / JSON spec exports",
-                  "Email alerts for new products",
-                ].map((feat) => (
-                  <li key={feat} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-              <button
-                disabled
-                className="mt-8 w-full cursor-not-allowed rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-60"
-              >
-                Join waitlist
-              </button>
-            </div>
-
-            {/* Enterprise */}
-            <div className="rounded-xl border bg-card p-8 shadow-sm">
-              <h3 className="font-semibold">Enterprise</h3>
-              <p className="mt-2 text-4xl font-bold">Custom</p>
-              <p className="mt-2 text-sm text-muted-foreground">For rental houses &amp; studios</p>
-              <ul className="mt-6 space-y-3 text-sm">
-                {[
-                  "Everything in Pro",
-                  "API access",
-                  "Bulk inventory imports",
-                  "Dedicated account manager",
-                  "Custom brand coverage",
-                ].map((feat) => (
-                  <li key={feat} className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="mailto:hello@altoscope.io"
-                className="mt-8 block rounded-lg border px-4 py-2 text-center text-sm font-medium transition-colors hover:bg-accent"
-              >
-                Contact us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t py-20">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to check your kit?
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            No account needed. Just pick your gear and get an instant answer.
-          </p>
-          <Link
-            href="/compatibility-checker"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+export default function LandingPage() {
+  return (
+    <div
+      style={{
+        background: "#18181A",
+        color: "#F4F4F5",
+        fontFamily: "'Aktiv Grotesk', ui-sans-serif, system-ui, sans-serif",
+        WebkitFontSmoothing: "antialiased",
+        minHeight: "100vh",
+        scrollBehavior: "smooth",
+      }}
+    >
+      <style>{`
+        .btn {
+          transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn:active { transform: translateY(0) scale(0.96); transition-duration: 0.08s; }
+        .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.28); }
+        .btn-primary:hover { background: #4a63bd; border-color: #4a63bd; }
+        .btn-cta:hover { background: #ffd98f; }
+        .link {
+          transition: color 0.18s ease, opacity 0.18s ease;
+        }
+        .link:hover { color: #F4F4F5; opacity: 1; }
+        @media (prefers-reduced-motion: reduce) {
+          .btn, .btn:hover, .btn:active, .link { transition: none !important; transform: none !important; }
+        }
+      `}</style>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 20,
+          height: 56,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 40px",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          background: "rgba(24,24,26,0.82)",
+          backdropFilter: "blur(14px)",
+        }}
+      >
+        <a href="#top" style={{ color: "#F4F4F5", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none" }}>
+          Altoscope
+        </a>
+        <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+          <a href="#features" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+            Features
+          </a>
+          <a href="#about" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+            About
+          </a>
+          <a
+            href="#join"
+            className="btn btn-primary"
+            style={{
+              color: "#fff",
+              background: "#3D55A8",
+              border: "1px solid #3D55A8",
+              borderRadius: 999,
+              padding: "8px 16px",
+              textDecoration: "none",
+            }}
           >
-            Open Compatibility Checker
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+            Join
+          </a>
+        </nav>
+      </header>
+
+      <section id="top" style={{ maxWidth: 1240, margin: "0 auto", padding: "72px 40px 96px", display: "flex", flexDirection: "column", gap: 56 }}>
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "clamp(48px, 8vw, 104px)",
+            lineHeight: 0.96,
+            fontWeight: 300,
+            letterSpacing: "-0.04em",
+            maxWidth: "16ch",
+            textWrap: "balance",
+            color: "rgba(255,255,255,0.52)",
+          }}
+        >
+          Where Productions Get Gear-<em style={{ fontStyle: "italic", color: "#F4F4F5" }}>Ready</em>.
+        </h1>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, flexWrap: "wrap" }}>
+          <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, color: "rgba(255,255,255,0.58)", maxWidth: "38ch", textWrap: "pretty" }}>
+            A suite of intelligent tools to streamline your rental prep. Built for production companies.
+          </p>
+          <div style={{ display: "flex", gap: 10 }}>
+            <a
+              href="#features"
+              className="btn btn-ghost"
+              style={{
+                whiteSpace: "nowrap",
+                display: "inline-flex",
+                alignItems: "center",
+                height: 44,
+                padding: "0 22px",
+                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: 999,
+                color: "#F4F4F5",
+                fontSize: 13,
+                textDecoration: "none",
+              }}
+            >
+              See features
+            </a>
+            <a
+              href="#join"
+              className="btn btn-primary"
+              style={{
+                whiteSpace: "nowrap",
+                display: "inline-flex",
+                alignItems: "center",
+                height: 44,
+                padding: "0 22px",
+                borderRadius: 999,
+                background: "#3D55A8",
+                color: "#fff",
+                fontSize: 13,
+                fontWeight: 500,
+                textDecoration: "none",
+              }}
+            >
+              Join the Waitlist
+            </a>
+          </div>
         </div>
       </section>
+
+      <section id="process" style={sectionShell}>
+        <SectionLabel label="Process" num="001" />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h2 style={{ margin: "0 0 40px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "22ch" }}>
+            Your rentals, effortlessly.
+          </h2>
+          <p style={{ margin: "0 0 48px", fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.58)", maxWidth: "46ch" }}>
+            Your entire gear list, planning, and collaboration all in one place.
+          </p>
+          {PROCESS.map((s, i) => (
+            <div
+              key={s.n}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "64px 200px 1fr",
+                gap: 24,
+                alignItems: "baseline",
+                padding: "28px 0",
+                borderTop: HAIRLINE,
+                borderBottom: i === PROCESS.length - 1 ? HAIRLINE : undefined,
+              }}
+            >
+              <span style={{ fontFamily: MONO, fontSize: 12, color: "rgba(255,255,255,0.30)" }}>{s.n}</span>
+              <h3 style={{ margin: 0, fontSize: 24, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: "rgba(255,255,255,0.58)" }}>{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="features" style={sectionShell}>
+        <SectionLabel label="Features" num="002" />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h2 style={{ margin: "0 0 24px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "22ch" }}>
+            Reasons you will love us.
+          </h2>
+          <p style={{ margin: "0 0 48px", fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.58)", maxWidth: "46ch" }}>
+            Specs, budget, and quotes in one place.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 48px" }}>
+            {FEATURES.map((f, i) => (
+              <div
+                key={f.title}
+                style={{
+                  padding: "26px 0",
+                  borderTop: HAIRLINE,
+                  borderBottom: i >= FEATURES.length - 2 ? HAIRLINE : undefined,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                <h3 style={{ margin: 0, fontSize: 18, fontWeight: 500, letterSpacing: "-0.01em" }}>{f.title}</h3>
+                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "rgba(255,255,255,0.56)" }}>{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style={sectionShell}>
+        <SectionLabel label="About" num="003" />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h2 style={{ margin: "0 0 24px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "20ch" }}>
+            Helping you streamline your rental workflow.
+          </h2>
+          <p style={{ margin: "0 0 48px", fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.58)", maxWidth: "52ch" }}>
+            We’re building a system replacing scattered emails with a unified standard that connects producers, DPs, and rental houses.
+          </p>
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/marketing/about-hero.jpg"
+            alt="On set during camera prep"
+            style={{ width: "100%", height: 280, objectFit: "cover", borderRadius: 12, marginBottom: 56, display: "block" }}
+          />
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40, paddingTop: 28, borderTop: HAIRLINE }}>
+            {PRINCIPLES.map((p) => (
+              <div key={p.title} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <h3 style={{ margin: 0, fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em" }}>{p.title}</h3>
+                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "rgba(255,255,255,0.56)" }}>{p.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 56 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20, paddingTop: 28, borderTop: HAIRLINE }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/marketing/darin.jpg" alt="Darin" style={{ width: 140, height: 140, objectFit: "cover", borderRadius: 12 }} />
+                <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Darin!</h3>
+                  <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Founder</span>
+                </div>
+              </div>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
+                I’m Darin, a photographer and data scientist passionate about creating software solutions for other creatives. This vision stems from the
+                frustration with how to find camera gear on the internet.
+              </p>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
+                Altoscope started as a personal project—a tool I built just to solve my own headaches. But the more I talked to other professionals, the more I
+                realized I wasn’t alone. Our industry is incredible at creating content, yet we’re still stuck with outdated, fragmented workflows. I want to
+                change that.
+              </p>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
+                Feel free to reach out at{" "}
+                <a href="mailto:darin@altoscope.so" style={{ color: "#8FA3E0", textDecoration: "none" }}>
+                  darin@altoscope.so
+                </a>{" "}
+                to schedule a call or just say hi :)
+              </p>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 20, paddingTop: 28, borderTop: HAIRLINE }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/marketing/kevin.jpg" alt="Kevin" style={{ width: 140, height: 140, objectFit: "cover", borderRadius: 12 }} />
+                <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                  <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Kevin!</h3>
+                  <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>CFO</span>
+                </div>
+              </div>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
+                I’m Kevin, a photographer pursuing neuroscience and finance. Having met Darin while he was working on this project, I jumped headfirst into this
+                project with the same passion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="join" style={{ ...sectionShell, padding: "56px 40px 96px" }}>
+        <SectionLabel label="Waitlist" num="004" />
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <h2 style={{ margin: 0, fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.02, fontWeight: 300, letterSpacing: "-0.035em" }}>Are you ready?</h2>
+          <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.58)", maxWidth: "44ch" }}>
+            Join the waitlist to get behind-the-scenes access &amp; join the beta testing team.
+          </p>
+          <WaitlistForm />
+        </div>
+      </section>
+
+      <footer
+        style={{
+          maxWidth: 1240,
+          margin: "0 auto",
+          padding: 40,
+          borderTop: HAIRLINE,
+          display: "grid",
+          gridTemplateColumns: "200px 1fr 1fr",
+          gap: 48,
+        }}
+      >
+        <a href="#top" style={{ color: "#F4F4F5", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", alignSelf: "start", textDecoration: "none" }}>
+          Altoscope
+        </a>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Contact</span>
+          <a href="mailto:darin@altoscope.so" style={{ fontSize: 13, color: "#8FA3E0", textDecoration: "none" }}>
+            darin@altoscope.so
+          </a>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Navigation</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 13 }}>
+            {[
+              ["#process", "Process"],
+              ["#features", "Features"],
+              ["#about", "About"],
+              ["#join", "Waitlist"],
+            ].map(([href, label]) => (
+              <a key={href} href={href} className="link" style={{ color: "#8FA3E0", textDecoration: "none" }}>
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div style={{ gridColumn: "1 / -1", paddingTop: 32, fontSize: 12, color: "rgba(255,255,255,0.32)" }}>© Altoscope 2026</div>
+      </footer>
     </div>
   )
 }
