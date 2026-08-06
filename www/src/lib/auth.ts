@@ -11,6 +11,19 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: { enabled: true },
+  user: {
+    additionalFields: {
+      appRole: {
+        type: "string",
+        required: false,
+        defaultValue: "user",
+        // Server/admin-controlled only — never settable by the client on
+        // sign-up or profile update, so a signup request can't self-grant a
+        // privileged appRole.
+        input: false,
+      },
+    },
+  },
   databaseHooks: {
     user: {
       create: {

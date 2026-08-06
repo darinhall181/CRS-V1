@@ -292,7 +292,7 @@ export const kitTemplateItem = pgTable("kit_template_item", {
 // ─── Productions layer enums ──────────────────────────────────────────────────
 
 export const companyRoleEnum = pgEnum("company_role", ["owner", "admin", "member"])
-export const productionRoleEnum = pgEnum("production_role", ["dp", "coordinator", "producer"])
+export const productionRoleEnum = pgEnum("production_role", ["dp", "coordinator", "producer", "gaffer"])
 export const productionStatusEnum = pgEnum("production_status", ["draft", "active", "wrapped", "archived"])
 export const packageItemStatusEnum = pgEnum("package_item_status", [
   "draft",
@@ -415,6 +415,10 @@ export const productionMembers = pgTable(
     productionId: uuid("production_id").notNull().references(() => productions.id, { onDelete: "cascade" }),
     userId: uuid("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
     role: productionRoleEnum("role").notNull(),
+    // Scopes a department-lead's (gaffer, etc.) authority to one department —
+    // e.g. 'lighting_grip'. Null for dp/coordinator/producer, whose authority
+    // isn't department-scoped.
+    department: text("department"),
     invitedBy: uuid("invited_by").references(() => users.id),
     joinedAt: timestamp("joined_at", { withTimezone: true }),
   },
