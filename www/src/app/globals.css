@@ -46,10 +46,25 @@
   /* ── Extended tokens (design-handoff bundle, Aug 2026) ─────────────
      Source of truth: Figma "Altoscope Design System" file, Color/Spacing/
      Radius variable collections. Names below match each variable's WEB
-     code syntax exactly — keep them in sync if the Figma tokens change. */
+     code syntax exactly — keep them in sync if the Figma tokens change.
+
+     bg-base/bg-surface/text-primary/text-muted/border-subtle/interactive-default
+     are aliases onto the shadcn tokens above (same values, Figma naming) —
+     added 2026-08-05 after a real bug: package-builder-client.tsx used these
+     Figma names directly assuming they existed here, and 7 of them didn't,
+     so ~60 call sites silently resolved to transparent/unset. Bind hand-built
+     components to whichever name is easiest to reach for; both resolve to
+     the same color. */
+  --bg-base: var(--background);
+  --bg-surface: var(--card);
   --bg-overlay: #2E2E34;
   --bg-sidebar-alt: #1C1C1F;
+  --text-primary: var(--foreground);
+  --text-muted: var(--muted-foreground);
+  --border-subtle: var(--border);
+  --border-default: rgba(255, 255, 255, 0.12);
   --border-hairline: rgba(255, 255, 255, 0.06);
+  --interactive-default: var(--primary);
   /* WCAG AA fix: original #4D68C0 only hit 4.30:1 with white button text (needs 4.5).
      Nudged darker — still reads as "lighter than interactive/default", now 4.52:1. */
   --interactive-hover: #4964BF;
