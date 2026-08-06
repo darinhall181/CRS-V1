@@ -3,7 +3,6 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import { Navbar } from "@/components/nav/navbar"
 
 export const metadata: Metadata = {
   title: "Altoscope — Camera & Lens Compatibility Intelligence",
@@ -25,7 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <Navbar />
         <main>{children}</main>
         <Analytics />
       </body>
