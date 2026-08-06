@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://altoscope.so"),
   title: "Altoscope — Camera & Lens Compatibility Intelligence",
   description:
     "Stop guessing. Altoscope cross-references every spec from thousands of cameras, lenses, and accessories so you always know what works together before you buy.",

@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Altoscope — Where Productions Get Gear-Ready",
   description:
     "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
+  openGraph: {
+    title: "Altoscope",
+    description: "Knowledge is your best equipment.",
+    images: [{ url: "/marketing/og-banner.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/marketing/og-banner.jpg"],
+  },
 }
 
 const HAIRLINE = "1px solid rgba(255,255,255,0.08)"
@@ -133,8 +142,9 @@ export default function LandingPage() {
           backdropFilter: "blur(14px)",
         }}
       >
-        <a href="#top" style={{ color: "#F4F4F5", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", textDecoration: "none" }}>
-          Altoscope
+        <a href="#top" style={{ display: "inline-flex", alignItems: "center" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/marketing/logo-nav.png" alt="Altoscope" style={{ height: 22, width: "auto", display: "block" }} />
         </a>
         <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
           <a href="#features" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
@@ -368,11 +378,11 @@ export default function LandingPage() {
         style={{
           maxWidth: 1240,
           margin: "0 auto",
-          padding: 40,
+          padding: "28px 40px",
           borderTop: HAIRLINE,
           display: "grid",
           gridTemplateColumns: "200px 1fr 1fr",
-          gap: 48,
+          gap: 32,
         }}
       >
         <a href="#top" style={{ color: "#F4F4F5", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", alignSelf: "start", textDecoration: "none" }}>
@@ -399,7 +409,7 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-        <div style={{ gridColumn: "1 / -1", paddingTop: 32, fontSize: 12, color: "rgba(255,255,255,0.32)" }}>© Altoscope 2026</div>
+        <div style={{ gridColumn: "1 / -1", paddingTop: 20, fontSize: 12, color: "rgba(255,255,255,0.32)" }}>© Altoscope 2026</div>
       </footer>
     </div>
   )
