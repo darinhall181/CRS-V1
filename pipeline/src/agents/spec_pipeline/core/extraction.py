@@ -303,6 +303,19 @@ class CanonCameraExtractor(BaseExtractor):
 
         return sections
 
+    # Canon site-wide UI chrome (wifi/firmware/support icons, etc.) that appears
+    # on nearly every product page — confirmed empirically: these basenames show
+    # up on 170+ of 195 scraped Canon products, so they can't be specific to any
+    # one product. See pipeline/scripts/clean_generic_product_images.py for how
+    # this list was derived; re-run that script periodically to catch new noise
+    # patterns rather than hand-maintaining this list.
+    _CANON_GENERIC_IMAGE_BASENAMES = {
+        "wifi@2x", "book-1@2x", "book-2@2x", "calibration-services-icon-1",
+        "customer-support-1@2x", "monitor@2x", "question@2x",
+        "support-specification-icon", "support@2x", "firmware@2x",
+        "image-unavailable.png", "image-unavailable", "image-unavailable-no-transparent",
+    }
+
     def _parse_canon_product_images(self, soup: BeautifulSoup, base_url: str) -> List[Dict[str, Any]]:
         """
         Extract product image URLs from a Canon shop product page.
@@ -312,6 +325,14 @@ class CanonCameraExtractor(BaseExtractor):
         """
         urls: List[str] = []
         primary_url: Optional[str] = None
+        seen_canonical: set[str] = set()  # url path minus query string, for dedup
+
+        def _canonical(u: str) -> str:
+            return u.split("?", 1)[0]
+
+        def _is_generic(u: str) -> bool:
+            basename = u.split("?", 1)[0].rsplit("/", 1)[-1]
+            return basename in self._CANON_GENERIC_IMAGE_BASENAMES
 
         def _add(u: Optional[str]) -> None:
             if not u:
@@ -319,6 +340,14 @@ class CanonCameraExtractor(BaseExtractor):
             u2 = urljoin(base_url, u)
             # canonicalize fragments only (keep query params like fmt=webp-alpha)
             u2 = _normalize_url(u2)
+            if _is_generic(u2):
+                return
+            canon = _canonical(u2)
+            if canon in seen_canonical:
+                # Same image at a different CDN-requested width — keep the first
+                # (usually the primary/hero crop) rather than every resize variant.
+                return
+            seen_canonical.add(canon)
             if u2 not in urls:
                 urls.append(u2)
 
