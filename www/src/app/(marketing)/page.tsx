@@ -1,17 +1,22 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
 
+const TITLE = "Altoscope: Gear Rental and Preproduction Software"
+const DESCRIPTION =
+  "A suite of intelligent tools to streamline your rental prep. Built for production companies."
+
 export const metadata: Metadata = {
-  title: "Altoscope — Where Productions Get Gear-Ready",
-  description:
-    "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
-    title: "Altoscope",
-    description: "Knowledge is your best equipment.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: [{ url: "/marketing/og-banner.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/marketing/og-banner.jpg"],
   },
 }
@@ -70,6 +75,7 @@ const PRINCIPLES = [
 function SectionLabel({ label, num }: { label: string; num: string }) {
   return (
     <div
+      className="section-label"
       style={{
         position: "sticky",
         top: 96,
@@ -83,6 +89,9 @@ function SectionLabel({ label, num }: { label: string; num: string }) {
       }}
     >
       <span>{label}</span>
+      <span className="section-label-dot" style={{ fontFamily: MONO }}>
+        ·
+      </span>
       <span style={{ fontFamily: MONO }}>{num}</span>
     </div>
   )
@@ -91,10 +100,7 @@ function SectionLabel({ label, num }: { label: string; num: string }) {
 const sectionShell = {
   maxWidth: 1240,
   margin: "0 auto",
-  padding: "56px 40px",
   display: "grid",
-  gridTemplateColumns: "200px 1fr",
-  gap: 48,
   borderTop: HAIRLINE,
 } as const
 
@@ -107,10 +113,14 @@ export default function LandingPage() {
         fontFamily: "'Aktiv Grotesk', ui-sans-serif, system-ui, sans-serif",
         WebkitFontSmoothing: "antialiased",
         minHeight: "100vh",
-        scrollBehavior: "smooth",
       }}
     >
       <style>{`
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+        }
+        #top, .section-shell { scroll-margin-top: 72px; }
         .btn {
           transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
         }
@@ -123,11 +133,52 @@ export default function LandingPage() {
           transition: color 0.18s ease, opacity 0.18s ease;
         }
         .link:hover { color: #F4F4F5; opacity: 1; }
+        .nav-link { color: rgba(255,255,255,0.55); }
+        .nav-link:hover { color: #F4F4F5; }
         @media (prefers-reduced-motion: reduce) {
           .btn, .btn:hover, .btn:active, .link { transition: none !important; transform: none !important; }
         }
+
+        .site-header { padding: 0 40px; }
+        .site-nav { gap: 8px; }
+        .hero { padding: 72px 40px 96px; }
+        .section-shell { padding: 56px 40px; grid-template-columns: 200px 1fr; gap: 48px; }
+        .section-shell-join { padding-bottom: 96px; }
+        .process-row { grid-template-columns: 64px 200px 1fr; gap: 24px; }
+        .features-grid { grid-template-columns: 1fr 1fr; gap: 0 48px; }
+        .about-hero-img { height: 280px; }
+        .principles-grid { grid-template-columns: 1fr 1fr 1fr; }
+        .bios-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        .bio-avatar { width: 140px; height: 140px; }
+        .footer-grid { padding: 28px 40px; grid-template-columns: 200px 1fr 1fr; gap: 32px; }
+        .section-label-dot { display: none; }
+
+        @media (max-width: 900px) {
+          .section-shell { grid-template-columns: 1fr; gap: 20px; }
+          .principles-grid { grid-template-columns: 1fr; gap: 24px; }
+          .bios-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 640px) {
+          .site-header { padding: 0 20px; }
+          .site-nav { gap: 2px; font-size: 11px; }
+          .site-nav a { padding: 8px !important; }
+          .hero { padding: 40px 20px 56px !important; }
+          .hero-cta-row { flex-direction: column; align-items: flex-start !important; gap: 24px !important; }
+          .section-shell { padding: 40px 20px !important; }
+          .section-shell-join { padding-bottom: 64px !important; }
+          .process-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+          .process-num { display: none; }
+          .features-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .about-hero-img { height: 180px !important; margin-bottom: 32px !important; }
+          .bio-avatar { width: 96px !important; height: 96px !important; }
+          .footer-grid { padding: 24px 20px !important; grid-template-columns: 1fr !important; gap: 24px !important; }
+          .section-label { position: static !important; justify-content: flex-start !important; gap: 6px; }
+          .section-label-dot { display: inline; opacity: 0.5; }
+        }
       `}</style>
       <header
+        className="site-header"
         style={{
           position: "sticky",
           top: 0,
@@ -136,7 +187,6 @@ export default function LandingPage() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "0 40px",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
           background: "rgba(24,24,26,0.82)",
           backdropFilter: "blur(14px)",
@@ -146,11 +196,11 @@ export default function LandingPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/marketing/logo-nav.png" alt="Altoscope" style={{ height: 22, width: "auto", display: "block" }} />
         </a>
-        <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-          <a href="#features" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+        <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+          <a href="#features" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             Features
           </a>
-          <a href="#about" className="link" style={{ color: "rgba(255,255,255,0.55)", padding: "8px 12px", textDecoration: "none" }}>
+          <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             About
           </a>
           <a
@@ -170,7 +220,7 @@ export default function LandingPage() {
         </nav>
       </header>
 
-      <section id="top" style={{ maxWidth: 1240, margin: "0 auto", padding: "72px 40px 96px", display: "flex", flexDirection: "column", gap: 56 }}>
+      <section id="top" className="hero" style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexDirection: "column", gap: 56 }}>
         <h1
           style={{
             margin: 0,
@@ -185,7 +235,7 @@ export default function LandingPage() {
         >
           Where Productions Get Gear-<em style={{ fontStyle: "italic", color: "#F4F4F5" }}>Ready</em>.
         </h1>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, flexWrap: "wrap" }}>
+        <div className="hero-cta-row" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 48, flexWrap: "wrap" }}>
           <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, color: "rgba(255,255,255,0.58)", maxWidth: "38ch", textWrap: "pretty" }}>
             A suite of intelligent tools to streamline your rental prep. Built for production companies.
           </p>
@@ -231,7 +281,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="process" style={sectionShell}>
+      <section id="process" className="section-shell" style={sectionShell}>
         <SectionLabel label="Process" num="001" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h2 style={{ margin: "0 0 40px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "22ch" }}>
@@ -243,17 +293,16 @@ export default function LandingPage() {
           {PROCESS.map((s, i) => (
             <div
               key={s.n}
+              className="process-row"
               style={{
                 display: "grid",
-                gridTemplateColumns: "64px 200px 1fr",
-                gap: 24,
                 alignItems: "baseline",
                 padding: "28px 0",
                 borderTop: HAIRLINE,
                 borderBottom: i === PROCESS.length - 1 ? HAIRLINE : undefined,
               }}
             >
-              <span style={{ fontFamily: MONO, fontSize: 12, color: "rgba(255,255,255,0.30)" }}>{s.n}</span>
+              <span className="process-num" style={{ fontFamily: MONO, fontSize: 12, color: "rgba(255,255,255,0.30)" }}>{s.n}</span>
               <h3 style={{ margin: 0, fontSize: 24, fontWeight: 400, letterSpacing: "-0.02em" }}>{s.title}</h3>
               <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: "rgba(255,255,255,0.58)" }}>{s.body}</p>
             </div>
@@ -261,7 +310,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="features" style={sectionShell}>
+      <section id="features" className="section-shell" style={sectionShell}>
         <SectionLabel label="Features" num="002" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h2 style={{ margin: "0 0 24px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "22ch" }}>
@@ -270,7 +319,7 @@ export default function LandingPage() {
           <p style={{ margin: "0 0 48px", fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.58)", maxWidth: "46ch" }}>
             Specs, budget, and quotes in one place.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 48px" }}>
+          <div className="features-grid" style={{ display: "grid" }}>
             {FEATURES.map((f, i) => (
               <div
                 key={f.title}
@@ -291,7 +340,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="about" style={sectionShell}>
+      <section id="about" className="section-shell" style={sectionShell}>
         <SectionLabel label="About" num="003" />
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h2 style={{ margin: "0 0 24px", fontSize: "clamp(28px, 3.4vw, 42px)", lineHeight: 1.1, fontWeight: 300, letterSpacing: "-0.03em", maxWidth: "20ch" }}>
@@ -305,10 +354,11 @@ export default function LandingPage() {
           <img
             src="/marketing/about-hero.jpg"
             alt="On set during camera prep"
-            style={{ width: "100%", height: 280, objectFit: "cover", borderRadius: 12, marginBottom: 56, display: "block" }}
+            className="about-hero-img"
+            style={{ width: "100%", objectFit: "cover", borderRadius: 12, marginBottom: 56, display: "block" }}
           />
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40, paddingTop: 28, borderTop: HAIRLINE }}>
+          <div className="principles-grid" style={{ display: "grid", paddingTop: 28, borderTop: HAIRLINE }}>
             {PRINCIPLES.map((p) => (
               <div key={p.title} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <h3 style={{ margin: 0, fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em" }}>{p.title}</h3>
@@ -317,11 +367,11 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 56 }}>
+          <div className="bios-grid" style={{ display: "grid", marginTop: 56 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, paddingTop: 28, borderTop: HAIRLINE }}>
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/marketing/darin.jpg" alt="Darin" style={{ width: 140, height: 140, objectFit: "cover", borderRadius: 12 }} />
+                <img src="/marketing/darin.jpg" alt="Darin" className="bio-avatar" style={{ objectFit: "cover", borderRadius: 12 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Darin!</h3>
                   <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Founder</span>
@@ -348,7 +398,7 @@ export default function LandingPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 20, paddingTop: 28, borderTop: HAIRLINE }}>
               <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/marketing/kevin.jpg" alt="Kevin" style={{ width: 140, height: 140, objectFit: "cover", borderRadius: 12 }} />
+                <img src="/marketing/kevin.jpg" alt="Kevin" className="bio-avatar" style={{ objectFit: "cover", borderRadius: 12 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Kevin!</h3>
                   <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>CFO</span>
@@ -363,7 +413,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="join" style={{ ...sectionShell, padding: "56px 40px 96px" }}>
+      <section id="join" className="section-shell section-shell-join" style={sectionShell}>
         <SectionLabel label="Waitlist" num="004" />
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <h2 style={{ margin: 0, fontSize: "clamp(36px, 5vw, 64px)", lineHeight: 1.02, fontWeight: 300, letterSpacing: "-0.035em" }}>Are you ready?</h2>
@@ -375,14 +425,12 @@ export default function LandingPage() {
       </section>
 
       <footer
+        className="footer-grid"
         style={{
           maxWidth: 1240,
           margin: "0 auto",
-          padding: "28px 40px",
           borderTop: HAIRLINE,
           display: "grid",
-          gridTemplateColumns: "200px 1fr 1fr",
-          gap: 32,
         }}
       >
         <a href="#top" style={{ color: "#F4F4F5", fontSize: 15, fontWeight: 600, letterSpacing: "-0.01em", alignSelf: "start", textDecoration: "none" }}>
