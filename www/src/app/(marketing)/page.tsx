@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
+import SmoothScrollNav from "./smooth-scroll-nav"
 
 const TITLE = "Altoscope: Gear Rental and Preproduction Software"
 const DESCRIPTION =
@@ -115,6 +116,7 @@ export default function LandingPage() {
         minHeight: "100vh",
       }}
     >
+      <SmoothScrollNav />
       <style>{`
         html { scroll-behavior: smooth; }
         @media (prefers-reduced-motion: reduce) {
