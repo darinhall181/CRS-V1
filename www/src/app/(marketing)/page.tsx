@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
+import SmoothScrollNav from "./smooth-scroll-nav"
 
 const TITLE = "Altoscope: Gear Rental and Preproduction Software"
 const DESCRIPTION =
@@ -115,6 +116,7 @@ export default function LandingPage() {
         minHeight: "100vh",
       }}
     >
+      <SmoothScrollNav />
       <style>{`
         html { scroll-behavior: smooth; }
         @media (prefers-reduced-motion: reduce) {
@@ -147,7 +149,7 @@ export default function LandingPage() {
         .process-row { grid-template-columns: 64px 200px 1fr; gap: 24px; }
         .features-grid { grid-template-columns: 1fr 1fr; gap: 0 48px; }
         .about-hero-img { height: 280px; }
-        .principles-grid { grid-template-columns: 1fr 1fr 1fr; }
+        .principles-grid { grid-template-columns: 1fr 1fr 1fr; column-gap: 40px; }
         .bios-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
         .bio-avatar { width: 140px; height: 140px; }
         .footer-grid { padding: 28px 40px; grid-template-columns: 200px 1fr 1fr; gap: 32px; }
@@ -358,7 +360,7 @@ export default function LandingPage() {
             style={{ width: "100%", objectFit: "cover", borderRadius: 12, marginBottom: 56, display: "block" }}
           />
 
-          <div className="principles-grid" style={{ display: "grid", paddingTop: 28, borderTop: HAIRLINE }}>
+          <div className="principles-grid" style={{ display: "grid", gap: 24, paddingTop: 28, borderTop: HAIRLINE }}>
             {PRINCIPLES.map((p) => (
               <div key={p.title} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <h3 style={{ margin: 0, fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em" }}>{p.title}</h3>
