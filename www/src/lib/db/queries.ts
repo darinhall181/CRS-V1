@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, productionMembers } from "./schema"
 import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -277,6 +277,30 @@ export async function getProduction(id: string): Promise<Production | null> {
     })
     .from(productions)
     .where(eq(productions.id, id))
+    .limit(1)
+
+  if (!rows[0]) return null
+  return { ...rows[0], totalBudget: rows[0].totalBudget !== null ? parseFloat(rows[0].totalBudget) : null }
+}
+
+// Resolves "the" production for a signed-in user from their production_members
+// rows — most recently active production they belong to. A user can belong to
+// multiple productions; real production selection/routing (switching between
+// them) is a separate, bigger feature — see TODO(T00xx) at the call site.
+export async function getActiveProductionForUser(userId: string): Promise<Production | null> {
+  const rows = await db
+    .select({
+      id: productions.id,
+      name: productions.name,
+      shootType: productions.shootType,
+      shootDays: productions.shootDays,
+      totalBudget: productions.totalBudget,
+      status: productions.status,
+    })
+    .from(productionMembers)
+    .innerJoin(productions, eq(productionMembers.productionId, productions.id))
+    .where(and(eq(productionMembers.userId, userId), eq(productions.status, "active")))
+    .orderBy(desc(productions.updatedAt))
     .limit(1)
 
   if (!rows[0]) return null

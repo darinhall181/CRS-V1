@@ -1,10 +1,15 @@
-import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getProducts, getRentalHouseInventory, getProduction, getActiveProductionForUser, getPackageByProduction, getPackageItems, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getSession } from "@/lib/session"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
 
-// Hardcoded until real production selection/routing exists (single-tenant
-// demo state) — Harpeth Valley Studios / Top Gun Maverick, seeded 2026-08-05
-// (see docs/tasks/T0004-seed-demo-production.md).
+// Fallback only — used when a signed-in user has no production_members row
+// (or nobody is signed in yet) and only safe while there's exactly one
+// seeded production in this single-tenant demo state: Harpeth Valley
+// Studios / Top Gun Maverick, seeded 2026-08-05 (see
+// docs/tasks/finished/T0004-seed-demo-production.md). Real production
+// selection/routing (a user with multiple productions choosing one) is a
+// separate, bigger feature — TODO(T00xx).
 const DEMO_PRODUCTION_ID = "3bd8e7c3-d0a0-4382-960c-c104c472a6ee"
 
 // categorySlug (product_category) → the 5-group taxonomy the builder grid uses.
@@ -63,11 +68,15 @@ function toGearItem(
 }
 
 export default async function PackageBuilderPage() {
+  const session = await getSession()
+  const activeProduction = session ? await getActiveProductionForUser(session.user.id) : null
+  const productionId = activeProduction?.id ?? DEMO_PRODUCTION_ID
+
   const [products, vendorRateRows, production, pkg] = await Promise.all([
     getProducts({ brandSlug: "canon", limit: 200 }),
     getRentalHouseInventory(VENDOR_SLUG),
-    getProduction(DEMO_PRODUCTION_ID),
-    getPackageByProduction(DEMO_PRODUCTION_ID),
+    activeProduction ? Promise.resolve(activeProduction) : getProduction(productionId),
+    getPackageByProduction(productionId),
   ])
   const vendorRates = new Map(vendorRateRows.map((r) => [r.productId, r]))
 
