@@ -11,6 +11,7 @@ import {
   doublePrecision,
   jsonb,
   unique,
+  index,
 } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 
@@ -783,3 +784,19 @@ export type RentalHouse = typeof rentalHouse.$inferSelect
 export type RentalHouseLocation = typeof rentalHouseLocation.$inferSelect
 export type RentalHouseInventory = typeof rentalHouseInventory.$inferSelect
 export type PackageItemQuote = typeof packageItemQuote.$inferSelect
+
+// ─── waitlist_signup ────────────────────────────────────────────────────────
+
+export const waitlistSignup = pgTable(
+  "waitlist_signup",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    email: text("email").notNull().unique(),
+    source: text("source").default("landing"),
+    referrer: text("referrer"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("waitlist_signup_created_at_idx").on(t.createdAt)]
+)
+
+export type WaitlistSignup = typeof waitlistSignup.$inferSelect
