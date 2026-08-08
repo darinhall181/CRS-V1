@@ -33,3 +33,12 @@ rental house.** This task turns that into a concrete design before any payment c
 Darin mentioned recent test plans / markdown files elsewhere (not on `develop`'s docs/)
 that already describe this — pull those in as the starting input when this task starts.
 Prerequisite: Batch 6 (T0031/T0032) landed, since the RFQ document is the anchor object.
+
+**Concrete UI-driven input, added 2026-08-08 (T0042):** the History page prototype
+(`History.dc.html`) needs to render a unified ledger across 7 record kinds — `quote,
+invoice, payment, pickup, return, damage, credit` — each shaped as {date, reference,
+party, production, amount, status, facts[], line_items[], timeline[]}. Whatever schema
+this task lands on should be checked against that shape before being called final: either
+the schema natively produces it, or T0042 needs an explicit mapping/union-query layer to
+assemble it from several tables. Don't let the schema sketch above get finalized without
+that check.
