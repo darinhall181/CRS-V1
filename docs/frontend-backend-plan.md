@@ -267,11 +267,53 @@ end at a shippable state; if a batch stalls, the app still works.
   anticipates exactly this).
 - **Featured/hero curation** — heuristic (newest flagship w/ image) vs a tiny
   `is_featured` flag. T0022 starts heuristic.
-- **Storybook (T0002)** — still open; T0006's note ("what happened building the first one")
-  suggests doing it before Batch 3's big restyle. Optional but recommended.
+- ~~**Storybook (T0002)** — still open~~ **Done 2026-08-08** — see
+  `docs/tasks/finished/T0002-storybook-integration.md` and T0034.
 - ~~**The strategic question** from the workbook: planning surface vs system of record.~~
   **Answered 2026-08-08:** planning surface that talks to rental houses, plus hosting the
   production↔house monetary transaction (see §4 and T0033). Not the houses' rental
   management system.
 - **Payments provider** — Stripe Connect is the obvious shape (platform between two
   businesses, holds/deposits, payouts) but the pick belongs to T0033's scoping, not here.
+- **Rejected direction (2026-08-08 workshop): consumer rental marketplace.** A "GrubHub
+  for lower-tier rental houses" idea — Altoscope hosting bookings for consumer-gear houses
+  (DSLR/mirrorless, publicly-priced) with a transaction cut — was considered and
+  **rejected**. It's a third, undifferentiated business (consumer marketplace + commission)
+  entered against incumbents (LensRentals/ShareGrid/B&H) who already own the segment, and
+  it repeats the exact failure mode this project already identified: ShareGrid/KitSplit/
+  BorrowFox all attempted vertical integration into transactions without decisively
+  winning, because top rental houses compete on relationships, not availability, and a
+  commission model taxes an existing relationship rather than creating value. It's also
+  the segment furthest from the validated ICP (mid-tier production studios, DP-as-champion)
+  and furthest from the validated pain points (COI management, production verification —
+  which matter in the relationship-driven B2B tier, not consumer rental). **Resolution:**
+  don't gatekeep by rental-house type at signup — anyone can list in the database, good for
+  coverage — but don't build the transactional/booking feature that would make a
+  consumer-gear listing *useful* as a transaction. The product's own shape does the segment
+  filtering; no explicit rule needed. **Do not revisit this without new evidence.**
+- **Why T0033's $0-cut hosted payments do NOT repeat the rejected marketplace mistake**,
+  despite surface similarity ("money moves through Altoscope"): ShareGrid et al. failed
+  because they tried to *be* the marketplace — inserting themselves as the matching layer
+  between supply and demand, taking a % cut, competing on availability in a
+  relationship-driven industry. The $0-cut design (Stripe Connect direct charges, $0
+  application fee, Altoscope never custodies funds — see
+  `post-mvp-on-platform-payments.md`) doesn't match anyone with anyone (the relationship
+  already exists via RFQ/workflow), doesn't take a cut, and isn't competing to create the
+  relationship — it's a payment rail *attached to* a relationship the workflow tools
+  already built. The failure mode is specifically "taking a cut as an intermediary," not
+  "hosting payments at all." Planned as a paid-tier feature initially (evidence of
+  workflow stickiness), with the explicit possibility of dropping it to free tier later —
+  not a revenue line to protect long-term.
+- **Billing model (decided 2026-08-08, T0038):** studio tier flat/unlimited once paid, no
+  per-seat/per-production metering. Free/hobby tier gets a *lifetime* cap (not monthly,
+  Figma page-cap pattern) shared across package builder + RFQ as one funnel. Browse/
+  database stays uncapped for everyone always — top-of-funnel, not the paywalled
+  workflow. Exact cap number and unit (productions vs. RFQs/quote-requests sent) still
+  undecided — see T0038.
+- **Company model (decided 2026-08-08, T0037):** solo users need no company at all
+  (`productions.companyId` going nullable); studio creation is atomic
+  (`companies` + owner `companyMembers` row, one transaction, never a two-step gap); a
+  user's prior solo productions never auto-migrate into a company they create later.
+- **Role taxonomy (T0039) and approval authority (T0040)** — both explicitly undecided as
+  of 2026-08-08, blocked pending a decision from Darin. Don't default into an
+  implementation choice on either while building adjacent tasks (T0006, T0017, T0026).

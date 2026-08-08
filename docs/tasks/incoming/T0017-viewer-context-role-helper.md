@@ -35,3 +35,9 @@ Rental-house-side membership deliberately does NOT exist yet — that table arri
 RFQ batch (T0031). Design the return shape to accept a future `rentalHouseRole` without
 breaking callers. UI-gating half of T0007 stays open and closes progressively via
 T0026/T0030/T0032.
+
+Returning both `companyRole` and `productionRole` here is deliberate and already
+future-proofs **T0040** (blocked — undecided whether approval authority is gated by
+company role or production role, since they can give different answers for the same
+user). Don't resolve T0040's question inside this helper; just make sure both fields are
+available to whichever consumer eventually needs them.

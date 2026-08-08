@@ -46,6 +46,17 @@ T0031 (Batch 6) — until then they land in the app with a "house tools coming" 
 Hobbyists have no memberships at all — `getViewerContext()` (T0017) already returns null
 roles, and nothing may crash on that.
 
+## Open question (2026-08-08 workshop, not yet resolved)
+A separate planning session proposed a "solo or studio?" fork right after sign-up
+(solo → create productions immediately, no company; studio → name a company, atomic
+`companies` + `companyMembers` owner row). Not yet decided whether/how this competes or
+complements Step 1's workspace_type select above — resolve when this task is actually
+picked up, don't guess now. Company-model schema this would need (`productions.companyId`
+nullable, `companies.companyType`) is captured separately in T0037 regardless of how the
+UI question gets asked. Likely relevant scope: only `workspace_type = production` users
+need this fork at all — hobbyists are already solo by design (no memberships), rental
+company structure is separate future work (T0031).
+
 ## Progress
 - [ ] Step 1 · Workspace select → `users.workspace_type`
 - [ ] Step 2 · Profession (skippable) → `users.profession` + conditional
