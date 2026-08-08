@@ -104,3 +104,9 @@ dmypy.json
 
 *storybook.log
 storybook-static
+
+# ─── Claude Code ──────────────────────────────────────────────────────────────
+# Nested git worktrees (each is a full checkout of this repo at another branch,
+# including the session's own worktree) — never committed. .claude/skills/ stays
+# tracked; this only excludes worktrees/.
+.claude/worktrees/
