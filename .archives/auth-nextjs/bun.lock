@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "clerk-nextjs",
+      "name": "auth-nextjs",
       "dependencies": {
         "better-auth": "^1.6.5",
         "drizzle-orm": "^0.45.2",
