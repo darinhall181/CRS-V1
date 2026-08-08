@@ -6,6 +6,7 @@ type: task
 component: www/src/app/(app)/package-builder/package-builder-client.tsx
 found_by: claude-code
 found_date: 2026-08-05
+completed_date: null
 verified_live: false
 github_issue: null
 ---

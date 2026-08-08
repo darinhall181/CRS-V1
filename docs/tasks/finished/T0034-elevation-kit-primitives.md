@@ -6,6 +6,7 @@ type: task
 component: www/src/components/elevation/, www/.storybook/, www/src/app/globals.css
 found_by: claude-code
 found_date: 2026-08-08
+completed_date: 2026-08-08
 verified_live: false
 github_issue: null
 ---

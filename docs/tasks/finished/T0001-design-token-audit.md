@@ -6,6 +6,7 @@ type: task
 component: www/src/app/globals.css
 found_by: claude-code
 found_date: 2026-08-05
+completed_date: 2026-08-05
 verified_live: false
 github_issue: "#9"
 ---

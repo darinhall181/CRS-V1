@@ -6,6 +6,7 @@ type: task
 component: www/src/lib/db/schema.ts
 found_by: claude-code
 found_date: 2026-08-05
+completed_date: null
 verified_live: false
 github_issue: null
 ---

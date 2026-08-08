@@ -6,6 +6,7 @@ type: task
 component: Cloudflare R2 (external)
 found_by: claude-code
 found_date: 2026-08-05
+completed_date: null
 verified_live: false
 github_issue: null
 ---

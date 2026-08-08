@@ -6,6 +6,7 @@ type: task
 component: www/
 found_by: claude-code
 found_date: 2026-08-05
+completed_date: 2026-08-08
 verified_live: true
 github_issue: null
 ---
