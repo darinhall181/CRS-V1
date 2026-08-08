@@ -1,13 +1,18 @@
 import { NextResponse, type NextRequest } from "next/server"
+import { getSessionCookie } from "better-auth/cookies"
 
-// Login-gating is TEMPORARILY DISABLED (task #18, decided 2026-08-05): no
-// page differentiates by role yet and all data is synthetic demo data, so
-// the gate has no real security payoff right now — only friction during
-// active UI iteration. Re-enable once building real role-gated views
-// (task #19/#20) — see git history on this file for the working version:
-// getSessionCookie(request) from "better-auth/cookies", redirect to /login
-// with a `next` param when absent, matcher on /package-builder, /gear,
-// /compatibility-checker.
-export function middleware(_request: NextRequest) {
+export function middleware(request: NextRequest) {
+  const sessionCookie = getSessionCookie(request)
+
+  if (!sessionCookie) {
+    const loginUrl = new URL("/login", request.url)
+    loginUrl.searchParams.set("next", request.nextUrl.pathname)
+    return NextResponse.redirect(loginUrl)
+  }
+
   return NextResponse.next()
+}
+
+export const config = {
+  matcher: ["/package-builder", "/gear", "/compatibility-checker"],
 }

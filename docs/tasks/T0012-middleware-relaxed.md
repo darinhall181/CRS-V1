@@ -14,9 +14,17 @@ github_issue: null
 Decided 2026-08-05: relaxed `middleware.ts` to always allow through, since
 no page differentiates by role yet and all data is synthetic — the
 login-gate was pure friction during active UI iteration with no real
-security payoff. The working redirect implementation (session-cookie check,
-`/login` redirect) is preserved in git history on this file, not deleted.
+security payoff.
+
+**2026-08-08: re-enabled.** Session-cookie check via `getSessionCookie`
+(`better-auth/cookies`), redirect to `/login?next=<path>` when absent,
+matcher on `/package-builder`, `/gear`, `/compatibility-checker`. Verified
+against a running dev server — all three gated routes 307 to `/login`,
+`/` and `/login` pass through. Note: the original comment claiming the
+working version was "preserved in git history" was inaccurate — it was
+written and short-circuited in the same commit (`ec0d2a6`), so it had to
+be rebuilt from the spec left in that comment, not restored.
 
 ## Notes
-Re-enable when starting T0007 (role-based UI gating) / T0006 (real role
-views) — that's when the gate starts protecting something real.
+This only re-adds session gating (logged-in or not) — role-based gating
+still needs T0006 (real role views) before T0007 has anything to gate on.
