@@ -17,8 +17,10 @@ name/email/avatar/roles, while the DP Profile mockup's information model needs e
 blocks. New tables (all keyed to `users.id`):
 
 ```
-user_profile(user_id pk, headline, bio, city, region, union_status, years_experience,
-             genres text[], is_verified, availability_status, available_from, available_to)
+user_profile: EXTEND the table T0035 creates (do not create a second one) with
+             headline, bio, city, region, years_experience, genres text[],
+             is_verified, availability_status, available_from, available_to
+             -- union_status already lands there via T0035 (onboarding step 4)
 user_owned_gear(id, user_id, product_id → product nullable, custom_name, description,
                 day_rate numeric, sort_order)          -- owner-operator package
 user_credit(id, user_id, title, kind, director, year, platform, shot_on, still_url, sort_order)
@@ -40,6 +42,22 @@ Design notes:
 - Packages & quotes block needs NO new table — it's the user's packages joined through
   `package_item_quote` (query in T0030).
 - Skip a `ratings`/endorsement system entirely; `is_verified` is an admin-set boolean.
+
+## Progress
+- [ ] Extend T0035's `user_profile` table (do not create a second one) with the profile
+      fields above
+- [ ] `user_owned_gear` table
+- [ ] `user_credit` table
+- [ ] `user_rate` table
+- [ ] `user_document` table
+- [ ] `user_rental_house_account` table
+- [ ] `user_crew` table
+- [ ] Migration via the authoritative path, schema.ts mirrored
+- [ ] Seed Darin's own profile as the demo DP, joined read-back verified
+
+## Notes
+Depends on T0035 landing first — this task extends its `user_profile` table rather than
+creating its own; if T0035 hasn't shipped yet, do that one first.
 
 ## Verification
 Migration via the authoritative path (T0013 decision), schema.ts mirrored, seed Darin's

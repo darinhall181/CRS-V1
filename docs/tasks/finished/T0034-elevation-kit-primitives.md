@@ -48,6 +48,12 @@ matching how the prototype's `style-hover` attribute behaves). `preview.tsx` imp
 not an unstyled white page.
 
 ## Notes
+- **2026-08-08, numbering collision:** a second task was independently created at this
+  same number (`T0034-elevation-primitives-storybook.md`, unaware this file already
+  existed and was done) with near-identical scope. Renumbered to
+  `docs/tasks/incoming/T0036-elevation-kit-selected-card.md` and trimmed to the one
+  genuinely new piece it surfaced — a selected-card treatment from a newer onboarding
+  handoff, not in this file's original scope.
 - **Bugs caught and fixed before calling this done:** this project's Tailwind theme
   *overrides* `rounded-lg`/`rounded-xl` to non-default pixel values (`--radius-lg:
   10px`, `--radius-xl: 14px`, via `@theme inline` aliasing `--radius: 0.625rem`) —
