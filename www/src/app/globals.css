@@ -109,6 +109,64 @@
   --radius-lg: 10px;
   --radius-xl: 12px;
   --radius-pill: 20px;
+
+  /* ── Elevation Kit (design handoff, Aug 2026) ──────────────────────
+     "Elevated Dark Surfaces New Primitives" — see T0015/T0034 and
+     docs/tasks + the design_handoff_altoscope_screens bundle. Replaces
+     the border-driven flat surface language with a lightened surface
+     ramp + two-layer black shadow ramp. Borders survive only as
+     internal dividers. Consumed by www/src/components/elevation/* —
+     never inline these hex values in a component. */
+
+  /* Surface ramp */
+  --surface-00: var(--background); /* #18181A — page/app background */
+  --surface-page-shell: #101012; /* outer desk behind a framed screen */
+  --surface-01: var(--secondary); /* #2E2E34 — inputs, chips, toggle tracks, wells */
+  --surface-01-alt: #2A2A30; /* inset composer / segmented-control wells */
+  --surface-02: #34343B; /* all cards & panels */
+  --surface-02-hover: #3A3A42;
+  --surface-03: #45454E; /* raised buttons/avatars/thumbs on a card */
+  --surface-03-hover: #50505A;
+  --surface-menu: #3C3C45; /* dropdown/popover panel */
+  --surface-pager: #3E3E46; /* circular carousel pager buttons */
+  --surface-pager-hover: #4A4A54;
+  --surface-inverse: #F4F4F5; /* selected toggle thumb, map pins */
+  --surface-disabled: #242428; /* pair with opacity .6 on the element */
+
+  /* Elevation ramp — pure black, never tinted (usage rule: one elevation/2 per region) */
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.35), 0 6px 18px rgba(0, 0, 0, 0.26); /* every card */
+  --elevation-1-hero: 0 1px 3px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --elevation-2: 0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 22px rgba(0, 0, 0, 0.3); /* search pill, toggle thumb, popovers */
+  --elevation-menu: 0 2px 6px rgba(0, 0, 0, 0.4), 0 14px 34px rgba(0, 0, 0, 0.45);
+  --elevation-small: 0 1px 3px rgba(0, 0, 0, 0.3); /* small raised controls, chips */
+  --elevation-inset: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* toggle tracks, sunken wells */
+  --elevation-map-pin: 0 2px 6px rgba(0, 0, 0, 0.45), 0 6px 16px rgba(0, 0, 0, 0.35);
+
+  /* Semantic tint triads — dot / text / fill (distinct from the flat --semantic-* and
+     --status-* tokens above, which existing package-item status pills already depend
+     on; these are additive, not a replacement, to avoid touching call sites that work) */
+  --success-dot: #6e9e7a;
+  --success-text: #8fc29b;
+  --success-fill: rgba(110, 158, 122, 0.14);
+  --warning-dot: #c9a24d;
+  --warning-text: #e0be72;
+  --warning-fill: rgba(201, 162, 77, 0.14);
+  --info-dot: #5c77cf;
+  --info-text: #8fa4e8;
+  --info-fill: rgba(61, 85, 168, 0.16);
+  --danger-text: #d08c86; /* destructive menu items only */
+  --map-match-full: #8fbf9f;
+  --map-match-partial: #d9b36a;
+
+  /* Divider / hover alphas */
+  --elevation-divider: rgba(255, 255, 255, 0.08); /* internal card dividers, table rules */
+  --row-hover: rgba(255, 255, 255, 0.02);
+  --row-active: rgba(61, 85, 168, 0.08);
+  --ghost-hover: rgba(255, 255, 255, 0.05);
+
+  /* Focus ring — identical on every interactive element */
+  --focus-ring-halo: rgba(61, 85, 168, 0.2);
+  --focus-ring-edge: var(--interactive-default);
 }
 
 @theme inline {

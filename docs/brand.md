@@ -62,6 +62,19 @@ Aktiv Grotesk is the sole typeface across all surfaces. It is highly legible at 
 | `color.border.subtle` | `rgba(255,255,255,0.07)` | Dividers, section separators |
 | `color.border.default` | `rgba(255,255,255,0.12)` | Card borders, input borders |
 | `color.brand.navy` | `#1D2C59` | Brand accent — Delft Blue, hero moments |
+
+### Elevation (decided 2026-08-08 — supersedes "borders over shadows" below for cards/panels)
+
+The design system originally used borders (`color.border.*` above) to separate every surface —
+flat, no shadow. The "Elevated Dark Surfaces" pass (T0015, `docs/tasks/T0034`) replaces that for
+**cards and panels**: a lightened surface ramp (`--surface-01` through `--surface-03`, `--surface-page-shell`)
+plus a two-layer, never-tinted black shadow ramp (`--elevation-1` … `--elevation-menu`, see
+`www/src/app/globals.css`). Contrast between adjacent surface steps now reads as an edge; shadow
+reads as height. `color.border.subtle`/`color.border.default` still apply — but only as **internal
+dividers within a surface** (table row rules, card-footer separators), never as the thing that
+separates one card from the page behind it. Usage rules carried into implementation: one
+`elevation/2` per region, shadows never tint, pills stay reserved for true pills, one sunset CTA
+per screen, one unchanged focus ring everywhere. Primitives live in `www/src/components/elevation/`.
 | `color.interactive.default` | `#3D55A8` | Buttons, links, focus rings |
 | `color.interactive.hover` | `#4D68C0` | Button hover state |
 | `color.accent.sunset` | `#FFCF7B` | Highlights, key badges, send CTA — Sunset |
