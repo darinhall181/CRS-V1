@@ -1,55 +1,56 @@
+import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
 export type StatusTone = "success" | "warning" | "info" | "danger" | "neutral"
 
-const TONE_VARS: Record<Exclude<StatusTone, "neutral">, { dot: string; text: string; fill: string }> = {
+const TONE_VARS: Record<StatusTone, { dot: string; text: string; fill: string }> = {
   success: { dot: "var(--success-dot)", text: "var(--success-text)", fill: "var(--success-fill)" },
   warning: { dot: "var(--warning-dot)", text: "var(--warning-text)", fill: "var(--warning-fill)" },
   info: { dot: "var(--info-dot)", text: "var(--info-text)", fill: "var(--info-fill)" },
   danger: { dot: "var(--danger-text)", text: "var(--danger-text)", fill: "rgba(208,140,134,0.14)" },
+  neutral: { dot: "var(--text-secondary)", text: "var(--text-secondary)", fill: "var(--neutral-fill)" },
 }
 
 export interface StatusBadgeProps {
   tone: StatusTone
-  children: React.ReactNode
-  /** "dot" — bare 7px dot + 11px text, for table/line-item status cells (RFQ).
-   *  "pill" — dot + text on a tinted rounded-full fill, for header/list badges. */
-  variant?: "dot" | "pill"
+  children: ReactNode
+  /** "pill" — tinted background + tone-colored text, optional leading icon,
+   *  NO dot (DP Profile package-status table, "Verified DP" badge).
+   *  "dot" — bare 7px tone-colored dot + neutral text-secondary text, no
+   *  background (RFQ line-item status cell, hold-expiry line). */
+  variant?: "pill" | "dot"
+  icon?: ReactNode
   className?: string
 }
 
-// Elevation Kit — StatusBadge. "dot" matches the RFQ line-item status cell spec
-// (7px dot + 11px text); "pill" matches header/verification badges. Neutral tone
-// falls back to text-muted for statuses with no strong semantic (e.g. draft).
-export function StatusBadge({ tone, children, variant = "pill", className }: StatusBadgeProps) {
-  if (tone === "neutral") {
+// Elevation Kit — StatusBadge, rebuilt against the actual DP Profile / RFQ
+// prototype markup (not just the README summary): the pill variant never
+// combines a dot with a fill — it's fill+text, or fill+icon+text. Only the
+// dot variant carries a literal colored dot, and even then the label text
+// itself stays neutral; the dot alone signals tone.
+export function StatusBadge({ tone, children, variant = "pill", icon, className }: StatusBadgeProps) {
+  const { dot, text, fill } = TONE_VARS[tone]
+
+  if (variant === "dot") {
     return (
-      <span
-        className={cn(
-          "inline-flex items-center gap-[7px] text-[11px] text-[var(--text-muted)]",
-          variant === "pill" && "rounded-full bg-[var(--surface-01)] px-[10px] py-[3px]",
-          className
-        )}
-      >
-        <span style={{ background: "var(--text-muted)" }} className="h-[7px] w-[7px] flex-none rounded-full" />
+      <span className={cn("inline-flex items-center gap-[7px] text-[11px] text-[var(--text-secondary)]", className)}>
+        <span style={{ background: dot }} className="h-[7px] w-[7px] flex-none rounded-full" />
         {children}
       </span>
     )
   }
 
-  const { dot, text, fill } = TONE_VARS[tone]
-
   return (
     <span
-      style={variant === "pill" ? { background: fill } : undefined}
+      style={{ background: fill, color: text }}
       className={cn(
-        "inline-flex items-center gap-[7px] text-[11px]",
-        variant === "pill" && "rounded-full px-[10px] py-[3px]",
+        "inline-flex h-[22px] items-center gap-[5px] rounded-full text-[11px] font-medium",
+        icon ? "pl-[9px] pr-[10px]" : "px-[10px]",
         className
       )}
     >
-      <span style={{ background: dot }} className="h-[7px] w-[7px] flex-none rounded-full" />
-      <span style={{ color: text }}>{children}</span>
+      {icon}
+      {children}
     </span>
   )
 }

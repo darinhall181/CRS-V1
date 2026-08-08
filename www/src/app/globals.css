@@ -155,6 +155,7 @@
   --info-text: #8fa4e8;
   --info-fill: rgba(61, 85, 168, 0.16);
   --danger-text: #d08c86; /* destructive menu items only */
+  --neutral-fill: rgba(255, 255, 255, 0.06); /* neutral status pill, e.g. draft/returned */
   --map-match-full: #8fbf9f;
   --map-match-partial: #d9b36a;
 
