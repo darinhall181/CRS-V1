@@ -51,13 +51,15 @@ python3 scripts/upload_images_to_r2.py
 python3 scripts/import_documents_from_extractions.py
 ```
 
-### Database (Supabase)
+### Database (Neon + Drizzle)
+The database is Neon Postgres, managed through Drizzle from `www/`:
 ```bash
-supabase start               # Start local Postgres + Studio in Docker
-supabase db push --include-all  # Apply all migrations
-supabase stop
-# Studio UI: http://127.0.0.1:54323
+bun run db:generate   # Generate SQL migration from schema.ts changes
+bun run db:push       # Apply to the Neon branch in DATABASE_URL
+bun run db:studio     # Drizzle Studio (visual DB browser)
 ```
+The `supabase/` folder is **historical only** (pre-Neon migrations kept for reference).
+Do not add new migrations there, and local Supabase Docker tooling is no longer used.
 
 ## Architecture
 
@@ -95,25 +97,26 @@ Each stage is idempotent and produces JSON consumed by the next:
 - `product_spec` stores both `spec_value` (normalized) and `raw_value` (verbatim from website)
 - Matrix/tabular specs use `product_spec_matrix` with a `dims` JSONB column for row/column identifiers
 - `is_active` boolean for soft deletes
-- Schema changes: write SQL in `supabase/migrations/` with timestamp prefix (e.g., `20260101000000_description.sql`)
+- Schema changes: edit `www/src/lib/db/schema.ts` first, then `bun run db:generate` to produce the migration and `bun run db:push` to apply it to Neon
 
-### Three-Layer DB Pattern
+### DB Source of Truth (decided 2026-08-08)
 
 ```
-supabase/migrations/*.sql    ← Authoritative SQL schema (DDL + seed data)
-        ↓ mirrored in
-www/src/lib/db/schema.ts     ← Drizzle TypeScript table definitions
+www/src/lib/db/schema.ts     ← AUTHORITATIVE table definitions (Drizzle)
+        ↓ drizzle-kit generate → migrations applied to Neon via db:push
         ↓ queried by
 www/src/lib/db/queries.ts    ← Typed async functions used by Server Components
 ```
 
-When changing the DB schema: update the SQL migration first, then update `schema.ts` to match.
+`schema.ts` is the single source of truth; migrations are generated from it, never
+hand-written first. `supabase/migrations/` predates the Neon move and is historical
+reference only — the live Neon schema may already be ahead of it.
 
 ## Environment Variables
 
 - `www/.env.local`: `DATABASE_URL` (Neon Postgres) + Better Auth vars
 - `pipeline/.env`: `DATABASE_URL` (Neon Postgres) + Cloudflare R2 credentials (see `pipeline/.env.example`)
-- `SUPABASE_DB_URL` is deprecated — the database moved from Supabase to Neon. The `supabase/` folder (migrations SQL) remains the authoritative schema reference, but local Supabase Docker tooling is no longer the target.
+- `SUPABASE_DB_URL` is deprecated — the database moved from Supabase to Neon. The `supabase/` folder is historical only; `www/src/lib/db/schema.ts` is the authoritative schema (see DB Source of Truth above).
 
 ## Key Dependencies
 
