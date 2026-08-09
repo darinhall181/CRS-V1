@@ -52,6 +52,9 @@ supabase/.temp
 .env.keys
 .env.*.local
 
+# ─── Local dev notes (may contain credentials) ────────────────────────────────
+docs/dev-notes.local.md
+
 # ─── macOS ────────────────────────────────────────────────────────────────────
 .DS_Store
 .AppleDouble

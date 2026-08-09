@@ -1,5 +1,5 @@
-import { getProducts, getRentalHouseInventory, getProduction, getActiveProductionForUser, getPackageByProduction, getPackageItems, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
-import { getSession } from "@/lib/session"
+import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getViewerContext } from "@/lib/viewer-context"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
 
@@ -68,17 +68,17 @@ function toGearItem(
 }
 
 export default async function PackageBuilderPage() {
-  const session = await getSession()
-  const activeProduction = session ? await getActiveProductionForUser(session.user.id) : null
-  const productionId = activeProduction?.id ?? DEMO_PRODUCTION_ID
+  const viewer = await getViewerContext()
+  const productionId = viewer?.productionId ?? DEMO_PRODUCTION_ID
 
   const [products, vendorRateRows, production, pkg] = await Promise.all([
     getProducts({ brandSlug: "canon", limit: 200 }),
     getRentalHouseInventory(VENDOR_SLUG),
-    activeProduction ? Promise.resolve(activeProduction) : getProduction(productionId),
+    getProduction(productionId),
     getPackageByProduction(productionId),
   ])
   const vendorRates = new Map(vendorRateRows.map((r) => [r.productId, r]))
+  const company = production ? await getCompany(production.companyId) : null
 
   const catalog = products
     .map((p) => toGearItem(p, vendorRates))
@@ -108,6 +108,8 @@ export default async function PackageBuilderPage() {
       packageId={pkg?.id ?? null}
       shootDays={shootDays}
       approvedBudget={approvedBudget}
+      userName={viewer?.user.name ?? "Guest"}
+      companyName={company?.name ?? null}
     />
   )
 }

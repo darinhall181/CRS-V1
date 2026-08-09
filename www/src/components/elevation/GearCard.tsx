@@ -3,6 +3,7 @@ import { Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { IconButton } from "./IconButton"
 import { PhotoWell } from "./PhotoWell"
+import { SELECTED_CARD_RING } from "./shared"
 
 export interface GearCardProps {
   photo?: ReactNode
@@ -11,6 +12,8 @@ export interface GearCardProps {
   rate: string
   rateUnit?: string
   onAdd?: () => void
+  /** T0036 selected-card treatment — elevation/1 + 1.5px interactive-hover inset ring. */
+  selected?: boolean
   className?: string
 }
 
@@ -18,15 +21,16 @@ export interface GearCardProps {
 // Photo well 8px radius, object-fit contain. Rate = data/mono 17px/600, unit
 // 10px sans muted. Add action = IconButton/square on surface/03. Hover steps
 // the container to surface/02-hover; nothing else moves.
-export function GearCard({ photo, name, spec, rate, rateUnit = "/day", onAdd, className }: GearCardProps) {
+export function GearCard({ photo, name, spec, rate, rateUnit = "/day", onAdd, selected, className }: GearCardProps) {
   return (
     <div
       className={cn(
         "flex flex-col gap-1 rounded-[12px] bg-[var(--surface-02)] p-4 shadow-[var(--elevation-1)] transition-colors hover:bg-[var(--surface-02-hover)]",
+        selected && SELECTED_CARD_RING,
         className
       )}
     >
-      <div className="mb-2.5 h-[110px]">
+      <div className="mb-2.5 h-[143px]">
         <PhotoWell radius={8} placeholder={name}>
           {photo}
         </PhotoWell>

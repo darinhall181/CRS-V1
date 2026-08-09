@@ -217,3 +217,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Themed scrollbars — the site is always-dark, so the OS default (light,
+   often frosted-white) scrollbar reads as a rendering glitch on every
+   scrollable panel. Matches the design handoff's own reference CSS. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  border: 2px solid var(--bg-base);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.26);
+  background-clip: padding-box;
+}

@@ -81,3 +81,19 @@ not an unstyled white page.
   beneficiary — `package-builder-client.tsx`'s inline `DetailPanel`/`BudgetPanel`/
   `Row`/`Cell` local functions (see T0002's original motivation) are exactly the kind
   of hand-built pieces this kit should replace, not sit alongside.
+
+**2026-08-08, second pass — Dashboard/CRM/History primitives:** checked the three new
+`Dashboard.dc.html`/`CRM.dc.html`/`History.dc.html` prototypes against this kit before
+T0016/T0041/T0042/T0043 pick them up. Every color/shadow token they use already existed
+here (`--elevation-1` is byte-identical to the prototypes' inline card shadow) — no
+token work needed. Added the primitives that were genuinely missing, each verified
+rendering error-free via a headless Playwright pass against the live Storybook (no
+console/page errors) plus a visual screenshot check:
+- `StatCard` — label/mono-value/note card, 4-up stat grids (Dashboard, History headers)
+- `SidebarNav` — 236px sidebar shell + nav rows + optional workspace-switcher cluster
+  (per T0016/T0040, `workspaces` is omittable so solo accounts render no switcher)
+- `TableShell`/`TableHeaderRow`/`TableRow` — generic grid-column table row primitives
+  (CRM's account table, History's ledger table with click-to-expand)
+Full page compositions (the actual Dashboard/CRM/History screens, and the sidebar's
+final nav-shape) were deliberately **not** built here — T0016's hybrid nav direction
+isn't locked yet, so building full pages now risks throwing work away.

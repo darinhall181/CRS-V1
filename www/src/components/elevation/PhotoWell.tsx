@@ -23,7 +23,7 @@ export function PhotoWell({ children, placeholder = "Photo", radius = 8, fit = "
       )}
     >
       {children ? (
-        <div className={cn("h-full w-full", fit === "contain" ? "[&>*]:object-contain" : "[&>*]:object-cover")}>
+        <div className={cn("relative h-full w-full", fit === "contain" ? "[&>*]:object-contain" : "[&>*]:object-cover")}>
           {children}
         </div>
       ) : (

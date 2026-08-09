@@ -1,12 +1,12 @@
 ---
 title: Add the selected-card treatment to the Elevation Kit primitives
-status: open
+status: done
 severity: low
 type: task
 component: www/src/components/elevation/
 found_by: claude-code
 found_date: 2026-08-08
-completed_date: null
+completed_date: 2026-08-08
 verified_live: false
 github_issue: null
 ---
@@ -35,3 +35,24 @@ T0019/T0020/T0024 should consume those existing components, not rebuild them.
 ## Verification
 Storybook story shows both states; visually matches `inset 0 0 0 1.5px #4D68C0` on an
 elevation/1 card against the onboarding prototype.
+
+## Summary (2026-08-08)
+Landed as `SELECTED_CARD_RING` in `www/src/components/elevation/shared.ts` — a shared
+class string (`shadow-[var(--elevation-1),inset_0_0_0_1.5px_var(--interactive-hover)]`),
+not a new component, per this task's own guidance. `--interactive-hover` (#4964BF) is
+close enough to the prototype's literal `#4D68C0` that reusing the existing token was
+correct rather than introducing a one-off hex value. Wired onto `GearCard` via a new
+`selected?: boolean` prop as the reference implementation — other card primitives (the
+onboarding workspace/profession cards, once T0018/T0019 actually build them) apply the
+same `cn(..., selected && SELECTED_CARD_RING)` pattern. Story:
+`GearCard.stories.tsx` → `SelectedState`, verified rendering error-free via headless
+Playwright and a visual screenshot pass against Storybook.
+
+Also closed two adjacent gaps found while reading `Onboarding.dc.html` for this task:
+- `SegmentedToggle` was hardcoded to exactly 2 options (`readonly [string, string]`,
+  `value: 0 | 1`) — generalized to N options (`readonly string[]`, `value: number`) so
+  it also covers onboarding's 3-way Guided/Standard/Pro experience-level picker. No
+  existing call sites broke (only Storybook consumed it before this).
+- Two new primitives with no prior equivalent: `Switch` (binary on/off — the
+  "I own gear I bring to jobs" toggle; distinct shape from `SegmentedToggle`) and
+  `StepDots` (onboarding progress indicator, expanding-pill dots).

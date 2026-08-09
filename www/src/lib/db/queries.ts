@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, productionMembers } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, productionMembers, companyMembers, companies } from "./schema"
 import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -258,6 +258,7 @@ export async function getRentalHouseInventory(rentalHouseSlug: string): Promise<
 
 export type Production = {
   id: string
+  companyId: string
   name: string
   shootType: string | null
   shootDays: number | null
@@ -269,6 +270,7 @@ export async function getProduction(id: string): Promise<Production | null> {
   const rows = await db
     .select({
       id: productions.id,
+      companyId: productions.companyId,
       name: productions.name,
       shootType: productions.shootType,
       shootDays: productions.shootDays,
@@ -291,6 +293,7 @@ export async function getActiveProductionForUser(userId: string): Promise<Produc
   const rows = await db
     .select({
       id: productions.id,
+      companyId: productions.companyId,
       name: productions.name,
       shootType: productions.shootType,
       shootDays: productions.shootDays,
@@ -305,6 +308,34 @@ export async function getActiveProductionForUser(userId: string): Promise<Produc
 
   if (!rows[0]) return null
   return { ...rows[0], totalBudget: rows[0].totalBudget !== null ? parseFloat(rows[0].totalBudget) : null }
+}
+
+export async function getCompany(id: string): Promise<{ id: string; name: string } | null> {
+  const rows = await db.select({ id: companies.id, name: companies.name }).from(companies).where(eq(companies.id, id)).limit(1)
+  return rows[0] ?? null
+}
+
+// ─── Membership / role resolution (T0017 — getViewerContext) ──────────────────
+
+export type CompanyMemberRow = { role: "owner" | "admin" | "member" }
+export type ProductionMemberRow = { role: "dp" | "coordinator" | "producer" | "gaffer"; department: string | null }
+
+export async function getCompanyMember(companyId: string, userId: string): Promise<CompanyMemberRow | null> {
+  const rows = await db
+    .select({ role: companyMembers.role })
+    .from(companyMembers)
+    .where(and(eq(companyMembers.companyId, companyId), eq(companyMembers.userId, userId)))
+    .limit(1)
+  return rows[0] ?? null
+}
+
+export async function getProductionMember(productionId: string, userId: string): Promise<ProductionMemberRow | null> {
+  const rows = await db
+    .select({ role: productionMembers.role, department: productionMembers.department })
+    .from(productionMembers)
+    .where(and(eq(productionMembers.productionId, productionId), eq(productionMembers.userId, userId)))
+    .limit(1)
+  return rows[0] ?? null
 }
 
 export type PackageSummary = {
@@ -364,6 +395,10 @@ export async function addPackageItem(
     .values({ packageId, gearId, quantity: qty, status: "draft", addedBy })
     .returning({ id: packageItems.id })
   return row
+}
+
+export async function updatePackageItemQty(id: string, qty: number): Promise<void> {
+  await db.update(packageItems).set({ quantity: qty }).where(eq(packageItems.id, id))
 }
 
 export async function removePackageItem(id: string): Promise<void> {

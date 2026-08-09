@@ -22,3 +22,17 @@ export const Default: Story = {
     </div>
   ),
 }
+
+// T0036 — selected-card treatment: unselected vs. selected side by side.
+export const SelectedState: Story = {
+  render: () => (
+    <div className="flex gap-4">
+      <div style={{ width: 220 }}>
+        <GearCard name="ARRI ALEXA 35" spec="4.6K Super 35 body" rate="$780" rateUnit="/day" />
+      </div>
+      <div style={{ width: 220 }}>
+        <GearCard name="ARRI ALEXA 35" spec="4.6K Super 35 body" rate="$780" rateUnit="/day" selected />
+      </div>
+    </div>
+  ),
+}

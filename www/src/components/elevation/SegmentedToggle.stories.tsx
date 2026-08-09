@@ -11,7 +11,7 @@ export default meta
 type Story = StoryObj<typeof SegmentedToggle>
 
 function Interactive() {
-  const [value, setValue] = useState<0 | 1>(0)
+  const [value, setValue] = useState(0)
   return (
     <SegmentedToggle
       options={["APS-C", "Full frame"]}
@@ -30,4 +30,21 @@ export const RightSelected: Story = {
   render: () => (
     <SegmentedToggle options={["APS-C", "Full frame"]} value={1} onChange={() => {}} aria-label="Sensor format" />
   ),
+}
+
+// Onboarding — 3-way experience-level picker ("Set up your profile" step).
+function ThreeWayInteractive() {
+  const [value, setValue] = useState(1)
+  return (
+    <SegmentedToggle
+      options={["Guided", "Standard", "Pro"]}
+      value={value}
+      onChange={setValue}
+      aria-label="Experience level"
+    />
+  )
+}
+
+export const ThreeWay: Story = {
+  render: () => <ThreeWayInteractive />,
 }

@@ -7,3 +7,8 @@ export const FOCUS_RING =
 
 // Usage rule (segmented toggle motion spec): 250ms cubic-bezier(.3,.9,.3,1).
 export const THUMB_EASE = "cubic-bezier(0.3, 0.9, 0.3, 1)"
+
+// T0036 — selected-card treatment: an elevation/1 card gets a 1.5px interactive-hover
+// inset ring layered on top when selected. A state, not a new component — apply to
+// any card-shaped primitive's className via `cn(..., selected && SELECTED_CARD_RING)`.
+export const SELECTED_CARD_RING = "shadow-[var(--elevation-1),inset_0_0_0_1.5px_var(--interactive-hover)]"
