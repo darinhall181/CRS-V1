@@ -1,19 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { LayoutDashboard, Search, Package, FileText, Building2, Settings, Plus } from "lucide-react"
+import { useRouter, usePathname } from "next/navigation"
+import { Building2, Plus } from "lucide-react"
 import { SidebarNav } from "@/components/elevation"
+import { NAV_ITEMS, SETTINGS_NAV_ITEM } from "@/components/nav/nav-items"
 import { cn } from "@/lib/utils"
-
-// Trimmed 2026-08-08 — Rental houses/Budget dropped per Darin's direction;
-// Settings moved to its own group below a divider (secondaryItems).
-const NAV_ITEMS = [
-  { label: "Dashboard", href: "/", icon: <LayoutDashboard size={15} strokeWidth={1.7} /> },
-  { label: "Browse", href: "/gear", icon: <Search size={15} strokeWidth={1.7} /> },
-  { label: "Packages", href: "/package-builder", icon: <Package size={15} strokeWidth={1.7} /> },
-  { label: "Quotes", href: "/compatibility-checker", icon: <FileText size={15} strokeWidth={1.7} /> },
-]
 
 // Package Builder's left nav — Navigation Options "1a" wireframe restyled
 // flush (Storefront handoff's borderless treatment, T0034/T0036 primitives).
@@ -21,9 +13,8 @@ const NAV_ITEMS = [
 // "Production Studio"/"Harpeth Valley Studios" wrap to 3 lines — long labels
 // still wrap and grow their row's height rather than clip, just less often.
 // Nav destinations here are the old top-center "Browse · Packages · Quote"
-// tabs moved into the sidebar. Most hrefs are placeholders (Dashboard/Quotes
-// don't exist as real routes yet) — Packages is the only one that resolves
-// to a real page today.
+// tabs moved into the sidebar, and shared with (app)'s AppShell (T0016) via
+// nav-items.tsx so the destination list can't drift between the two shells.
 //
 // 2026-08-08 experiment: "Add gear" moved from the top action row into the
 // sidebar header slot, at Darin's request, to see whether it reads better
@@ -44,6 +35,7 @@ export function PackageBuilderSidebar({
   onAddGear: () => void
 }) {
   const router = useRouter()
+  const pathname = usePathname()
   const [collapsed, setCollapsed] = useState(false)
 
   return (
@@ -67,12 +59,10 @@ export function PackageBuilderSidebar({
       items={NAV_ITEMS.map((item) => ({
         label: item.label,
         icon: item.icon,
-        active: item.label === "Packages",
+        active: pathname === item.href,
         onClick: () => router.push(item.href),
       }))}
-      secondaryItems={[
-        { label: "Settings", icon: <Settings size={15} strokeWidth={1.7} /> },
-      ]}
+      secondaryItems={[SETTINGS_NAV_ITEM]}
       workspaces={
         companyName
           ? [{ name: companyName, icon: <Building2 size={16} strokeWidth={1.7} />, active: true }]

@@ -1,13 +1,13 @@
 ---
 title: App shell v2 — global nav + shared (app) layout per the design handoffs
-status: open
+status: in-progress
 severity: medium
 type: task
 component: www/src/components/nav/, www/src/app/(app)/layout.tsx
 found_by: claude-code
 found_date: 2026-08-08
 completed_date: null
-verified_live: false
+verified_live: true
 github_issue: null
 ---
 
@@ -53,3 +53,42 @@ The workspace switcher (production company ↔ rental-house company, e.g. "Vanta
 Pictures" / "Keslow West" in the mockups) is the company-context differentiator flagged in
 T0040's permissions notes — solo users don't need it at all. Whichever nav shape wins,
 solo (no company) accounts should not see a switcher with nothing to switch to.
+
+## Progress
+- [x] Replaced the old light shadcn `<Navbar/>` with a real shared shell —
+  `(app)/app-shell.tsx`, wired in via `(app)/layout.tsx` (now an async server component
+  resolving viewer + company, same pattern as `package-builder/page.tsx`)
+- [x] Shell = full-width `TopBar` above a flush, collapsible `SidebarNav` — the leaning
+  hybrid-toward-1a direction, reusing the exact primitives already validated on Package
+  Builder rather than a new build
+- [x] Nav destinations, logo, and account/sign-out menu extracted to shared modules
+  (`components/nav/nav-items.tsx`, `logo.tsx`, `account-menu.tsx`) so Package Builder's
+  own shell and this one can't drift — updated `package-builder-sidebar.tsx`/`-topbar.tsx`
+  to consume the same modules instead of duplicating
+  (`package-builder-sidebar.tsx` also picked up real `usePathname()`-based active-item
+  state instead of a hardcoded `label === "Packages"` check, as a side benefit)
+- [x] Solo-account workspace-switcher omission verified — falls out of `SidebarNav`'s
+  existing `workspaces` prop behavior (already the case for Package Builder), not new
+  code
+- [x] Verified live: Browse and Compatibility Checker both render inside the new shell
+  with correct active-nav-item highlighting; Package Builder (separate `(workspace)`
+  shell, deliberately not unified — see below) confirmed unaffected by the shared-module
+  extraction
+- [ ] **Not done** — full nav-item-list reconciliation against the actual `Navigation
+  Options.dc.html`/`Dashboard.dc.html`/`CRM.dc.html`/`History.dc.html` handoff files this
+  task references (`~/Downloads/...`, outside this repo, not accessible from this
+  session). Reused Package Builder's existing 4-item list (Dashboard/Browse/Packages/
+  Quotes) as-is rather than guessing at the 6-vs-7-item History discrepancy the task
+  flags — whoever has those files should confirm/adjust `nav-items.tsx` directly
+- [ ] **Not done** — account dropdown still only has sign-out. "Saved items" (T0023) and
+  a profile link weren't added since neither destination exists yet; wiring them in is a
+  one-line addition to `account-menu.tsx` once T0023 lands
+- [ ] **Out of scope, not blocking** — Dashboard/CRM/History don't exist as real pages yet
+  (T0043/T0041/T0042), so "one shared layout so the five screens only render their body"
+  is only true for the 2 of 5 screens that currently exist (Browse, Compatibility
+  Checker). The shell is ready for the other three whenever they land.
+
+Package Builder intentionally keeps its own page-scoped shell rather than moving into
+this one — the task's own notes flag exactly why (1a "costs real width — noticeable on
+the three-pane package builder"). Unifying that is a separate, bigger call, not a side
+effect of this pass.
