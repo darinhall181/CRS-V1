@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import { Plus, Search, X, ChevronDown, FileSpreadsheet } from "lucide-react"
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from "@/components/ui/sheet"
@@ -18,8 +18,10 @@ import {
   type GearCategory,
   type GearItem,
   type PackageLineItem,
+  type PackageComment,
+  type MentionableUser,
 } from "./types"
-import { addPackageItemAction, removePackageItemAction, updatePackageItemQtyAction } from "./actions"
+import { addPackageItemAction, removePackageItemAction, updatePackageItemQtyAction, addPackageCommentAction } from "./actions"
 import { PackageBuilderSidebar } from "./package-builder-sidebar"
 import { PackageBuilderTopBar } from "./package-builder-topbar"
 
@@ -45,6 +47,23 @@ const RIGHT_PANEL_WIDTH = 266
 const RIGHT_PANEL_CARD_WIDTH = RIGHT_PANEL_WIDTH - 26 // 240
 const RIGHT_PANEL_TOGGLE_WIDTH = RIGHT_PANEL_CARD_WIDTH - 12 * 2 // 288 — tab row's px-3
 const TAB_LABELS = ["Detail", "Budget", "Notes"] as const
+
+// "Saved just now" / "Saved 2m ago" — formatted client-side off a real
+// timestamp (packages.updated_at, bumped on every real package_items write —
+// see queries.ts). No polling needed: the label just re-formats the elapsed
+// time on an interval; the timestamp itself only moves when a mutation
+// actually lands.
+function formatSavedAt(savedAt: Date | null): string {
+  if (!savedAt) return "Not saved yet"
+  const elapsedMs = Date.now() - savedAt.getTime()
+  const minutes = Math.floor(elapsedMs / 60_000)
+  if (minutes < 1) return "Saved just now"
+  if (minutes < 60) return `Saved ${minutes}m ago`
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `Saved ${hours}h ago`
+  const days = Math.floor(hours / 24)
+  return `Saved ${days}d ago`
+}
 
 function fmt(n: number): string {
   return n.toLocaleString("en-US")
@@ -75,24 +94,41 @@ export function PackageBuilderClient({
   productionName,
   packageName,
   packageId,
+  productionId,
+  updatedAt,
   shootDays,
   approvedBudget,
   userName,
   companyName,
+  initialComments,
+  mentionableUsers,
 }: {
   catalog: GearItem[]
   initialLineItems: PackageLineItem[]
   productionName: string
   packageName: string
   packageId: string | null
+  productionId: string
+  updatedAt: string | null
   shootDays: number
   approvedBudget: number
   userName: string
   companyName: string | null
+  initialComments: PackageComment[]
+  mentionableUsers: MentionableUser[]
 }) {
   const gearById = useMemo(() => new Map(catalog.map((g) => [g.id, g])), [catalog])
 
   const [lineItems, setLineItems] = useState<PackageLineItem[]>(initialLineItems)
+  const [comments, setComments] = useState<PackageComment[]>(initialComments)
+  const [savedAt, setSavedAt] = useState<Date | null>(updatedAt ? new Date(updatedAt) : null)
+  // Re-formats the elapsed-time label every 30s — the timestamp itself only
+  // ever moves on a real mutation (see formatSavedAt above).
+  const [, forceTick] = useState(0)
+  useEffect(() => {
+    const interval = setInterval(() => forceTick((n) => n + 1), 30_000)
+    return () => clearInterval(interval)
+  }, [])
   const [selectedLineId, setSelectedLineId] = useState<string | null>(
     initialLineItems[0]?.id ?? null
   )
@@ -229,6 +265,7 @@ export function PackageBuilderClient({
       const { id: realId } = await addPackageItemAction(packageId, gear.id)
       setLineItems((prev) => prev.map((l) => (l.id === tempId ? { ...l, id: realId } : l)))
       setSelectedLineId((prev) => (prev === tempId ? realId : prev))
+      setSavedAt(new Date())
     } catch (err) {
       console.error("Failed to add package item:", err)
       setLineItems((prev) => prev.filter((l) => l.id !== tempId))
@@ -262,6 +299,7 @@ export function PackageBuilderClient({
     const realIds = idsToRemove.filter((id) => !id.startsWith("temp-"))
     try {
       await Promise.all(realIds.map((id) => removePackageItemAction(id)))
+      if (realIds.length > 0) setSavedAt(new Date())
     } catch (err) {
       console.error("Failed to remove package item(s):", err)
       // Not rolling back the optimistic removal here — a failed delete on an
@@ -280,6 +318,7 @@ export function PackageBuilderClient({
     if (!lineId.startsWith("temp-")) {
       try {
         await removePackageItemAction(lineId)
+        setSavedAt(new Date())
       } catch (err) {
         console.error("Failed to remove package item:", err)
       }
@@ -294,8 +333,20 @@ export function PackageBuilderClient({
     if (lineId.startsWith("temp-")) return // not persisted yet — the add flow will carry the current qty
     try {
       await updatePackageItemQtyAction(lineId, qty)
+      setSavedAt(new Date())
     } catch (err) {
       console.error("Failed to update quantity:", err)
+    }
+  }
+
+  async function postComment(body: string, mentionedUserIds: string[]) {
+    if (!packageId || !body.trim()) return
+    try {
+      const comment = await addPackageCommentAction(packageId, productionId, body, mentionedUserIds)
+      setComments((prev) => [...prev, comment])
+      setSavedAt(new Date())
+    } catch (err) {
+      console.error("Failed to post comment:", err)
     }
   }
 
@@ -321,7 +372,7 @@ export function PackageBuilderClient({
             {productionName} — {packageName}
           </span>
           <StatusBadge tone={packageStatus.tone}>{packageStatus.label}</StatusBadge>
-          <span className="text-[11px] text-[var(--text-subtle)]">Saved just now</span>
+          <span className="text-[11px] text-[var(--text-subtle)]">{formatSavedAt(savedAt)}</span>
         </div>
 
         {/* ── Action row ──────────────────────────────────────────────────── */}
@@ -550,7 +601,9 @@ export function PackageBuilderClient({
                     rateMode={rateMode}
                   />
                 )}
-                {rightTab === "notes" && <NotesPanel />}
+                {rightTab === "notes" && (
+                  <NotesPanel comments={comments} mentionableUsers={mentionableUsers} onPost={postComment} />
+                )}
               </div>
 
               {/* Re-prices the whole table (not just this panel), but only
@@ -815,22 +868,330 @@ function BudgetPanel({
   )
 }
 
-function NotesPanel() {
+// Comment timestamps are historical (unlike the header's live-ticking
+// "Saved…" label) — formatted once per render off a fixed created_at, no
+// interval needed.
+function formatCommentTime(iso: string): string {
+  const elapsedMs = Date.now() - new Date(iso).getTime()
+  const minutes = Math.floor(elapsedMs / 60_000)
+  if (minutes < 1) return "just now"
+  if (minutes < 60) return `${minutes}m ago`
+  const hours = Math.floor(minutes / 60)
+  if (hours < 24) return `${hours}h ago`
+  const days = Math.floor(hours / 24)
+  return `${days}d ago`
+}
+
+// A single visual pill for an @mention — used both live in the composer
+// (with a remove ×) and when rendering a posted comment's body (read-only).
+// Kept as one small component so both contexts stay visually identical.
+function MentionPill({ children, onRemove }: { children: React.ReactNode; onRemove?: () => void }) {
+  return (
+    <span
+      className="inline-flex items-center gap-1 rounded-full px-2 py-px text-[12px] font-medium"
+      style={{ background: "rgba(61,85,168,0.16)", color: "var(--interactive-default)" }}
+    >
+      {children}
+      {onRemove && (
+        <button
+          type="button"
+          onClick={onRemove}
+          aria-label="Remove mention"
+          className="flex h-3 w-3 items-center justify-center rounded-full opacity-70 hover:opacity-100"
+        >
+          <X size={9} strokeWidth={2.5} />
+        </button>
+      )}
+    </span>
+  )
+}
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
+// Splits a posted comment's body on its real @mentions (cross-referenced
+// against mentionedUserIds → name, not just any "@word" that happens to
+// match) and renders each as a MentionPill — visual continuity with the
+// composer, without needing to store rich content, since the mention is
+// still a real reference (mentionedUserIds) independent of this formatting.
+function renderCommentBody(body: string, mentionedUserIds: string[], usersById: Map<string, string>): React.ReactNode {
+  const names = mentionedUserIds.map((id) => usersById.get(id)).filter((n): n is string => !!n)
+  if (names.length === 0) return body
+
+  const sorted = [...new Set(names)].sort((a, b) => b.length - a.length)
+  const pattern = new RegExp(`(@(?:${sorted.map(escapeRegExp).join("|")}))`, "g")
+  const parts = body.split(pattern)
+
+  return parts.map((part, i) =>
+    sorted.some((n) => part === `@${n}`) ? (
+      <MentionPill key={i}>{part}</MentionPill>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  )
+}
+
+// Composer draft, modeled as an ordered list of segments rather than a flat
+// string — the append-only text run is always the last segment; every
+// mention picked from the dropdown becomes its own atomic segment in
+// between. This is what makes a mention behave as a single deletable block
+// (explicit × on the pill, or Backspace while the trailing text segment is
+// empty) without needing a contenteditable/rich-text editor — the DOM never
+// has to represent a pill *inside* editable text, just a flex row of
+// finished segments followed by one plain <input>.
+type DraftSegment =
+  | { kind: "text"; segId: string; value: string }
+  | { kind: "mention"; segId: string; userId: string; name: string }
+
+function newTextSegment(): DraftSegment {
+  return { kind: "text", segId: `seg-${Math.random().toString(36).slice(2)}`, value: "" }
+}
+
+function NotesPanel({
+  comments,
+  mentionableUsers,
+  onPost,
+}: {
+  comments: PackageComment[]
+  mentionableUsers: MentionableUser[]
+  onPost: (body: string, mentionedUserIds: string[]) => void | Promise<void>
+}) {
+  const [segments, setSegments] = useState<DraftSegment[]>(() => [newTextSegment()])
+  const [posting, setPosting] = useState(false)
+  // Non-null while the live text ends in an in-progress "@query" — drives the
+  // typeahead dropdown below the composer.
+  const [mentionQuery, setMentionQuery] = useState<string | null>(null)
+  const [highlightIndex, setHighlightIndex] = useState(0)
+  const usersById = useMemo(() => new Map(mentionableUsers.map((u) => [u.id, u.name])), [mentionableUsers])
+
+  const liveSegment = segments[segments.length - 1]
+  const liveText = liveSegment.kind === "text" ? liveSegment.value : ""
+  const isEmpty = segments.every((s) => s.kind === "text" && s.value.trim() === "")
+
+  const mentionMatches = useMemo(() => {
+    if (mentionQuery === null) return []
+    const q = mentionQuery.toLowerCase()
+    return mentionableUsers
+      .filter((u) => u.name.toLowerCase().includes(q))
+      .sort((a, b) => {
+        const aStarts = a.name.toLowerCase().startsWith(q) ? 0 : 1
+        const bStarts = b.name.toLowerCase().startsWith(q) ? 0 : 1
+        return aStarts - bStarts || a.name.localeCompare(b.name)
+      })
+      .slice(0, 6)
+  }, [mentionQuery, mentionableUsers])
+
+  // "@" triggers the dropdown only at the start of the text or right after a
+  // space (so it won't fire mid-word), and only while there's no space yet
+  // between the "@" and the cursor — i.e. still actively typing the name.
+  function activeMentionQuery(text: string): string | null {
+    const at = text.lastIndexOf("@")
+    if (at === -1) return null
+    if (at > 0 && text[at - 1] !== " ") return null
+    const after = text.slice(at + 1)
+    if (/\s/.test(after)) return null
+    return after
+  }
+
+  function updateLiveText(value: string) {
+    setSegments((prev) => prev.map((s, i) => (i === prev.length - 1 ? { ...s, value } : s)))
+    setMentionQuery(activeMentionQuery(value))
+    setHighlightIndex(0)
+  }
+
+  function addMention(user: MentionableUser) {
+    setSegments((prev) => [...prev, { kind: "mention", segId: `seg-${user.id}-${Date.now()}`, userId: user.id, name: user.name }, newTextSegment()])
+    setMentionQuery(null)
+  }
+
+  // Picking from the typeahead: strip the trailing "@query" the user was
+  // typing out of the live text, freeze what's left as a committed segment,
+  // then insert the mention chip — same atomic-segment shape as addMention.
+  function selectMentionMatch(user: MentionableUser) {
+    setSegments((prev) => {
+      const last = prev[prev.length - 1]
+      if (last.kind !== "text") return prev
+      const at = last.value.lastIndexOf("@")
+      const trimmed = at === -1 ? last.value : last.value.slice(0, at)
+      return [
+        ...prev.slice(0, -1),
+        { ...last, value: trimmed },
+        { kind: "mention", segId: `seg-${user.id}-${Date.now()}`, userId: user.id, name: user.name },
+        newTextSegment(),
+      ]
+    })
+    setMentionQuery(null)
+    setHighlightIndex(0)
+  }
+
+  function removeSegment(segId: string) {
+    setSegments((prev) => {
+      const next = prev.filter((s) => s.segId !== segId)
+      // Always end on an editable text segment.
+      return next.length === 0 || next[next.length - 1].kind !== "text" ? [...next, newTextSegment()] : next
+    })
+  }
+
+  function handleBackspaceOnEmpty() {
+    // Live text segment is already empty — Backspace here removes the whole
+    // previous segment atomically (which, by construction, can only be a
+    // mention chip; two text segments never sit adjacent).
+    setSegments((prev) => {
+      if (prev.length <= 1) return prev
+      return prev.slice(0, -2).concat(newTextSegment())
+    })
+  }
+
+  async function handlePost() {
+    if (isEmpty || posting) return
+    const body = segments.map((s) => (s.kind === "text" ? s.value : `@${s.name}`)).join("").trim()
+    const mentionedUserIds = Array.from(new Set(segments.filter((s) => s.kind === "mention").map((s) => s.userId)))
+    if (!body) return
+    setPosting(true)
+    try {
+      await onPost(body, mentionedUserIds)
+      setSegments([newTextSegment()])
+      setMentionQuery(null)
+    } finally {
+      setPosting(false)
+    }
+  }
+
   return (
     <div>
       <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Notes &amp; activity</p>
-      <div className="mb-2.5 rounded-xl bg-[var(--surface-01)] p-3">
-        <p className="text-xs text-[var(--text-secondary)]">No comments yet on this package.</p>
+
+      <div className="mb-2.5 flex flex-col gap-2">
+        {comments.length === 0 ? (
+          <div className="rounded-xl bg-[var(--surface-01)] p-3">
+            <p className="text-xs text-[var(--text-secondary)]">No comments yet on this package.</p>
+          </div>
+        ) : (
+          comments.map((c) => (
+            <div key={c.id} className="rounded-xl bg-[var(--surface-01)] p-3">
+              <div className="mb-1 flex items-baseline gap-2">
+                <span className="text-xs font-semibold text-[var(--text-primary)]">{c.authorName}</span>
+                <span className="text-[10px] text-[var(--text-subtle)]">{formatCommentTime(c.createdAt)}</span>
+              </div>
+              <p className="whitespace-pre-wrap text-xs leading-relaxed text-[var(--text-secondary)]">
+                {renderCommentBody(c.body, c.mentionedUserIds, usersById)}
+              </p>
+            </div>
+          ))
+        )}
       </div>
-      <div className="flex flex-col gap-2.5 rounded-xl bg-[var(--surface-01)] p-3">
-        <span className="text-xs text-[var(--text-subtle)]">Reply or @mention…</span>
+
+      <div className="relative flex flex-col gap-2.5 rounded-xl bg-[var(--surface-01)] p-3">
+        <div className="flex flex-wrap items-center gap-1.5">
+          {segments.slice(0, -1).map((s) =>
+            s.kind === "mention" ? (
+              <MentionPill key={s.segId} onRemove={() => removeSegment(s.segId)}>
+                @{s.name}
+              </MentionPill>
+            ) : (
+              <span key={s.segId} className="text-xs text-[var(--text-primary)]">
+                {s.value}
+              </span>
+            )
+          )}
+          <input
+            value={liveText}
+            onChange={(e) => updateLiveText(e.target.value)}
+            onBlur={() => {
+              // Delay so a click on a dropdown row (onMouseDown, below) can
+              // still register before the dropdown unmounts.
+              setTimeout(() => setMentionQuery(null), 120)
+            }}
+            onKeyDown={(e) => {
+              if (mentionQuery !== null && mentionMatches.length > 0) {
+                if (e.key === "ArrowDown") {
+                  e.preventDefault()
+                  setHighlightIndex((i) => (i + 1) % mentionMatches.length)
+                  return
+                }
+                if (e.key === "ArrowUp") {
+                  e.preventDefault()
+                  setHighlightIndex((i) => (i - 1 + mentionMatches.length) % mentionMatches.length)
+                  return
+                }
+                if (e.key === "Enter" || e.key === "Tab") {
+                  e.preventDefault()
+                  selectMentionMatch(mentionMatches[highlightIndex])
+                  return
+                }
+                if (e.key === "Escape") {
+                  e.preventDefault()
+                  setMentionQuery(null)
+                  return
+                }
+              }
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault()
+                handlePost()
+              } else if (e.key === "Backspace" && liveText === "" && segments.length > 1) {
+                e.preventDefault()
+                handleBackspaceOnEmpty()
+              }
+            }}
+            placeholder={segments.length === 1 ? "Reply or @mention…" : ""}
+            className="min-w-[80px] flex-1 bg-transparent text-xs text-[var(--text-primary)] outline-none placeholder:text-[var(--text-subtle)]"
+          />
+
+          {mentionQuery !== null && (
+            <div className="absolute left-3 top-full z-10 mt-1 w-[200px] overflow-hidden rounded-lg bg-[var(--surface-02)] py-1 shadow-[var(--elevation-2)]">
+              {mentionMatches.length === 0 ? (
+                <p className="px-3 py-1.5 text-xs text-[var(--text-subtle)]">No matches</p>
+              ) : (
+                mentionMatches.map((u, i) => (
+                  <button
+                    key={u.id}
+                    type="button"
+                    onMouseDown={(e) => {
+                      e.preventDefault() // keep focus in the input so onBlur doesn't fire first
+                      selectMentionMatch(u)
+                    }}
+                    className="flex w-full items-center px-3 py-1.5 text-left text-xs"
+                    style={{
+                      background: i === highlightIndex ? "var(--ghost-hover)" : "transparent",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {u.name}
+                  </button>
+                ))
+              )}
+            </div>
+          )}
+        </div>
         <div className="flex gap-2">
-          <button className="flex h-7 items-center rounded-lg px-3 text-xs text-white transition-colors hover:bg-[var(--interactive-hover)]" style={{ background: "var(--interactive-default)" }}>
+          <button
+            type="button"
+            disabled={isEmpty || posting}
+            onClick={handlePost}
+            className="flex h-7 items-center rounded-lg px-3 text-xs text-white transition-colors hover:bg-[var(--interactive-hover)] disabled:cursor-default disabled:opacity-50"
+            style={{ background: "var(--interactive-default)" }}
+          >
             Post
           </button>
-          <button className="flex h-7 items-center rounded-lg px-3 text-xs text-[var(--text-secondary)] transition-colors hover:bg-[var(--ghost-hover)] hover:text-[var(--text-primary)]">
-            @ mention
-          </button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                type="button"
+                disabled={mentionableUsers.length === 0}
+                className="flex h-7 items-center rounded-lg px-3 text-xs text-[var(--text-secondary)] transition-colors hover:bg-[var(--ghost-hover)] hover:text-[var(--text-primary)] disabled:cursor-default disabled:opacity-50"
+              >
+                @ mention
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {mentionableUsers.map((u) => (
+                <DropdownMenuItem key={u.id} onClick={() => addMention(u)}>
+                  {u.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>

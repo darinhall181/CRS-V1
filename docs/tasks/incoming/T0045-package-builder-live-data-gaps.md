@@ -1,6 +1,6 @@
 ---
 title: Package Builder still has UI-only "live" data — saved time, status, vendor link
-status: open
+status: in-progress
 severity: medium
 type: task
 component: www/src/app/(workspace)/package-builder/, www/src/lib/db/schema.ts
@@ -36,8 +36,30 @@ separate gaps, worth splitting when this gets picked up rather than solving as o
    rental house it's quoting (T0031 territory again), this should read from that real
    relationship instead of the constant.
 
+## Progress
+- [x] "Saved just now" — real write path (item 1)
+- [ ] Package-level status field (item 2) — still client-derived, deferred to T0031/T0032
+- [ ] Real rental-house relationship for the footer line (item 3) — deferred, same reason
+
 ## Notes
 None of these are wrong today (the seeded data happens to make the constant/derived
 values correct) — they're just not wired to update if the underlying reality changes.
 Don't build speculative infrastructure (no cron needed) — just make sure each of these
 reads from a real write path once one exists.
+
+**2026-08-08 — item 1 done, items 2/3 deferred.** `packages.updated_at` (already a real
+column) now gets bumped in a transaction alongside every real `package_items` write —
+`addPackageItem`, `updatePackageItemQty`, `removePackageItem` in `queries.ts` all update
+it (the latter two look up `packageId` off the item row first, since callers only ever
+have the item id). `page.tsx` passes the real timestamp down as `updatedAt`;
+`package-builder-client.tsx` seeds client state from it, bumps it optimistically
+on every successful mutation, and renders it through `formatSavedAt()` — "Saved just
+now" / "Saved Nm ago" / "Nh ago" / "Nd ago" — re-formatted on a 30s client tick, no
+polling/cron. Verified live: item count 12→13 after a real add flipped the label from
+"Saved 3d ago" to "Saved just now" in the same request.
+
+Items 2 (real `packages.status` column) and 3 (real production↔rental-house
+relationship) both need schema/relationships that don't exist yet and depend on
+T0031/T0032's quote/RFQ work — not implemented here, left as-is (client-derived status,
+hardcoded `VENDOR_NAME` constant) per the original task's guidance not to build ahead of
+that.

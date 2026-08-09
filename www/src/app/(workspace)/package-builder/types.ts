@@ -59,6 +59,25 @@ export interface PackageLineItem {
   notesCount: number
 }
 
+// ─── Package comments ──────────────────────────────────────────────────────────
+// Package-scoped (see package_comments — T0008), not per-line-item: one thread
+// per package, matching the Notes tab's actual UI (a sibling of Detail/Budget,
+// not gated behind a selected line).
+
+export interface PackageComment {
+  id: string
+  body: string
+  createdAt: string // ISO — formatted client-side, same pattern as `updatedAt`/formatSavedAt
+  authorId: string
+  authorName: string
+  mentionedUserIds: string[]
+}
+
+export interface MentionableUser {
+  id: string
+  name: string
+}
+
 // ─── Status badge config ──────────────────────────────────────────────────────
 
 export interface StatusStyle {

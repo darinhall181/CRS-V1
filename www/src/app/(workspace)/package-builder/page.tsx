@@ -1,4 +1,4 @@
-import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, getPackageComments, getMentionableUsers, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
 import { getViewerContext } from "@/lib/viewer-context"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
@@ -89,14 +89,26 @@ export default async function PackageBuilderPage() {
 
   // Real persisted line items — see docs/tasks/T0005. Falls back to an empty
   // package (not fake data) if the package row itself is somehow missing.
-  const packageItemRows = pkg ? await getPackageItems(pkg.id) : []
+  const [packageItemRows, comments, mentionableUsers] = await Promise.all([
+    pkg ? getPackageItems(pkg.id) : Promise.resolve([]),
+    pkg ? getPackageComments(pkg.id) : Promise.resolve([]),
+    getMentionableUsers(productionId),
+  ])
   const initialLineItems: PackageLineItem[] = packageItemRows.map((row) => ({
     id: row.id,
     gearId: row.gearId,
     qty: row.qty,
     days: shootDays,
     status: row.status as PackageLineItem["status"],
-    notesCount: 0, // no comment table yet — see docs/tasks/T0008
+    notesCount: 0, // package-level comments, not per-line — see docs/tasks/T0008
+  }))
+  const initialComments = comments.map((c) => ({
+    id: c.id,
+    body: c.body,
+    createdAt: c.createdAt.toISOString(),
+    authorId: c.authorId,
+    authorName: c.authorName,
+    mentionedUserIds: c.mentionedUserIds,
   }))
 
   return (
@@ -106,10 +118,14 @@ export default async function PackageBuilderPage() {
       productionName={production?.name ?? "Untitled Production"}
       packageName={pkg?.name ?? "Camera Package"}
       packageId={pkg?.id ?? null}
+      productionId={productionId}
+      updatedAt={pkg?.updatedAt.toISOString() ?? null}
       shootDays={shootDays}
       approvedBudget={approvedBudget}
       userName={viewer?.user.name ?? "Guest"}
       companyName={company?.name ?? null}
+      initialComments={initialComments}
+      mentionableUsers={mentionableUsers}
     />
   )
 }

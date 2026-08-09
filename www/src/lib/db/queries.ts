@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, productionMembers, companyMembers, companies } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, productionMembers, companyMembers, companies, users } from "./schema"
 import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -341,13 +341,14 @@ export async function getProductionMember(productionId: string, userId: string):
 export type PackageSummary = {
   id: string
   name: string
+  updatedAt: Date
 }
 
 // A production can have multiple packages; for now this returns the first
 // one (matches the current single-package-per-production demo state).
 export async function getPackageByProduction(productionId: string): Promise<PackageSummary | null> {
   const rows = await db
-    .select({ id: packages.id, name: packages.name })
+    .select({ id: packages.id, name: packages.name, updatedAt: packages.updatedAt })
     .from(packages)
     .where(eq(packages.productionId, productionId))
     .limit(1)
@@ -390,17 +391,182 @@ export async function addPackageItem(
   addedBy: string,
   qty: number = 1
 ): Promise<{ id: string }> {
-  const [row] = await db
-    .insert(packageItems)
-    .values({ packageId, gearId, quantity: qty, status: "draft", addedBy })
-    .returning({ id: packageItems.id })
-  return row
+  return db.transaction(async (tx) => {
+    const [row] = await tx
+      .insert(packageItems)
+      .values({ packageId, gearId, quantity: qty, status: "draft", addedBy })
+      .returning({ id: packageItems.id })
+    await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, packageId))
+    return row
+  })
 }
 
 export async function updatePackageItemQty(id: string, qty: number): Promise<void> {
-  await db.update(packageItems).set({ quantity: qty }).where(eq(packageItems.id, id))
+  await db.transaction(async (tx) => {
+    const [item] = await tx
+      .update(packageItems)
+      .set({ quantity: qty })
+      .where(eq(packageItems.id, id))
+      .returning({ packageId: packageItems.packageId })
+    if (item) {
+      await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, item.packageId))
+    }
+  })
 }
 
 export async function removePackageItem(id: string): Promise<void> {
-  await db.delete(packageItems).where(eq(packageItems.id, id))
+  await db.transaction(async (tx) => {
+    const [item] = await tx
+      .delete(packageItems)
+      .where(eq(packageItems.id, id))
+      .returning({ packageId: packageItems.packageId })
+    if (item) {
+      await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, item.packageId))
+    }
+  })
+}
+
+// ─── Package comments (T0008) ───────────────────────────────────────────────
+
+export type MentionableUser = {
+  id: string
+  name: string
+}
+
+// @mention candidates — real production_members only, not arbitrary users.
+export async function getMentionableUsers(productionId: string): Promise<MentionableUser[]> {
+  const rows = await db
+    .select({ id: users.id, name: users.name })
+    .from(productionMembers)
+    .innerJoin(users, eq(productionMembers.userId, users.id))
+    .where(eq(productionMembers.productionId, productionId))
+
+  return rows
+}
+
+export type PackageCommentRow = {
+  id: string
+  body: string
+  createdAt: Date
+  authorId: string
+  authorName: string
+  mentionedUserIds: string[]
+}
+
+export async function getPackageComments(packageId: string): Promise<PackageCommentRow[]> {
+  const comments = await db
+    .select({
+      id: packageComments.id,
+      body: packageComments.body,
+      createdAt: packageComments.createdAt,
+      authorId: packageComments.authorId,
+      authorName: users.name,
+    })
+    .from(packageComments)
+    .innerJoin(users, eq(packageComments.authorId, users.id))
+    .where(eq(packageComments.packageId, packageId))
+    .orderBy(asc(packageComments.createdAt))
+
+  if (comments.length === 0) return []
+
+  const mentionRows = await db
+    .select({ commentId: packageCommentMentions.commentId, userId: packageCommentMentions.mentionedUserId })
+    .from(packageCommentMentions)
+    .where(
+      or(...comments.map((c) => eq(packageCommentMentions.commentId, c.id)))
+    )
+
+  const mentionsByComment = new Map<string, string[]>()
+  for (const row of mentionRows) {
+    const list = mentionsByComment.get(row.commentId) ?? []
+    list.push(row.userId)
+    mentionsByComment.set(row.commentId, list)
+  }
+
+  return comments.map((c) => ({ ...c, mentionedUserIds: mentionsByComment.get(c.id) ?? [] }))
+}
+
+// mentionedUserIds is untrusted client input — cross-checked against real
+// production_members below rather than recorded as-is, so a mention can only
+// ever reference someone who actually has access to this production.
+export async function addPackageComment(
+  packageId: string,
+  productionId: string,
+  authorId: string,
+  body: string,
+  mentionedUserIds: string[]
+): Promise<{ id: string; createdAt: Date }> {
+  return db.transaction(async (tx) => {
+    const [comment] = await tx
+      .insert(packageComments)
+      .values({ packageId, authorId, body })
+      .returning({ id: packageComments.id, createdAt: packageComments.createdAt })
+
+    if (mentionedUserIds.length > 0) {
+      const validMembers = await tx
+        .select({ userId: productionMembers.userId })
+        .from(productionMembers)
+        .where(
+          and(
+            eq(productionMembers.productionId, productionId),
+            or(...mentionedUserIds.map((id) => eq(productionMembers.userId, id)))
+          )
+        )
+      const validIds = new Set(validMembers.map((m) => m.userId))
+      const rows = mentionedUserIds
+        .filter((id) => validIds.has(id))
+        .map((mentionedUserId) => ({ commentId: comment.id, mentionedUserId }))
+      if (rows.length > 0) {
+        await tx.insert(packageCommentMentions).values(rows)
+      }
+    }
+
+    await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, packageId))
+    return comment
+  })
+}
+
+// ─── Package department budgets (T0009) ─────────────────────────────────────
+// Schema-only groundwork for now — no consuming UI yet (see schema.ts comment
+// on packageDepartmentBudget for why: T0006/T0007 closed superseded, so this
+// isn't gating a separate "Gaffer view" that doesn't exist). These are the
+// basic read/write primitives a future budget-visibility rule would sit on
+// top of, following T0030/T0032's query-level-scoping precedent rather than
+// a new page.
+
+export type PackageDepartmentBudgetRow = {
+  id: string
+  department: string
+  approvedAmount: string
+}
+
+export async function getPackageDepartmentBudgets(packageId: string): Promise<PackageDepartmentBudgetRow[]> {
+  return db
+    .select({
+      id: packageDepartmentBudget.id,
+      department: packageDepartmentBudget.department,
+      approvedAmount: packageDepartmentBudget.approvedAmount,
+    })
+    .from(packageDepartmentBudget)
+    .where(eq(packageDepartmentBudget.packageId, packageId))
+}
+
+// One envelope per (package, department) — upsert rather than insert, so
+// re-setting a department's budget updates it in place instead of erroring
+// on the unique constraint.
+export async function setPackageDepartmentBudget(
+  packageId: string,
+  department: string,
+  approvedAmount: number,
+  setBy: string
+): Promise<{ id: string }> {
+  const [row] = await db
+    .insert(packageDepartmentBudget)
+    .values({ packageId, department, approvedAmount: approvedAmount.toString(), setBy })
+    .onConflictDoUpdate({
+      target: [packageDepartmentBudget.packageId, packageDepartmentBudget.department],
+      set: { approvedAmount: approvedAmount.toString(), setBy, updatedAt: new Date() },
+    })
+    .returning({ id: packageDepartmentBudget.id })
+  return row
 }

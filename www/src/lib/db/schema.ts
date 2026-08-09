@@ -459,6 +459,63 @@ export const packageItems = pgTable("package_items", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 })
 
+// ─── package_department_budget ─────────────────────────────────────────────────
+// T0009 — per-department approved envelope within a package (e.g. "camera
+// approved for $22,000"). `department` deliberately stays free text keyed off
+// the same convention as `production_members.department` (e.g.
+// 'lighting_grip' for a gaffer) rather than a new enum — it's a crew
+// department, not the gear-catalog taxonomy (GearCategory in
+// package-builder/types.ts covers 'camera'/'lenses'/'support'/'focus'/
+// 'video', a different axis).
+//
+// The task's original framing ("needed before the Gaffer role view's budget
+// envelope works") is stale in one respect: T0006/T0007 closed superseded —
+// the 2026-08-08 workshop settled on one shared Package Builder UI, not a
+// separate page per role. So this stays schema-only groundwork for now; a
+// future budget-visibility rule (who sees which department's envelope) would
+// be a query-level scope on this table, the same pattern as T0030's rate
+// visibility and T0032's client_note/internal_note split — not a new page.
+export const packageDepartmentBudget = pgTable(
+  "package_department_budget",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    packageId: uuid("package_id").notNull().references(() => packages.id, { onDelete: "cascade" }),
+    department: text("department").notNull(),
+    approvedAmount: numeric("approved_amount", { precision: 12, scale: 2 }).notNull(),
+    setBy: uuid("set_by").references(() => users.id),
+    createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+  },
+  (t) => [unique().on(t.packageId, t.department)]
+)
+
+// ─── package_comments ─────────────────────────────────────────────────────────
+// T0008 — package-scoped, not line-item-scoped: the Package Builder Notes panel
+// ("No comments yet on this package") lives on the "Notes" tab as a sibling of
+// "Detail"/"Budget", not gated behind a selected line item, so the comment
+// thread is one conversation per package rather than one per package_item.
+
+export const packageComments = pgTable("package_comments", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  packageId: uuid("package_id").notNull().references(() => packages.id, { onDelete: "cascade" }),
+  authorId: uuid("author_id").notNull().references(() => users.id),
+  body: text("body").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+})
+
+// A real reference per @mentioned user, not a substring match on `body` — so a
+// mention can drive a real notification later (T0046) without re-parsing text.
+// One row per mention (a comment can @mention more than one person).
+export const packageCommentMentions = pgTable(
+  "package_comment_mentions",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    commentId: uuid("comment_id").notNull().references(() => packageComments.id, { onDelete: "cascade" }),
+    mentionedUserId: uuid("mentioned_user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+  },
+  (t) => [unique().on(t.commentId, t.mentionedUserId)]
+)
+
 // ─── invitations ──────────────────────────────────────────────────────────────
 
 export const invitations = pgTable("invitations", {
@@ -740,6 +797,8 @@ export const packagesRelations = relations(packages, ({ one, many }) => ({
   sourceKitTemplate: one(kitTemplate, { fields: [packages.sourceKitTemplateId], references: [kitTemplate.id] }),
   createdBy: one(users, { fields: [packages.createdBy], references: [users.id] }),
   items: many(packageItems),
+  comments: many(packageComments),
+  departmentBudgets: many(packageDepartmentBudget),
 }))
 
 export const packageItemsRelations = relations(packageItems, ({ one, many }) => ({
@@ -748,6 +807,22 @@ export const packageItemsRelations = relations(packageItems, ({ one, many }) => 
   addedBy: one(users, { fields: [packageItems.addedBy], references: [users.id] }),
   approvedBy: one(users, { fields: [packageItems.approvedBy], references: [users.id] }),
   quotes: many(packageItemQuote),
+}))
+
+export const packageDepartmentBudgetRelations = relations(packageDepartmentBudget, ({ one }) => ({
+  package: one(packages, { fields: [packageDepartmentBudget.packageId], references: [packages.id] }),
+  setBy: one(users, { fields: [packageDepartmentBudget.setBy], references: [users.id] }),
+}))
+
+export const packageCommentsRelations = relations(packageComments, ({ one, many }) => ({
+  package: one(packages, { fields: [packageComments.packageId], references: [packages.id] }),
+  author: one(users, { fields: [packageComments.authorId], references: [users.id] }),
+  mentions: many(packageCommentMentions),
+}))
+
+export const packageCommentMentionsRelations = relations(packageCommentMentions, ({ one }) => ({
+  comment: one(packageComments, { fields: [packageCommentMentions.commentId], references: [packageComments.id] }),
+  mentionedUser: one(users, { fields: [packageCommentMentions.mentionedUserId], references: [users.id] }),
 }))
 
 export const invitationsRelations = relations(invitations, ({ one }) => ({

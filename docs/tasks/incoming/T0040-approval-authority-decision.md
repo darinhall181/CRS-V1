@@ -39,3 +39,20 @@ need to be blocked on this to build session/role resolution generally.
 Company-switcher UI (the other differentiator this workshop confirmed) is in scope for
 T0016 (app shell/global nav) — studio members need it, solo users don't, but it's still
 one shared app shell component, not a fork.
+
+**2026-08-09 — account for `package_department_budget` (T0009) here too.** Built T0009's
+department-budget table same day — schema-only, no consuming UI yet, deliberately, because
+this exact permissions decision hadn't landed. When this gets decided, it should also
+cover *who can see a given department's budget row* (e.g. should a gaffer see the
+lighting_grip envelope but not camera's) — a visibility question, not an approval one, but
+the same "permissions not views" category this task already covers. Confirmed again with
+Darin 2026-08-09: still not forking the UI by role — same one shared Package Builder page,
+gated by permission checks. The only real view-level differences remain account *type*
+(rental house vs. production studio, i.e. the company-context switcher above), not role
+within a production.
+
+Also noted for context, not yet in scope: Darin wants a beginner/intermediate/pro
+experience-level toggle eventually (separate from role or company type) — but explicitly
+described this as much later, gated behind the not-yet-built hobbyist login/onboarding
+flow. Don't fold it into this decision prematurely; flagging here only so it's not
+forgotten when this task and the hobbyist flow both eventually get picked up.
