@@ -3,7 +3,7 @@ title: Saved items (hearts) — schema + storefront wiring
 status: open
 severity: low
 type: task
-component: www/src/lib/db/schema.ts, www/src/app/(app)/gear/
+component: www/src/lib/db/schema.ts, www/src/app/(app)/browse/
 found_by: claude-code
 found_date: 2026-08-08
 completed_date: null

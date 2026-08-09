@@ -17,7 +17,7 @@ inventory, and per-item quotes all have tables. The scraping pipeline feeds came
 
 **Frontend: one real surface plus scaffolding.** The Package Builder is the only screen wired
 end-to-end (server component → `queries.ts` → client component → server actions →
-`package_items`, with optimistic UI — T0003/T0005). `/gear` is a basic browse grid. `/login`
+`package_items`, with optimistic UI — T0003/T0005). `/browse` is a basic browse grid. `/login`
 works but is unstyled shadcn-default. `/compatibility-checker` exists. Everything else —
 storefront redesign, profile, map, RFQ — exists only as high-fidelity HTML design prototypes.
 
@@ -195,7 +195,7 @@ designed flow doesn't include it) — it appears when a production-workspace use
 needs a company.
 
 **Batch 2 · Storefront / browse — T0020–T0023**
-Rework `/gear` into the Storefront: category sidebar driven by `product_category` (with
+Rework `/browse` into the Storefront: category sidebar driven by `product_category` (with
 counts — don't hardcode the mockup's 11 categories; the pipeline only has cameras + lenses
 today and the sidebar should tell the truth), URL-param search + pagination (server-rendered,
 shareable), hero/featured rows, saved items. Ratings deferred — no data source.

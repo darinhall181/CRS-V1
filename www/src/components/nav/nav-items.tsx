@@ -17,7 +17,7 @@ import { LayoutDashboard, Search, Package, FileText, History as HistoryIcon, Use
 //               was scrapped 2026-08-09, see T0048 for revisiting that page
 export const NAV_ITEMS: { label: string; href: string | null; icon: React.ReactNode }[] = [
   { label: "Dashboard", href: null, icon: <LayoutDashboard size={15} strokeWidth={1.7} /> },
-  { label: "Browse", href: "/gear", icon: <Search size={15} strokeWidth={1.7} /> },
+  { label: "Browse", href: "/browse", icon: <Search size={15} strokeWidth={1.7} /> },
   { label: "Packages", href: "/package-builder", icon: <Package size={15} strokeWidth={1.7} /> },
   { label: "Quotes", href: null, icon: <FileText size={15} strokeWidth={1.7} /> },
   { label: "History", href: null, icon: <HistoryIcon size={15} strokeWidth={1.7} /> },

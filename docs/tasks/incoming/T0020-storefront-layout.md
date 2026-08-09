@@ -1,9 +1,9 @@
 ---
-title: Rework /gear into the Storefront layout (sidebar, tabs, card grid, pagination)
+title: Rework /browse into the Storefront layout (sidebar, tabs, card grid, pagination)
 status: open
 severity: high
 type: task
-component: www/src/app/(app)/gear/
+component: www/src/app/(app)/browse/
 found_by: claude-code
 found_date: 2026-08-08
 completed_date: null

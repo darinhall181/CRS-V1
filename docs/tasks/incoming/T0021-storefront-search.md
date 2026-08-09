@@ -3,7 +3,7 @@ title: Wire the search pill to product search
 status: open
 severity: medium
 type: task
-component: www/src/app/(app)/gear/, www/src/components/nav/
+component: www/src/app/(app)/browse/, www/src/components/nav/
 found_by: claude-code
 found_date: 2026-08-08
 completed_date: null

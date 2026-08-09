@@ -27,9 +27,9 @@ description) — this isn't a "never build it" call, just "not now, and not as i
 ## Notes
 Darin's initial thinking, mid-conversation, worth preserving verbatim-ish rather than
 losing to a summary: **compatibility checking may not deserve a standalone page at all —
-it may belong folded into Browse (`/gear`) itself.** He specifically recalled that an
+it may belong folded into Browse (`/browse`) itself.** He specifically recalled that an
 earlier skeleton/mockup of the site had compatibility checking integrated directly into
-the gear/browse page, rather than as its own destination. If that's the direction, the
+the browse page, rather than as its own destination. If that's the direction, the
 "Quotes" nav item (currently an inert placeholder, see `nav-items.tsx`) stays free for
 whatever "Quotes" actually ends up meaning — a real quotes/RFQ list, most likely, once
 T0031/T0032 land — rather than reclaiming this old page's route.

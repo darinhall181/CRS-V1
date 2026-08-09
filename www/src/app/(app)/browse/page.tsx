@@ -5,7 +5,7 @@ import Link from "next/link"
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: "Gear — Altoscope",
+  title: "Browse — Altoscope",
   description: "Browse all cameras and lenses in the Altoscope database.",
 }
 
@@ -13,7 +13,7 @@ interface PageProps {
   searchParams: { category?: string }
 }
 
-export default async function GearPage({ searchParams }: PageProps) {
+export default async function BrowsePage({ searchParams }: PageProps) {
   const [products, categories] = await Promise.all([
     getProducts({ categorySlug: searchParams.category, limit: 100 }),
     getCategoriesWithCounts(),
@@ -22,7 +22,7 @@ export default async function GearPage({ searchParams }: PageProps) {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Gear Database</h1>
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Browse</h1>
         <p className="mt-2 text-muted-foreground">
           {products.length} products across {categories.length} categories
         </p>
@@ -31,7 +31,7 @@ export default async function GearPage({ searchParams }: PageProps) {
       {/* Category filter */}
       <div className="mb-8 flex flex-wrap gap-2">
         <Link
-          href="/gear"
+          href="/browse"
           className={`rounded-full border px-3 py-1 text-sm transition-colors hover:bg-accent ${
             !searchParams.category ? "bg-primary text-primary-foreground border-primary" : ""
           }`}
@@ -41,7 +41,7 @@ export default async function GearPage({ searchParams }: PageProps) {
         {categories.map((cat) => (
           <Link
             key={cat.slug}
-            href={`/gear?category=${cat.slug}`}
+            href={`/browse?category=${cat.slug}`}
             className={`rounded-full border px-3 py-1 text-sm transition-colors hover:bg-accent ${
               searchParams.category === cat.slug
                 ? "bg-primary text-primary-foreground border-primary"

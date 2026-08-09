@@ -19,6 +19,12 @@ const nextConfig = {
       { protocol: "http", hostname: "**" },
     ],
   },
+  async redirects() {
+    return [
+      // /gear → /browse (renamed 2026-08-09) — keeps any existing bookmarks/links working.
+      { source: "/gear", destination: "/browse", permanent: true },
+    ]
+  },
 }
 
 export default nextConfig
