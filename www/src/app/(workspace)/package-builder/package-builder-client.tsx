@@ -72,6 +72,61 @@ function fmtMoney(n: number): string {
   return `$${fmt(Math.round(n))}`
 }
 
+// RFC 4180-ish: wrap in quotes and double any embedded quotes whenever the
+// value could otherwise break the format (comma, quote, or newline).
+function csvCell(value: string | number): string {
+  const s = String(value)
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+}
+
+// T0010 — real client-side export, no server round-trip. Exports the whole
+// real package (category order, unfiltered) regardless of the current
+// search/group-by view state, since that's a display-only lens on the same
+// underlying data.
+function buildPackageCsv(
+  groups: { category: GearCategory; lines: PackageLineItem[]; total: number }[],
+  gearById: Map<string, GearItem>,
+  rateOf: (gear: GearItem) => number,
+  periods: number,
+  rateUnit: string
+): string {
+  const header = ["Category", "Item", "Brand", "SKU", "Availability", "Qty", "Rate", "Rate unit", "Total"]
+  const rows: string[][] = [header]
+
+  for (const group of groups) {
+    for (const line of group.lines) {
+      const gear = gearById.get(line.gearId)
+      if (!gear) continue
+      const rate = rateOf(gear)
+      rows.push([
+        GEAR_CATEGORY_LABELS[group.category],
+        gear.name,
+        gear.brandName,
+        gear.sku,
+        gear.rate.source === "vendor" ? `In stock (${gear.rate.quantityOnHand ?? "—"})` : "Not confirmed",
+        String(line.qty),
+        fmtMoney(rate),
+        rateUnit,
+        fmtMoney(rate * line.qty * periods),
+      ])
+    }
+  }
+
+  return rows.map((row) => row.map(csvCell).join(",")).join("\r\n")
+}
+
+function downloadCsv(filename: string, csv: string) {
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement("a")
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
+}
+
 // Derived, not fabricated — rolls up the real per-line statuses into one
 // package-level badge (no `packages.status` column exists yet to read this
 // from directly).
@@ -350,6 +405,12 @@ export function PackageBuilderClient({
     }
   }
 
+  function handleExportCsv() {
+    const csv = buildPackageCsv(groups, gearById, rateOf, periods, rateUnit)
+    const safeName = `${productionName} - ${packageName}`.replace(/[\\/:*?"<>|]/g, "-")
+    downloadCsv(`${safeName}.csv`, csv)
+  }
+
   const drawerResults = catalog.filter((g) => {
     if (drawerCategory !== "all" && g.category !== drawerCategory) return false
     if (drawerSearch && !g.name.toLowerCase().includes(drawerSearch.toLowerCase())) return false
@@ -402,7 +463,9 @@ export function PackageBuilderClient({
 
           <button
             type="button"
-            className="flex h-[38px] flex-none items-center gap-[7px] rounded-[14px] bg-[var(--surface-03)] px-4 text-xs font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-03-hover)]"
+            onClick={handleExportCsv}
+            disabled={totalItemCount === 0}
+            className="flex h-[38px] flex-none items-center gap-[7px] rounded-[14px] bg-[var(--surface-03)] px-4 text-xs font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-03-hover)] disabled:cursor-default disabled:opacity-50"
           >
             <FileSpreadsheet size={14} strokeWidth={2} />
             Export CSV

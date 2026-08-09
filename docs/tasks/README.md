@@ -4,10 +4,20 @@ Git-committed, durable backlog for this repo — the reference for what's done, 
 
 ## Folders
 
-- `incoming/` — everything not yet done: `open`, `in-progress`, `blocked`, `wontfix`.
+- `incoming/` — everything actionable right now: `open`, `in-progress`, `blocked` (on an
+  in-repo decision — another task, a design call), `wontfix`.
+- `postponed/` — `blocked`, but on something outside any Claude Code session's reach:
+  a manual step in an external console (DNS/registrar, a paid dashboard), waiting on a
+  real-world event (closer to launch, a contract signed), or anything else no amount of
+  repo work moves forward. Keeps `incoming/` to things a session picking up the backlog
+  can actually pick up next, without losing the task or implying it's done.
 - `finished/` — `done` tasks, moved here when they're completed and signed off (see below).
 
-A task file lives in exactly one of the two at any time. **Move it with `git mv`** (not a plain copy) so history follows the file. This split exists because multiple sessions (including concurrent ones) write task files here, and "is this actually done" needs to be answerable by which folder a file is in, not just by opening it and checking frontmatter.
+A task file lives in exactly one of the three at any time. **Move it with `git mv`** (not
+a plain copy) so history follows the file. This split exists because multiple sessions
+(including concurrent ones) write task files here, and "is this actually actionable" or
+"is this actually done" needs to be answerable by which folder a file is in, not just by
+opening it and checking frontmatter.
 
 ## Naming
 
