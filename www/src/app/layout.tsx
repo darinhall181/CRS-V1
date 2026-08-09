@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 // Site-wide fallback — wins on any route that doesn't export its own
-// `metadata` (currently: /login, /compatibility-checker, /package-builder).
+// `metadata` (currently: /login, /package-builder — /gear has its own).
 // Keep this in sync with (marketing)/page.tsx's TITLE/DESCRIPTION — that
 // page overrides these for "/" itself, but this is what every other route
 // (and any stale search-engine cache) falls back to, so a drift here reads

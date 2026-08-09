@@ -14,5 +14,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/package-builder", "/gear", "/compatibility-checker"],
+  matcher: ["/package-builder", "/gear"],
 }

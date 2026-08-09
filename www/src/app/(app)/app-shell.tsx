@@ -8,9 +8,9 @@ import { NAV_ITEMS, SETTINGS_NAV_ITEM } from "@/components/nav/nav-items"
 import { AltoscopeLogo } from "@/components/nav/logo"
 import { AccountMenu } from "@/components/nav/account-menu"
 
-// T0016 — shared shell for the (app) route group (Browse, Compatibility
-// Checker today; future Dashboard/CRM/History land here too), replacing the
-// old light shadcn <Navbar/>. Composed from the same Elevation Kit
+// T0016 — shared shell for the (app) route group (Browse today; future
+// Dashboard/Quotes/History/CRM land here too — see nav-items.tsx), replacing
+// the old light shadcn <Navbar/>. Composed from the same Elevation Kit
 // primitives and nav-items.tsx config as Package Builder's page-scoped
 // shell, so the two read as one product rather than two — full-width
 // TopBar above a flush, collapsible sidebar (Navigation Options "1a",
@@ -51,8 +51,8 @@ export function AppShell({
           items={NAV_ITEMS.map((item) => ({
             label: item.label,
             icon: item.icon,
-            active: pathname === item.href,
-            onClick: () => router.push(item.href),
+            active: item.href !== null && pathname === item.href,
+            onClick: item.href ? () => router.push(item.href!) : undefined,
           }))}
           secondaryItems={[SETTINGS_NAV_ITEM]}
           workspaces={

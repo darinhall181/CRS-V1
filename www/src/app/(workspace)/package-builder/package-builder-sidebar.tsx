@@ -59,8 +59,8 @@ export function PackageBuilderSidebar({
       items={NAV_ITEMS.map((item) => ({
         label: item.label,
         icon: item.icon,
-        active: pathname === item.href,
-        onClick: () => router.push(item.href),
+        active: item.href !== null && pathname === item.href,
+        onClick: item.href ? () => router.push(item.href!) : undefined,
       }))}
       secondaryItems={[SETTINGS_NAV_ITEM]}
       workspaces={

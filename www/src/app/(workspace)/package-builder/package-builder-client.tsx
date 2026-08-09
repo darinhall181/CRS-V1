@@ -506,7 +506,7 @@ export function PackageBuilderClient({
               <span className="w-[130px] px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Availability</span>
               <span className="w-14 px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Qty</span>
               <span className="w-14 px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Days</span>
-              <span className="w-[90px] px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Rate</span>
+              <span className="w-[108px] px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Est. Rate</span>
               <span className="w-[100px] px-2 text-right text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Total</span>
               <span className="ml-2.5 w-[26px]" />
             </div>
@@ -587,7 +587,7 @@ export function PackageBuilderClient({
                             className="w-14 flex-none rounded-md bg-transparent px-2 text-center font-mono text-[13px] text-[var(--text-secondary)] outline-none transition-colors hover:bg-[var(--ghost-hover)] focus-visible:bg-[var(--surface-01)] focus-visible:text-[var(--text-primary)] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                           />
                           <span className="w-14 px-2 text-center font-mono text-[13px] text-[var(--text-secondary)]">{line.days}</span>
-                          <span className="w-[90px] px-2 text-center font-mono text-[13px]">{fmtMoney(rateOf(gear))}{rateUnit}</span>
+                          <span className="w-[108px] px-2 text-center font-mono text-[13px]">{fmtMoney(rateOf(gear))}{rateUnit}</span>
                           <span className="w-[100px] px-2 text-right font-mono text-[13px]">{fmtMoney(lineTotal)}</span>
                           <IconButton
                             shape="square"

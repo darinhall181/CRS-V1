@@ -74,19 +74,26 @@ solo (no company) accounts should not see a switcher with nothing to switch to.
   with correct active-nav-item highlighting; Package Builder (separate `(workspace)`
   shell, deliberately not unified — see below) confirmed unaffected by the shared-module
   extraction
-- [ ] **Not done** — full nav-item-list reconciliation against the actual `Navigation
-  Options.dc.html`/`Dashboard.dc.html`/`CRM.dc.html`/`History.dc.html` handoff files this
-  task references (`~/Downloads/...`, outside this repo, not accessible from this
-  session). Reused Package Builder's existing 4-item list (Dashboard/Browse/Packages/
-  Quotes) as-is rather than guessing at the 6-vs-7-item History discrepancy the task
-  flags — whoever has those files should confirm/adjust `nav-items.tsx` directly
+- [x] **2026-08-09 update** — nav list expanded to the full 6-item shape per explicit
+  direction from Darin: Dashboard/Browse/Packages/Quotes/History/CRM, + Settings below
+  the divider. Only Browse/Packages are real destinations; the rest (`href: null` in
+  `nav-items.tsx`) render in the shell but are deliberately inert (no click handler)
+  rather than routing to "/" — landing a signed-in user on the public marketing page read
+  as a bug, not a coming-soon state, once there were 4 placeholder items instead of 2.
+  This supersedes the item below — no longer blocked on the external handoff files, this
+  is now the decided shape regardless of what those mockups show.
+- [ ] ~~full nav-item-list reconciliation against the actual `Navigation
+  Options.dc.html`/`Dashboard.dc.html`/`CRM.dc.html`/`History.dc.html` handoff files~~ —
+  superseded, see above.
 - [ ] **Not done** — account dropdown still only has sign-out. "Saved items" (T0023) and
   a profile link weren't added since neither destination exists yet; wiring them in is a
   one-line addition to `account-menu.tsx` once T0023 lands
-- [ ] **Out of scope, not blocking** — Dashboard/CRM/History don't exist as real pages yet
-  (T0043/T0041/T0042), so "one shared layout so the five screens only render their body"
-  is only true for the 2 of 5 screens that currently exist (Browse, Compatibility
-  Checker). The shell is ready for the other three whenever they land.
+- [ ] **Out of scope, not blocking** — Dashboard/History/CRM don't exist as real pages yet
+  (T0043/T0042/T0041), so "one shared layout so the five screens only render their body"
+  is only true for the 2 of 6 nav items that currently resolve to a real page (Browse,
+  Packages). The shell has a slot for the other four whenever they land. Compatibility
+  Checker (the "Quotes" placeholder's previous destination) was scrapped outright, not
+  folded into this shell — see T0048.
 
 Package Builder intentionally keeps its own page-scoped shell rather than moving into
 this one — the task's own notes flag exactly why (1a "costs real width — noticeable on
