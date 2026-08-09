@@ -85,15 +85,21 @@ solo (no company) accounts should not see a switcher with nothing to switch to.
 - [ ] ~~full nav-item-list reconciliation against the actual `Navigation
   Options.dc.html`/`Dashboard.dc.html`/`CRM.dc.html`/`History.dc.html` handoff files~~ —
   superseded, see above.
-- [ ] **Not done** — account dropdown still only has sign-out. "Saved items" (T0023) and
-  a profile link weren't added since neither destination exists yet; wiring them in is a
-  one-line addition to `account-menu.tsx` once T0023 lands
-- [ ] **Out of scope, not blocking** — Dashboard/History/CRM don't exist as real pages yet
-  (T0043/T0042/T0041), so "one shared layout so the five screens only render their body"
+- [ ] **Not done, and scope revised** — account dropdown still only has sign-out.
+  "Saved items" (T0023) is now planned to live in Browse/the Add-gear drawer instead of
+  the account dropdown (2026-08-09, see T0023's Notes) — a global cart-like icon read as
+  too consumer/e-commerce for this product. A profile link stays a maybe, no destination
+  exists yet either way.
+- [ ] **"History" is coming out of this nav entirely** (2026-08-09, decided, not yet
+  executed in code) — it's being relocated to a Package Builder tab instead (package-scoped
+  history is the common case, not a global destination). See T0025 for where the actual
+  build lands; `nav-items.tsx` still has the placeholder pending that removal.
+- [ ] **Out of scope, not blocking** — Dashboard/CRM don't exist as real pages yet
+  (T0043/T0041), so "one shared layout so the five screens only render their body"
   is only true for the 2 of 6 nav items that currently resolve to a real page (Browse,
-  Packages). The shell has a slot for the other four whenever they land. Compatibility
-  Checker (the "Quotes" placeholder's previous destination) was scrapped outright, not
-  folded into this shell — see T0048.
+  Packages) — soon 2 of 5 once History is pulled out. The shell has a slot for Dashboard/
+  CRM whenever they land. Compatibility Checker (the "Quotes" placeholder's previous
+  destination) was scrapped outright, not folded into this shell — see T0048.
 
 Package Builder intentionally keeps its own page-scoped shell rather than moving into
 this one — the task's own notes flag exactly why (1a "costs real width — noticeable on

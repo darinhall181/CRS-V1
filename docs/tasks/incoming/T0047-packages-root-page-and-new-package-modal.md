@@ -91,3 +91,9 @@ Opened from either the empty-state card or the header button. Two-column layout:
   `package-builder-client.tsx`, not a real field.
 - "Duplicate"/"Template" start options in the modal aren't wired to real behavior in the
   mockup — scope as follow-up if picked up as UI-only first.
+- **2026-08-09 — this page does *not* own "History."** Discussed with Darin whether the
+  soon-to-be-removed global "History" nav item (T0016) should land here instead. Decision:
+  no — this list page's job is picking/starting a package, and history is almost always
+  about *one* package's activity, not a cross-package view. That belongs on Package
+  Builder itself as a tab (see T0025, where the actual `package_event` table gets built).
+  Don't add a history section to this page as part of building it.
