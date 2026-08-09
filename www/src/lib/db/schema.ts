@@ -495,12 +495,20 @@ export const packageDepartmentBudget = pgTable(
 // "Detail"/"Budget", not gated behind a selected line item, so the comment
 // thread is one conversation per package rather than one per package_item.
 
+// 2026-08-09 — added updatedAt/deletedAt (T0025 decision): edit is tracked via
+// updatedAt != createdAt (render "(edited)" — no full revision history, YAGNI
+// for now), delete is soft via deletedAt (filter it out of reads, never
+// hard-DELETE — preserves the audit trail and avoids cascade-cleanup on
+// package_comment_mentions). Only the author may edit/delete their own
+// comment — enforced in queries.ts, not just hidden in the UI.
 export const packageComments = pgTable("package_comments", {
   id: uuid("id").primaryKey().defaultRandom(),
   packageId: uuid("package_id").notNull().references(() => packages.id, { onDelete: "cascade" }),
   authorId: uuid("author_id").notNull().references(() => users.id),
   body: text("body").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }),
+  deletedAt: timestamp("deleted_at", { withTimezone: true }),
 })
 
 // A real reference per @mentioned user, not a substring match on `body` — so a
@@ -515,6 +523,28 @@ export const packageCommentMentions = pgTable(
   },
   (t) => [unique().on(t.commentId, t.mentionedUserId)]
 )
+
+// ─── package_events ─────────────────────────────────────────────────────────
+// T0025 — the changelog half ("Coordinator added Ronin 2"), separate from
+// package_comments (the discussion thread). Written directly from the
+// existing server actions as each mutation happens, not reconstructed after
+// the fact. Backs the Package Builder "History" tab — deliberately NOT a
+// global nav destination (T0016 decision, 2026-08-09): history is almost
+// always about one specific package, not a cross-app feed.
+//
+// `kind` + `payload` (jsonb) stays generic on purpose — e.g.
+// kind: "item_added", payload: { gearName, qty }. The RFQ timeline (T0031)
+// may want the same shape scoped to a quote later; decide then whether to
+// reuse this table (add a nullable quote_id) or mirror it — don't design for
+// both today.
+export const packageEvents = pgTable("package_events", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  packageId: uuid("package_id").notNull().references(() => packages.id, { onDelete: "cascade" }),
+  actorId: uuid("actor_id").references(() => users.id),
+  kind: text("kind").notNull(),
+  payload: jsonb("payload").notNull().default({}),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+})
 
 // ─── invitations ──────────────────────────────────────────────────────────────
 
@@ -799,6 +829,7 @@ export const packagesRelations = relations(packages, ({ one, many }) => ({
   items: many(packageItems),
   comments: many(packageComments),
   departmentBudgets: many(packageDepartmentBudget),
+  events: many(packageEvents),
 }))
 
 export const packageItemsRelations = relations(packageItems, ({ one, many }) => ({
@@ -823,6 +854,11 @@ export const packageCommentsRelations = relations(packageComments, ({ one, many 
 export const packageCommentMentionsRelations = relations(packageCommentMentions, ({ one }) => ({
   comment: one(packageComments, { fields: [packageCommentMentions.commentId], references: [packageComments.id] }),
   mentionedUser: one(users, { fields: [packageCommentMentions.mentionedUserId], references: [users.id] }),
+}))
+
+export const packageEventsRelations = relations(packageEvents, ({ one }) => ({
+  package: one(packages, { fields: [packageEvents.packageId], references: [packages.id] }),
+  actor: one(users, { fields: [packageEvents.actorId], references: [users.id] }),
 }))
 
 export const invitationsRelations = relations(invitations, ({ one }) => ({

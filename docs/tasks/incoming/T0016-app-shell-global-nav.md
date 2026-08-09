@@ -90,16 +90,16 @@ solo (no company) accounts should not see a switcher with nothing to switch to.
   the account dropdown (2026-08-09, see T0023's Notes) — a global cart-like icon read as
   too consumer/e-commerce for this product. A profile link stays a maybe, no destination
   exists yet either way.
-- [ ] **"History" is coming out of this nav entirely** (2026-08-09, decided, not yet
-  executed in code) — it's being relocated to a Package Builder tab instead (package-scoped
-  history is the common case, not a global destination). See T0025 for where the actual
-  build lands; `nav-items.tsx` still has the placeholder pending that removal.
+- [x] **"History" removed from this nav entirely** (2026-08-09) — relocated to a Package
+  Builder tab instead (package-scoped history is the common case, not a global
+  destination). `nav-items.tsx` no longer lists it; see T0025 for the `package_events`
+  table + tab it now lands on.
 - [ ] **Out of scope, not blocking** — Dashboard/CRM don't exist as real pages yet
   (T0043/T0041), so "one shared layout so the five screens only render their body"
-  is only true for the 2 of 6 nav items that currently resolve to a real page (Browse,
-  Packages) — soon 2 of 5 once History is pulled out. The shell has a slot for Dashboard/
-  CRM whenever they land. Compatibility Checker (the "Quotes" placeholder's previous
-  destination) was scrapped outright, not folded into this shell — see T0048.
+  is only true for the 2 of 5 nav items that currently resolve to a real page (Browse,
+  Packages). The shell has a slot for Dashboard/CRM whenever they land. Compatibility
+  Checker (the "Quotes" placeholder's previous destination) was scrapped outright, not
+  folded into this shell — see T0048.
 
 Package Builder intentionally keeps its own page-scoped shell rather than moving into
 this one — the task's own notes flag exactly why (1a "costs real width — noticeable on

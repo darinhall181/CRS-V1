@@ -15,6 +15,13 @@
       "when": 1786248184366,
       "tag": "0001_lush_the_leader",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1786317188549,
+      "tag": "0002_previous_stepford_cuckoos",
+      "breakpoints": true
     }
   ]
 }

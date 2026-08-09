@@ -97,3 +97,14 @@ Opened from either the empty-state card or the header button. Two-column layout:
   about *one* package's activity, not a cross-package view. That belongs on Package
   Builder itself as a tab (see T0025, where the actual `package_event` table gets built).
   Don't add a history section to this page as part of building it.
+  **Done 2026-08-09**: History nav item removed from `nav-items.tsx`; `package_events`
+  table + Package Builder's History tab both built (T0025).
+- **2026-08-09 — consider a "Saved packages" section on this page.** Distinct from T0023
+  (saved *items* — individual gear/products, heart-toggle in Browse). This would be
+  favoriting/bookmarking whole *packages* — e.g. a starting-point template you come back
+  to, or a package you want quick access to without scrolling the full list. Not scoped or
+  designed yet — no schema, no UI decided — just flagging it as a real, separate idea
+  worth considering when this page actually gets built, so it doesn't get conflated with
+  T0023 or forgotten. If it happens, it likely wants its own join table
+  (`saved_package(user_id, package_id)`, mirroring T0023's `saved_product` shape) rather
+  than reusing T0023's table.

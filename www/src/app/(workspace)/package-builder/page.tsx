@@ -1,4 +1,4 @@
-import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, getPackageComments, getMentionableUsers, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, getPackageComments, getMentionableUsers, getPackageEvents, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
 import { getViewerContext } from "@/lib/viewer-context"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
@@ -89,10 +89,11 @@ export default async function PackageBuilderPage() {
 
   // Real persisted line items — see docs/tasks/T0005. Falls back to an empty
   // package (not fake data) if the package row itself is somehow missing.
-  const [packageItemRows, comments, mentionableUsers] = await Promise.all([
+  const [packageItemRows, comments, mentionableUsers, events] = await Promise.all([
     pkg ? getPackageItems(pkg.id) : Promise.resolve([]),
     pkg ? getPackageComments(pkg.id) : Promise.resolve([]),
     getMentionableUsers(productionId),
+    pkg ? getPackageEvents(pkg.id) : Promise.resolve([]),
   ])
   const initialLineItems: PackageLineItem[] = packageItemRows.map((row) => ({
     id: row.id,
@@ -106,9 +107,17 @@ export default async function PackageBuilderPage() {
     id: c.id,
     body: c.body,
     createdAt: c.createdAt.toISOString(),
+    updatedAt: c.updatedAt ? c.updatedAt.toISOString() : null,
     authorId: c.authorId,
     authorName: c.authorName,
     mentionedUserIds: c.mentionedUserIds,
+  }))
+  const initialEvents = events.map((e) => ({
+    id: e.id,
+    kind: e.kind,
+    payload: e.payload,
+    createdAt: e.createdAt.toISOString(),
+    actorName: e.actorName,
   }))
 
   return (
@@ -119,6 +128,7 @@ export default async function PackageBuilderPage() {
       packageName={pkg?.name ?? "Camera Package"}
       packageId={pkg?.id ?? null}
       productionId={productionId}
+      viewerId={viewer?.user.id ?? null}
       updatedAt={pkg?.updatedAt.toISOString() ?? null}
       shootDays={shootDays}
       approvedBudget={approvedBudget}
@@ -126,6 +136,7 @@ export default async function PackageBuilderPage() {
       companyName={company?.name ?? null}
       initialComments={initialComments}
       mentionableUsers={mentionableUsers}
+      initialEvents={initialEvents}
     />
   )
 }

@@ -20,8 +20,16 @@ import {
   type PackageLineItem,
   type PackageComment,
   type MentionableUser,
+  type PackageEvent,
 } from "./types"
-import { addPackageItemAction, removePackageItemAction, updatePackageItemQtyAction, addPackageCommentAction } from "./actions"
+import {
+  addPackageItemAction,
+  removePackageItemAction,
+  updatePackageItemQtyAction,
+  addPackageCommentAction,
+  updatePackageCommentAction,
+  deletePackageCommentAction,
+} from "./actions"
 import { PackageBuilderSidebar } from "./package-builder-sidebar"
 import { PackageBuilderTopBar } from "./package-builder-topbar"
 
@@ -46,7 +54,8 @@ const CATEGORY_ABBR: Record<GearCategory, string> = {
 const RIGHT_PANEL_WIDTH = 266
 const RIGHT_PANEL_CARD_WIDTH = RIGHT_PANEL_WIDTH - 26 // 240
 const RIGHT_PANEL_TOGGLE_WIDTH = RIGHT_PANEL_CARD_WIDTH - 12 * 2 // 288 — tab row's px-3
-const TAB_LABELS = ["Detail", "Budget", "Notes"] as const
+const TAB_LABELS = ["Detail", "Budget", "Notes", "History"] as const
+const TAB_VALUES = ["detail", "budget", "notes", "history"] as const
 
 // "Saved just now" / "Saved 2m ago" — formatted client-side off a real
 // timestamp (packages.updated_at, bumped on every real package_items write —
@@ -150,6 +159,7 @@ export function PackageBuilderClient({
   packageName,
   packageId,
   productionId,
+  viewerId,
   updatedAt,
   shootDays,
   approvedBudget,
@@ -157,6 +167,7 @@ export function PackageBuilderClient({
   companyName,
   initialComments,
   mentionableUsers,
+  initialEvents,
 }: {
   catalog: GearItem[]
   initialLineItems: PackageLineItem[]
@@ -164,6 +175,7 @@ export function PackageBuilderClient({
   packageName: string
   packageId: string | null
   productionId: string
+  viewerId: string | null
   updatedAt: string | null
   shootDays: number
   approvedBudget: number
@@ -171,11 +183,13 @@ export function PackageBuilderClient({
   companyName: string | null
   initialComments: PackageComment[]
   mentionableUsers: MentionableUser[]
+  initialEvents: PackageEvent[]
 }) {
   const gearById = useMemo(() => new Map(catalog.map((g) => [g.id, g])), [catalog])
 
   const [lineItems, setLineItems] = useState<PackageLineItem[]>(initialLineItems)
   const [comments, setComments] = useState<PackageComment[]>(initialComments)
+  const [events, setEvents] = useState<PackageEvent[]>(initialEvents)
   const [savedAt, setSavedAt] = useState<Date | null>(updatedAt ? new Date(updatedAt) : null)
   // Re-formats the elapsed-time label every 30s — the timestamp itself only
   // ever moves on a real mutation (see formatSavedAt above).
@@ -298,6 +312,22 @@ export function PackageBuilderClient({
     setDrawerOpen(true)
   }
 
+  // T0025 — synthesized client-side to match what the server just wrote in
+  // the same request (queries.ts logs the real package_events row); avoids a
+  // second round-trip just to re-fetch history after every mutation.
+  function addLocalEvent(kind: PackageEvent["kind"], payload: Record<string, unknown>) {
+    setEvents((prev) => [
+      {
+        id: `evt-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+        kind,
+        payload,
+        createdAt: new Date().toISOString(),
+        actorName: userName,
+      },
+      ...prev,
+    ])
+  }
+
   async function addToPackage(gear: GearItem) {
     const tempId = `temp-${gear.id}-${Date.now()}`
     const newLine: PackageLineItem = {
@@ -321,6 +351,7 @@ export function PackageBuilderClient({
       setLineItems((prev) => prev.map((l) => (l.id === tempId ? { ...l, id: realId } : l)))
       setSelectedLineId((prev) => (prev === tempId ? realId : prev))
       setSavedAt(new Date())
+      addLocalEvent("item_added", { gearName: gear.name, qty: 1 })
     } catch (err) {
       console.error("Failed to add package item:", err)
       setLineItems((prev) => prev.filter((l) => l.id !== tempId))
@@ -348,13 +379,19 @@ export function PackageBuilderClient({
 
   async function removeBulkSelected() {
     const idsToRemove = Array.from(bulkSelected)
+    const removedNames = idsToRemove
+      .map((id) => gearById.get(lineItems.find((l) => l.id === id)?.gearId ?? "")?.name)
+      .filter((n): n is string => !!n)
     setLineItems((prev) => prev.filter((l) => !bulkSelected.has(l.id)))
     setBulkSelected(new Set())
 
     const realIds = idsToRemove.filter((id) => !id.startsWith("temp-"))
     try {
       await Promise.all(realIds.map((id) => removePackageItemAction(id)))
-      if (realIds.length > 0) setSavedAt(new Date())
+      if (realIds.length > 0) {
+        setSavedAt(new Date())
+        for (const gearName of removedNames) addLocalEvent("item_removed", { gearName })
+      }
     } catch (err) {
       console.error("Failed to remove package item(s):", err)
       // Not rolling back the optimistic removal here — a failed delete on an
@@ -364,6 +401,7 @@ export function PackageBuilderClient({
   }
 
   async function removeLine(lineId: string) {
+    const gearName = gearById.get(lineItems.find((l) => l.id === lineId)?.gearId ?? "")?.name ?? "an item"
     setLineItems((prev) => prev.filter((l) => l.id !== lineId))
     setBulkSelected((prev) => {
       const next = new Set(prev)
@@ -374,6 +412,7 @@ export function PackageBuilderClient({
       try {
         await removePackageItemAction(lineId)
         setSavedAt(new Date())
+        addLocalEvent("item_removed", { gearName })
       } catch (err) {
         console.error("Failed to remove package item:", err)
       }
@@ -389,6 +428,8 @@ export function PackageBuilderClient({
     try {
       await updatePackageItemQtyAction(lineId, qty)
       setSavedAt(new Date())
+      const gearName = gearById.get(lineItems.find((l) => l.id === lineId)?.gearId ?? "")?.name ?? "an item"
+      addLocalEvent("item_qty_updated", { gearName, qty })
     } catch (err) {
       console.error("Failed to update quantity:", err)
     }
@@ -400,8 +441,31 @@ export function PackageBuilderClient({
       const comment = await addPackageCommentAction(packageId, productionId, body, mentionedUserIds)
       setComments((prev) => [...prev, comment])
       setSavedAt(new Date())
+      addLocalEvent("comment_added", { snippet: comment.body.slice(0, 80) })
     } catch (err) {
       console.error("Failed to post comment:", err)
+    }
+  }
+
+  async function editComment(id: string, body: string) {
+    try {
+      await updatePackageCommentAction(id, body)
+      setComments((prev) =>
+        prev.map((c) => (c.id === id ? { ...c, body, updatedAt: new Date().toISOString() } : c))
+      )
+      setSavedAt(new Date())
+    } catch (err) {
+      console.error("Failed to edit comment:", err)
+    }
+  }
+
+  async function deleteComment(id: string) {
+    setComments((prev) => prev.filter((c) => c.id !== id))
+    try {
+      await deletePackageCommentAction(id)
+      setSavedAt(new Date())
+    } catch (err) {
+      console.error("Failed to delete comment:", err)
     }
   }
 
@@ -627,10 +691,8 @@ export function PackageBuilderClient({
               <div className="flex-none px-3 pt-3">
                 <SegmentedToggle
                   options={TAB_LABELS}
-                  value={TAB_LABELS.indexOf(
-                    rightTab === "detail" ? "Detail" : rightTab === "budget" ? "Budget" : "Notes"
-                  )}
-                  onChange={(i) => setRightTab((["detail", "budget", "notes"] as const)[i])}
+                  value={TAB_VALUES.indexOf(rightTab)}
+                  onChange={(i) => setRightTab(TAB_VALUES[i])}
                   width={RIGHT_PANEL_TOGGLE_WIDTH}
                   height={34}
                   aria-label="Panel"
@@ -665,8 +727,16 @@ export function PackageBuilderClient({
                   />
                 )}
                 {rightTab === "notes" && (
-                  <NotesPanel comments={comments} mentionableUsers={mentionableUsers} onPost={postComment} />
+                  <NotesPanel
+                    comments={comments}
+                    mentionableUsers={mentionableUsers}
+                    viewerId={viewerId}
+                    onPost={postComment}
+                    onEdit={editComment}
+                    onDelete={deleteComment}
+                  />
                 )}
+                {rightTab === "history" && <HistoryPanel events={events} />}
               </div>
 
               {/* Re-prices the whole table (not just this panel), but only
@@ -931,9 +1001,9 @@ function BudgetPanel({
   )
 }
 
-// Comment timestamps are historical (unlike the header's live-ticking
+// Comment/event timestamps are historical (unlike the header's live-ticking
 // "Saved…" label) — formatted once per render off a fixed created_at, no
-// interval needed.
+// interval needed. Shared by NotesPanel and HistoryPanel.
 function formatCommentTime(iso: string): string {
   const elapsedMs = Date.now() - new Date(iso).getTime()
   const minutes = Math.floor(elapsedMs / 60_000)
@@ -1011,14 +1081,126 @@ function newTextSegment(): DraftSegment {
   return { kind: "text", segId: `seg-${Math.random().toString(36).slice(2)}`, value: "" }
 }
 
+// Own comments only — edit swaps the body for an inline textarea (no modal),
+// delete has no confirm step, matching this file's existing line-item-remove
+// convention (the × on a row deletes immediately, no dialog).
+function CommentCard({
+  comment,
+  isOwn,
+  usersById,
+  onEdit,
+  onDelete,
+}: {
+  comment: PackageComment
+  isOwn: boolean
+  usersById: Map<string, string>
+  onEdit: (id: string, body: string) => void | Promise<void>
+  onDelete: (id: string) => void | Promise<void>
+}) {
+  const [editing, setEditing] = useState(false)
+  const [draft, setDraft] = useState(comment.body)
+  const [saving, setSaving] = useState(false)
+
+  async function save() {
+    const body = draft.trim()
+    if (!body || saving) return
+    setSaving(true)
+    try {
+      await onEdit(comment.id, body)
+      setEditing(false)
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  return (
+    <div className="rounded-xl bg-[var(--surface-01)] p-3">
+      <div className="mb-1 flex items-baseline gap-2">
+        <span className="text-xs font-semibold text-[var(--text-primary)]">{comment.authorName}</span>
+        <span className="text-[10px] text-[var(--text-subtle)]">{formatCommentTime(comment.createdAt)}</span>
+        {comment.updatedAt && <span className="text-[10px] text-[var(--text-subtle)]">(edited)</span>}
+        {isOwn && !editing && (
+          <div className="ml-auto flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => {
+                setDraft(comment.body)
+                setEditing(true)
+              }}
+              className="text-[10px] text-[var(--text-subtle)] hover:text-[var(--text-secondary)]"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              onClick={() => onDelete(comment.id)}
+              className="text-[10px] text-[var(--text-subtle)] hover:text-[var(--danger-text)]"
+            >
+              Delete
+            </button>
+          </div>
+        )}
+      </div>
+
+      {editing ? (
+        <div className="flex flex-col gap-1.5">
+          <textarea
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault()
+                save()
+              } else if (e.key === "Escape") {
+                setEditing(false)
+              }
+            }}
+            autoFocus
+            rows={2}
+            className="resize-none rounded-lg bg-[var(--surface-00)] p-2 text-xs text-[var(--text-primary)] outline-none"
+          />
+          <div className="flex gap-2">
+            <button
+              type="button"
+              disabled={!draft.trim() || saving}
+              onClick={save}
+              className="flex h-6 items-center rounded-lg px-2.5 text-[11px] text-white transition-colors disabled:cursor-default disabled:opacity-50"
+              style={{ background: "var(--interactive-default)" }}
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              onClick={() => setEditing(false)}
+              className="flex h-6 items-center rounded-lg px-2.5 text-[11px] text-[var(--text-secondary)] hover:bg-[var(--ghost-hover)]"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ) : (
+        <p className="whitespace-pre-wrap text-xs leading-relaxed text-[var(--text-secondary)]">
+          {renderCommentBody(comment.body, comment.mentionedUserIds, usersById)}
+        </p>
+      )}
+    </div>
+  )
+}
+
 function NotesPanel({
   comments,
   mentionableUsers,
+  viewerId,
   onPost,
+  onEdit,
+  onDelete,
 }: {
   comments: PackageComment[]
   mentionableUsers: MentionableUser[]
+  viewerId: string | null
   onPost: (body: string, mentionedUserIds: string[]) => void | Promise<void>
+  onEdit: (id: string, body: string) => void | Promise<void>
+  onDelete: (id: string) => void | Promise<void>
 }) {
   const [segments, setSegments] = useState<DraftSegment[]>(() => [newTextSegment()])
   const [posting, setPosting] = useState(false)
@@ -1132,15 +1314,14 @@ function NotesPanel({
           </div>
         ) : (
           comments.map((c) => (
-            <div key={c.id} className="rounded-xl bg-[var(--surface-01)] p-3">
-              <div className="mb-1 flex items-baseline gap-2">
-                <span className="text-xs font-semibold text-[var(--text-primary)]">{c.authorName}</span>
-                <span className="text-[10px] text-[var(--text-subtle)]">{formatCommentTime(c.createdAt)}</span>
-              </div>
-              <p className="whitespace-pre-wrap text-xs leading-relaxed text-[var(--text-secondary)]">
-                {renderCommentBody(c.body, c.mentionedUserIds, usersById)}
-              </p>
-            </div>
+            <CommentCard
+              key={c.id}
+              comment={c}
+              isOwn={c.authorId === viewerId}
+              usersById={usersById}
+              onEdit={onEdit}
+              onDelete={onDelete}
+            />
           ))
         )}
       </div>
@@ -1257,6 +1438,52 @@ function NotesPanel({
           </DropdownMenu>
         </div>
       </div>
+    </div>
+  )
+}
+
+// T0025/T0016 — package-scoped change log, deliberately not a global nav
+// destination: "what happened to this package" is almost always the actual
+// question, so it lives here as a tab rather than a cross-app page.
+function describeEvent(event: PackageEvent): string {
+  const p = event.payload as Record<string, unknown>
+  switch (event.kind) {
+    case "item_added":
+      return `added ${p.gearName ?? "an item"}${typeof p.qty === "number" && p.qty > 1 ? ` ×${p.qty}` : ""}`
+    case "item_qty_updated":
+      return `set ${p.gearName ?? "an item"} to ${p.qty ?? "?"}`
+    case "item_removed":
+      return `removed ${p.gearName ?? "an item"}`
+    case "comment_added":
+      return `commented: "${p.snippet ?? ""}"`
+    default:
+      return event.kind
+  }
+}
+
+function HistoryPanel({ events }: { events: PackageEvent[] }) {
+  return (
+    <div>
+      <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">
+        History
+      </p>
+      {events.length === 0 ? (
+        <div className="rounded-xl bg-[var(--surface-01)] p-3">
+          <p className="text-xs text-[var(--text-secondary)]">Nothing has happened on this package yet.</p>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-2">
+          {events.map((e) => (
+            <div key={e.id} className="rounded-xl bg-[var(--surface-01)] p-3">
+              <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
+                <span className="font-semibold text-[var(--text-primary)]">{e.actorName ?? "Someone"}</span>{" "}
+                {describeEvent(e)}
+              </p>
+              <span className="text-[10px] text-[var(--text-subtle)]">{formatCommentTime(e.createdAt)}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

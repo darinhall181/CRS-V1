@@ -19,7 +19,7 @@ export type PackageItemStatus =
   | 'unavailable'
   | 'over_budget'
 
-export type ContextTab = 'detail' | 'budget' | 'notes'
+export type ContextTab = 'detail' | 'budget' | 'notes' | 'history'
 
 // ─── Gear catalog ─────────────────────────────────────────────────────────────
 // Sourced from the real `product` table (see lib/db/queries.ts getProducts), with
@@ -68,6 +68,7 @@ export interface PackageComment {
   id: string
   body: string
   createdAt: string // ISO — formatted client-side, same pattern as `updatedAt`/formatSavedAt
+  updatedAt: string | null // ISO — non-null once edited; renders "(edited)" — see T0025
   authorId: string
   authorName: string
   mentionedUserIds: string[]
@@ -76,6 +77,21 @@ export interface PackageComment {
 export interface MentionableUser {
   id: string
   name: string
+}
+
+// ─── Package events (T0025) ─────────────────────────────────────────────────
+// Backs the Package Builder "History" tab. `kind` + `payload` stay generic on
+// purpose (see schema.ts's packageEvents comment) — the client just knows how
+// to render the handful of kinds the server actually writes today.
+
+export type PackageEventKind = "item_added" | "item_qty_updated" | "item_removed" | "comment_added"
+
+export interface PackageEvent {
+  id: string
+  kind: PackageEventKind | string
+  payload: Record<string, unknown>
+  createdAt: string
+  actorName: string | null
 }
 
 // ─── Status badge config ──────────────────────────────────────────────────────

@@ -1,6 +1,6 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, productionMembers, companyMembers, companies, users } from "./schema"
-import { eq, ilike, and, or, isNotNull, desc, asc } from "drizzle-orm"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, packageEvents, productionMembers, companyMembers, companies, users } from "./schema"
+import { eq, ilike, and, or, isNotNull, isNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
 
@@ -385,6 +385,10 @@ export async function getPackageItems(packageId: string): Promise<PackageItemRow
     .map((r) => ({ ...r, gearId: r.gearId as string }))
 }
 
+// T0025 — package_events written directly from each mutation as it happens
+// (not reconstructed after the fact), in the same transaction as the write
+// it's describing.
+
 export async function addPackageItem(
   packageId: string,
   gearId: string,
@@ -397,31 +401,56 @@ export async function addPackageItem(
       .values({ packageId, gearId, quantity: qty, status: "draft", addedBy })
       .returning({ id: packageItems.id })
     await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, packageId))
+    const [gear] = await tx.select({ name: product.fullName }).from(product).where(eq(product.id, gearId))
+    await tx.insert(packageEvents).values({
+      packageId,
+      actorId: addedBy,
+      kind: "item_added",
+      payload: { gearName: gear?.name ?? "an item", qty },
+    })
     return row
   })
 }
 
-export async function updatePackageItemQty(id: string, qty: number): Promise<void> {
+export async function updatePackageItemQty(id: string, qty: number, actorId: string): Promise<void> {
   await db.transaction(async (tx) => {
     const [item] = await tx
       .update(packageItems)
       .set({ quantity: qty })
       .where(eq(packageItems.id, id))
-      .returning({ packageId: packageItems.packageId })
+      .returning({ packageId: packageItems.packageId, gearId: packageItems.gearId })
     if (item) {
       await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, item.packageId))
+      const gear = item.gearId
+        ? (await tx.select({ name: product.fullName }).from(product).where(eq(product.id, item.gearId)))[0]
+        : undefined
+      await tx.insert(packageEvents).values({
+        packageId: item.packageId,
+        actorId,
+        kind: "item_qty_updated",
+        payload: { gearName: gear?.name ?? "an item", qty },
+      })
     }
   })
 }
 
-export async function removePackageItem(id: string): Promise<void> {
+export async function removePackageItem(id: string, actorId: string): Promise<void> {
   await db.transaction(async (tx) => {
     const [item] = await tx
       .delete(packageItems)
       .where(eq(packageItems.id, id))
-      .returning({ packageId: packageItems.packageId })
+      .returning({ packageId: packageItems.packageId, gearId: packageItems.gearId })
     if (item) {
       await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, item.packageId))
+      const gear = item.gearId
+        ? (await tx.select({ name: product.fullName }).from(product).where(eq(product.id, item.gearId)))[0]
+        : undefined
+      await tx.insert(packageEvents).values({
+        packageId: item.packageId,
+        actorId,
+        kind: "item_removed",
+        payload: { gearName: gear?.name ?? "an item" },
+      })
     }
   })
 }
@@ -448,6 +477,7 @@ export type PackageCommentRow = {
   id: string
   body: string
   createdAt: Date
+  updatedAt: Date | null
   authorId: string
   authorName: string
   mentionedUserIds: string[]
@@ -459,12 +489,13 @@ export async function getPackageComments(packageId: string): Promise<PackageComm
       id: packageComments.id,
       body: packageComments.body,
       createdAt: packageComments.createdAt,
+      updatedAt: packageComments.updatedAt,
       authorId: packageComments.authorId,
       authorName: users.name,
     })
     .from(packageComments)
     .innerJoin(users, eq(packageComments.authorId, users.id))
-    .where(eq(packageComments.packageId, packageId))
+    .where(and(eq(packageComments.packageId, packageId), isNull(packageComments.deletedAt)))
     .orderBy(asc(packageComments.createdAt))
 
   if (comments.length === 0) return []
@@ -522,8 +553,74 @@ export async function addPackageComment(
     }
 
     await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, packageId))
+    await tx.insert(packageEvents).values({
+      packageId,
+      actorId: authorId,
+      kind: "comment_added",
+      payload: { snippet: body.slice(0, 80) },
+    })
     return comment
   })
+}
+
+// Only the author may edit/delete their own comment — enforced here, not
+// just hidden in the UI. Throws rather than silently no-op-ing on a
+// mismatch, so a caller bug surfaces instead of failing invisibly.
+export async function updatePackageComment(id: string, authorId: string, body: string): Promise<void> {
+  await db.transaction(async (tx) => {
+    const [existing] = await tx
+      .select({ authorId: packageComments.authorId, packageId: packageComments.packageId })
+      .from(packageComments)
+      .where(eq(packageComments.id, id))
+    if (!existing) throw new Error("Comment not found.")
+    if (existing.authorId !== authorId) throw new Error("Only the author can edit this comment.")
+
+    await tx.update(packageComments).set({ body, updatedAt: new Date() }).where(eq(packageComments.id, id))
+    await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, existing.packageId))
+  })
+}
+
+export async function deletePackageComment(id: string, authorId: string): Promise<void> {
+  await db.transaction(async (tx) => {
+    const [existing] = await tx
+      .select({ authorId: packageComments.authorId, packageId: packageComments.packageId })
+      .from(packageComments)
+      .where(eq(packageComments.id, id))
+    if (!existing) throw new Error("Comment not found.")
+    if (existing.authorId !== authorId) throw new Error("Only the author can delete this comment.")
+
+    await tx.update(packageComments).set({ deletedAt: new Date() }).where(eq(packageComments.id, id))
+    await tx.update(packages).set({ updatedAt: new Date() }).where(eq(packages.id, existing.packageId))
+  })
+}
+
+// ─── Package events (T0025) ─────────────────────────────────────────────────
+// Backs the Package Builder "History" tab — package-scoped, deliberately not
+// a global nav destination (T0016 decision, 2026-08-09).
+
+export type PackageEventRow = {
+  id: string
+  kind: string
+  payload: Record<string, unknown>
+  createdAt: Date
+  actorName: string | null
+}
+
+export async function getPackageEvents(packageId: string): Promise<PackageEventRow[]> {
+  const rows = await db
+    .select({
+      id: packageEvents.id,
+      kind: packageEvents.kind,
+      payload: packageEvents.payload,
+      createdAt: packageEvents.createdAt,
+      actorName: users.name,
+    })
+    .from(packageEvents)
+    .leftJoin(users, eq(packageEvents.actorId, users.id))
+    .where(eq(packageEvents.packageId, packageId))
+    .orderBy(desc(packageEvents.createdAt))
+
+  return rows as PackageEventRow[]
 }
 
 // ─── Package department budgets (T0009) ─────────────────────────────────────
