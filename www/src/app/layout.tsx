@@ -4,15 +4,22 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+// Site-wide fallback — wins on any route that doesn't export its own
+// `metadata` (currently: /login, /compatibility-checker, /package-builder).
+// Keep this in sync with (marketing)/page.tsx's TITLE/DESCRIPTION — that
+// page overrides these for "/" itself, but this is what every other route
+// (and any stale search-engine cache) falls back to, so a drift here reads
+// as "the pitch changed but half the site didn't get the memo."
 export const metadata: Metadata = {
   metadataBase: new URL("https://altoscope.so"),
-  title: "Altoscope — Camera & Lens Compatibility Intelligence",
+  title: "Altoscope: Gear Rental and Preproduction Software",
   description:
-    "Stop guessing. Altoscope cross-references every spec from thousands of cameras, lenses, and accessories so you always know what works together before you buy.",
-  keywords: ["camera compatibility", "lens mount", "camera specs", "cinematography gear"],
+    "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
+  keywords: ["gear rental software", "preproduction software", "camera compatibility", "lens mount", "RFQ", "cinematography gear"],
   openGraph: {
-    title: "Altoscope",
-    description: "Camera & lens compatibility intelligence for filmmakers.",
+    title: "Altoscope: Gear Rental and Preproduction Software",
+    description:
+      "A suite of intelligent tools to streamline your rental prep. Built for production companies.",
     type: "website",
   },
 }
