@@ -8,7 +8,15 @@ export const auth = betterAuth({
     provider: "pg",
     schema: { user: users, session, account, verification },
   }),
-  baseURL: process.env.BETTER_AUTH_URL,
+  // .env.local sets BETTER_AUTH_URL explicitly (localhost:3004) for local
+  // dev — unaffected by anything below. On Vercel, VERCEL_URL is injected
+  // automatically for every deployment (preview and production alike), so
+  // this falls back to it instead of needing a fixed value that would only
+  // be correct for one specific preview URL. Leave BETTER_AUTH_URL unset in
+  // Vercel's dashboard env vars — this makes that unnecessary. Only set it
+  // there if you want a stable custom production domain instead of the
+  // auto-assigned *.vercel.app one.
+  baseURL: process.env.BETTER_AUTH_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined),
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: { enabled: true },
   // Better Auth's built-in default (a generic un-styled HTML page at
