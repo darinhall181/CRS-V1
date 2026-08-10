@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
 import SmoothScrollNav from "./smooth-scroll-nav"
-import { AltoscopeLogo } from "@/components/nav/logo"
+import SiteHeader from "./site-header"
 
 const TITLE = "Altoscope: Gear Rental and Preproduction Software"
 const DESCRIPTION =
@@ -180,70 +180,7 @@ export default function LandingPage() {
           .section-label-dot { display: inline; opacity: 0.5; }
         }
       `}</style>
-      {/* Sticky header, restyled 2026-08-10 to match the app's Elevation Kit
-          TopBar (www/src/components/elevation/TopBar.tsx) — same logo mark +
-          wordmark treatment (23px mark, 17px medium wordmark, 11px gap), same
-          taller/more spacious footprint — instead of the search pill and
-          account/bell cluster (nothing to search, nobody's signed in yet)
-          the right side keeps this page's own Features/About/Join links.
-          2026-08-10, take two: the blur+mask version looked like a smudge,
-          not an effect — a single blur radius with a soft-edged mask just
-          produces a blurry patch, not a real gradient of blur. Replaced with
-          a plain solid-to-transparent scrim instead: solid near-black
-          (matching the login page's brand-panel color, --surface-page-shell)
-          behind the header content, fading to fully transparent underneath —
-          scrolling text just fades into it rather than blurring. */}
-      <div style={{ position: "sticky", top: 0, zIndex: 20 }}>
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            inset: "0 0 auto 0",
-            height: 140,
-            background: "linear-gradient(to bottom, #101012 0%, #101012 54%, rgba(16,16,18,0) 100%)",
-            pointerEvents: "none",
-          }}
-        />
-        <header
-          className="site-header"
-          style={{
-            position: "relative",
-            height: 76,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <a href="#top" style={{ display: "inline-flex", alignItems: "center", gap: 11 }}>
-            <AltoscopeLogo />
-            <span style={{ fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em", color: "#F4F4F5" }}>
-              Altoscope
-            </span>
-          </a>
-          <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-            <a href="#features" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
-              Features
-            </a>
-            <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
-              About
-            </a>
-            <a
-              href="#join"
-              className="btn btn-primary"
-              style={{
-                color: "#fff",
-                background: "#3D55A8",
-                border: "1px solid #3D55A8",
-                borderRadius: 999,
-                padding: "8px 16px",
-                textDecoration: "none",
-              }}
-            >
-              Join
-            </a>
-          </nav>
-        </header>
-      </div>
+      <SiteHeader />
 
       <section id="top" className="hero" style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexDirection: "column", gap: 56 }}>
         <h1
