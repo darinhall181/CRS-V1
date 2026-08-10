@@ -312,7 +312,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
                   <button
                     key={opt.id}
                     type="button"
-                    onClick={() => setProfession(opt.id)}
+                    onClick={() => setProfession(selected ? null : opt.id)}
                     className={cn(
                       "flex min-h-[78px] cursor-pointer flex-col gap-2.5 rounded-[14px] border-none p-4 text-left",
                       selected ? SELECTED_CARD_RING : "shadow-[var(--elevation-1)]",
