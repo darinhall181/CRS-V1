@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Home } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 import { FOCUS_RING } from "@/components/elevation/shared"
@@ -15,13 +15,11 @@ import { cn } from "@/lib/utils"
 // pixel-for-pixel where the handoff specifies it (colors, sizes, copy) —
 // steps 1–5 (workspace/role/profile/etc.) are T0019's, not built here.
 //
-// Deliberately NOT done here (see T0018's Progress checklist, left
-// unchecked): real Google OAuth (`socialProviders.google`) — no client
-// ID/secret exist anywhere in this repo, can't wire a real provider without
-// them, so the button is styled per the handoff but honest about not
-// working yet — and onboarding-wizard redirect (needs T0035's
-// `users.onboarding_completed_at`, which doesn't exist yet). Existing
-// email/password + `next`-param routing is unchanged.
+// Google OAuth wired 2026-08-10 once Darin had real Console credentials in
+// www/.env.local (GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET) — see auth.ts's
+// socialProviders.google. A brand-new Google identity gets a user row the
+// same way email/password signup does, so it lands in /signup (T0019's
+// onboarding wizard) same as everyone else, no extra plumbing needed there.
 export default function LoginPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -37,8 +35,8 @@ export default function LoginPage() {
   const [name, setName] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
   const [showForgotNotice, setShowForgotNotice] = useState(false)
-  const [showGoogleNotice, setShowGoogleNotice] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -59,6 +57,18 @@ export default function LoginPage() {
 
     router.push(next)
     router.refresh()
+  }
+
+  async function handleGoogleSignIn() {
+    setError(null)
+    setGoogleLoading(true)
+    const { error: authError } = await authClient.signIn.social({ provider: "google", callbackURL: next })
+    if (authError) {
+      setGoogleLoading(false)
+      setError(authError.message ?? "Google sign-in failed — try again or use email below.")
+    }
+    // No else branch — on success Better Auth redirects the browser to
+    // Google itself, so there's nothing to navigate to here.
   }
 
   const inputClass = cn(
@@ -107,7 +117,7 @@ export default function LoginPage() {
             FOCUS_RING
           )}
         >
-          <Home size={15} strokeWidth={1.8} />
+          <ArrowLeft size={15} strokeWidth={1.8} />
           Home
         </Link>
 
@@ -123,21 +133,17 @@ export default function LoginPage() {
 
           <button
             type="button"
-            onClick={() => setShowGoogleNotice(true)}
+            onClick={handleGoogleSignIn}
+            disabled={googleLoading}
             className={cn(
-              "flex h-[46px] items-center justify-center gap-2.5 rounded-[10px] border-none text-[13px] font-medium shadow-[0_1px_3px_rgba(0,0,0,0.35),0_6px_18px_rgba(0,0,0,0.26)] transition-colors hover:bg-[#3A3A42]",
+              "flex h-[46px] items-center justify-center gap-2.5 rounded-[10px] border-none text-[13px] font-medium shadow-[0_1px_3px_rgba(0,0,0,0.35),0_6px_18px_rgba(0,0,0,0.26)] transition-colors hover:bg-[#3A3A42] disabled:cursor-default disabled:opacity-60",
               FOCUS_RING
             )}
             style={{ background: "#34343B", color: "var(--text-primary)" }}
           >
             <GoogleIcon />
-            Continue with Google
+            {googleLoading ? "Redirecting…" : "Continue with Google"}
           </button>
-          {showGoogleNotice && (
-            <p className="-mt-2 text-center text-[11px] text-[var(--text-subtle)]">
-              Google sign-in isn&apos;t set up yet — use email below.
-            </p>
-          )}
 
           <div className="flex items-center gap-3.5">
             <span className="h-px flex-1" style={{ background: "rgba(255,255,255,0.10)" }} />

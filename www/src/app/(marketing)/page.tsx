@@ -205,9 +205,6 @@ export default function LandingPage() {
           <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             About
           </a>
-          <a href="/login" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
-            Log in
-          </a>
           <a
             href="#join"
             className="btn btn-primary"
@@ -448,19 +445,12 @@ export default function LandingPage() {
           </a>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Navigation</span>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 13 }}>
-            {[
-              ["#process", "Process"],
-              ["#features", "Features"],
-              ["#about", "About"],
-              ["#join", "Waitlist"],
-            ].map(([href, label]) => (
-              <a key={href} href={href} className="link" style={{ color: "#8FA3E0", textDecoration: "none" }}>
-                {label}
-              </a>
-            ))}
-          </div>
+          <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>
+            Demo Login Information
+          </span>
+          <a href="/login" className="link" style={{ fontSize: 13, color: "#8FA3E0", textDecoration: "none" }}>
+            Demo Login
+          </a>
         </div>
         <div style={{ gridColumn: "1 / -1", paddingTop: 20, fontSize: 12, color: "rgba(255,255,255,0.32)" }}>© Altoscope 2026</div>
       </footer>
