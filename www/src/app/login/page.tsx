@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils"
 export default function LoginPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const next = searchParams.get("next") || "/package-builder"
+  const next = searchParams.get("next") || "/dashboard"
 
   const [mode, setMode] = useState<"sign-in" | "sign-up">("sign-in")
   const [email, setEmail] = useState("")

@@ -7,8 +7,10 @@ import { LayoutDashboard, Search, Package, FileText, Users, Settings } from "luc
 // `href: null` marks a placeholder — deliberately inert (no click handler
 // wired by consumers below) rather than pointing at "/", since navigating a
 // signed-in user to the public marketing/waitlist page reads as a bug, not
-// a coming-soon state. Only Browse and Packages are real destinations today:
-//   Dashboard → T0043 (www/(app)/dashboard/)
+// a coming-soon state. Dashboard, Browse, and Packages are real destinations:
+//   Dashboard → (app)/dashboard/page.tsx is a placeholder screen for now
+//               (real build is T0043) — it's wired up because it's also the
+//               default post-sign-in landing page (2026-08-09 decision).
 //   CRM       → T0041 (www/(app)/crm/)
 //   Quotes    → no task yet; previous placeholder (Compatibility Checker)
 //               was scrapped 2026-08-09, see T0048 for revisiting that page
@@ -20,7 +22,7 @@ import { LayoutDashboard, Search, Package, FileText, Users, Settings } from "luc
 // itself instead — see package-builder-client.tsx's HistoryPanel, backed by
 // the package_events table (T0025).
 export const NAV_ITEMS: { label: string; href: string | null; icon: React.ReactNode }[] = [
-  { label: "Dashboard", href: null, icon: <LayoutDashboard size={15} strokeWidth={1.7} /> },
+  { label: "Dashboard", href: "/dashboard", icon: <LayoutDashboard size={15} strokeWidth={1.7} /> },
   { label: "Browse", href: "/browse", icon: <Search size={15} strokeWidth={1.7} /> },
   { label: "Packages", href: "/package-builder", icon: <Package size={15} strokeWidth={1.7} /> },
   { label: "Quotes", href: null, icon: <FileText size={15} strokeWidth={1.7} /> },

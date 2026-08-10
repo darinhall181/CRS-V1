@@ -3,10 +3,11 @@
 
 export type WorkspaceType = "production" | "rental" | "hobbyist"
 
+// Hobbyist dropped from the UI for now (kept in the type/DB enum below so
+// existing rows stay valid and it's a one-line add-back, not a migration).
 export const WORKSPACE_OPTIONS: { value: WorkspaceType; label: string; body: string }[] = [
   { value: "production", label: "Production", body: "Build packages, validate gear, and send quote requests." },
   { value: "rental", label: "Rental house", body: "Receive requests, price packages, and manage inventory." },
-  { value: "hobbyist", label: "Hobbyist", body: "Shoot for yourself, rent occasionally, learn the gear." },
 ]
 
 export type ProductionRole = "dp" | "coordinator" | "producer" | "gaffer"

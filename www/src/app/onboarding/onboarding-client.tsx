@@ -175,7 +175,13 @@ export function OnboardingClient({
   )
   const [stubNotice, setStubNotice] = useState<string | null>(null)
 
-  const isHobbyist = workspaceType === "hobbyist"
+  // "rental" skips the crew-specific steps entirely (Profession, Working
+  // details — day rate/union/owner-kit/insurance don't apply to a business
+  // account). "hobbyist" isn't selectable in the UI anymore but its rows
+  // still exist in the DB, so it keeps its old (step-4-only) skip behavior.
+  const isRental = workspaceType === "rental"
+  const skipProfessionStep = isRental
+  const skipWorkingDetailsStep = isRental || workspaceType === "hobbyist"
   const completedRef = useRef(false)
 
   // Reaching "Ready" is what actually finishes onboarding — fires once, not
@@ -200,7 +206,7 @@ export function OnboardingClient({
     try {
       if (step === 1) {
         await saveWorkspaceStepAction(workspaceType)
-        setStep(2)
+        setStep(skipProfessionStep ? 3 : 2)
       } else if (step === 2) {
         await saveProfessionStepAction(profession)
         setStep(3)
@@ -211,7 +217,7 @@ export function OnboardingClient({
           experienceLevel,
           referralSource: referralSource.trim() || null,
         })
-        setStep(isHobbyist ? 5 : 4)
+        setStep(skipWorkingDetailsStep ? 5 : 4)
       } else if (step === 4) {
         await saveWorkingDetailsStepAction({
           dayRateBand: rateBand[0] ?? null,
@@ -254,11 +260,20 @@ export function OnboardingClient({
   }
 
   function goBack() {
-    if (step === 5) setStep(isHobbyist ? 3 : 4)
-    else if (step > 1) setStep((s) => s - 1)
+    if (step === 5) {
+      setStep(skipWorkingDetailsStep ? 3 : 4)
+      return
+    }
+    if (step === 3 && skipProfessionStep) {
+      setStep(1)
+      return
+    }
+    if (step > 1) setStep((s) => s - 1)
   }
 
-  const dots = STEP_LABELS.map((label, i) => ({ label, step: i + 1 })).filter((d) => !(isHobbyist && d.step === 4))
+  const dots = STEP_LABELS.map((label, i) => ({ label, step: i + 1 })).filter(
+    (d) => !(skipProfessionStep && d.step === 2) && !(skipWorkingDetailsStep && d.step === 4)
+  )
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-[var(--bg-base)] px-8 pb-7 pt-10 text-[var(--text-primary)]">
@@ -311,7 +326,7 @@ export function OnboardingClient({
         )}
 
         {/* ── Step 2 · Profession ───────────────────────────────────────── */}
-        {step === 2 && (
+        {step === 2 && !skipProfessionStep && (
           <div className="flex w-full flex-col gap-6">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>What do you do?</h1>
@@ -408,7 +423,7 @@ export function OnboardingClient({
         )}
 
         {/* ── Step 4 · Working details ──────────────────────────────────── */}
-        {step === 4 && !isHobbyist && (
+        {step === 4 && !skipWorkingDetailsStep && (
           <div className="flex w-full max-w-[620px] flex-col gap-[26px]">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>A few working details</h1>

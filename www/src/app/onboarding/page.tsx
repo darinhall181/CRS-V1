@@ -20,7 +20,7 @@ export default async function OnboardingPage() {
   // Already done — someone navigating here directly after finishing (the
   // redirect gate on every other protected page would've sent them
   // elsewhere already, so this is only reachable by typing the URL).
-  if (state?.onboardingCompletedAt) redirect("/package-builder")
+  if (state?.onboardingCompletedAt) redirect("/dashboard")
 
   return <OnboardingClient initialState={state} userName={session.user.name} />
 }
