@@ -13,7 +13,7 @@ import { FOCUS_RING } from "@/components/elevation/shared"
 // a real access_denied hit during Google OAuth testing.
 const ERROR_MESSAGES: Record<string, string> = {
   access_denied:
-    "Google didn't complete the sign-in — either it was cancelled, or (while the app's OAuth consent screen is still in testing mode) this Google account hasn't been added as a test user yet.",
+    "Google sign-in was cancelled or denied — this account may not be added as a test user yet.",
   invalid_callback:
     "That sign-in link is no longer valid — it may have expired or already been used.",
 }
