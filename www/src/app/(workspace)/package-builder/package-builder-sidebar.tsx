@@ -5,7 +5,6 @@ import { useRouter, usePathname } from "next/navigation"
 import { Building2, Plus } from "lucide-react"
 import { SidebarNav } from "@/components/elevation"
 import { NAV_ITEMS, SETTINGS_NAV_ITEM } from "@/components/nav/nav-items"
-import { cn } from "@/lib/utils"
 
 // Package Builder's left nav — Navigation Options "1a" wireframe restyled
 // flush (Storefront handoff's borderless treatment, T0034/T0036 primitives).
@@ -16,12 +15,13 @@ import { cn } from "@/lib/utils"
 // tabs moved into the sidebar, and shared with (app)'s AppShell (T0016) via
 // nav-items.tsx so the destination list can't drift between the two shells.
 //
-// 2026-08-08 experiment: "Add gear" moved from the top action row into the
-// sidebar header slot, at Darin's request, to see whether it reads better
-// living next to the rest of the left-side navigation while still opening
-// the same left-side catalog drawer (Sheet) — not yet confirmed as final.
-// "Add gear" is specific to this page (opens the Package Builder catalog
-// drawer) — not a global action, so it stays in this file's header slot
+// "Add gear" history: started in the top action row, moved into the sidebar
+// header slot 2026-08-08 (its own bright bg-interactive-default button,
+// above Dashboard/Browse/etc.), moved again 2026-08-10 at Darin's request —
+// he didn't like it living at the top, so it's now the first secondary item,
+// directly above Settings under that same divider, styled like any other
+// nav row instead of a standalone CTA button. Still opens the same
+// left-side catalog drawer (Sheet); still page-specific, so it stays here
 // rather than moving into a shared primitive.
 //
 // Logo/wordmark deliberately omitted here — they now live in
@@ -42,27 +42,16 @@ export function PackageBuilderSidebar({
     <SidebarNav
       flush
       width={180}
-      header={
-        <button
-          type="button"
-          title={collapsed ? "Add gear" : undefined}
-          onClick={onAddGear}
-          className={cn(
-            "flex items-center gap-[7px] border-none bg-[var(--interactive-default)] text-white transition-colors hover:bg-[var(--interactive-hover)]",
-            collapsed ? "h-[38px] w-[38px] justify-center rounded-full" : "h-[34px] w-full rounded-[8px] px-[10px]"
-          )}
-        >
-          <Plus size={15} strokeWidth={2.2} />
-          {!collapsed && <span className="text-[13px] font-medium">Add gear</span>}
-        </button>
-      }
       items={NAV_ITEMS.map((item) => ({
         label: item.label,
         icon: item.icon,
         active: item.href !== null && pathname === item.href,
         onClick: item.href ? () => router.push(item.href!) : undefined,
       }))}
-      secondaryItems={[SETTINGS_NAV_ITEM]}
+      secondaryItems={[
+        { label: "Add gear", icon: <Plus size={15} strokeWidth={1.7} />, onClick: onAddGear },
+        SETTINGS_NAV_ITEM,
+      ]}
       workspaces={
         companyName
           ? [{ name: companyName, icon: <Building2 size={16} strokeWidth={1.7} />, active: true }]

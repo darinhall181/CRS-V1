@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import Link from "next/link"
 import { Search, Bell } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FOCUS_RING } from "./shared"
@@ -28,6 +29,9 @@ export interface TopBarProps {
 // SidebarNav's own `logo`/`wordmark` props exist only for layouts that don't
 // use a TopBar at all (see SidebarNav's ProductionWithWorkspaces story).
 //
+// Logo/wordmark link to /dashboard (2026-08-10, at Darin's request) — the
+// conventional "click the brand mark to go home" affordance.
+//
 // mt-8 (32px) pushes the row down from the true top of the screen to match
 // the 32px pt-8 a page composing this typically gives its own title row
 // below — keeps the gap above and below the bar visually even.
@@ -43,10 +47,16 @@ export function TopBar({
 }: TopBarProps) {
   return (
     <div className={cn("mt-8 flex h-[42px] flex-none items-center gap-5 bg-[var(--bg-base)] px-8", className)}>
-      <div className="flex flex-none items-center gap-[11px]">
+      <Link
+        href="/dashboard"
+        className={cn(
+          "flex flex-none items-center gap-[11px] rounded-[8px] transition-opacity hover:opacity-80",
+          FOCUS_RING
+        )}
+      >
         {logo}
         <span className="whitespace-nowrap text-[17px] font-medium tracking-[-0.01em]">{wordmark}</span>
-      </div>
+      </Link>
 
       <div className="flex flex-1 justify-center">
         <div className="flex h-[42px] w-full max-w-[560px] items-center gap-2.5 rounded-full bg-[var(--surface-01)] px-4">
