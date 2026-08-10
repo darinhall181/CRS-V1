@@ -49,7 +49,7 @@ export function PackageBuilderSidebar({
         onClick: item.href ? () => router.push(item.href!) : undefined,
       }))}
       secondaryItems={[
-        { label: "Add gear", icon: <Plus size={15} strokeWidth={1.7} />, onClick: onAddGear },
+        { label: "Add gear", icon: <Plus size={15} strokeWidth={1.7} />, onClick: onAddGear, outline: true },
         SETTINGS_NAV_ITEM,
       ]}
       workspaces={

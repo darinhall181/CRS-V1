@@ -47,13 +47,7 @@ export function TopBar({
 }: TopBarProps) {
   return (
     <div className={cn("mt-8 flex h-[42px] flex-none items-center gap-5 bg-[var(--bg-base)] px-8", className)}>
-      <Link
-        href="/dashboard"
-        className={cn(
-          "flex flex-none items-center gap-[11px] rounded-[8px] transition-opacity hover:opacity-80",
-          FOCUS_RING
-        )}
-      >
+      <Link href="/dashboard" className={cn("flex flex-none items-center gap-[11px] rounded-[8px]", FOCUS_RING)}>
         {logo}
         <span className="whitespace-nowrap text-[17px] font-medium tracking-[-0.01em]">{wordmark}</span>
       </Link>

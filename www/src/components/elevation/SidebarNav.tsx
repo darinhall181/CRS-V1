@@ -8,6 +8,9 @@ export interface SidebarNavItem {
   icon: ReactNode
   active?: boolean
   onClick?: () => void
+  /** Blue outline instead of the usual ghost/fill treatment — e.g. Package
+   * Builder's "Add gear", called out from a plain destination like Settings. */
+  outline?: boolean
 }
 
 export interface SidebarWorkspace {
@@ -50,10 +53,11 @@ export interface SidebarNavProps {
   className?: string
 }
 
-function navItemClass(collapsed: boolean, active: boolean | undefined) {
+function navItemClass(collapsed: boolean, active: boolean | undefined, outline?: boolean) {
   return cn(
-    "flex items-center gap-[10px] overflow-hidden whitespace-nowrap border-none text-left text-[13px] transition-[width,border-radius,background-color] duration-200",
+    "flex items-center gap-[10px] overflow-hidden whitespace-nowrap text-left text-[13px] transition-[width,border-radius,background-color] duration-200",
     collapsed ? "h-[38px] w-[38px] justify-center rounded-full" : "h-[34px] w-full rounded-[8px] px-[10px]",
+    outline ? "border border-[var(--interactive-default)]" : "border-none",
     active
       ? "bg-[var(--bg-overlay)] text-[var(--text-primary)]"
       : "bg-transparent text-[var(--text-secondary)] hover:bg-[var(--ghost-hover)]",
@@ -125,7 +129,7 @@ export function SidebarNav({
               type="button"
               title={collapsed ? item.label : undefined}
               onClick={item.onClick}
-              className={navItemClass(collapsed, item.active)}
+              className={navItemClass(collapsed, item.active, item.outline)}
             >
               {item.icon}
               {!collapsed && item.label}
@@ -142,7 +146,7 @@ export function SidebarNav({
               type="button"
               title={collapsed ? item.label : undefined}
               onClick={item.onClick}
-              className={navItemClass(collapsed, item.active)}
+              className={navItemClass(collapsed, item.active, item.outline)}
             >
               {item.icon}
               {!collapsed && item.label}

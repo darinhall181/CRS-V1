@@ -534,7 +534,14 @@ export function PackageBuilderClient({
               </div>
             )}
 
-            <div className="flex flex-none items-center px-3.5">
+            {/* pr-[29px] = the row's own 14px pr-3.5 + the ~15px gutter the
+                list below reserves via scrollbar-gutter:stable (measured
+                live, not just Chrome's drawn 10px scrollbar — the reserved
+                gutter and the styled ::-webkit-scrollbar width in globals.css
+                aren't the same number) — without it these labels sit right
+                of the columns they're heading, since only the list scrolls,
+                not this row. */}
+            <div className="flex flex-none items-center pl-3.5 pr-[29px]">
               <span className="w-[30px]" />
               <span className="flex-1 px-2" />
               <span className="w-[130px] px-2 text-center text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">Availability</span>
@@ -545,7 +552,7 @@ export function PackageBuilderClient({
               <span className="ml-2.5 w-[26px]" />
             </div>
 
-            <div className="flex-1 overflow-auto flex flex-col gap-3 pr-1">
+            <div className="flex-1 overflow-auto flex flex-col gap-3 pr-1" style={{ scrollbarGutter: "stable" }}>
               {displayGroups.map(({ key, label, category, lines, total }) => {
                 const displayLines = lines.filter((l) => matchesQuery(gearById.get(l.gearId)))
                 const displayTotal = query
