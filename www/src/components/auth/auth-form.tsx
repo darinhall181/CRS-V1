@@ -26,7 +26,15 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const rawNext = searchParams.get("next")
-  const next = rawNext || "/dashboard"
+  // /signup only exists for creating a new account, and a brand-new account
+  // always has onboarding incomplete — default straight to /onboarding
+  // instead of /dashboard so a fresh signup (email or Google) doesn't take
+  // an extra redirect hop through the dashboard gate just to land there
+  // anyway. Not a guess: this is /signup's actual, declared purpose, not an
+  // assumption about the specific user. Self-corrects either way — an
+  // already-completed viewer who somehow lands on /onboarding gets bounced
+  // to /dashboard by that page itself (see onboarding/page.tsx).
+  const next = rawNext || (mode === "sign-up" ? "/onboarding" : "/dashboard")
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
