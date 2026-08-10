@@ -17,7 +17,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   invalid_callback:
     "That sign-in link is no longer valid — it may have expired or already been used.",
   please_restart_the_process:
-    "That sign-in link was already used, likely from a duplicate attempt (e.g. two tabs) — if you're already signed in, it actually went through; otherwise just try again.",
+    "That sign-in link was already used — try again.",
 }
 
 function describeError(code: string | null): string {
