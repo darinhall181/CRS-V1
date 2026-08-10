@@ -1,6 +1,6 @@
 import { db } from "./index"
 import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, packageEvents, productionMembers, companyMembers, companies, users, userProfile } from "./schema"
-import { eq, ilike, and, or, isNotNull, isNull, desc, asc } from "drizzle-orm"
+import { eq, ilike, and, or, isNotNull, isNull, desc, asc, count as sqlCount } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
 
@@ -17,13 +17,33 @@ export type ProductCard = {
   categorySlug: string
 }
 
+// Shared between getProducts and getProductsCount so the two never drift on
+// what counts as "matching" — the count must reflect exactly the same rows
+// the paginated query would return.
+function productFilters(opts: { categorySlug?: string; brandSlug?: string; search?: string }) {
+  const { categorySlug, brandSlug, search } = opts
+  return and(
+    eq(product.isActive, true),
+    categorySlug ? eq(productCategory.slug, categorySlug) : undefined,
+    brandSlug ? eq(brand.slug, brandSlug) : undefined,
+    search
+      ? or(
+          ilike(product.fullName, `%${search}%`),
+          ilike(product.model, `%${search}%`),
+          ilike(brand.name, `%${search}%`)
+        )
+      : undefined
+  )
+}
+
 export async function getProducts(opts: {
   categorySlug?: string
   brandSlug?: string
   search?: string
   limit?: number
+  offset?: number
 } = {}): Promise<ProductCard[]> {
-  const { categorySlug, brandSlug, search, limit = 60 } = opts
+  const { limit = 60, offset = 0 } = opts
 
   const rows = await db
     .select({
@@ -41,24 +61,29 @@ export async function getProducts(opts: {
     .from(product)
     .innerJoin(brand, eq(product.brandId, brand.id))
     .innerJoin(productCategory, eq(product.categoryId, productCategory.id))
-    .where(
-      and(
-        eq(product.isActive, true),
-        categorySlug ? eq(productCategory.slug, categorySlug) : undefined,
-        brandSlug ? eq(brand.slug, brandSlug) : undefined,
-        search
-          ? or(
-              ilike(product.fullName, `%${search}%`),
-              ilike(product.model, `%${search}%`),
-              ilike(brand.name, `%${search}%`)
-            )
-          : undefined
-      )
-    )
+    .where(productFilters(opts))
     .orderBy(asc(productCategory.displayOrder), asc(product.fullName))
     .limit(limit)
+    .offset(offset)
 
   return rows as ProductCard[]
+}
+
+// Total matching row count for the same filters getProducts() accepts —
+// pagination (Browse, T0020) needs this alongside the page of rows itself.
+export async function getProductsCount(opts: {
+  categorySlug?: string
+  brandSlug?: string
+  search?: string
+} = {}): Promise<number> {
+  const [row] = await db
+    .select({ count: sqlCount() })
+    .from(product)
+    .innerJoin(brand, eq(product.brandId, brand.id))
+    .innerJoin(productCategory, eq(product.categoryId, productCategory.id))
+    .where(productFilters(opts))
+
+  return row?.count ?? 0
 }
 
 // ─── Product Detail ───────────────────────────────────────────────────────────
@@ -215,6 +240,39 @@ export async function getCategoriesWithCounts(): Promise<CategoryCount[]> {
   }
 
   return Array.from(map.values())
+}
+
+// ─── Brands with product counts (Browse tab row, T0020) ──────────────────────
+// The Storefront mockup's tab row is a quick-access filter distinct from the
+// sidebar's category axis; real data only supports category + brand as
+// filterable axes today, so the tabs are brand-driven (real counts, scoped
+// to the current category filter if one is set) rather than the mockup's
+// curated/hardcoded tab labels.
+
+export async function getBrandsWithCounts(categorySlug?: string): Promise<CategoryCount[]> {
+  const rows = await db
+    .select({
+      slug: brand.slug,
+      name: brand.name,
+    })
+    .from(product)
+    .innerJoin(brand, eq(product.brandId, brand.id))
+    .innerJoin(productCategory, eq(product.categoryId, productCategory.id))
+    .where(
+      and(
+        eq(product.isActive, true),
+        categorySlug ? eq(productCategory.slug, categorySlug) : undefined
+      )
+    )
+
+  const map = new Map<string, CategoryCount>()
+  for (const r of rows) {
+    const existing = map.get(r.slug)
+    if (existing) existing.count++
+    else map.set(r.slug, { slug: r.slug, name: r.name, count: 1 })
+  }
+
+  return Array.from(map.values()).sort((a, b) => b.count - a.count)
 }
 
 // ─── Rental house inventory ───────────────────────────────────────────────────

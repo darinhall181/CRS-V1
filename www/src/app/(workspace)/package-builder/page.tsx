@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation"
 import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, getPackageComments, getMentionableUsers, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
+import { resolveGearRate } from "@/lib/gear-rate"
 import { getViewerContext } from "@/lib/viewer-context"
 import { PackageBuilderClient } from "./package-builder-client"
 import type { GearCategory, GearItem, PackageLineItem } from "./types"
@@ -25,15 +26,6 @@ const CATEGORY_MAP: Record<string, GearCategory> = {
 
 const VENDOR_SLUG = "davinci-rentals"
 
-// Placeholder day-rate estimate (≈1.2% of MSRP/day, roughly matching real-world
-// cinema rental pricing) — used only when no real DaVinci Rentals row exists yet
-// for this product. Real rates always win over this.
-function estimateDayRate(msrpUsd: string | null, category: GearCategory): number {
-  const msrp = msrpUsd ? parseFloat(msrpUsd) : null
-  if (msrp && msrp > 0) return Math.max(25, Math.round((msrp * 0.012) / 5) * 5)
-  return category === "camera" ? 250 : 65
-}
-
 function toGearItem(
   p: ProductCard,
   vendorRates: Map<string, RentalHouseRate>
@@ -41,20 +33,9 @@ function toGearItem(
   const category = CATEGORY_MAP[p.categorySlug]
   if (!category) return null
 
-  const vendor = vendorRates.get(p.id)
-  const rate = vendor
-    ? {
-        dayRate: vendor.dayRate,
-        weekRate: vendor.weekRate,
-        source: "vendor" as const,
-        vendorName: vendor.rentalHouseName,
-        quantityOnHand: vendor.quantityOnHand,
-      }
-    : {
-        dayRate: estimateDayRate(p.msrpUsd, category),
-        weekRate: null,
-        source: "estimate" as const,
-      }
+  // See lib/gear-rate.ts — shared with Browse (T0020) so the two never
+  // silently diverge on the estimate heuristic.
+  const rate = resolveGearRate(p.id, p.msrpUsd, vendorRates, category === "camera" ? 250 : 65)
 
   return {
     id: p.id,
