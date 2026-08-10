@@ -11,6 +11,12 @@ export const auth = betterAuth({
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: { enabled: true },
+  // Better Auth's built-in default (a generic un-styled HTML page at
+  // /api/auth/error) fired for real 2026-08-10 when a Google OAuth attempt
+  // came back access_denied — replaced with our own branded, public page.
+  onAPIError: {
+    errorURL: "/auth-error",
+  },
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
