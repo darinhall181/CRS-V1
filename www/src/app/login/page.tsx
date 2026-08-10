@@ -66,10 +66,14 @@ export default function LoginPage() {
   const labelClass = "text-xs font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]"
 
   return (
-    <div className="grid min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] lg:grid-cols-2">
+    <div className="grid min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] lg:grid-cols-2 lg:gap-5 lg:p-5">
       {/* ── Brand panel ─────────────────────────────────────────────────── */}
+      {/* 2026-08-10, at Darin's request: same dark panel as before, but as an
+          inset rounded-2xl card (matching the onboarding wizard's card
+          radius) instead of flush full-bleed — the light-panel version this
+          replaced didn't land, but the card treatment itself did. */}
       <div
-        className="hidden flex-col justify-center gap-[26px] px-[72px] py-16 lg:flex"
+        className="hidden flex-col justify-center gap-[26px] rounded-2xl px-[72px] py-16 lg:flex"
         style={{ background: "var(--surface-page-shell)" }}
       >
         <Image
