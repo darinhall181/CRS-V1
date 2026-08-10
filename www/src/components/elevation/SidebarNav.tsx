@@ -57,10 +57,16 @@ function navItemClass(collapsed: boolean, active: boolean | undefined, outline?:
   return cn(
     "flex items-center gap-[10px] overflow-hidden whitespace-nowrap text-left text-[13px] transition-[width,border-radius,background-color] duration-200",
     collapsed ? "h-[38px] w-[38px] justify-center rounded-full" : "h-[34px] w-full rounded-[8px] px-[10px]",
-    outline ? "border border-[var(--interactive-default)]" : "border-none",
-    active
-      ? "bg-[var(--bg-overlay)] text-[var(--text-primary)]"
-      : "bg-transparent text-[var(--text-secondary)] hover:bg-[var(--ghost-hover)]",
+    outline
+      ? // Fill matches the stroke — a solid blue CTA, not a ghost button with
+        // just a colored border (2026-08-10, at Darin's request).
+        "border border-[var(--interactive-default)] bg-[var(--interactive-default)] text-white transition-opacity hover:opacity-90"
+      : cn(
+          "border-none",
+          active
+            ? "bg-[var(--bg-overlay)] text-[var(--text-primary)]"
+            : "bg-transparent text-[var(--text-secondary)] hover:bg-[var(--ghost-hover)]"
+        ),
     FOCUS_RING
   )
 }

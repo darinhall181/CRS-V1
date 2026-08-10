@@ -1,6 +1,6 @@
 import { db } from "./index"
 import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, packageEvents, productionMembers, companyMembers, companies, users, userProfile } from "./schema"
-import { eq, ilike, and, or, isNotNull, isNull, desc, asc, count as sqlCount } from "drizzle-orm"
+import { eq, ilike, and, or, isNotNull, isNull, desc, asc, count as sqlCount, inArray } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
 
@@ -20,11 +20,12 @@ export type ProductCard = {
 // Shared between getProducts and getProductsCount so the two never drift on
 // what counts as "matching" — the count must reflect exactly the same rows
 // the paginated query would return.
-function productFilters(opts: { categorySlug?: string; brandSlug?: string; search?: string }) {
-  const { categorySlug, brandSlug, search } = opts
+function productFilters(opts: { categorySlug?: string; categorySlugs?: string[]; brandSlug?: string; search?: string }) {
+  const { categorySlug, categorySlugs, brandSlug, search } = opts
   return and(
     eq(product.isActive, true),
     categorySlug ? eq(productCategory.slug, categorySlug) : undefined,
+    categorySlugs && categorySlugs.length > 0 ? inArray(productCategory.slug, categorySlugs) : undefined,
     brandSlug ? eq(brand.slug, brandSlug) : undefined,
     search
       ? or(
@@ -38,6 +39,7 @@ function productFilters(opts: { categorySlug?: string; brandSlug?: string; searc
 
 export async function getProducts(opts: {
   categorySlug?: string
+  categorySlugs?: string[]
   brandSlug?: string
   search?: string
   limit?: number
@@ -73,6 +75,7 @@ export async function getProducts(opts: {
 // pagination (Browse, T0020) needs this alongside the page of rows itself.
 export async function getProductsCount(opts: {
   categorySlug?: string
+  categorySlugs?: string[]
   brandSlug?: string
   search?: string
 } = {}): Promise<number> {

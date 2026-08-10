@@ -1,39 +1,59 @@
 import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import type { CategoryCount } from "@/lib/db/queries"
+import { ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react"
+import { GEAR_GROUP_LABELS, GEAR_GROUP_ORDER, type GearGroup } from "@/lib/gear-taxonomy"
 
-// Tab row above the grid. The mockup's tabs are curated category shortcuts
-// ("All / Rental houses / Cameras / Lenses / ..."); real data only supports
-// category and brand as filterable axes today (see T0020 task notes), and
-// category already has its own affordance in the page-local sidebar — so
-// this row uses brand as the second, real axis instead of inventing/
-// hardcoding tab labels the catalog can't back up. "Rental houses" browsing
-// is a distinct, unbuilt feature (no vendor-browse UI exists) and stays out
-// of scope here.
+// Tab row above the grid — 2026-08-10, replaced the earlier brand-based tabs
+// with the same 5-department grouping Package Builder's grid already uses
+// (camera/lenses/support/focus/video, see lib/gear-taxonomy.ts), now that
+// the page-local category sidebar is gone (single global left nav only).
+// Brand stays a real, useful filter axis — it just moves into the (not yet
+// built) filter panel instead of living as tabs.
 export function BrowseTabs({
-  brands,
-  activeSlug,
+  counts,
+  activeGroup,
+  totalCount,
   buildHref,
 }: {
-  brands: CategoryCount[]
-  activeSlug: string | undefined
-  buildHref: (next: { tab: string | null; page?: number }) => string
+  counts: Record<GearGroup, number>
+  activeGroup: GearGroup | undefined
+  totalCount: number
+  buildHref: (next: { group: string | null; page?: number }) => string
 }) {
   return (
-    <div className="flex items-center gap-7 overflow-x-auto border-b border-[var(--elevation-divider)] px-1 pb-0 pt-2">
-      <Tab href={buildHref({ tab: null, page: 1 })} label="All" active={!activeSlug} />
-      {brands.map((b) => (
-        <Tab key={b.slug} href={buildHref({ tab: b.slug, page: 1 })} label={b.name} active={activeSlug === b.slug} />
-      ))}
+    <div className="flex items-center justify-between gap-4 border-b border-[var(--elevation-divider)] px-1 pb-0 pt-2">
+      <div className="flex items-center gap-7 overflow-x-auto">
+        <Tab href={buildHref({ group: null, page: 1 })} label="All" count={totalCount} active={!activeGroup} />
+        {GEAR_GROUP_ORDER.map((group) => (
+          <Tab
+            key={group}
+            href={buildHref({ group, page: 1 })}
+            label={GEAR_GROUP_LABELS[group]}
+            count={counts[group]}
+            active={activeGroup === group}
+          />
+        ))}
+      </div>
+      {/* Static for now — real filter fields (brand + mount type look like
+          the strongest real candidates from the data; see conversation) get
+          scoped and wired as a follow-up, not part of this pass. */}
+      <button
+        type="button"
+        disabled
+        title="Filters — coming soon"
+        className="mb-2 flex flex-none cursor-default items-center gap-2 rounded-full bg-[var(--surface-02)] px-3.5 py-2 text-xs text-[var(--text-muted)] shadow-[var(--elevation-1)]"
+      >
+        <SlidersHorizontal size={13} strokeWidth={1.8} />
+        Filter
+      </button>
     </div>
   )
 }
 
-function Tab({ href, label, active }: { href: string; label: string; active: boolean }) {
+function Tab({ href, label, count, active }: { href: string; label: string; count: number; active: boolean }) {
   return (
     <Link
       href={href}
-      className="whitespace-nowrap pb-[11px] text-xs transition-colors"
+      className="flex items-center gap-1.5 whitespace-nowrap pb-[11px] text-xs transition-colors"
       style={{
         color: active ? "var(--text-primary)" : "var(--text-muted)",
         fontWeight: active ? 500 : 400,
@@ -41,6 +61,7 @@ function Tab({ href, label, active }: { href: string; label: string; active: boo
       }}
     >
       {label}
+      <span className="font-mono text-[10px] text-[var(--text-subtle)]">{count}</span>
     </Link>
   )
 }
