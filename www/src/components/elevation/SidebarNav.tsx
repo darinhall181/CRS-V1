@@ -90,7 +90,16 @@ export function SidebarNav({
       className={cn(
         "sticky top-0 flex h-full flex-none flex-col gap-[26px] box-border transition-[width] duration-200",
         flush ? "bg-transparent" : "bg-[var(--bg-surface)]",
-        collapsed ? "items-center px-0 py-[22px]" : "p-[22px_16px]",
+        collapsed
+          ? "items-center px-0 py-[22px]"
+          : // flush (AppShell/Package Builder) sits directly under a TopBar whose
+            // logo starts at 32px (px-8) — 22px left padding + a nav row's own
+            // 10px inner padding lines the row icons up under the wordmark
+            // (2026-08-10, at Darin's request). Non-flush (boxed-panel) usage
+            // keeps the original 16px — it has no TopBar above it to align to.
+            flush
+            ? "p-[22px_22px]"
+            : "p-[22px_16px]",
         className
       )}
     >
