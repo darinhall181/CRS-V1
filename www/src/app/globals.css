@@ -242,3 +242,21 @@
   background: rgba(255, 255, 255, 0.26);
   background-clip: padding-box;
 }
+
+/* Onboarding wizard step transitions — a light fade + rise, not a full
+   slide/route transition. Re-triggers because each step's root div is
+   keyed by step number, so React remounts it instead of just updating
+   props. */
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.onboarding-step {
+  animation: step-in 240ms ease-out;
+}

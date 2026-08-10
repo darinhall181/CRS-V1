@@ -282,7 +282,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
       <div className="flex w-full max-w-[940px] flex-1 flex-col items-center justify-center py-12">
         {/* ── Step 1 · Workspace ────────────────────────────────────────── */}
         {step === 1 && (
-          <div className="flex w-full max-w-[640px] flex-col items-center gap-7">
+          <div key={step} className="onboarding-step flex w-full max-w-[640px] flex-col items-center gap-7">
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className={h1Class}>Choose your workspace</h1>
               <p className="m-0 text-[13px] text-[var(--text-secondary)]">
@@ -330,7 +330,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
         {/* ── Step 2 · Profession ───────────────────────────────────────── */}
         {step === 2 && !skipCrewSteps && (
-          <div className="flex w-full flex-col gap-6">
+          <div key={step} className="onboarding-step flex w-full flex-col gap-6">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>What do you do?</h1>
               <p className="m-0 text-[13px] text-[var(--text-secondary)]">
@@ -369,7 +369,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
         {/* ── Step 3 · Working details ──────────────────────────────────── */}
         {step === 3 && !skipCrewSteps && (
-          <div className="flex w-full max-w-[620px] flex-col gap-[26px]">
+          <div key={step} className="onboarding-step flex w-full max-w-[620px] flex-col gap-[26px]">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>A few working details…</h1>
             </div>
@@ -472,7 +472,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
         {/* ── Step 4 · Ready ─────────────────────────────────────────────── */}
         {step === 4 && (
-          <div className="flex w-full max-w-[720px] flex-col items-center gap-[30px] text-center">
+          <div key={step} className="onboarding-step flex w-full max-w-[720px] flex-col items-center gap-[30px] text-center">
             <div
               className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-[var(--elevation-1)]"
               style={{ background: "#34343B" }}
