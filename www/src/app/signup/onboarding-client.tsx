@@ -149,10 +149,29 @@ function ChipRow({
   )
 }
 
+// Session-scoped, not localStorage — a refresh mid-wizard shouldn't drop you
+// back to step 1, but a genuinely new browser session/account should still
+// start clean (2026-08-10, at Darin's request).
+const STEP_STORAGE_KEY = "altoscope-signup-step"
+
 export function OnboardingClient({ initialState }: { initialState: OnboardingState | null }) {
   const router = useRouter()
   const [step, setStep] = useState(1)
   const [saving, setSaving] = useState(false)
+
+  // Runs once on mount, after the step-1 SSR/hydration render — jumping
+  // straight to the saved step in the initializer instead would desync from
+  // the server-rendered markup (window/sessionStorage don't exist during
+  // SSR) and trigger a hydration mismatch.
+  useEffect(() => {
+    const saved = Number(sessionStorage.getItem(STEP_STORAGE_KEY))
+    if (saved >= 1 && saved <= 4) setStep(saved)
+  }, [])
+
+  function goToStep(n: number) {
+    setStep(n)
+    sessionStorage.setItem(STEP_STORAGE_KEY, String(n))
+  }
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const [workspaceType, setWorkspaceType] = useState<WorkspaceType | null>(initialState?.workspaceType ?? null)
@@ -180,6 +199,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
     if (step === 4 && !completedRef.current) {
       completedRef.current = true
       completeOnboardingAction()
+      sessionStorage.removeItem(STEP_STORAGE_KEY)
     }
   }, [step])
 
@@ -196,10 +216,10 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
     try {
       if (step === 1 && workspaceType) {
         await saveWorkspaceStepAction(workspaceType)
-        setStep(skipCrewSteps ? 4 : 2)
+        goToStep(skipCrewSteps ? 4 : 2)
       } else if (step === 2) {
         await saveProfessionStepAction(profession)
-        setStep(3)
+        goToStep(3)
       } else if (step === 3) {
         await saveWorkingDetailsStepAction({
           dayRateBand: rateBand[0] ?? null,
@@ -208,7 +228,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
           ownerKitCategories: kitCategories,
           insuranceStatus: insurance.length > 0 ? insurance.join(", ") : null,
         })
-        setStep(4)
+        goToStep(4)
       }
     } finally {
       setSaving(false)
@@ -219,7 +239,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
     setSaving(true)
     try {
       await saveProfessionStepAction(null)
-      setStep(3)
+      goToStep(3)
     } finally {
       setSaving(false)
     }
@@ -227,10 +247,10 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
   function goBack() {
     if (step === 4) {
-      setStep(skipCrewSteps ? 1 : 3)
+      goToStep(skipCrewSteps ? 1 : 3)
       return
     }
-    if (step > 1) setStep((s) => s - 1)
+    if (step > 1) goToStep(step - 1)
   }
 
   const workingDetailsComplete = rateBand.length > 0 && unionStatus.length > 0 && insurance.length > 0
