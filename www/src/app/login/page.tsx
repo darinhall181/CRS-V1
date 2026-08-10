@@ -62,11 +62,17 @@ export default function LoginPage() {
   const labelClass = "text-xs font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]"
 
   return (
-    <div className="grid min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] lg:grid-cols-2">
+    <div className="grid min-h-screen bg-[var(--bg-base)] text-[var(--text-primary)] lg:grid-cols-2 lg:gap-5 lg:p-5">
       {/* ── Brand panel ─────────────────────────────────────────────────── */}
+      {/* 2026-08-10 experiment, at Darin's request: light panel + rounded-2xl
+          (the same radius the onboarding wizard's workspace/profession cards
+          use) instead of the original flush dark panel. Logo/text flip to a
+          dark ink since the background flipped light — the logo asset itself
+          stays the one white-on-transparent PNG (invert(1) flips it dark
+          rather than needing a second exported asset). */}
       <div
-        className="hidden flex-col justify-center gap-[26px] px-[72px] py-16 lg:flex"
-        style={{ background: "var(--surface-page-shell)" }}
+        className="hidden flex-col justify-center gap-[26px] rounded-2xl px-[72px] py-16 lg:flex"
+        style={{ background: "#EDEAE0" }}
       >
         <Image
           src="/altoscope-mark-white.png"
@@ -74,11 +80,12 @@ export default function LoginPage() {
           width={44}
           height={44}
           className="h-11 w-auto self-start object-contain"
+          style={{ filter: "invert(1)" }}
         />
-        <h2 className="m-0 max-w-[420px] text-[34px] font-light leading-[1.25] tracking-[-0.015em]">
+        <h2 className="m-0 max-w-[420px] text-[34px] font-light leading-[1.25] tracking-[-0.015em]" style={{ color: "#1C1C1A" }}>
           Every gear list, budget, and quote in one place.
         </h2>
-        <p className="m-0 max-w-[380px] text-[13px] leading-[1.7] text-[var(--text-secondary)]">
+        <p className="m-0 max-w-[380px] text-[13px] leading-[1.7]" style={{ color: "#5B5B54" }}>
           Build a package that&apos;s checked for compatibility, priced against your budget, and
           ready to send to a rental house.
         </p>
