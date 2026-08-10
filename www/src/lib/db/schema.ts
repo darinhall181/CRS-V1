@@ -294,6 +294,9 @@ export const kitTemplateItem = pgTable("kit_template_item", {
 
 export const companyRoleEnum = pgEnum("company_role", ["owner", "admin", "member"])
 export const productionRoleEnum = pgEnum("production_role", ["dp", "coordinator", "producer", "gaffer"])
+// T0035 — onboarding step 1. `profession` (step 2, users.profession) deliberately
+// stays free text, not an enum — 10 values, wider than production_role, display-only.
+export const workspaceTypeEnum = pgEnum("workspace_type", ["production", "rental", "hobbyist"])
 export const productionStatusEnum = pgEnum("production_status", ["draft", "active", "wrapped", "archived"])
 export const packageItemStatusEnum = pgEnum("package_item_status", [
   "draft",
@@ -320,8 +323,33 @@ export const users = pgTable("users", {
   appRole: text("app_role").notNull().default("user"),
   experienceLevel: text("experience_level"),
   defaultProductionRole: productionRoleEnum("default_production_role"),
+  // T0035 — onboarding (Onboarding.dc.html steps 1–5). workspaceType drives
+  // routing (step 1); profession is display-only, wider than production_role
+  // (step 2, only 4 of its 10 values also set defaultProductionRole above).
+  // onboardingCompletedAt is null for a brand-new signup and the gate every
+  // protected layout checks — existing users at the time this column landed
+  // were backfilled to now() so they aren't retroactively forced through the
+  // wizard (see migration notes).
+  workspaceType: workspaceTypeEnum("workspace_type"),
+  profession: text("profession"),
+  onboardingCompletedAt: timestamp("onboarding_completed_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+})
+
+// ─── user_profile ───────────────────────────────────────────────────────────
+// T0035 — onboarding steps 3–4, minimal on purpose. Coarse bands (chips,
+// "Prefer not to say"), not exact figures — T0029 extends this same table
+// with the full DP-profile fields later; don't create a second table there.
+export const userProfile = pgTable("user_profile", {
+  userId: uuid("user_id").primaryKey().references(() => users.id, { onDelete: "cascade" }),
+  homeMarket: text("home_market"),
+  referralSource: text("referral_source"),
+  dayRateBand: text("day_rate_band"),
+  unionStatus: text("union_status"),
+  hasOwnerKit: boolean("has_owner_kit").notNull().default(false),
+  ownerKitCategories: text("owner_kit_categories").array(),
+  insuranceStatus: text("insurance_status"),
 })
 
 // ─── Better Auth tables ───────────────────────────────────────────────────────
@@ -791,12 +819,17 @@ export const packageItemQuoteRelations = relations(packageItemQuote, ({ one }) =
 }))
 
 // Productions layer relations (unchanged from original)
-export const usersRelations = relations(users, ({ many }) => ({
+export const usersRelations = relations(users, ({ one, many }) => ({
   companyMemberships: many(companyMembers),
   productionMemberships: many(productionMembers),
   ownedCompanies: many(companies),
   createdProductions: many(productions),
   createdKitTemplates: many(kitTemplate),
+  profile: one(userProfile, { fields: [users.id], references: [userProfile.userId] }),
+}))
+
+export const userProfileRelations = relations(userProfile, ({ one }) => ({
+  user: one(users, { fields: [userProfile.userId], references: [users.id] }),
 }))
 
 export const companiesRelations = relations(companies, ({ one, many }) => ({

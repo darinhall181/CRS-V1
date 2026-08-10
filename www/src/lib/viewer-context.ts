@@ -4,6 +4,7 @@ import {
   getProduction,
   getCompanyMember,
   getProductionMember,
+  getOnboardingCompletedAt,
 } from "./db/queries"
 
 export interface ViewerContext {
@@ -14,6 +15,9 @@ export interface ViewerContext {
   productionRole: "dp" | "coordinator" | "producer" | "gaffer" | null
   /** Scopes a department-lead's (gaffer, etc.) authority — null otherwise. */
   department: string | null
+  /** Null means the onboarding wizard (T0019) hasn't been completed yet —
+   * every protected layout redirects to /onboarding when this is null. */
+  onboardingCompletedAt: Date | null
 }
 
 // T0017 — one server-side resolver for user + roles, called once per request in
@@ -29,9 +33,10 @@ export async function getViewerContext(productionId?: string): Promise<ViewerCon
   const session = await getSession()
   if (!session) return null
 
-  const production = productionId
-    ? await getProduction(productionId)
-    : await getActiveProductionForUser(session.user.id)
+  const [production, onboardingCompletedAt] = await Promise.all([
+    productionId ? getProduction(productionId) : getActiveProductionForUser(session.user.id),
+    getOnboardingCompletedAt(session.user.id),
+  ])
 
   if (!production) {
     return {
@@ -40,6 +45,7 @@ export async function getViewerContext(productionId?: string): Promise<ViewerCon
       companyRole: null,
       productionRole: null,
       department: null,
+      onboardingCompletedAt,
     }
   }
 
@@ -53,6 +59,7 @@ export async function getViewerContext(productionId?: string): Promise<ViewerCon
     productionId: production.id,
     companyRole: companyMember?.role ?? null,
     productionRole: productionMember?.role ?? null,
+    onboardingCompletedAt,
     department: productionMember?.department ?? null,
   }
 }

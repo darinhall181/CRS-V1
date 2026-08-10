@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation"
 import { getProducts, getRentalHouseInventory, getProduction, getPackageByProduction, getPackageItems, getCompany, getPackageComments, getMentionableUsers, getPackageEvents, type ProductCard, type RentalHouseRate } from "@/lib/db/queries"
 import { getViewerContext } from "@/lib/viewer-context"
 import { PackageBuilderClient } from "./package-builder-client"
@@ -69,6 +70,9 @@ function toGearItem(
 
 export default async function PackageBuilderPage() {
   const viewer = await getViewerContext()
+  // T0019 — see (app)/layout.tsx for the same gate; package-builder sits
+  // under its own (workspace) route group so it needs its own check.
+  if (viewer && !viewer.onboardingCompletedAt) redirect("/onboarding")
   const productionId = viewer?.productionId ?? DEMO_PRODUCTION_ID
 
   const [products, vendorRateRows, production, pkg] = await Promise.all([

@@ -1,13 +1,13 @@
 ---
 title: Onboarding schema — workspace type, profession, and the working-details fields
-status: open
+status: done
 severity: high
 type: task
 component: www/src/lib/db/schema.ts
 found_by: claude-code
 found_date: 2026-08-08
-completed_date: null
-verified_live: false
+completed_date: 2026-08-09
+verified_live: true
 github_issue: null
 ---
 
@@ -45,11 +45,18 @@ Design notes:
   column.
 
 ## Progress
-- [ ] `workspace_type`, `profession`, `onboarding_completed_at` columns on `users`
-- [ ] New `user_profile` table (minimal — T0029 extends it later)
-- [ ] Migration generated + pushed to the Neon dev branch, schema.ts mirrored
-- [ ] Verified via a T0019 wizard run-through, row read-back
+- [x] `workspace_type`, `profession`, `onboarding_completed_at` columns on `users`
+- [x] New `user_profile` table (minimal — T0029 extends it later)
+- [x] Migration generated + pushed to the `dev-darin` Neon branch, schema.ts mirrored
+- [x] Verified via a T0019 wizard run-through, row read-back
 
 ## Verification
-Migration generated + pushed to the Neon dev branch; schema.ts mirrored; a wizard
-run-through (T0019) persists every step's answers, confirmed by row read-back.
+**Done 2026-08-09:** Migration applied directly to `dev-darin` (the branch `.env.local`
+actually points at). Existing users at the time of the migration were backfilled to
+`onboarding_completed_at = now()` so the new redirect gate (T0019) doesn't retroactively
+force them through the wizard — only brand-new signups get a null value. Verified via
+several real signup → full-wizard run-throughs with direct DB read-back: `workspace_type`,
+`profession` (+ conditional `default_production_role`), `experience_level`,
+`home_market`/`referral_source`, and the full working-details set (`day_rate_band`,
+`union_status`, `has_owner_kit`, `owner_kit_categories` array, `insurance_status` as a
+comma-joined string for the prototype's multi-select chips) all round-tripped correctly.

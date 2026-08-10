@@ -1,5 +1,5 @@
 import { db } from "./index"
-import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, packageEvents, productionMembers, companyMembers, companies, users } from "./schema"
+import { product, brand, productCategory, productSpec, specDefinition, specSection, rentalHouse, rentalHouseInventory, productions, packages, packageItems, packageComments, packageCommentMentions, packageDepartmentBudget, packageEvents, productionMembers, companyMembers, companies, users, userProfile } from "./schema"
 import { eq, ilike, and, or, isNotNull, isNull, desc, asc } from "drizzle-orm"
 
 // ─── Product Browse ───────────────────────────────────────────────────────────
@@ -666,4 +666,113 @@ export async function setPackageDepartmentBudget(
     })
     .returning({ id: packageDepartmentBudget.id })
   return row
+}
+
+// ─── Onboarding (T0019/T0035) ────────────────────────────────────────────────
+// Persisted per-step, not one big submit at the end — abandoning mid-flow
+// still keeps whatever steps were completed. `workspace_type`/`profession`/
+// `onboarding_completed_at` live on `users` (identity-level); the rest is
+// user_profile (minimal now, T0029 extends the same table later).
+
+export type OnboardingState = {
+  name: string
+  workspaceType: "production" | "rental" | "hobbyist" | null
+  profession: string | null
+  experienceLevel: string | null
+  onboardingCompletedAt: Date | null
+  homeMarket: string | null
+  referralSource: string | null
+  dayRateBand: string | null
+  unionStatus: string | null
+  hasOwnerKit: boolean
+  ownerKitCategories: string[] | null
+  insuranceStatus: string | null
+}
+
+// Lighter than getOnboardingState — just the one field the app-shell
+// redirect gate needs, called on every protected-route request.
+export async function getOnboardingCompletedAt(userId: string): Promise<Date | null> {
+  const [row] = await db.select({ onboardingCompletedAt: users.onboardingCompletedAt }).from(users).where(eq(users.id, userId))
+  return row?.onboardingCompletedAt ?? null
+}
+
+export async function getOnboardingState(userId: string): Promise<OnboardingState | null> {
+  const [row] = await db
+    .select({
+      name: users.name,
+      workspaceType: users.workspaceType,
+      profession: users.profession,
+      experienceLevel: users.experienceLevel,
+      onboardingCompletedAt: users.onboardingCompletedAt,
+      homeMarket: userProfile.homeMarket,
+      referralSource: userProfile.referralSource,
+      dayRateBand: userProfile.dayRateBand,
+      unionStatus: userProfile.unionStatus,
+      hasOwnerKit: userProfile.hasOwnerKit,
+      ownerKitCategories: userProfile.ownerKitCategories,
+      insuranceStatus: userProfile.insuranceStatus,
+    })
+    .from(users)
+    .leftJoin(userProfile, eq(userProfile.userId, users.id))
+    .where(eq(users.id, userId))
+
+  if (!row) return null
+  return { ...row, hasOwnerKit: row.hasOwnerKit ?? false }
+}
+
+export async function setOnboardingWorkspace(
+  userId: string,
+  workspaceType: "production" | "rental" | "hobbyist"
+): Promise<void> {
+  await db.update(users).set({ workspaceType, updatedAt: new Date() }).where(eq(users.id, userId))
+}
+
+export async function setOnboardingProfession(
+  userId: string,
+  profession: string | null,
+  defaultProductionRole: "dp" | "coordinator" | "producer" | "gaffer" | null
+): Promise<void> {
+  await db
+    .update(users)
+    .set({ profession, defaultProductionRole, updatedAt: new Date() })
+    .where(eq(users.id, userId))
+}
+
+export async function setOnboardingProfile(
+  userId: string,
+  fields: { name: string; homeMarket: string | null; experienceLevel: string | null; referralSource: string | null }
+): Promise<void> {
+  await db.transaction(async (tx) => {
+    await tx
+      .update(users)
+      .set({ name: fields.name, experienceLevel: fields.experienceLevel, updatedAt: new Date() })
+      .where(eq(users.id, userId))
+    await tx
+      .insert(userProfile)
+      .values({ userId, homeMarket: fields.homeMarket, referralSource: fields.referralSource })
+      .onConflictDoUpdate({
+        target: userProfile.userId,
+        set: { homeMarket: fields.homeMarket, referralSource: fields.referralSource },
+      })
+  })
+}
+
+export async function setOnboardingWorkingDetails(
+  userId: string,
+  fields: {
+    dayRateBand: string | null
+    unionStatus: string | null
+    hasOwnerKit: boolean
+    ownerKitCategories: string[]
+    insuranceStatus: string | null
+  }
+): Promise<void> {
+  await db
+    .insert(userProfile)
+    .values({ userId, ...fields })
+    .onConflictDoUpdate({ target: userProfile.userId, set: fields })
+}
+
+export async function completeOnboarding(userId: string): Promise<void> {
+  await db.update(users).set({ onboardingCompletedAt: new Date(), updatedAt: new Date() }).where(eq(users.id, userId))
 }

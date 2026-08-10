@@ -14,5 +14,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/package-builder", "/browse"],
+  matcher: ["/package-builder", "/browse", "/onboarding"],
 }
