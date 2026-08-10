@@ -186,23 +186,21 @@ export default function LandingPage() {
           taller/more spacious footprint — instead of the search pill and
           account/bell cluster (nothing to search, nobody's signed in yet)
           the right side keeps this page's own Features/About/Join links.
-          The hard border+uniform-blur cutoff is gone too: a taller
-          absolutely-positioned layer beneath the header content carries the
-          actual blur+background wash and fades it out via a mask gradient,
-          so text scrolling underneath blurs in gradually instead of hitting
-          a hard edge. */}
+          2026-08-10, take two: the blur+mask version looked like a smudge,
+          not an effect — a single blur radius with a soft-edged mask just
+          produces a blurry patch, not a real gradient of blur. Replaced with
+          a plain solid-to-transparent scrim instead: solid near-black
+          (matching the login page's brand-panel color, --surface-page-shell)
+          behind the header content, fading to fully transparent underneath —
+          scrolling text just fades into it rather than blurring. */}
       <div style={{ position: "sticky", top: 0, zIndex: 20 }}>
         <div
           aria-hidden
           style={{
             position: "absolute",
             inset: "0 0 auto 0",
-            height: 128,
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            background: "linear-gradient(to bottom, rgba(16,16,18,0.78) 0%, rgba(16,16,18,0.5) 45%, rgba(16,16,18,0) 100%)",
-            maskImage: "linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%)",
+            height: 140,
+            background: "linear-gradient(to bottom, #101012 0%, #101012 54%, rgba(16,16,18,0) 100%)",
             pointerEvents: "none",
           }}
         />
