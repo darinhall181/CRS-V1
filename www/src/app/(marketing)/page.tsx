@@ -50,8 +50,8 @@ const FEATURES = [
     body: "Access a unified, searchable database of verified public specs for bodies, lenses, and accessories.",
   },
   {
-    title: "Instant RFQs",
-    body: "One click reaches every rental house in your area. Eliminating a messy inbox.",
+    title: "Send Requests",
+    body: "Send a structured request to the houses you choose — one or several — with insurance, dates, and budget attached.",
   },
   {
     title: "Team Collaboration",
@@ -66,7 +66,7 @@ const PRINCIPLES = [
   },
   {
     title: "Confidence at the forefront",
-    body: "Every kit is processed through our compatibility checker to catch errors before they happen. We are committed to delivering RFQs that rental houses respect and producers rely on.",
+    body: "Every kit is processed through our compatibility checker to catch errors before they happen. We are committed to delivering RFQs that are complete and legible — every date, spec, and contact attached — so producers rely on them and rental houses can act on them fast.",
   },
   {
     title: "Focus on production speed",
@@ -336,17 +336,13 @@ export default function LandingPage() {
                 <img src="/marketing/darin.jpg" alt="Darin" className="bio-avatar" style={{ objectFit: "cover", borderRadius: 12 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Darin!</h3>
-                  <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>Founder</span>
                 </div>
               </div>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
-                I’m Darin, a photographer and data scientist passionate about creating software solutions for other creatives. This vision stems from the
-                frustration with how to find camera gear on the internet.
+                I’m Darin, a photographer and data scientist passionate about creating software solutions for other creatives.
               </p>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
-                Altoscope started as a personal project—a tool I built just to solve my own headaches. But the more I talked to other professionals, the more I
-                realized I wasn’t alone. Our industry is incredible at creating content, yet we’re still stuck with outdated, fragmented workflows. I want to
-                change that.
+                Altoscope started as a personal project—a tool I built just to solve my own headaches.
               </p>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
                 Feel free to reach out at{" "}
@@ -363,7 +359,6 @@ export default function LandingPage() {
                 <img src="/marketing/kevin.jpg" alt="Kevin" className="bio-avatar" style={{ objectFit: "cover", borderRadius: 12 }} />
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <h3 style={{ margin: 0, fontSize: 20, fontWeight: 400, letterSpacing: "-0.02em" }}>I’m Kevin!</h3>
-                  <span style={{ fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)" }}>CFO</span>
                 </div>
               </div>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.56)" }}>
