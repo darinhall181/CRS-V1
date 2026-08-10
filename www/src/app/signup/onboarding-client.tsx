@@ -90,8 +90,30 @@ function StepNav({
   disabled?: boolean
   sunset?: boolean
 }) {
+  // 2026-08-10, at Darin's request — right-aligned as a group, with Next
+  // (the actual forward action) always the rightmost button rather than the
+  // leftmost, so it reads consistently across every step regardless of
+  // whether Back/Skip are present.
   return (
-    <div className="flex items-center gap-[14px]">
+    <div className="flex w-full items-center justify-end gap-[14px]">
+      {onSkip && (
+        <button
+          type="button"
+          onClick={onSkip}
+          className="flex h-[42px] items-center rounded-[10px] border-none bg-transparent px-4 text-[13px] font-medium text-[var(--text-muted)] hover:bg-white/[0.04]"
+        >
+          Skip
+        </button>
+      )}
+      {onBack && (
+        <button
+          type="button"
+          onClick={onBack}
+          className="flex h-[42px] items-center rounded-[10px] border-none bg-transparent px-4 text-[13px] font-medium text-[var(--text-secondary)] hover:bg-white/[0.04]"
+        >
+          Back
+        </button>
+      )}
       <button
         type="button"
         onClick={onNext}
@@ -107,24 +129,6 @@ function StepNav({
       >
         {saving ? "Saving…" : nextLabel}
       </button>
-      {onBack && (
-        <button
-          type="button"
-          onClick={onBack}
-          className="flex h-[42px] items-center rounded-[10px] border-none bg-transparent px-4 text-[13px] font-medium text-[var(--text-secondary)] hover:bg-white/[0.04]"
-        >
-          Back
-        </button>
-      )}
-      {onSkip && (
-        <button
-          type="button"
-          onClick={onSkip}
-          className="flex h-[42px] items-center rounded-[10px] border-none bg-transparent px-4 text-[13px] font-medium text-[var(--text-muted)] hover:bg-white/[0.04]"
-        >
-          Skip
-        </button>
-      )}
     </div>
   )
 }
@@ -173,6 +177,8 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
     sessionStorage.setItem(STEP_STORAGE_KEY, String(n))
   }
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const insuranceFileInputRef = useRef<HTMLInputElement>(null)
+  const [insuranceFileName, setInsuranceFileName] = useState<string | null>(null)
 
   const [workspaceType, setWorkspaceType] = useState<WorkspaceType | null>(initialState?.workspaceType ?? null)
   const [profession, setProfession] = useState<string | null>(initialState?.profession ?? null)
@@ -270,7 +276,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
       <div className="flex w-full max-w-[940px] flex-1 flex-col items-center justify-center py-12">
         {/* ── Step 1 · Workspace ────────────────────────────────────────── */}
         {step === 1 && (
-          <div className="flex w-full flex-col items-center gap-7">
+          <div className="flex w-full max-w-[640px] flex-col items-center gap-7">
             <div className="flex flex-col items-center gap-2 text-center">
               <h1 className={h1Class}>Choose your workspace</h1>
               <p className="m-0 text-[13px] text-[var(--text-secondary)]">
@@ -359,7 +365,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
         {step === 3 && !skipCrewSteps && (
           <div className="flex w-full max-w-[620px] flex-col gap-[26px]">
             <div className="flex flex-col gap-1.5">
-              <h1 className={h1Class}>A few working details</h1>
+              <h1 className={h1Class}>A few working details…</h1>
             </div>
 
             <div className="flex flex-col gap-2.5">
@@ -415,6 +421,36 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
               <span className="text-[11px] text-[var(--text-muted)]">
                 Certificates are uploaded later — rental houses only need them before pickup.
               </span>
+              {insurance.some((i) => i !== "Not yet") && (
+                <div
+                  className="flex items-center justify-between gap-4 rounded-2xl p-[18px_20px] shadow-[var(--elevation-1)]"
+                  style={{ background: "#34343B" }}
+                >
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-sm font-medium">Upload your certificate</span>
+                    <span className="text-xs leading-[1.5] text-[var(--text-muted)]">
+                      {insuranceFileName ?? "PDF or image, from your computer — wiring up storage comes later."}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => insuranceFileInputRef.current?.click()}
+                    className={cn(
+                      "flex h-9 flex-none items-center justify-center rounded-[8px] border-none bg-[var(--surface-01)] px-3.5 text-[12.5px] font-medium text-[var(--text-primary)] hover:bg-[var(--surface-02-hover)]",
+                      FOCUS_RING
+                    )}
+                  >
+                    {insuranceFileName ? "Replace" : "Upload"}
+                  </button>
+                  <input
+                    ref={insuranceFileInputRef}
+                    type="file"
+                    accept=".pdf,.png,.jpg,.jpeg"
+                    className="hidden"
+                    onChange={(e) => setInsuranceFileName(e.target.files?.[0]?.name ?? null)}
+                  />
+                </div>
+              )}
             </div>
 
             <StepNav

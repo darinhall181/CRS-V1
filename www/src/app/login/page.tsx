@@ -85,7 +85,7 @@ export default function LoginPage() {
           radius) instead of flush full-bleed — the light-panel version this
           replaced didn't land, but the card treatment itself did. */}
       <div
-        className="hidden flex-col justify-center gap-[26px] rounded-2xl px-[72px] py-16 lg:flex"
+        className="hidden flex-col items-center justify-center gap-[26px] rounded-2xl px-[72px] py-16 text-center lg:flex"
         style={{ background: "var(--surface-page-shell)" }}
       >
         <Image
@@ -93,7 +93,7 @@ export default function LoginPage() {
           alt="Altoscope"
           width={44}
           height={44}
-          className="h-11 w-auto self-start object-contain"
+          className="h-11 w-auto object-contain"
         />
         <h2 className="m-0 max-w-[420px] text-[34px] font-light leading-[1.25] tracking-[-0.015em]">
           Every gear list, budget, and quote in one place.
