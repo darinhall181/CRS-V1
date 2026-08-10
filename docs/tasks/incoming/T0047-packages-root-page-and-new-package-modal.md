@@ -99,6 +99,16 @@ Opened from either the empty-state card or the header button. Two-column layout:
   Don't add a history section to this page as part of building it.
   **Done 2026-08-09**: History nav item removed from `nav-items.tsx`; `package_events`
   table + Package Builder's History tab both built (T0025).
+  **Reversed 2026-08-10**, at Darin's direction: Package Builder is a single hardcoded
+  package today (no per-package routing yet — see this file's own routing note above),
+  so a "History" tab there reads as if it belongs to the whole product, not one package —
+  wrong home until package-builder is actually parameterized by package id. Removed the
+  tab + its `HistoryPanel`/`describeEvent` UI from `package-builder-client.tsx`; `"history"`
+  dropped from `types.ts`'s `ContextTab`. **`package_events` rows are still written
+  server-side** (queries.ts) — nothing lost, just not surfaced anywhere right now. When
+  this root list page (or a real per-package route) gets built, decide there whether
+  history is a tab on an individual package's detail view, a feed on this list page, or
+  both — don't just restore the old tab unexamined.
 - **2026-08-09 — consider a "Saved packages" section on this page.** Distinct from T0023
   (saved *items* — individual gear/products, heart-toggle in Browse). This would be
   favoriting/bookmarking whole *packages* — e.g. a starting-point template you come back

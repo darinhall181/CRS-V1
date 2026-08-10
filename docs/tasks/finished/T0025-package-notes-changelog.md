@@ -71,3 +71,10 @@ needed real edit/delete, not just post-only:
   just hidden in the UI.
 - Migration applied directly to the `dev-darin` Neon branch (the one `.env.local` actually
   points at — see T0008/T0009 for why that matters).
+
+**2026-08-10 — History tab removed from Package Builder.** Not a revert of this task's
+comments/notes work (that stays) — just the History tab specifically. See T0047's notes:
+Package Builder is still a single hardcoded package with no per-package routing, so a
+"History" tab there read as product-wide rather than scoped to one package. `package_events`
+rows are still written server-side; only the UI surfacing them was pulled. Revisit once
+T0047 (packages root page / per-package routing) is built.

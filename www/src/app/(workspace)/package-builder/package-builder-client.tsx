@@ -20,7 +20,6 @@ import {
   type PackageLineItem,
   type PackageComment,
   type MentionableUser,
-  type PackageEvent,
 } from "./types"
 import {
   addPackageItemAction,
@@ -54,8 +53,8 @@ const CATEGORY_ABBR: Record<GearCategory, string> = {
 const RIGHT_PANEL_WIDTH = 266
 const RIGHT_PANEL_CARD_WIDTH = RIGHT_PANEL_WIDTH - 26 // 240
 const RIGHT_PANEL_TOGGLE_WIDTH = RIGHT_PANEL_CARD_WIDTH - 12 * 2 // 288 — tab row's px-3
-const TAB_LABELS = ["Detail", "Budget", "Notes", "History"] as const
-const TAB_VALUES = ["detail", "budget", "notes", "history"] as const
+const TAB_LABELS = ["Detail", "Budget", "Notes"] as const
+const TAB_VALUES = ["detail", "budget", "notes"] as const
 
 // "Saved just now" / "Saved 2m ago" — formatted client-side off a real
 // timestamp (packages.updated_at, bumped on every real package_items write —
@@ -167,7 +166,6 @@ export function PackageBuilderClient({
   companyName,
   initialComments,
   mentionableUsers,
-  initialEvents,
 }: {
   catalog: GearItem[]
   initialLineItems: PackageLineItem[]
@@ -183,13 +181,11 @@ export function PackageBuilderClient({
   companyName: string | null
   initialComments: PackageComment[]
   mentionableUsers: MentionableUser[]
-  initialEvents: PackageEvent[]
 }) {
   const gearById = useMemo(() => new Map(catalog.map((g) => [g.id, g])), [catalog])
 
   const [lineItems, setLineItems] = useState<PackageLineItem[]>(initialLineItems)
   const [comments, setComments] = useState<PackageComment[]>(initialComments)
-  const [events, setEvents] = useState<PackageEvent[]>(initialEvents)
   const [savedAt, setSavedAt] = useState<Date | null>(updatedAt ? new Date(updatedAt) : null)
   // Re-formats the elapsed-time label every 30s — the timestamp itself only
   // ever moves on a real mutation (see formatSavedAt above).
@@ -312,22 +308,6 @@ export function PackageBuilderClient({
     setDrawerOpen(true)
   }
 
-  // T0025 — synthesized client-side to match what the server just wrote in
-  // the same request (queries.ts logs the real package_events row); avoids a
-  // second round-trip just to re-fetch history after every mutation.
-  function addLocalEvent(kind: PackageEvent["kind"], payload: Record<string, unknown>) {
-    setEvents((prev) => [
-      {
-        id: `evt-${Date.now()}-${Math.random().toString(36).slice(2)}`,
-        kind,
-        payload,
-        createdAt: new Date().toISOString(),
-        actorName: userName,
-      },
-      ...prev,
-    ])
-  }
-
   async function addToPackage(gear: GearItem) {
     const tempId = `temp-${gear.id}-${Date.now()}`
     const newLine: PackageLineItem = {
@@ -351,7 +331,6 @@ export function PackageBuilderClient({
       setLineItems((prev) => prev.map((l) => (l.id === tempId ? { ...l, id: realId } : l)))
       setSelectedLineId((prev) => (prev === tempId ? realId : prev))
       setSavedAt(new Date())
-      addLocalEvent("item_added", { gearName: gear.name, qty: 1 })
     } catch (err) {
       console.error("Failed to add package item:", err)
       setLineItems((prev) => prev.filter((l) => l.id !== tempId))
@@ -379,9 +358,6 @@ export function PackageBuilderClient({
 
   async function removeBulkSelected() {
     const idsToRemove = Array.from(bulkSelected)
-    const removedNames = idsToRemove
-      .map((id) => gearById.get(lineItems.find((l) => l.id === id)?.gearId ?? "")?.name)
-      .filter((n): n is string => !!n)
     setLineItems((prev) => prev.filter((l) => !bulkSelected.has(l.id)))
     setBulkSelected(new Set())
 
@@ -390,7 +366,6 @@ export function PackageBuilderClient({
       await Promise.all(realIds.map((id) => removePackageItemAction(id)))
       if (realIds.length > 0) {
         setSavedAt(new Date())
-        for (const gearName of removedNames) addLocalEvent("item_removed", { gearName })
       }
     } catch (err) {
       console.error("Failed to remove package item(s):", err)
@@ -401,7 +376,6 @@ export function PackageBuilderClient({
   }
 
   async function removeLine(lineId: string) {
-    const gearName = gearById.get(lineItems.find((l) => l.id === lineId)?.gearId ?? "")?.name ?? "an item"
     setLineItems((prev) => prev.filter((l) => l.id !== lineId))
     setBulkSelected((prev) => {
       const next = new Set(prev)
@@ -412,7 +386,6 @@ export function PackageBuilderClient({
       try {
         await removePackageItemAction(lineId)
         setSavedAt(new Date())
-        addLocalEvent("item_removed", { gearName })
       } catch (err) {
         console.error("Failed to remove package item:", err)
       }
@@ -428,8 +401,6 @@ export function PackageBuilderClient({
     try {
       await updatePackageItemQtyAction(lineId, qty)
       setSavedAt(new Date())
-      const gearName = gearById.get(lineItems.find((l) => l.id === lineId)?.gearId ?? "")?.name ?? "an item"
-      addLocalEvent("item_qty_updated", { gearName, qty })
     } catch (err) {
       console.error("Failed to update quantity:", err)
     }
@@ -441,7 +412,6 @@ export function PackageBuilderClient({
       const comment = await addPackageCommentAction(packageId, productionId, body, mentionedUserIds)
       setComments((prev) => [...prev, comment])
       setSavedAt(new Date())
-      addLocalEvent("comment_added", { snippet: comment.body.slice(0, 80) })
     } catch (err) {
       console.error("Failed to post comment:", err)
     }
@@ -736,7 +706,6 @@ export function PackageBuilderClient({
                     onDelete={deleteComment}
                   />
                 )}
-                {rightTab === "history" && <HistoryPanel events={events} />}
               </div>
 
               {/* Re-prices the whole table (not just this panel), but only
@@ -1001,9 +970,9 @@ function BudgetPanel({
   )
 }
 
-// Comment/event timestamps are historical (unlike the header's live-ticking
+// Comment timestamps are historical (unlike the header's live-ticking
 // "Saved…" label) — formatted once per render off a fixed created_at, no
-// interval needed. Shared by NotesPanel and HistoryPanel.
+// interval needed.
 function formatCommentTime(iso: string): string {
   const elapsedMs = Date.now() - new Date(iso).getTime()
   const minutes = Math.floor(elapsedMs / 60_000)
@@ -1442,48 +1411,7 @@ function NotesPanel({
   )
 }
 
-// T0025/T0016 — package-scoped change log, deliberately not a global nav
-// destination: "what happened to this package" is almost always the actual
-// question, so it lives here as a tab rather than a cross-app page.
-function describeEvent(event: PackageEvent): string {
-  const p = event.payload as Record<string, unknown>
-  switch (event.kind) {
-    case "item_added":
-      return `added ${p.gearName ?? "an item"}${typeof p.qty === "number" && p.qty > 1 ? ` ×${p.qty}` : ""}`
-    case "item_qty_updated":
-      return `set ${p.gearName ?? "an item"} to ${p.qty ?? "?"}`
-    case "item_removed":
-      return `removed ${p.gearName ?? "an item"}`
-    case "comment_added":
-      return `commented: "${p.snippet ?? ""}"`
-    default:
-      return event.kind
-  }
-}
-
-function HistoryPanel({ events }: { events: PackageEvent[] }) {
-  return (
-    <div>
-      <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]">
-        History
-      </p>
-      {events.length === 0 ? (
-        <div className="rounded-xl bg-[var(--surface-01)] p-3">
-          <p className="text-xs text-[var(--text-secondary)]">Nothing has happened on this package yet.</p>
-        </div>
-      ) : (
-        <div className="flex flex-col gap-2">
-          {events.map((e) => (
-            <div key={e.id} className="rounded-xl bg-[var(--surface-01)] p-3">
-              <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
-                <span className="font-semibold text-[var(--text-primary)]">{e.actorName ?? "Someone"}</span>{" "}
-                {describeEvent(e)}
-              </p>
-              <span className="text-[10px] text-[var(--text-subtle)]">{formatCommentTime(e.createdAt)}</span>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
+// describeEvent/HistoryPanel removed 2026-08-10 — the per-package History tab
+// is gone (see T0047's notes: reversed the 2026-08-09 "history lives on
+// Package Builder" call). package_events rows are still written server-side
+// (queries.ts) for whenever the future packages-root page picks this up.

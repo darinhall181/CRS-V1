@@ -19,7 +19,7 @@ export type PackageItemStatus =
   | 'unavailable'
   | 'over_budget'
 
-export type ContextTab = 'detail' | 'budget' | 'notes' | 'history'
+export type ContextTab = 'detail' | 'budget' | 'notes'
 
 // ─── Gear catalog ─────────────────────────────────────────────────────────────
 // Sourced from the real `product` table (see lib/db/queries.ts getProducts), with
@@ -80,9 +80,11 @@ export interface MentionableUser {
 }
 
 // ─── Package events (T0025) ─────────────────────────────────────────────────
-// Backs the Package Builder "History" tab. `kind` + `payload` stay generic on
-// purpose (see schema.ts's packageEvents comment) — the client just knows how
-// to render the handful of kinds the server actually writes today.
+// No longer rendered anywhere (the per-package "History" tab this backed was
+// removed 2026-08-10 — see T0047's notes) — the server still writes these
+// rows (queries.ts) for whenever the future packages-root page picks history
+// back up. `kind` + `payload` stay generic on purpose (see schema.ts's
+// packageEvents comment).
 
 export type PackageEventKind = "item_added" | "item_qty_updated" | "item_removed" | "comment_added"
 

@@ -168,12 +168,14 @@ export function SidebarNav({
                 className={cn(
                   "flex gap-[10px] border-none text-left transition-[width,border-radius,background-color] duration-200",
                   // Collapsed clips/no-wraps (icon only, avoids the collapse-
-                  // transition flicker); expanded allows the name to wrap —
-                  // at a narrow sidebar width, a long company name needs it,
-                  // so the icon aligns to the top of the (possibly 2-line) name.
+                  // transition flicker); expanded allows the name to wrap — at
+                  // a narrow sidebar width, a long company name needs it. Icon
+                  // stays vertically centered against the card regardless of
+                  // whether the name wraps to one or two lines (2026-08-10, at
+                  // Darin's request — previously items-start, top-aligned).
                   collapsed
                     ? "h-9 w-9 items-center justify-center overflow-hidden whitespace-nowrap rounded-full"
-                    : "w-full items-start rounded-[14px] px-3 py-[11px]",
+                    : "w-full items-center rounded-[14px] px-3 py-[11px]",
                   ws.active ? "bg-[var(--bg-overlay)] shadow-[var(--elevation-1)]" : "bg-transparent",
                   FOCUS_RING
                 )}
