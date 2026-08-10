@@ -65,7 +65,7 @@ export function TopBar({
         </div>
       </div>
 
-      <div className="flex flex-none items-center gap-4">
+      <div className="flex flex-none items-center gap-1.5">
         <button
           type="button"
           aria-label="Notifications"

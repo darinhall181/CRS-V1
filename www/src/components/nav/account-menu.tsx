@@ -17,8 +17,11 @@ export function AccountMenu({ userName }: { userName: string }) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 rounded-full px-2 py-1 outline-none transition-colors hover:bg-[var(--ghost-hover)]">
-        <span className="text-[15px] font-medium text-[var(--text-primary)]">{userName}</span>
+      <DropdownMenuTrigger
+        aria-label={userName}
+        title={userName}
+        className="flex items-center rounded-full p-1 outline-none transition-colors hover:bg-[var(--ghost-hover)]"
+      >
         <div className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[var(--interactive-default)] text-[13px] font-medium text-white">
           {userName.slice(0, 2).toUpperCase()}
         </div>
