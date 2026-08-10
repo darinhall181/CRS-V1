@@ -5,9 +5,13 @@ export function middleware(request: NextRequest) {
   const sessionCookie = getSessionCookie(request)
 
   if (!sessionCookie) {
-    const loginUrl = new URL("/login", request.url)
-    loginUrl.searchParams.set("next", request.nextUrl.pathname)
-    return NextResponse.redirect(loginUrl)
+    // /signup (T0019's onboarding wizard) is the one protected route that
+    // implies "I want to create an account" rather than "log back in" —
+    // send it to /register instead of /login.
+    const isSignupIntent = request.nextUrl.pathname === "/signup"
+    const authUrl = new URL(isSignupIntent ? "/register" : "/login", request.url)
+    authUrl.searchParams.set("next", request.nextUrl.pathname)
+    return NextResponse.redirect(authUrl)
   }
 
   return NextResponse.next()
