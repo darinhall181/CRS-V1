@@ -237,12 +237,17 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-[var(--bg-base)] px-8 pb-7 pt-10 text-[var(--text-primary)]">
-      <div className="mb-auto flex items-center gap-[9px]">
+      <div className="flex items-center gap-[9px]">
         <Image src="/altoscope-mark-white.png" alt="" width={20} height={20} className="h-5 w-5 object-contain" />
         <span className="text-[15px] font-medium tracking-[-0.01em]">Altoscope</span>
       </div>
 
-      <div className="flex w-full max-w-[940px] flex-col items-center py-12">
+      {/* flex-1 + justify-center centers each step's content in the space
+          left over below the logo — previously relied on a progress-dots row
+          at the bottom (removed 2026-08-09) to balance the logo's mb-auto,
+          so content had nothing pushing back up and sat pinned to the
+          bottom. */}
+      <div className="flex w-full max-w-[940px] flex-1 flex-col items-center justify-center py-12">
         {/* ── Step 1 · Workspace ────────────────────────────────────────── */}
         {step === 1 && (
           <div className="flex w-full flex-col items-center gap-7">
@@ -259,7 +264,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
                   <button
                     key={opt.value}
                     type="button"
-                    onClick={() => setWorkspaceType(opt.value)}
+                    onClick={() => setWorkspaceType(selected ? null : opt.value)}
                     className={cn(
                       "flex cursor-pointer flex-col items-center gap-[26px] rounded-2xl border-none px-6 pb-[30px] pt-8 text-center",
                       selected ? SELECTED_CARD_RING : "shadow-[var(--elevation-1)]",
@@ -281,7 +286,13 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
                 )
               })}
             </div>
-            <StepNav onNext={goNext} nextLabel="Continue" saving={saving} disabled={!workspaceType} />
+            <StepNav
+              onNext={goNext}
+              onBack={() => router.push("/")}
+              nextLabel="Continue"
+              saving={saving}
+              disabled={!workspaceType}
+            />
           </div>
         )}
 
