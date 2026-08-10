@@ -5,11 +5,11 @@ export function middleware(request: NextRequest) {
   const sessionCookie = getSessionCookie(request)
 
   if (!sessionCookie) {
-    // /signup (T0019's onboarding wizard) is the one protected route that
-    // implies "I want to create an account" rather than "log back in" —
-    // send it to /register instead of /login.
-    const isSignupIntent = request.nextUrl.pathname === "/signup"
-    const authUrl = new URL(isSignupIntent ? "/register" : "/login", request.url)
+    // /onboarding (T0019's wizard) is the one protected route that implies
+    // "I want to create an account" rather than "log back in" — send it to
+    // /signup instead of /login.
+    const isSignupIntent = request.nextUrl.pathname === "/onboarding"
+    const authUrl = new URL(isSignupIntent ? "/signup" : "/login", request.url)
     authUrl.searchParams.set("next", request.nextUrl.pathname)
     return NextResponse.redirect(authUrl)
   }
@@ -18,5 +18,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/package-builder", "/browse", "/signup", "/dashboard", "/profile"],
+  matcher: ["/package-builder", "/browse", "/onboarding", "/dashboard", "/profile"],
 }

@@ -70,6 +70,8 @@ const PROFESSION_ICONS: Record<string, React.ReactNode> = {
   other: <MoreHorizontal size={17} strokeWidth={1.8} />,
 }
 
+const STEP_LABELS = ["Workspace", "Profession", "Working details", "Ready"]
+
 const h1Class = "m-0 text-[28px] font-medium tracking-[-0.015em]"
 const labelClass = "text-xs font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]"
 
@@ -261,6 +263,13 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
 
   const workingDetailsComplete = rateBand.length > 0 && unionStatus.length > 0 && insurance.length > 0
 
+  // Re-added 2026-08-10 alongside the /onboarding rename — skips the same
+  // steps rental/hobbyist skip in the wizard itself, so the dots never show
+  // a step that isn't actually reachable.
+  const dots = STEP_LABELS.map((label, i) => ({ label, step: i + 1 })).filter(
+    (d) => !(skipCrewSteps && (d.step === 2 || d.step === 3))
+  )
+
   return (
     <div className="flex min-h-screen flex-col items-center bg-[var(--bg-base)] px-8 pb-7 pt-10 text-[var(--text-primary)]">
       <div className="flex items-center gap-[9px]">
@@ -268,11 +277,8 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
         <span className="text-[15px] font-medium tracking-[-0.01em]">Altoscope</span>
       </div>
 
-      {/* flex-1 + justify-center centers each step's content in the space
-          left over below the logo — previously relied on a progress-dots row
-          at the bottom (removed 2026-08-09) to balance the logo's mb-auto,
-          so content had nothing pushing back up and sat pinned to the
-          bottom. */}
+      {/* flex-1 + justify-center centers each step's content between the
+          fixed-height logo above and the dots row below. */}
       <div className="flex w-full max-w-[940px] flex-1 flex-col items-center justify-center py-12">
         {/* ── Step 1 · Workspace ────────────────────────────────────────── */}
         {step === 1 && (
@@ -531,6 +537,22 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
             </button>
           </div>
         )}
+      </div>
+
+      <div className="mt-auto flex h-5 items-center gap-2">
+        {dots.map((d) => (
+          <button
+            key={d.step}
+            type="button"
+            title={d.label}
+            onClick={() => goToStep(d.step)}
+            className="h-1 rounded-full transition-all"
+            style={{
+              width: d.step === step ? 20 : 8,
+              background: d.step === step ? "#F4F4F5" : "rgba(255,255,255,0.22)",
+            }}
+          />
+        ))}
       </div>
     </div>
   )

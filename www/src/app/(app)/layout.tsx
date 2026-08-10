@@ -18,7 +18,7 @@ export default async function AppLayout({
   // done first. A signed-out viewer is null here (middleware already
   // redirected to /login for the routes this layout covers) — only a real,
   // signed-in-but-incomplete viewer gets bounced.
-  if (viewer && !viewer.onboardingCompletedAt) redirect("/signup")
+  if (viewer && !viewer.onboardingCompletedAt) redirect("/onboarding")
   const productionId = viewer?.productionId ?? DEMO_PRODUCTION_ID
   const production = await getProduction(productionId)
   const company = production ? await getCompany(production.companyId) : null

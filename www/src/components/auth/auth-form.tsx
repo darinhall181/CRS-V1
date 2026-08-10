@@ -9,17 +9,19 @@ import { authClient } from "@/lib/auth-client"
 import { FOCUS_RING } from "@/components/elevation/shared"
 import { cn } from "@/lib/utils"
 
-// T0018 — shared by /login and /register (split 2026-08-10, at Darin's
+// T0018 — shared by /login and /signup (split 2026-08-10, at Darin's
 // request, from a single page that toggled an internal sign-in/sign-up
-// mode). Real URLs for each intent instead of a client-only toggle: no more
-// guessing "should this open in sign-up mode?" from a next param, and a
-// sign-up link is now something that can actually be shared/bookmarked.
+// mode; briefly lived at /login + /register before that, before Darin
+// settled the three-page shape: /login, /signup, /onboarding). Real URLs
+// for each intent instead of a client-only toggle: no more guessing
+// "should this open in sign-up mode?" from a next param, and a sign-up
+// link is now something that can actually be shared/bookmarked.
 //
 // Google OAuth wired 2026-08-10 once Darin had real Console credentials in
 // www/.env.local (GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET) — see auth.ts's
 // socialProviders.google. A brand-new Google identity gets a user row the
-// same way email/password signup does, so it lands in /signup (T0019's
-// onboarding wizard) same as everyone else, no extra plumbing needed there.
+// same way email/password signup does, so it lands in /onboarding (T0019's
+// wizard) same as everyone else, no extra plumbing needed there.
 export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -37,7 +39,7 @@ export function AuthForm({ mode }: { mode: "sign-in" | "sign-up" }) {
   // Preserves ?next= across the sign-in/sign-up switch — e.g. hitting a
   // protected route while signed out and then bouncing between the two
   // forms shouldn't lose where you were headed.
-  const toggleHref = `${mode === "sign-in" ? "/register" : "/login"}${
+  const toggleHref = `${mode === "sign-in" ? "/signup" : "/login"}${
     rawNext ? `?next=${encodeURIComponent(rawNext)}` : ""
   }`
 
