@@ -308,7 +308,7 @@ export function OnboardingClient({ initialState }: { initialState: OnboardingSta
             </div>
             <StepNav
               onNext={goNext}
-              onBack={() => router.push("/")}
+              onBack={() => router.push("/login")}
               nextLabel="Continue"
               saving={saving}
               disabled={!workspaceType}
