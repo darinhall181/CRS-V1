@@ -16,6 +16,8 @@ const ERROR_MESSAGES: Record<string, string> = {
     "Google sign-in was cancelled or denied — this account may not be added as a test user yet.",
   invalid_callback:
     "That sign-in link is no longer valid — it may have expired or already been used.",
+  please_restart_the_process:
+    "That sign-in link was already used, likely from a duplicate attempt (e.g. two tabs) — if you're already signed in, it actually went through; otherwise just try again.",
 }
 
 function describeError(code: string | null): string {
