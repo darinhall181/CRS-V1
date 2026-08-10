@@ -205,6 +205,9 @@ export default function LandingPage() {
           <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
             About
           </a>
+          <a href="/login" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
+            Log in
+          </a>
           <a
             href="#join"
             className="btn btn-primary"

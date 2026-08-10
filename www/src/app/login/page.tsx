@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { Home } from "lucide-react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { authClient } from "@/lib/auth-client"
 import { FOCUS_RING } from "@/components/elevation/shared"
@@ -93,7 +95,22 @@ export default function LoginPage() {
       </div>
 
       {/* ── Auth card ────────────────────────────────────────────────────── */}
-      <div className="flex flex-col items-center justify-center px-8 py-16">
+      <div className="relative flex flex-col items-center justify-center px-8 py-16">
+        {/* 2026-08-10, at Darin's request — the landing page (marketing waitlist,
+            "/") doesn't have a way back in yet either, so this is the first leg
+            of that connection: Home here, and a "Log in" link added to the
+            marketing nav pointing back at /login. */}
+        <Link
+          href="/"
+          className={cn(
+            "absolute left-8 top-8 flex items-center gap-[7px] text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]",
+            FOCUS_RING
+          )}
+        >
+          <Home size={15} strokeWidth={1.8} />
+          Home
+        </Link>
+
         <div className="flex w-full max-w-[360px] flex-col gap-5">
           <div className="flex flex-col items-center gap-1.5 text-center">
             <h1 className="m-0 text-[26px] font-medium tracking-[-0.015em]">
