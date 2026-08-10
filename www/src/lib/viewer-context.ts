@@ -16,7 +16,7 @@ export interface ViewerContext {
   /** Scopes a department-lead's (gaffer, etc.) authority — null otherwise. */
   department: string | null
   /** Null means the onboarding wizard (T0019) hasn't been completed yet —
-   * every protected layout redirects to /onboarding when this is null. */
+   * every protected layout redirects to /signup when this is null. */
   onboardingCompletedAt: Date | null
 }
 

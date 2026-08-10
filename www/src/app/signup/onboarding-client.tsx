@@ -21,13 +21,11 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FOCUS_RING, SELECTED_CARD_RING } from "@/components/elevation/shared"
-import { Chip, SegmentedToggle, Switch } from "@/components/elevation"
+import { Chip, Switch } from "@/components/elevation"
 import type { OnboardingState } from "@/lib/db/queries"
 import {
   WORKSPACE_OPTIONS,
   PROFESSION_OPTIONS,
-  HOME_MARKET_OPTIONS,
-  EXPERIENCE_LEVELS,
   RATE_BAND_OPTIONS,
   UNION_STATUS_OPTIONS,
   KIT_CATEGORY_OPTIONS,
@@ -37,16 +35,23 @@ import {
 import {
   saveWorkspaceStepAction,
   saveProfessionStepAction,
-  saveProfileStepAction,
   saveWorkingDetailsStepAction,
   completeOnboardingAction,
 } from "./actions"
 
-// T0019 — steps 1–5 of Onboarding.dc.html. Icons are lucide substitutes for
-// the handoff's hand-drawn SVGs (this app already uses lucide everywhere
-// else — Building2 in particular is the same icon already standing in for
-// "rental house" elsewhere, kept consistent here) rather than porting each
-// custom path 1:1. Colors/spacing/copy otherwise match the handoff.
+// T0019 — 4 steps: Workspace → Profession → Working details → Ready.
+// 2026-08-10: the original 5-step version (see git history) also had a
+// "Set up your profile" step (name/home market/experience level/referral
+// source) between Profession and Working details. Cut it — once "Complete
+// your profile" on the Ready screen routes to a real profile page, a
+// 2-field standalone step (home market + referral source, since name and
+// experience level were also dropped) wasn't earning its place as a whole
+// step. Those fields now live on the future profile page instead.
+//
+// Icons are lucide substitutes for the handoff's hand-drawn SVGs (this app
+// already uses lucide everywhere else — Building2 in particular is the same
+// icon already standing in for "rental house" elsewhere, kept consistent
+// here) rather than porting each custom path 1:1.
 const WORKSPACE_ICONS: Record<WorkspaceType, React.ReactNode> = {
   production: <Video size={30} strokeWidth={1.5} />,
   rental: <Building2 size={30} strokeWidth={1.5} />,
@@ -62,18 +67,11 @@ const PROFESSION_ICONS: Record<string, React.ReactNode> = {
   coord: <ClipboardList size={17} strokeWidth={1.8} />,
   gaffer: <Lightbulb size={17} strokeWidth={1.8} />,
   dit: <Monitor size={17} strokeWidth={1.8} />,
-  rental: <Building2 size={17} strokeWidth={1.8} />,
   other: <MoreHorizontal size={17} strokeWidth={1.8} />,
 }
 
-const STEP_LABELS = ["Workspace", "Profession", "Profile", "Working details", "Ready"]
-
 const h1Class = "m-0 text-[28px] font-medium tracking-[-0.015em]"
 const labelClass = "text-xs font-medium uppercase tracking-[0.04em] text-[var(--text-muted)]"
-const inputClass = cn(
-  "h-11 rounded-[10px] border-none bg-[var(--surface-01)] px-3.5 text-[13px] text-[var(--text-primary)] shadow-[inset_0_2px_5px_rgba(0,0,0,0.30)] placeholder:text-[var(--text-subtle)]",
-  FOCUS_RING
-)
 
 function StepNav({
   onNext,
@@ -81,6 +79,7 @@ function StepNav({
   onSkip,
   nextLabel = "Next",
   saving,
+  disabled,
   sunset,
 }: {
   onNext: () => void
@@ -88,6 +87,7 @@ function StepNav({
   onSkip?: () => void
   nextLabel?: string
   saving?: boolean
+  disabled?: boolean
   sunset?: boolean
 }) {
   return (
@@ -95,9 +95,9 @@ function StepNav({
       <button
         type="button"
         onClick={onNext}
-        disabled={saving}
+        disabled={saving || disabled}
         className={cn(
-          "flex h-[42px] items-center justify-center rounded-[10px] border-none px-7 text-[13px] font-medium transition-opacity hover:opacity-90 disabled:cursor-default disabled:opacity-60",
+          "flex h-[42px] items-center justify-center rounded-[10px] border-none px-7 text-[13px] font-medium transition-opacity hover:opacity-90 disabled:cursor-default disabled:opacity-40",
           FOCUS_RING
         )}
         style={{
@@ -149,23 +149,14 @@ function ChipRow({
   )
 }
 
-export function OnboardingClient({
-  initialState,
-  userName,
-}: {
-  initialState: OnboardingState | null
-  userName: string
-}) {
+export function OnboardingClient({ initialState }: { initialState: OnboardingState | null }) {
   const router = useRouter()
   const [step, setStep] = useState(1)
   const [saving, setSaving] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const [workspaceType, setWorkspaceType] = useState<WorkspaceType>(initialState?.workspaceType ?? "production")
+  const [workspaceType, setWorkspaceType] = useState<WorkspaceType | null>(initialState?.workspaceType ?? null)
   const [profession, setProfession] = useState<string | null>(initialState?.profession ?? null)
-  const [name, setName] = useState(initialState?.name || userName)
-  const [homeMarket, setHomeMarket] = useState(initialState?.homeMarket ?? HOME_MARKET_OPTIONS[0])
-  const [experienceLevel, setExperienceLevel] = useState(initialState?.experienceLevel ?? "Standard")
-  const [referralSource, setReferralSource] = useState(initialState?.referralSource ?? "")
   const [rateBand, setRateBand] = useState<string[]>(initialState?.dayRateBand ? [initialState.dayRateBand] : [])
   const [unionStatus, setUnionStatus] = useState<string[]>(initialState?.unionStatus ? [initialState.unionStatus] : [])
   const [hasOwnerKit, setHasOwnerKit] = useState(initialState?.hasOwnerKit ?? false)
@@ -178,16 +169,15 @@ export function OnboardingClient({
   // "rental" skips the crew-specific steps entirely (Profession, Working
   // details — day rate/union/owner-kit/insurance don't apply to a business
   // account). "hobbyist" isn't selectable in the UI anymore but its rows
-  // still exist in the DB, so it keeps its old (step-4-only) skip behavior.
+  // still exist in the DB, so it keeps the same skip behavior if reached.
   const isRental = workspaceType === "rental"
-  const skipProfessionStep = isRental
-  const skipWorkingDetailsStep = isRental || workspaceType === "hobbyist"
+  const skipCrewSteps = isRental || workspaceType === "hobbyist"
   const completedRef = useRef(false)
 
   // Reaching "Ready" is what actually finishes onboarding — fires once, not
   // gated behind clicking an entry card (T0019: "Sets onboarding_completed_at").
   useEffect(() => {
-    if (step === 5 && !completedRef.current) {
+    if (step === 4 && !completedRef.current) {
       completedRef.current = true
       completeOnboardingAction()
     }
@@ -204,21 +194,13 @@ export function OnboardingClient({
   async function goNext() {
     setSaving(true)
     try {
-      if (step === 1) {
+      if (step === 1 && workspaceType) {
         await saveWorkspaceStepAction(workspaceType)
-        setStep(skipProfessionStep ? 3 : 2)
+        setStep(skipCrewSteps ? 4 : 2)
       } else if (step === 2) {
         await saveProfessionStepAction(profession)
         setStep(3)
       } else if (step === 3) {
-        await saveProfileStepAction({
-          name: name.trim() || userName,
-          homeMarket,
-          experienceLevel,
-          referralSource: referralSource.trim() || null,
-        })
-        setStep(skipWorkingDetailsStep ? 5 : 4)
-      } else if (step === 4) {
         await saveWorkingDetailsStepAction({
           dayRateBand: rateBand[0] ?? null,
           unionStatus: unionStatus[0] ?? null,
@@ -226,7 +208,7 @@ export function OnboardingClient({
           ownerKitCategories: kitCategories,
           insuranceStatus: insurance.length > 0 ? insurance.join(", ") : null,
         })
-        setStep(5)
+        setStep(4)
       }
     } finally {
       setSaving(false)
@@ -243,37 +225,15 @@ export function OnboardingClient({
     }
   }
 
-  async function skipWorkingDetails() {
-    setSaving(true)
-    try {
-      await saveWorkingDetailsStepAction({
-        dayRateBand: null,
-        unionStatus: null,
-        hasOwnerKit: false,
-        ownerKitCategories: [],
-        insuranceStatus: null,
-      })
-      setStep(5)
-    } finally {
-      setSaving(false)
-    }
-  }
-
   function goBack() {
-    if (step === 5) {
-      setStep(skipWorkingDetailsStep ? 3 : 4)
-      return
-    }
-    if (step === 3 && skipProfessionStep) {
-      setStep(1)
+    if (step === 4) {
+      setStep(skipCrewSteps ? 1 : 3)
       return
     }
     if (step > 1) setStep((s) => s - 1)
   }
 
-  const dots = STEP_LABELS.map((label, i) => ({ label, step: i + 1 })).filter(
-    (d) => !(skipProfessionStep && d.step === 2) && !(skipWorkingDetailsStep && d.step === 4)
-  )
+  const workingDetailsComplete = rateBand.length > 0 && unionStatus.length > 0 && insurance.length > 0
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-[var(--bg-base)] px-8 pb-7 pt-10 text-[var(--text-primary)]">
@@ -292,7 +252,7 @@ export function OnboardingClient({
                 You can switch or join a second workspace later.
               </p>
             </div>
-            <div className="grid w-full grid-cols-3 gap-4">
+            <div className="grid w-full max-w-[640px] grid-cols-2 gap-4">
               {WORKSPACE_OPTIONS.map((opt) => {
                 const selected = workspaceType === opt.value
                 return (
@@ -321,17 +281,17 @@ export function OnboardingClient({
                 )
               })}
             </div>
-            <StepNav onNext={goNext} nextLabel="Continue" saving={saving} />
+            <StepNav onNext={goNext} nextLabel="Continue" saving={saving} disabled={!workspaceType} />
           </div>
         )}
 
         {/* ── Step 2 · Profession ───────────────────────────────────────── */}
-        {step === 2 && !skipProfessionStep && (
+        {step === 2 && !skipCrewSteps && (
           <div className="flex w-full flex-col gap-6">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>What do you do?</h1>
               <p className="m-0 text-[13px] text-[var(--text-secondary)]">
-                Sets your default gear categories and rate references.
+                Choose the title that best describes you.
               </p>
             </div>
             <div className="grid grid-cols-5 gap-4">
@@ -364,72 +324,11 @@ export function OnboardingClient({
           </div>
         )}
 
-        {/* ── Step 3 · Profile ──────────────────────────────────────────── */}
-        {step === 3 && (
-          <div className="flex w-full max-w-[460px] flex-col gap-[22px]">
-            <h1 className={h1Class}>Set up your profile</h1>
-
-            <div className="flex flex-col gap-[7px]">
-              <label className={labelClass}>Name</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} className={inputClass} />
-            </div>
-
-            <div className="flex flex-col gap-[7px]">
-              <label className={labelClass}>Home market</label>
-              <select
-                value={homeMarket}
-                onChange={(e) => setHomeMarket(e.target.value)}
-                className={cn(inputClass, "appearance-none")}
-              >
-                {HOME_MARKET_OPTIONS.map((m) => (
-                  <option key={m} value={m}>
-                    {m}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-[7px]">
-              <label className={labelClass}>Experience level</label>
-              <SegmentedToggle
-                options={EXPERIENCE_LEVELS}
-                value={EXPERIENCE_LEVELS.indexOf(experienceLevel as (typeof EXPERIENCE_LEVELS)[number])}
-                onChange={(i) => setExperienceLevel(EXPERIENCE_LEVELS[i])}
-                width={432}
-                height={44}
-                aria-label="Experience level"
-              />
-              <span className="text-[11px] leading-[1.5] text-[var(--text-muted)]">
-                Changes defaults and how much detail is shown. Adjustable anytime in settings.
-              </span>
-            </div>
-
-            <div className="flex flex-col gap-[7px]">
-              <label className={labelClass}>
-                How did you hear about us? <span className="normal-case tracking-normal text-[var(--text-subtle)]">(optional)</span>
-              </label>
-              <input
-                value={referralSource}
-                onChange={(e) => setReferralSource(e.target.value)}
-                placeholder="A rental house, a colleague, a set…"
-                className={inputClass}
-              />
-            </div>
-
-            <div className="mt-1">
-              <StepNav onNext={goNext} onBack={goBack} saving={saving} />
-            </div>
-          </div>
-        )}
-
-        {/* ── Step 4 · Working details ──────────────────────────────────── */}
-        {step === 4 && !skipWorkingDetailsStep && (
+        {/* ── Step 3 · Working details ──────────────────────────────────── */}
+        {step === 3 && !skipCrewSteps && (
           <div className="flex w-full max-w-[620px] flex-col gap-[26px]">
             <div className="flex flex-col gap-1.5">
               <h1 className={h1Class}>A few working details</h1>
-              <p className="m-0 text-[13px] leading-[1.6] text-[var(--text-secondary)]">
-                All optional. Rate cards, credits, and documents can be filled in later from profile settings.
-              </p>
             </div>
 
             <div className="flex flex-col gap-2.5">
@@ -487,12 +386,19 @@ export function OnboardingClient({
               </span>
             </div>
 
-            <StepNav onNext={goNext} onBack={goBack} onSkip={skipWorkingDetails} nextLabel="Finish setup ↗" sunset saving={saving} />
+            <StepNav
+              onNext={goNext}
+              onBack={goBack}
+              nextLabel="Finish setup ↗"
+              sunset
+              saving={saving}
+              disabled={!workingDetailsComplete}
+            />
           </div>
         )}
 
-        {/* ── Step 5 · Ready ─────────────────────────────────────────────── */}
-        {step === 5 && (
+        {/* ── Step 4 · Ready ─────────────────────────────────────────────── */}
+        {step === 4 && (
           <div className="flex w-full max-w-[720px] flex-col items-center gap-[30px] text-center">
             <div
               className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-[var(--elevation-1)]"
@@ -511,25 +417,41 @@ export function OnboardingClient({
                 icon={<Package size={19} strokeWidth={1.8} />}
                 title="Build a package"
                 body="Start from a camera body."
-                onClick={() => router.push("/package-builder")}
+                onClick={() => {
+                  router.push("/package-builder")
+                  router.refresh()
+                }}
               />
               <EntryCard
                 icon={<MapPin size={19} strokeWidth={1.8} />}
                 title="Find rental houses"
                 body="Browse houses in your market."
-                onClick={() => setStubNotice("Rental house map is coming soon.")}
+                onClick={() => {
+                  router.push("/browse")
+                  router.refresh()
+                }}
               />
               <EntryCard
                 icon={<FileUp size={19} strokeWidth={1.8} />}
                 title="Import a gear list"
                 body="CSV, XLSX, or a PDF quote."
-                onClick={() => setStubNotice("Gear list import is coming soon.")}
+                onClick={() => fileInputRef.current?.click()}
               />
               <EntryCard
                 icon={<UserCircle size={19} strokeWidth={1.8} />}
                 title="Complete your profile"
                 body="Rates, credits, documents."
-                onClick={() => setStubNotice("Full profile settings are coming soon.")}
+                onClick={() => {
+                  router.push("/profile")
+                  router.refresh()
+                }}
+              />
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".csv,.xlsx,.pdf"
+                className="hidden"
+                onChange={() => setStubNotice("Gear list import isn't wired up yet — your file wasn't uploaded.")}
               />
             </div>
             {stubNotice && <p className="text-xs text-[var(--text-subtle)]">{stubNotice}</p>}
@@ -542,22 +464,6 @@ export function OnboardingClient({
             </button>
           </div>
         )}
-      </div>
-
-      <div className="mt-auto flex h-5 items-center gap-2">
-        {dots.map((d) => (
-          <button
-            key={d.step}
-            type="button"
-            title={d.label}
-            onClick={() => setStep(d.step)}
-            className="h-1 rounded-full transition-all"
-            style={{
-              width: d.step === step ? 20 : 8,
-              background: d.step === step ? "#F4F4F5" : "rgba(255,255,255,0.22)",
-            }}
-          />
-        ))}
       </div>
     </div>
   )

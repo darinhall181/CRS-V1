@@ -72,7 +72,7 @@ export default async function PackageBuilderPage() {
   const viewer = await getViewerContext()
   // T0019 — see (app)/layout.tsx for the same gate; package-builder sits
   // under its own (workspace) route group so it needs its own check.
-  if (viewer && !viewer.onboardingCompletedAt) redirect("/onboarding")
+  if (viewer && !viewer.onboardingCompletedAt) redirect("/signup")
   const productionId = viewer?.productionId ?? DEMO_PRODUCTION_ID
 
   const [products, vendorRateRows, production, pkg] = await Promise.all([

@@ -22,5 +22,5 @@ export default async function OnboardingPage() {
   // elsewhere already, so this is only reachable by typing the URL).
   if (state?.onboardingCompletedAt) redirect("/dashboard")
 
-  return <OnboardingClient initialState={state} userName={session.user.name} />
+  return <OnboardingClient initialState={state} />
 }

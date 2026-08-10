@@ -28,7 +28,6 @@ export const PROFESSION_OPTIONS: ProfessionOption[] = [
   { id: "coord", label: "Coordinator", productionRole: "coordinator" },
   { id: "gaffer", label: "Gaffer", productionRole: "gaffer" },
   { id: "dit", label: "DIT", productionRole: null },
-  { id: "rental", label: "Rental house", productionRole: null },
   { id: "other", label: "Other", productionRole: null },
 ]
 
