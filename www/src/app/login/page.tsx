@@ -72,7 +72,7 @@ export default function LoginPage() {
           rather than needing a second exported asset). */}
       <div
         className="hidden flex-col justify-center gap-[26px] rounded-2xl px-[72px] py-16 lg:flex"
-        style={{ background: "#C7C3B4" }}
+        style={{ background: "#EDEAE0" }}
       >
         <Image
           src="/altoscope-mark-white.png"
