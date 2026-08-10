@@ -7,6 +7,10 @@ export const metadata = {
   title: "Create an account — Altoscope",
 }
 
+// See login/page.tsx's identical export for why — AuthForm's
+// useSearchParams() needs this page to skip static prerendering entirely.
+export const dynamic = "force-dynamic"
+
 // Already-signed-in users should never see the signup form — send them on to
 // wherever they were headed. If onboarding isn't finished yet, go straight
 // there instead of /dashboard, since (app)/layout.tsx's gate would just
