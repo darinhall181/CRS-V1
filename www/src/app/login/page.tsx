@@ -25,7 +25,11 @@ export default function LoginPage() {
   const searchParams = useSearchParams()
   const next = searchParams.get("next") || "/dashboard"
 
-  const [mode, setMode] = useState<"sign-in" | "sign-up">("sign-in")
+  // Visiting /signup while signed out bounces here via middleware as
+  // /login?next=%2Fsignup (it's the gated onboarding-wizard route, T0019) —
+  // land straight on the create-account form in that case instead of
+  // sign-in, since hitting /signup is a declaration of "I want an account."
+  const [mode, setMode] = useState<"sign-in" | "sign-up">(next === "/signup" ? "sign-up" : "sign-in")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [name, setName] = useState("")
