@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import WaitlistForm from "./waitlist-form"
 import SmoothScrollNav from "./smooth-scroll-nav"
+import { AltoscopeLogo } from "@/components/nav/logo"
 
 const TITLE = "Altoscope: Gear Rental and Preproduction Software"
 const DESCRIPTION =
@@ -179,48 +180,72 @@ export default function LandingPage() {
           .section-label-dot { display: inline; opacity: 0.5; }
         }
       `}</style>
-      <header
-        className="site-header"
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 20,
-          height: 56,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-          background: "rgba(24,24,26,0.82)",
-          backdropFilter: "blur(14px)",
-        }}
-      >
-        <a href="#top" style={{ display: "inline-flex", alignItems: "center" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/marketing/logo-nav.png" alt="Altoscope" style={{ height: 22, width: "auto", display: "block" }} />
-        </a>
-        <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-          <a href="#features" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
-            Features
+      {/* Sticky header, restyled 2026-08-10 to match the app's Elevation Kit
+          TopBar (www/src/components/elevation/TopBar.tsx) — same logo mark +
+          wordmark treatment (23px mark, 17px medium wordmark, 11px gap), same
+          taller/more spacious footprint — instead of the search pill and
+          account/bell cluster (nothing to search, nobody's signed in yet)
+          the right side keeps this page's own Features/About/Join links.
+          The hard border+uniform-blur cutoff is gone too: a taller
+          absolutely-positioned layer beneath the header content carries the
+          actual blur+background wash and fades it out via a mask gradient,
+          so text scrolling underneath blurs in gradually instead of hitting
+          a hard edge. */}
+      <div style={{ position: "sticky", top: 0, zIndex: 20 }}>
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: "0 0 auto 0",
+            height: 128,
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            background: "linear-gradient(to bottom, rgba(16,16,18,0.78) 0%, rgba(16,16,18,0.5) 45%, rgba(16,16,18,0) 100%)",
+            maskImage: "linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%)",
+            pointerEvents: "none",
+          }}
+        />
+        <header
+          className="site-header"
+          style={{
+            position: "relative",
+            height: 76,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <a href="#top" style={{ display: "inline-flex", alignItems: "center", gap: 11 }}>
+            <AltoscopeLogo />
+            <span style={{ fontSize: 17, fontWeight: 500, letterSpacing: "-0.01em", color: "#F4F4F5" }}>
+              Altoscope
+            </span>
           </a>
-          <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
-            About
-          </a>
-          <a
-            href="#join"
-            className="btn btn-primary"
-            style={{
-              color: "#fff",
-              background: "#3D55A8",
-              border: "1px solid #3D55A8",
-              borderRadius: 999,
-              padding: "8px 16px",
-              textDecoration: "none",
-            }}
-          >
-            Join
-          </a>
-        </nav>
-      </header>
+          <nav className="site-nav" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            <a href="#features" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
+              Features
+            </a>
+            <a href="#about" className="link nav-link" style={{ padding: "8px 12px", textDecoration: "none" }}>
+              About
+            </a>
+            <a
+              href="#join"
+              className="btn btn-primary"
+              style={{
+                color: "#fff",
+                background: "#3D55A8",
+                border: "1px solid #3D55A8",
+                borderRadius: 999,
+                padding: "8px 16px",
+                textDecoration: "none",
+              }}
+            >
+              Join
+            </a>
+          </nav>
+        </header>
+      </div>
 
       <section id="top" className="hero" style={{ maxWidth: 1240, margin: "0 auto", display: "flex", flexDirection: "column", gap: 56 }}>
         <h1
